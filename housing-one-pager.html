@@ -448,17 +448,21 @@ ol.lst-stps.stps-strpd>li, ol.lst-stps.stps-strpd>li ol.lst-stps-sub.stps-strpd,
 </header>
 <main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
   <div class="container">
-    <h1 property="name" id="wb-cont" class="gc-thickline">Federal Housing Benefit for renters</h1>
+    <h1 property="name" class="wb-inv" id="wb-cont" dir="ltr">One-time payment for renters - Federal Canada Housing Benefit</h1>
+    <div aria-hidden="true">
+		<p class="lead mrgn-tp-md mrgn-bttm-0 text-muted">Federal Canada Housing Benefit</p>
+		<h1 class="gc-thickline mrgn-tp-0">One-time payment for renters</h1>
+	</div>
     <link href="https://cra-arc.gc.ca/wet-boew/css/custom/cb-ff-lg.css" rel="stylesheet">
     <div class="row">
       <div class="col-md-8"> 
-        <!--p><span class="label label-info">Status: opens on [Date]</span></p--> 
+        <p><span class="label label-info">Status: Not yet available</span></p> 
         <!-- AJAX ALERT - DO NOT REMOVE --> 
         <!-- <section data-ajax-replace="https://www.canada.ca/content/dam/cra-arc/includes/dental-alert.txt#eng"></section> -->       
         <p><span class="label label-warning">Status: Not yet available</span></p>
-        <p>The government is proposing a one-time top-up to the Canada Housing Benefit to help low-income renters who:</p> 
+        <p>The government is proposing a one-time federal Canada Housing Benefit payment to help low-income renters. If legislation passes as drafted, this benefit would be available to renters who:</p> 
 		<ul>
-          <li>have an annual household income for 2021 of less than $35,000 for families, or less than $20,000 for individuals</li>
+          <li>have an adjusted net income for 2021 of less than $35,000 for families, or less than $20,000 for individuals</li>
           <li>pay at least 30 per cent of their net income on rent for their own principal residence in Canada</li>
         </ul>
 		<p>Applications are not yet available.</p>
@@ -539,7 +543,7 @@ ol.lst-stps.stps-strpd>li, ol.lst-stps.stps-strpd>li ol.lst-stps-sub.stps-strpd,
           </div>
         </section-->
         <h2 id="h-1">Get ready to apply</h2>
-        <p>Until legislation is passed, answer these questions to make it easier to apply online when applications become available.</p>
+        <p>Answer the questions below. Completing any steps you are missing will make it easier to apply online.</p>
         <div class="row mrgn-bttm-md">
           <div class="col-xs-12">
             <div class="brdr-lft mrgn-lft-md mrgn-tp-sm">
@@ -564,16 +568,16 @@ ol.lst-stps.stps-strpd>li, ol.lst-stps.stps-strpd>li ol.lst-stps-sub.stps-strpd,
                 <div id="answers0"> 
                   <!--filed taxes-->
                   <div id="answer0-1" class="hidden alert alert-success alert0 provisional">
-                    <p>Great. We need your 2021 tax information to determine if you are eligible for the benefit.</p>
+                    <p>Great. We may need your 2021 tax information to determine if you are eligible for the benefit.</p>
                     <p>If you have a spouse or common-law partner, they must also file their 2021 taxes before you can apply.</p>                    
                     <div class="mrgn-tp-md">
-                      <p>Next, go to: <a href="#cnd-rentcnd-rent"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="fa fa-child fa-stack-1x"></span></span>Confirm</span> if you are paying rent for your own residence in Canada</a>.</p>
+                      <p>Next, go to: <a href="#confirm-registration"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="far fa-user-circle fa-stack-2x"></span></span>Confirm</span> you have access to your CRA My Account</a>.</p>
                     </div>
                   </div>
                   <!--Did not file-->
                   <div id="answer0-2" class="hidden alert alert-warning alert0 provisional">
-                    <p>You must file your 2021 taxes before you can apply.</p>
-                    <p>If you have a spouse or common-law partner, they must also file their 2021 taxes.</p>
+                    <p>You may need to file your 2021 taxes before you can apply.</p>
+                    <p>If you have a spouse or common-law partner, they may also need to file their 2021 taxes.</p>
                     <p>For information on how to file, go to: <a href="https://www.canada.ca/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html">Get ready to do your taxes</a>.</p>   
                   </div>
                 </div>
@@ -657,6 +661,7 @@ ol.lst-stps.stps-strpd>li, ol.lst-stps.stps-strpd>li ol.lst-stps-sub.stps-strpd,
               <h3 class="pull-left mrgn-tp-0 mrgn-lft-lg h3 text-info" id="confirm-registration">Confirm you have access to your CRA My Account</h3>
               <div class="clearfix"></div>
               <div class="mrgn-lft-lg">
+				<p>CRA My Account is the fastest way to apply for CRA-administered benefits.</p>
                 <div class="wb-frmvld fieldflow-lg">
                   <form>
                     <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
@@ -746,7 +751,7 @@ ol.lst-stps.stps-strpd>li, ol.lst-stps.stps-strpd>li ol.lst-stps-sub.stps-strpd,
               <h3 class="pull-left mrgn-tp-0 mrgn-lft-lg h3 text-info" id="deposit">Set up direct deposit</h3>
               <div class="clearfix"></div>
               <div class="mrgn-lft-lg">
-                <p>Direct deposit will be the fastest way to get your payments.</p>
+                <p>Direct deposit is the fastest way to get payments for CRA-administered benefits.</p>
                 <div class="wb-frmvld fieldflow-lg">
                   <form>
                     <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert2, #bank-redir&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}}">
@@ -772,7 +777,7 @@ ol.lst-stps.stps-strpd>li, ol.lst-stps.stps-strpd>li ol.lst-stps-sub.stps-strpd,
                   <div id="answer2-2" class="alert alert-info hidden alert2 provisional">
                     <p>Your mailing address must be up to date:</p>
                     <ul>
-                      <li><strong>Online:</strong> Confirm it's up to date in your <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" target="_blank">CRA My <span class="nowrap">Account<span class="far fa-window-restore mrgn-lft-sm"></span></span><span class="wb-inv"> (opens in new window)</span></a> under "Personal profile"</li>
+                      <li><strong>Online:</strong> Confirm it's up to date in your <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" target="_blank">CRA My <span class="nowrap">Account<span class="far fa-window-restore mrgn-lft-sm"></span></span><span class="wb-inv"> (opens in new window)</span></a> under your "personal profile"</li>
                       <li><strong>By phone:</strong> Call <a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281</a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281</strong></li>
                     </ul>
                     <p class="mrgn-tp-lg"><strong>Reminder:</strong> Once your application is processed, direct deposit payments will take up&nbsp;to&nbsp;5 business days. A cheque will take about 10&nbsp;to 12&nbsp;business days.</p>
@@ -801,7 +806,7 @@ ol.lst-stps.stps-strpd>li, ol.lst-stps.stps-strpd>li ol.lst-stps-sub.stps-strpd,
         <h2 id="h-2">When you could apply</h2>
         <!--p class="mrgn-tp-md"><span class="far fa-clock mrgn-rght-sm mrgn-bttm-sm lead"></span>Applications for Canada Dental Benefit will open on <strong>[date]</strong>.</p--> 
         <!--p>Applications for Canada Dental Benefit will open on <strong>[date]</strong>. You can apply if your child has a dental appointment between October 1, 2022 and July XX, 2023.</p-->
-        <p>The legislation for the [Federal Housing Benefit for renters ] is under review. More information will be provided on this page if Royal Assent is received.</p>
+        <p>The legislation for the one-time federal Canada Housing Benefit payment is under review in Parliament. More information will be provided on this page if legislation passes and becomes law.</p>
 		<p>Applications may be available in December 2022.</p>
       
 		<!--<h2 id="h-3">How this affects your other benefits</h2>
