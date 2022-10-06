@@ -594,7 +594,7 @@ margin-left: -2.0em;
                 </div>
             </div>
         </div>
-        <div class="row mrgn-bttm-md">
+        <!-- <div class="row mrgn-bttm-md">
             <div class="col-xs-12">
                 <div class="brdr-lft mrgn-lft-md mrgn-tp-sm">
                     <div class="pstn-lft-xs pstn-tp-xs"><span class="fa-stack fa-fw mrgn-lft-sm text-info"> <span class="fas fa-square fa-stack-2x fa-inverse"></span> <span class="far fa-user-circle fa-stack-2x"></span></span></div>
@@ -680,7 +680,7 @@ margin-left: -2.0em;
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row mrgn-bttm-md">
             <div class="col-xs-12">
                 <div class="brdr-lft mrgn-lft-md mrgn-tp-sm">
@@ -769,25 +769,138 @@ margin-left: -2.0em;
 
       <div class="mrgn-lft-xl">
         <dl class="dl-horizontal brdr-0">
-          <dt id="apply-online">Sign in with My Account</dt>
+          <dt id="apply-online">Apply online</dt>
           <dd>
             <p><a data-gc-analytics-customclick="CRA|ARC:CESB button click:Sign-In to your CRA My Account button" href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="btn btn-call-to-action">Sign in to your CRA My Account</a>  <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="mrgn-lft-md">Register</a> </p>
             <!-- <p class="mrgn-bttm-lg"><a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services/hours-service.html">Hours of service for CRA My Account</a></p> -->
-            <details>
-              <summary>If you don't have My Account with CRA, sign in with My Service Canada Account instead</summary>
-                <p>If you have an online account with Service Canada, you can sign in with them, and switch over to a CRA My Account to access the application.</p>
-                <ol>
-                  <li>Sign in to your <a href="">My Service Canada Account</a></li>
-                  <li>Switch over to a CRA My Account with the <mark>"button label"</mark> link in the bottom right of the main account landing page</li>
-                  <li>Apply for the one-time Canada Housing Benefit payment through the application linked in the blue alert on the My Account landing page.</li>
-                </ol>
-            </details>
-            <details>
-              <summary>If you cannot sign in or register for My Account or My Service Canada Account</summary>
-              <p>if you are unable to sign in to or register for a CRA My Account, you can still <a href="">submit your application online</a>.</p>
-              <p><strong>Processing times</strong>: <span class="far fa-clock"></span> Payments for applications not made through My Account or by phone will take between <strong>30 and 60 days</strong> to process.</p>
-      
-            </details>
+            <div class="col-xs-12">
+              <div class="brdr-lft mrgn-lft-md mrgn-tp-sm">
+                <div class="pstn-lft-xs pstn-tp-xs"><span class="fa-stack fa-fw mrgn-lft-sm text-info"> <span class="fas fa-square fa-stack-2x fa-inverse"></span> <span class="far fa-user-circle fa-stack-2x"></span></span></div>
+                <h3 class="pull-left mrgn-tp-0 mrgn-lft-lg h3 text-info" id="confirm-registration">Help applying online</h3>
+                <div class="clearfix"></div>
+                <div class="mrgn-lft-lg">
+                  <p>If you haven't registered or are locked out of My Account with CRA, find an alternative to apply online.</p>
+                  <div class="wb-frmvld fieldflow-lg">
+                    <form>
+                      <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
+                        <p>Do you have a CRA My Account? <small class="text-muted">(CRA's online application)</small></p>
+                        <ul>
+                          <li> Yes 
+                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                              <div class="wb-fieldflow-header">
+                                  <p class="wb-fieldflow-label">Are you able to successfully sign in?</p>
+                              </div>
+                              <ul>
+                                <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
+                                <li>No 
+                                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                    <div class="wb-fieldflow-header">
+                                      <p class="wb-fieldflow-label">What problem are you having?</p>
+                                    </div>
+                                    <ul>
+                                      <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2-1, #answer1-6&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">I am locked out</li>
+                                      <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">I can't remember my CRA user ID or password</li>
+                                      <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">I'm having trouble accessing my Sign-in partner</li>
+                                      <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2-4&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">I'm having trouble accessing my Provincial partner sign-in</li>
+                                    </ul>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li> No 
+                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                              <div class="wb-fieldflow-header">
+                                  <p class="wb-fieldflow-label">Do you have a My Service Canada Account?</p>
+                              </div>
+                              <ul>
+                                <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-4&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
+                                <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-5, #answer1-6&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </form>
+                  </div>
+                  <div id="answers1">
+                      <div id="answer1-1" class="hidden alert alert-success alert1 provisional">
+                          <p>Great.</p>
+                          <ol>
+                            <li>Sign in to your CRA My Account</li>
+                            <li>Go to the Canada Housing Benefit application from the alert at the top of the page once you're signed in</li>
+                            <li>Apply for the benefit through My Account</li>
+                          </ol>
+                          <p>Next, <span class="nowrap">sign in to <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">My Account</span></a>.</p>
+                      </div>
+                      <div id="answer1-2-1" class="hidden alert alert-success alert1 provisional">
+                          <p>Call the general enquiries line <a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]</strong> for help to access your CRA My Account.</p>
+                      </div>
+                      <div id="answer1-2-2" class="hidden alert alert-warning alert1 provisional">
+                          <ol>
+                              <li> You can recover your user ID or password by going to <a href="/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" target="_blank" rel="noopener">CRA My <span class="nowrap">Account<span class="far fa-window-restore mrgn-lft-sm"></span></span><span class="wb-inv"> (opens in new window)</span></a>
+                                  <ul>
+                                      <li>Select <strong>'CRA sign in'</strong></li>
+                                      <li>Choose <strong>'Forgot your user ID'</strong> or <strong>'Forgot your password'</strong>
+                                          <ul class="list-unstyled">
+                                              <li> If you <strong>'Forgot your user ID'</strong> you will need your: <ul>
+                                                      <li>Social Insurance Number (SIN) </li>
+                                                      <li>date of birth </li>
+                                                      <li>copy of this year's or last year's assessed individual tax return </li>
+                                                      <li>answers to the security questions you set up during registration </li>
+                                                  </ul>
+                                              </li>
+                                          </ul>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li>If you can't recover your account, call the general enquiries line <a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]</strong></li>
+                          </ol>
+                      </div>
+                      <div id="answer1-2-3" class="hidden alert alert-warning alert1 provisional">
+                          <p>Before contacting the CRA, you should contact your financial institution for assistance.</p>
+                      </div>
+                      <div id="answer1-2-4" class="hidden alert alert-warning alert1 provisional">
+                          <p>For assistance with your:</p>
+                          <ul>
+                              <li>BC Services Card, go to <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp/troubleshooting" target="_blank" rel="noopener">BC Services Card App - Troubleshooting<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a></li>
+                              <li>MyAlberta Digital ID, go to <a href="https://account.alberta.ca/contact-us" target="_blank" rel="noopener">MyAlberta Digital ID - Contact us<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a></li>
+                          </ul>
+                      </div>
+                      <div id="answer1-4" class="hidden alert alert-success alert1 provisional">
+                        <p>If you have a My Service Canada Account, you can sign in with MSCA then switch over to a CRA My Account without having to register.</p>
+                        <ol>
+                          <li>Sign in to your My Service Canada Account</li>
+                          <li>Switch over to a CRA My Account with the <mark>"button label"</mark> link in the bottom right of the main account landing page</li>
+                          <li>Go to the Canada Housing Benefit application from the alert at the top of the page once you're signed in</li>
+                          <li>Apply for the benefit through My Account</li>
+                        </ol>
+                        <p>Next, <span class="nowrap">sign in to <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">My</span> Service Canada Account</a>.</p>
+                      </div>
+                      <div id="answer1-5" class="hidden alert alert-success alert1 provisional">
+                        <p>You can register for CRA My Account and apply for the one-time Canada Housing Benefit payment right away, <strong>without waiting for a security code</strong>.</p>
+                        <ol>
+                          <li>Register for My Account to get limited access right away</li>
+                          <li>Go to the Canada Housing Benefit application from the alert at the top of the limited access My Account page once you're registered</li>
+                          <li>Apply for the benefit through the My Account with limited access</li>
+                          <li>After you apply, CRA will send you a security code to finish setting up your full access My Account later</li>
+                        </ol>
+                        <p>Next, <span class="nowrap">register for <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">My Account</span></a>.</p>
+                      </div>
+                      <div id="answer1-6" class="hidden alert alert-warning alert1 provisional">
+                        <p>Alternatively, you can apply for the one-time Canada Housing Benefit payment by phone or through a webform.</p>
+                        <p><strong>Processing times</strong>: <span class="far fa-clock"></span> Payments for applications:</p>
+                        <ul>
+                          <li>by phone will take between <strong>5 to 10 days</strong> to process</li>
+                          <li>by webform will take between <strong>30 to 60 days</strong> to process</li>
+                        </ul>
+                        <p>Next, <span class="nowrap">apply <a href="#apply-phone">by phone</span></a> or <a href="#">apply through the webform</a>.</p>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+             
           
           </dd>
           <dt id="apply-phone">By phone</dt>
@@ -915,97 +1028,63 @@ margin-left: -2.0em;
           </dd>
           <dt id="apply-phone">By phone</dt>
           <dd>
-            <details>
+            <p><strong>Processing times</strong>: <span class="far fa-clock"></span> Payments for applications by phone will take between <strong>5 to 10 days</strong> to process.</p>
+
+            <details class="mrgn-bttm-lg">
               <summary>Contact the CRA to apply by phone or TTY</summary>
-              <dl id="ajax-ite" class="dl-horizontal brdr-0">
-                <dt>Before you call:</dt>
+              <dl class="dl-horizontal brdr-0">
+                <dt>Before you call</dt>
                 <dd>
-                  <p>To verify your identity, you'll need your:</p>
+                  <p>To verify your identity, you'll need:</p>
                   <ul>
-                    <li>Social Insurance Number (SIN)</li>
-                    <li>full name and date of birth</li>
-                    <li>complete address</li>
-                    <li>assessed tax return, notice of assessment or reassessment, other tax document, or be signed in to CRA My Account</li>
+                  <li>your Social Insurance Number (SIN)</li>
+                  <li>postal code</li>
                   </ul>
+                  </dd>
+                  <dt>Telephone number</dt>
+                  <dd>
+                  <p><span class="wb-inv">Follow the instructions below before you call</span> <a href="tel:18009592019" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]</strong> or <a href="tel:18009592041" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]</strong></p>
+                  <details>
+                    <summary>Instructions</summary>
+                    <ol>
+                    <li>Select your language preference: English or French</li>
+                    <li>Press '2' to apply for the One-time Canada Housing Benefit payment</li>
+                    <li>Follow the prompts to enter your information, including:
+                    <ul>
+                    <li>your SIN</li>
+                    <li>confirmation of your postal code</li>
+                    <li>the period you are applying for</li>
+                    </ul>
+                    </li>
+                    <li>Declare that you qualify for the benefit</li>
+                    </ol>
+                  </details>
+                  <p>The CRA will issue payments by direct deposit or cheque, based on the payment method we have on file for you.</p>
                 </dd>
-                <dt><strong>Telephone number:</strong></dt>
-                <dd><a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281</strong><br></dd>
-                <dt>Hours:</dt>
+                <dt>Hours</dt>
                 <dd>
-                  <table class="table brdr-bttm">
+                  <table class="table">
                     <caption class="wb-inv">
-                    CRA's individual income tax enquiries line hours
+                    Details
                     </caption>
                     <thead>
                       <tr>
-                        <th class="wb-inv" scope="col">Date</th>
-                        <th class="wb-inv" scope="col">Hours</th>
+                        <th scope="col" class="wb-inv">Day</th>
+                        <th scope="col" class="wb-inv">Hours</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Monday to Friday</td>
-                        <td><strong>8&nbsp;am to 8&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                      <tr>
-                        <td>Saturday</td>
-                        <td><strong>9&nbsp;am to 5&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                      <tr>
-                        <td>Sunday</td>
-                        <td>Closed</td>
-                      </tr>
-                      <tr>
-                        <td>Friday, December 24&nbsp;and&nbsp;31</td>
-                        <td><strong>8&nbsp;am to 3&nbsp;pm</strong> (local time)</td>
+                        <td>Monday to Sunday</td>
+                        <td>6&nbsp;am to 3&nbsp;am (Eastern time)</td>
                       </tr>
                     </tbody>
                   </table>
-                  <p>Closed on <a href="https://www.canada.ca/en/revenue-agency/services/tax/public-holidays.html">public holidays</a></p>
-                </dd>
-                <dt><strong>TTY number:</strong></dt>
-                <dd>
-                  <p>If you use a teletypewriter:<br>
-                    <a href="tel:18006650354" class="hidden-md hidden-lg nowrap"><span class="fas fa-tty fa-flip-horizontal"></span>1-800-665-0354<span class="wb-inv"> (opens up tty application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-tty fa-flip-horizontal"></span>1-800-665-0354</strong></p>
-                  <p>If you use an operator-assisted relay service, call our regular telephone numbers on this page instead of the TTY number.</p>
-                </dd>
-                <dt>Hours:</dt>
-                <dd>
-                  <table class="table brdr-bttm">
-                    <caption class="wb-inv">
-                    Dedicated CWLB TTY number hours (phone-2)
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th class="wb-inv" scope="col">Date</th>
-                        <th class="wb-inv" scope="col">Hours</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Monday to Friday</td>
-                        <td><strong>8&nbsp;am to 8&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                      <tr>
-                        <td>Saturday</td>
-                        <td><strong>9&nbsp;am to 5&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                      <tr>
-                        <td>Sunday</td>
-                        <td>Closed</td>
-                      </tr>
-                      <tr>
-                        <td>Friday, December 24&nbsp;and&nbsp;31</td>
-                        <td><strong>8&nbsp;am to 3&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p>Closed on <a href="https://www.canada.ca/en/revenue-agency/services/tax/public-holidays.html">public holidays</a></p>
                 </dd>
               </dl>
             </details>
           </dd>
-          <dt id="apply-form">With the webform</dt>
+          <dt id="apply-phone">With the webform</dt>
           <dd>
             <p><strong>Processing times</strong>: <span class="far fa-clock"></span> Payments for applications through the webform will take between <strong>30 and 60 days</strong> to process.</p>
             <details>
@@ -1056,97 +1135,61 @@ margin-left: -2.0em;
         <dl class="dl-horizontal brdr-0">
           <dt id="apply-phone">By phone</dt>
           <dd>
-            <details>
+            <details class="mrgn-bttm-lg">
               <summary>Contact the CRA to apply by phone or TTY</summary>
-              <dl id="ajax-ite" class="dl-horizontal brdr-0">
-                <dt>Before you call:</dt>
+              <dl class="dl-horizontal brdr-0">
+                <dt>Before you call</dt>
                 <dd>
-                  <p>To verify your identity, you'll need your:</p>
+                  <p>To verify your identity, you'll need:</p>
                   <ul>
-                    <li>Social Insurance Number (SIN)</li>
-                    <li>full name and date of birth</li>
-                    <li>complete address</li>
-                    <li>assessed tax return, notice of assessment or reassessment, other tax document, or be signed in to CRA My Account</li>
+                  <li>your Social Insurance Number (SIN)</li>
+                  <li>postal code</li>
                   </ul>
+                  </dd>
+                  <dt>Telephone number</dt>
+                  <dd>
+                  <p><span class="wb-inv">Follow the instructions below before you call</span> <a href="tel:18009592019" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]</strong> or <a href="tel:18009592041" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>[number here]</strong></p>
+                  <details>
+                    <summary>Instructions</summary>
+                    <ol>
+                    <li>Select your language preference: English or French</li>
+                    <li>Press '2' to apply for the One-time Canada Housing Benefit payment</li>
+                    <li>Follow the prompts to enter your information, including:
+                    <ul>
+                    <li>your SIN</li>
+                    <li>confirmation of your postal code</li>
+                    <li>the period you are applying for</li>
+                    </ul>
+                    </li>
+                    <li>Declare that you qualify for the benefit</li>
+                    </ol>
+                  </details>
+                  <p>The CRA will issue payments by direct deposit or cheque, based on the payment method we have on file for you.</p>
                 </dd>
-                <dt><strong>Telephone number:</strong></dt>
-                <dd><a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281</strong><br></dd>
-                <dt>Hours:</dt>
+                <dt>Hours</dt>
                 <dd>
-                  <table class="table brdr-bttm">
+                  <table class="table">
                     <caption class="wb-inv">
-                    CRA's individual income tax enquiries line hours
+                    Details
                     </caption>
                     <thead>
                       <tr>
-                        <th class="wb-inv" scope="col">Date</th>
-                        <th class="wb-inv" scope="col">Hours</th>
+                        <th scope="col" class="wb-inv">Day</th>
+                        <th scope="col" class="wb-inv">Hours</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Monday to Friday</td>
-                        <td><strong>8&nbsp;am to 8&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                      <tr>
-                        <td>Saturday</td>
-                        <td><strong>9&nbsp;am to 5&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                      <tr>
-                        <td>Sunday</td>
-                        <td>Closed</td>
-                      </tr>
-                      <tr>
-                        <td>Friday, December 24&nbsp;and&nbsp;31</td>
-                        <td><strong>8&nbsp;am to 3&nbsp;pm</strong> (local time)</td>
+                        <td>Monday to Sunday</td>
+                        <td>6&nbsp;am to 3&nbsp;am (Eastern time)</td>
                       </tr>
                     </tbody>
                   </table>
-                  <p>Closed on <a href="https://www.canada.ca/en/revenue-agency/services/tax/public-holidays.html">public holidays</a></p>
-                </dd>
-                <dt><strong>TTY number:</strong></dt>
-                <dd>
-                  <p>If you use a teletypewriter:<br>
-                    <a href="tel:18006650354" class="hidden-md hidden-lg nowrap"><span class="fas fa-tty fa-flip-horizontal"></span>1-800-665-0354<span class="wb-inv"> (opens up tty application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-tty fa-flip-horizontal"></span>1-800-665-0354</strong></p>
-                  <p>If you use an operator-assisted relay service, call our regular telephone numbers on this page instead of the TTY number.</p>
-                </dd>
-                <dt>Hours:</dt>
-                <dd>
-                  <table class="table brdr-bttm">
-                    <caption class="wb-inv">
-                    Dedicated CWLB TTY number hours (phone-2)
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th class="wb-inv" scope="col">Date</th>
-                        <th class="wb-inv" scope="col">Hours</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Monday to Friday</td>
-                        <td><strong>8&nbsp;am to 8&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                      <tr>
-                        <td>Saturday</td>
-                        <td><strong>9&nbsp;am to 5&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                      <tr>
-                        <td>Sunday</td>
-                        <td>Closed</td>
-                      </tr>
-                      <tr>
-                        <td>Friday, December 24&nbsp;and&nbsp;31</td>
-                        <td><strong>8&nbsp;am to 3&nbsp;pm</strong> (local time)</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p>Closed on <a href="https://www.canada.ca/en/revenue-agency/services/tax/public-holidays.html">public holidays</a></p>
                 </dd>
               </dl>
             </details>
           </dd>
-          <dt id="apply-form">Submit a webform</dt>
+          <dt id="apply-phone">Submit a webform</dt>
           <dd>
             <details>
               <summary>If you can't sign up for My Account or My Service Canada Account</summary>
