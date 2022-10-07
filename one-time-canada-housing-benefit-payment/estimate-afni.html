@@ -338,15 +338,13 @@
         <ul class="gcnav-steps">
           <li><a href="who-apply.html">Who can apply<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a>
             <ul class="gc-navseq noline">
-              <li class="active"><a aria-current="page">Find out if your income and rent qualify</a></li>
+              <li class="active"><a aria-current="page">Estimate if your income and rent qualify</a><span class="wb-inv">: One-time Canada Housing Benefit payment</span></li>
             </ul>
           </li>
-          <!-- <li><a href="cesb-how-much.html">How much you can get<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li> -->
-          <!-- <li><a href="cesb-periods-apply.html">Which periods you can apply for<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li> -->
+          <li><a href="get-ready-apply.html">Get ready to apply<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li>
           <li><a href="how-apply.html">How to apply<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li>
-          <!-- <li><a href="cesb-getting-payments.html">Keep getting your payments<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li> -->
-          <li><a href="return-payment.html">Return or repay the payment<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li>
-          <li><a href="contact.html">Contact us about the payment<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li>
+          <li><a href="after-apply.html">After you apply<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li>
+          <li><a href="contact.html">Contact the CRA<span class="wb-inv">: One-time Canada Housing Benefit payment</span></a></li>
         </ul>
         <!-- <div class="hidden-sm hidden-xs" data-ajax-replace="http://test.canada.ca/covid-19-guidance/proto/cesb-archive/emergency-student-benefit.html#related-menu"></div> -->
       </nav>
@@ -354,7 +352,7 @@
     <!--  <aside class="hidden-xs hidden-sm gcnav-side">
     </aside>//-->
     <section class="gcnav-section">
-      <h1 property="name" id="wb-cont">Find out if your income and rent qualify</h1>
+      <h1 property="name" id="wb-cont">Estimate if your income and rent qualify</h1>
       
 
               <div class="row mrgn-tp-lg">
@@ -383,14 +381,16 @@
                     <!-- If not resident through all of 2021, need to ask deemed vs factual -->
 
 
-                    <div id="non-resident-type" class="panel-body mrgn-lft-sm hidden">
+                    <div id="non-resident-ties" class="panel-body mrgn-lft-sm hidden">
                       <div class="form-group">
-                        <legend class="h5 required">Were you resident in Canada throughout all of 2021? <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>
+                        <legend class="h5 required">When resident abroad in 2021, did you maintain significant residential ties in Canada? <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>
+                        <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">Determine if you had close residential ties</a></p>
+                        
                         <div class="radio">
-                          <label for="deemed-non-resident"><input type="radio" name="nonResidentType" id="deemed-non-resident" value="false" data-residency="false" data-rule-required="true">Yes</label>
+                          <label for="non-resident-ties-yes"><input type="radio" name="nonResidentTies" id="non-resident-ties-yes" value="true" data-residency="true" data-rule-required="true">Yes (factual resident)</label>
                         </div>
                         <div class="radio">
-                          <label for="factual-non-resident"><input type="radio" name="nonResidentType" id="factual-non-resident" value="true" data-residency="true" data-rule-required="true">No</label>
+                          <label for="non-resident-ties-no"><input type="radio" name="nonResidentTies" id="non-resident-ties-no" value="false" data-residency="false" data-rule-required="true">No</label>
                         </div>
                       </div>
                     </div>
@@ -708,6 +708,7 @@
         residency = $(this).data("residency");
         if (residency === true) {
           $("#worldIncomeElm").removeClass("hidden");
+          $("#worldIncomeElm").val(0);
         } else { //unhide follow up question
           $("#non-residency-type").removeClass("hidden");
         }
