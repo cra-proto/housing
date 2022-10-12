@@ -1252,32 +1252,67 @@
                   <fieldset id="marital" class="panel-default p-0">
                     <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Marital status</span></legend>
                     <div class="panel-body mrgn-lft-sm">
-                      <div class="form-group">
-                          <label for="maritalStatus" class="required">What was your <span class="field-name">Marital status as of December 1, 2022</span> <strong class="required">(required)</strong> <a href="#maritalStatus-help" aria-controls="maritalStatus-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for Marital status</span></a></label>
-                          <select name="maritalStatus" id="maritalStatus" class="form-control" required="required">
-                            <option label="Select a marital status"></option>
-                            <option value="DIVORCED" data-marital-add="false">Divorced</option>
-                            <option value="common law partner" data-marital-add="true">Living Common Law</option>
-                            <option value="spouse" data-marital-add="true">Married</option>
-                            <option value="SEPARATED" data-marital-add="false">Separated</option>
-                            <option value="SINGLE" data-marital-add="false">Single</option>
-                            <option value="WIDOWED" data-marital-add="false">Widowed</option>
-                          </select>
-                      </div>
-                      <section id="maritalStatus-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                        <header class="modal-header">
-                          <h2 class="modal-title">Marital status</h2>
-                        </header>
-                        <div class="modal-body">
-                          <dl>
-                            <dt>Common-law partner</dt>
-                            <dd class="mrgn-tp-md">This applies to a person <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</dd>
-                            <dt class="mrgn-tp-lg">Separated</dt>
-                            <dd class="mrgn-tp-md">You are separated when you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</dd>
-                          </dl>
-                          <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html#def" target="help" rel="noopener noreferrer">marital status</a> for more information</p>
+
+
+                      <div id="marital-status">
+                        <div class="form-group">
+                          <legend class="h5 required">What was your Marital status as of December 1, 2022 <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>
+                          
+                          <p><a href="#maritalStatus-help" aria-controls="maritalStatus-help" class="wb-lbx" role="button">What is living common law? <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                          <section id="maritalStatus-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                            <header class="modal-header">
+                              <h2 class="modal-title">What is living common law?</h2>
+                            </header>
+                            <div class="modal-body">
+                                <p>This applies to a person <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
+                                <!-- <dt class="mrgn-tp-lg">Separated</dt>
+                                <dd class="mrgn-tp-md">You are separated when you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</dd> -->
+                              <!-- </dl> -->
+                              <!-- <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html#def" target="help" rel="noopener noreferrer">marital status</a> for more information</p> -->
+                            </div>
+                          </section>
+
+                          <div class="radio">
+                            <label for="marital-single"><input type="radio" name="maritalStatus" id="marital-single" value="false" data-rule-required="true">Single</label>
+                          </div>
+                          <div class="radio">
+                            <label for="marital-spouse"><input type="radio" name="maritalStatus" id="marital-spouse" value="true" data-rule-required="true">Spouse</label>
+                          </div>
+                          <div class="radio">
+                            <label for="marital-common"><input type="radio" name="maritalStatus" id="marital-common" value="true" data-rule-required="true">Living common law</label>
+                          </div>
+                          <div class="radio">
+                            <label for="marital-divorced"><input type="radio" name="maritalStatus" id="marital-divorced" value="false" data-rule-required="true">Divorced</label>
+                          </div>
+                          <div class="radio">
+                            <label for="marital-separated"><input type="radio" name="maritalStatus" id="marital-separated" value="false" data-rule-required="true">Separated</label>
+                          </div>
+                          <div class="radio">
+                            <label for="marital-widowed"><input type="radio" name="maritalStatus" id="marital-widowed" value="false" data-rule-required="true">Widowed</label>
+                          </div>
                         </div>
-                      </section>
+                      </div>
+
+                      <div id="marital-change" class="hidden">
+                        <div class="form-group">
+                          <legend class="h5 required">Did the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> occur during the year 2021?<strong class="required">(required)</strong></legend>
+                          <div class="radio">
+                            <label for="marital-change-yes"><input type="radio" name="maritalChange" id="marital-change-yes" value="true" data-rule-required="true">Yes</label>
+                          </div>
+                          <div class="radio">
+                            <label for="marital-change-no"><input type="radio" name="maritalChange" id="marital-change-no" value="false" data-rule-required="true">No</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="well text-muted mrgn-tp-md" id="marital-summary">
+                        <h3 class="mrgn-tp-0">Summary of marital status</h3>
+                        <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
+                       
+                        <p class="marital-true hidden">Go to the next step to calculate your and your partner's average family net income. </p>
+                        <p class="marital-change-true hidden">Because there was a change in marital status during 2021, the average family net income will be calculated in two parts.</p>
+                        <p class="marital-false hidden">Go to the next step to calculate your individual average family net income.</p>
+                      </div>
                     </div>
                   </fieldset>
 
@@ -1486,18 +1521,23 @@
         if (target.name == "residency" || target.name == "nonResidentTies" || target.name == "deemedResidency") {
           residencyQuestions(target);
         }
+        if (target.name == "maritalStatus" || target.name == "maritalChange") {
+          maritalQuestions(target);
+        }
       });
 
       function residencyQuestions(target) {
         //resets
         $("#worldIncomeElm").addClass("hidden");
+        $("#non-resident-ties").addClass("hidden");
+        $("#deemed-residency").addClass("hidden");
         $(".residency-unanswered").removeClass("hidden");
         $(".canadian-resident").addClass("hidden");
         $(".factual-resident").addClass("hidden");
         $(".deemed-non-resident").addClass("hidden");
         $(".deemed-resident").addClass("hidden");
         $(".non-resident").addClass("hidden");
-
+        
         if ($('#resident-true:checked').length > 0) {
           $(".canadian-resident").removeClass("hidden");
           $(".residency-unanswered").addClass("hidden");
@@ -1521,6 +1561,45 @@
               $(".non-resident").removeClass("hidden");
             }
           }
+        }
+      }
+
+      function maritalQuestions(target) {
+        $("#marital-change").addClass("hidden");
+        $(".marital-unanswered").removeClass("hidden");
+        $(".marital-true").addClass("hidden");
+        $(".marital-change-true").addClass("hidden");
+        $(".marital-false").addClass("hidden");
+        $(".divorce-label").addClass("hidden");
+        $(".separation-label").addClass("hidden");
+        $(".death-label").addClass("hidden");
+
+        if ($('#marital-single:checked').length > 0) {
+          $(".marital-unanswered").addClass("hidden");
+          $(".marital-false").removeClass("hidden");
+        } else if ($('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
+          $(".marital-unanswered").addClass("hidden");
+          $(".marital-true").removeClass("hidden");
+        } else if ($('#marital-divorced:checked').length > 0) {
+          $(".divorce-label").removeClass("hidden");
+          maritalChangeQuestion(target);
+        } else if ($('#marital-separated:checked').length > 0) {
+          $(".separation-label").removeClass("hidden");
+          maritalChangeQuestion(target);
+        } else if ($('#marital-widowed:checked').length > 0) {
+          $(".death-label").removeClass("hidden");
+          maritalChangeQuestion(target);
+        }
+      }
+
+      function maritalChangeQuestion(target) {
+        $("#marital-change").removeClass("hidden");
+        if ($('#marital-change-yes:checked').length > 0) {
+          $(".marital-unanswered").addClass("hidden");
+          $(".marital-change-true").removeClass("hidden");
+        } else if ($('#marital-change-no:checked').length > 0) {
+          $(".marital-unanswered").addClass("hidden");
+          $(".marital-false").removeClass("hidden");
         }
       }
 
