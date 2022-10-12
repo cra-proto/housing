@@ -1485,6 +1485,40 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               </header>
               <div class="panel-body">
                 <div id="crb-statement">
+                  <p>Based on the amounts you entered:</p>
+                  <ul class="fa-ul">
+                    <li class="fa fa-check text-success fa-li">Your adjusted family net income (<span class="mrgn-tp-0 h5"><output style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output></span> qualifies as an <span class="indfam">individual</span></li>
+                    <li class="fa fa-check text-success fa-li">Your 2022 rent (<span class="mrgn-tp-0 h5"><output style="display: inline;" name="avg-fam-net-income-value"><strong>%0</strong></output></span> qualifies as a percentage of your 2021 income</li>
+                  </ul>
+                  <details class="mrgn-bttm-md">
+                    <summary>Show the math for your average family net income</summary>
+                    <p>Your adjusted family net income (AFNI) for this benefit is:</p>
+                    <ul class="fa-ul lst-spcd">
+                        <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="net-income-value">$0</output><span class="text-muted"> (your net income)</span></span></li>
+                        <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="spouse-net-income-value">$0</output><span class="text-muted"> (your spouse's net income)</span></span></li>
+                        <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
+                    </ul>
+                    <br>
+                    <ul class="fa-ul lst-spcd">
+                        <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
+                        <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-income-value">$0</output><span class="text-muted"> (UCCB and RDSP income)</span></span></li>
+                        <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-payment-value">$0</output><span class="text-muted"> (UCCB and RDSP repayment)</span></span></li>
+                        <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="avg-fam-net-income-value">$0</output><span class="text-muted"> (your adjusted family net income)</span></span></li>
+                    </ul>
+                  </details>
+                  <!-- <div class="alert alert-success provisional hidden" id="qualify">
+                      <p>Your benefit amount:</p>
+                      <p class="lead"><strong>$XXX</strong> for each eligible child</p>
+                      <p><strong>$XXX </strong>(half the benefit amount) if you have shared custody</p>
+                  </div>
+                  <div class="alert alert-danger provisional hidden" id="doesnt-qualify">
+                      <p>Based on the amounts you entered, your adjusted family net income does not qualify for this benefit.</p>
+                  </div> -->
+              </div>
+
+
+<!--               
+                <div id="crb-statement">
                   <p>Your average family net income (<abbr title="Average Family Net Income">AFNI</abbr>) is:</p>
                   <ul class="fa-ul lst-spcd">
                       <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="net-income-value">$0</output><span class="text-muted"> (your net income)</span></span></li>
@@ -1501,7 +1535,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <h3>You do not qualify</h3>
                       <p class="text-muted small">Phasellus congue mauris ipsum, at faucibus tellus euismod at.</p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
 
