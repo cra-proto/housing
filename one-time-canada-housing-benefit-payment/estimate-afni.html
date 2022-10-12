@@ -1162,10 +1162,10 @@
                       <div class="form-group">
                         <legend class="h5 required">Were you resident in Canada throughout all of 2021? <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>
                         <div class="radio">
-                          <label for="resident-true"><input type="radio" name="residency" id="resident-true" value="true" data-residency="true" data-rule-required="true">Yes</label>
+                          <label for="resident-true"><input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">Yes</label>
                         </div>
                         <div class="radio">
-                          <label for="resident-false"><input type="radio" name="residency" id="resident-false" value="false" data-residency="false" data-rule-required="true">No</label>
+                          <label for="resident-false"><input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">No</label>
                         </div>
                       </div>
                     
@@ -1174,16 +1174,43 @@
                       <!-- If not resident through all of 2021, need to ask deemed vs factual -->
 
 
-                      <div id="non-resident-ties" class="panel-body mrgn-lft-sm hidden">
+                      <div id="non-resident-ties" class="hidden">
                         <div class="form-group">
                           <legend class="h5 required">When resident abroad in 2021, did you maintain significant residential ties in Canada? <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>
                           <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">Determine if you had close residential ties</a></p>
                           
                           <div class="radio">
-                            <label for="non-resident-ties-yes"><input type="radio" name="nonResidentTies" id="non-resident-ties-yes" value="true" data-residency="true" data-rule-required="true">Yes (factual resident)</label>
+                            <label for="non-resident-ties-yes"><input type="radio" name="nonResidentTies" id="non-resident-ties-yes" value="true" data-rule-required="true">Yes (factual resident)</label>
                           </div>
                           <div class="radio">
-                            <label for="non-resident-ties-no"><input type="radio" name="nonResidentTies" id="non-resident-ties-no" value="false" data-residency="false" data-rule-required="true">No</label>
+                            <label for="non-resident-ties-yes-but"><input type="radio" name="nonResidentTies" id="non-resident-ties-yes-but" value="true-false" data-rule-required="true">Yes but income tax was paid to the other country</label>
+                          </div>
+                          <div class="radio">
+                            <label for="non-resident-ties-no"><input type="radio" name="nonResidentTies" id="non-resident-ties-no" value="false" data-rule-required="true">No (no significant residential ties)</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="deemed-residency" class="hidden">
+                        <div class="form-group">
+                          <legend class="h5 required">When you were non-resident in Canada in 2021, did any of the following apply to you? <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>                          
+                          <div class="checkbox">
+                            <label for="deemed-resident-183"><input type="checkbox" name="deemedResidency" id="deemed-resident-183" value="true" data-rule-required="true">You stayed in Canada for 183 days or more during 2021 and are not considered resident of another country under the terms of a tax treaty between Canada and that country</label>
+                          </div>
+                          <div class="checkbox">
+                            <label for="deemed-resident-government"><input type="checkbox" name="deemedResidency" id="deemed-resident-government" value="true" data-rule-required="true">You are a Canadian government employee (any jurisdiction)</label>
+                          </div>
+                          <div class="checkbox">
+                            <label for="deemed-resident-forces"><input type="checkbox" name="deemedResidency" id="deemed-resident-forces" value="true" data-rule-required="true">You are a member of the Canadian Forces (or their overseas staff)</label>
+                          </div>
+                          <div class="checkbox">
+                            <label for="deemed-resident-development"><input type="checkbox" name="deemedResidency" id="deemed-resident-development" value="true" data-rule-required="true">You are working under a Canadian International Development Agency (CIDA) assistance program</label>
+                          </div>
+                          <div class="checkbox">
+                            <label for="deemed-resident-family"><input type="checkbox" name="deemedResidency" id="deemed-resident-family" value="true" data-rule-required="true">You are a family member of one of the above</label>
+                          </div>
+                          <div class="checkbox">
+                            <label for="deemed-resident-none"><input type="checkbox" name="deemedResidency" id="deemed-resident-none" value="false" data-rule-required="true">None of the above apply</label>
                           </div>
                         </div>
                       </div>
@@ -1202,8 +1229,20 @@
                         <div class="well text-muted mrgn-tp-md" id="resident-summary">
                           <h3 class="mrgn-tp-0">Summary of residency status</h3>
                           <p class="residency-unanswered">Answer the questions above to determine your residency status. This will affect how you calculate your income for the tax year 2021.</p>
-                          <p class="canadian-resident hidden">You have indicated .</p>
-                          <p class="canadian-resident hidden">Your 12-month average revenue drop is one component of your eligibility for the THRP and HHBRP for periods 22 to 28. Continue to the next step to answer a few more questions related to THRP and HHBRP eligibility.</p>
+                          <p class="canadian-resident hidden">You have indicated you were resident in Canada throughout 2021. Go to the next step to continue the calculation.</p>
+                          <p class="factual-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (factual resident). This might be because you were temporarily:</p>
+                          <ul class="factual-resident hidden">
+                            <li>working temporarily outside Canada</li>
+                            <li>teaching or attending school in another country</li>
+                            <li>commuting (going back and forth daily or weekly) from Canada to your place of work in the United States (U.S.)</li>
+                            <li>vacationing outside Canada</li>
+                            <li>spending part of the year in the <abbr title="United States"><span class="nowrap">U.S</span>.</abbr>, for example, for health reasons or on vacation</li>
+                          </ul>
+                          <p class="factual-resident hidden">Go to the next step to continue the calculation.</p>
+                          <p class="deemed-non-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (factual resident). Go to the next step to continue the calculation.</p>
+                          <p class="deemed-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (deemed resident). Go to the next step to continue the calculation.</p>
+                          <p class="non-resident hidden">Based on your responses, you were a non-resident of Canada for tax purposes for at least part of 2021.</p>
+                          <p class="non-resident hidden">To be eligible for the one-time Canada Housing Benefit payment, you must have been resident for at least part of 2021 and a tax return must be filed with the CRA before you can apply. If you were a resident for part of the year, go to the next step to continue the calculation.</p>
                         </div>
                       </div>
                   </fieldset>
@@ -1432,30 +1471,67 @@
       var $document = wb.doc;
 
       //Radio event listener
-      $document.on("click", "input[type=radio]", function (event) {
+
+
+      $document.on("click", "input[type=checkbox]", function (event) {
         var target = event.target;
-        // var parts = target.name.split("-");
-        // var locationNumber = parts[parts.length - 1];
-        if (target.name == "residency") {
-          if (target.id == "resident-true") {
-            $("#worldIncomeElm").removeClass("hidden");
-            $(".residency-unanswered").addClass("hidden");
-            $(".canadian-resident").removeClass("hidden");
-          } else { //resident-false
-            $("#non-residency-ties").removeClass("hidden");
-          }
+        if (target.name == "deemedResidency") {
+          residencyQuestions(target);
         }
       });
 
-      $("input[type=radio][name=non-residency-ties]", "#housing_cal_form").change(function () {
-        residency = $(this).data("residency");
-        if (residency === true) {
-          $("#worldIncomeElm").removeClass("hidden");
-          $("#worldIncomeElm").val(0);
-        } else { //unhide follow up question
-          $("#non-residency-ties").removeClass("hidden");
+      $document.on("click", "input[type=radio]", function (event) {
+        var target = event.target;
+        if (target.name == "residency" || target.name == "nonResidentTies" || target.name == "deemedResidency") {
+          residencyQuestions(target);
         }
       });
+
+      function residencyQuestions(target) {
+        //resets
+        $("#worldIncomeElm").addClass("hidden");
+        $(".residency-unanswered").removeClass("hidden");
+        $(".canadian-resident").addClass("hidden");
+        $(".factual-resident").addClass("hidden");
+        $(".deemed-non-resident").addClass("hidden");
+        $(".deemed-resident").addClass("hidden");
+        $(".non-resident").addClass("hidden");
+
+        if ($('#resident-true:checked').length > 0) {
+          $(".canadian-resident").removeClass("hidden");
+          $(".residency-unanswered").addClass("hidden");
+        } else if ($('#resident-false:checked').length > 0) {
+          $("#non-resident-ties").removeClass("hidden"); //unhide follow on question
+          if ($('#non-resident-ties-yes:checked').length > 0) { //follow on question
+            $(".residency-unanswered").addClass("hidden");
+            $(".factual-resident").removeClass("hidden");
+          } else if ($('#non-resident-ties-yes-but:checked').length > 0) {
+            $("#worldIncomeElm").removeClass("hidden");
+            $(".residency-unanswered").addClass("hidden");
+            $(".deemed-non-resident").removeClass("hidden");
+          } else if ($('#non-resident-ties-no:checked').length > 0) {
+            $("#deemed-residency").removeClass("hidden"); //unhide follow on question
+            if ($('#deemed-resident-government:checked').length > 0 || $('#deemed-resident-forces:checked').length > 0 || $('#deemed-resident-development:checked').length > 0 || $('#deemed-resident-family:checked').length > 0 || $('#deemed-resident-183:checked').length > 0) { //follow on question
+              $(".residency-unanswered").addClass("hidden");
+              $(".deemed-resident").removeClass("hidden");
+            } else if ($('#deemed-resident-none:checked').length > 0) {
+              $("#worldIncomeElm").removeClass("hidden");
+              $(".residency-unanswered").addClass("hidden");
+              $(".non-resident").removeClass("hidden");
+            }
+          }
+        }
+      }
+
+      // $("input[type=radio][name=non-residency-ties]", "#housing_cal_form").change(function () {
+      //   residency = $(this).data("residency");
+      //   if (residency === true) {
+      //     $("#worldIncomeElm").removeClass("hidden");
+      //     $("#worldIncomeElm").val(0);
+      //   } else { //unhide follow up question
+      //     $("#non-residency-ties").removeClass("hidden");
+      //   }
+      // });
 
 
 
