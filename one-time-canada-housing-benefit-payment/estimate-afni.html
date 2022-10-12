@@ -1305,6 +1305,18 @@
                         </div>
                       </div>
 
+                      <div id="dependents-question" class="hidden">
+                        <div class="form-group">
+                          <legend class="h5 required">Did  ?<strong class="required">(required)</strong></legend>
+                          <div class="radio">
+                            <label for="dependent-yes"><input type="radio" name="dependents" id="dependent-yes" value="true" data-rule-required="true">Yes</label>
+                          </div>
+                          <div class="radio">
+                            <label for="dependent-no"><input type="radio" name="dependents" id="dependent-no" value="false" data-rule-required="true">No</label>
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="well text-muted mrgn-tp-md" id="marital-summary">
                         <h3 class="mrgn-tp-0">Summary of marital status</h3>
                         <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
@@ -1439,7 +1451,7 @@
                   </ul>
                   <div class="alert alert-success provisional hidden" id="qualify">
                       <p>Your <abbr title="Average Family Net Income">AFNI</abbr> is <span class="mrgn-tp-0 h5"><output style="display: inline;" name="avg-fam-net-income-value">$0</output></span></p>
-                      <h3>You qualify</h3>
+                      <h3>Based on the information you entered, your income and rent would qualify for the one-time payment</h3>
                       <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In justo nulla, porttitor ut euismod sed, lacinia sit amet turpis.</p>
                   </div>
                   <div class="alert alert-danger provisional hidden" id="doesnt-qualify">
