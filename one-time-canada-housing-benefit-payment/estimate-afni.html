@@ -1251,7 +1251,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Residency status</span></legend>
                     <div class="panel-body mrgn-lft-sm">
                       <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Were you <span class="spouse-specific">and your <span class="spouse-label">spouse </span></span><span class="field-name">resident in Canada</span> throughout all of 2021? <strong class="required">(required)</strong></span></legend>
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Were you <span class="spouse-specific">and your <span class="spouse-label">spouse</span> </span><span class="field-name">resident in Canada</span> throughout all of 2021? <strong class="required">(required)</strong></span></legend>
                         <ul class="list-unstyled">
                           <li class="radio">
                             <input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">
@@ -1269,7 +1269,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
 
                       <fieldset id="non-resident-ties" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When resident abroad in 2021, did you <span class="spouse-specific">and your <span class="spouse-label">spouse </span></span>maintain close residential ties in Canada? <strong class="required">(required)</strong></span></legend>
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When resident abroad in 2021, did you <span class="spouse-specific">and your <span class="spouse-label">spouse</span> </span>maintain close residential ties in Canada? <strong class="required">(required)</strong></span></legend>
                         <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">What are close residential ties? <span class="glyphicon glyphicon-question-sign"></span></a></p>
                         <ul class="list-unstyled">
                           <li class="radio">
@@ -1288,7 +1288,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       </fieldset>
 
                       <fieldset id="deemed-residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When you <span class="spouse-specific">or your <span class="spouse-label">spouse</span></span>were non-resident in Canada in 2021, did any of the following apply to you? <strong class="required">(required)</strong></span></legend>
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>were non-resident in Canada in 2021, did any of the following apply to you? <strong class="required">(required)</strong></span></legend>
                         <ul class="list-unstyled">
                           <li class="checkbox">
                             <input type="checkbox" name="deemedResidency" id="deemed-resident-183" value="true" data-rule-required="true">
@@ -1438,7 +1438,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   
                   
                   <fieldset id="rent-check" class="panel-default p-0">
-                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Rend paid in 2022</span></legend>
+                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Rent paid in 2022</span></legend>
                     <div class="panel-body mrgn-lft-sm">
                       
                       <div class="form-group">
@@ -1487,8 +1487,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 <div id="crb-statement">
                   <p>Based on the amounts you entered:</p>
                   <!-- <ul class="fa-ul"> -->
-                    <p>Your adjusted family net income (<span class="mrgn-tp-0 h5"><output style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output></span>) <span class="eligibility-verb">qualifies</span> as an <span class="indfam">individual</span></p>
-                    <p>Your rent paid in 2022 is <span class="mrgn-tp-0 h5"><output style="display: inline;" name="rent-percentage"><strong>%0</strong></output></span> of your 2021 income and would qualify for the benefit</p>
+                    <p>Your adjusted family net income (<output style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span class="eligibility-verb">qualifies</span> as an <span class="indfam">individual</span></p>
+                    <p>Your rent paid in 2022 is <output style="display: inline;" name="rent-percentage"><strong>%0</strong></output> of your 2021 income and would qualify for the benefit</p>
                   <!-- </ul> -->
                   <details class="mrgn-bttm-md">
                     <summary>Show the math for your average family net income</summary>
@@ -1625,6 +1625,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $(".death-label").addClass("hidden");
         $("#spouseNetIncomeElm").addClass("hidden");
         $(".spouse-specific").addClass("hidden");
+        $(".spouse-label").html("");
 
         if ($('#marital-single:checked').length > 0) {
           $(".marital-unanswered").addClass("hidden");
@@ -1634,9 +1635,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           $(".marital-true").removeClass("hidden");
           $(".spouse-specific").removeClass("hidden");
           if ($('#marital-spouse:checked').length > 0) {
-            $(".spouse-label").html("spouse ");
+            $(".spouse-label").html("spouse");
           } else {
-            $(".spouse-label").html("common law partner ");
+            $(".spouse-label").html("common law partner");
           }
           $("#spouseNetIncomeElm").removeClass("hidden");
         } else if ($('#marital-divorced:checked').length > 0) {
@@ -1657,7 +1658,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           $(".marital-unanswered").addClass("hidden");
           $(".marital-change-true").removeClass("hidden");
           $(".spouse-specific").removeClass("hidden");
-          $(".spouse-label").html("spouse or common law partner ");
+          $(".spouse-label").html("spouse or common law partner");
           $("#spouseNetIncomeElm").removeClass("hidden");
         } else if ($('#marital-change-no:checked').length > 0) {
           $(".marital-unanswered").addClass("hidden");
