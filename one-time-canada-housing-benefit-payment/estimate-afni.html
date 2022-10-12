@@ -26,1058 +26,1058 @@
     <style>
         @charset "utf-8";
 
-        /* CSS Document */
-        h1#wb-cont {
-            border-bottom: none;
-        }
-
-        /* Remove text decoration for abbr tags (equations) */
-        abbr.brdr-0 {
-            text-decoration: none !important;
-        }
-
-        section.gc-nav h1 {
-            font-size: 1.3em;
-            color: #555;
-            border-bottom: none;
-        }
-
-        /*page structure desktop (new) */
-        @media all and (min-width:992px) {
-            section.gc-nav nav {
-                position: relative;
-                width: 33.33%;
-                left: 66.66%;
-                float: left;
-                padding-left: 15px;
-                margin-bottom: 30px;
-            }
-
-            section.gc-nav h1 {
-                width: 66.66%;
-                padding-right: 15px;
-                margin-top: 20px;
-                margin-bottom: -5px;
-                font-weight: 200;
-            }
-
-            section.gc-nav-section {
-                position: relative;
-                width: 66.66%;
-                float: left;
-                padding-right: 15px;
-            }
-
-            section.gc-nav~section.gc-nav-section {
-                right: 33.33%;
-            }
-
-            section.gc-nav~section.gc-nav-section h1 {
-                margin-top: 0px
-            }
-
-            section.gc-nav-section+.pagedetails {
-                clear: both;
-            }
-        }
-
-        #gc-navseq-header {
-            font-size: 1.2em;
-            margin-top: 0px;
-        }
-
-        .gc-navseq {
-            padding-left: 0.9em;
-        }
-
-        .gc-navseq .small,
-        .gc-navseq small {
-            line-height: 0em;
-        }
-
-        .gc-navseq * {
-            font-weight: inherit !important;
-            line-height: inherit !important
-        }
-
-        .gc-navseq>li,
-        ul.gc-navseq-fa>li {
-            padding-bottom: 20px;
-            padding-right: 20px;
-            list-style: none;
-            padding-left: 1.2em;
-            border-left: 5px solid #26374a;
-            position: relative;
-        }
-
-        ul.gc-navseq-fa>li .fa-li {
-            left: 0em;
-            position: relative;
-        }
-
-        ul.gc-navseq-fa {
-            margin-left: 0.9em
-        }
-
-        li .gc-navseq {
-            margin-top: 16px;
-        }
-
-        .gc-navseq>li>:first-child::before,
-        ul.gc-navseq-fa li span.fa-li {
-            border-radius: 50%;
-            border: 3px solid #26374a;
-            background-color: #fff;
-            float: left;
-            text-decoration: none;
-            box-sizing: content-box;
-            line-height: 1.3em;
-            text-align: center;
-            padding: 3px;
-            font-size: 1.0em;
-            /* transition: width 0.2s, height 0.2s, margin-top 0.2s, font-size 0.2s, margin-left 0.2s, line-height 0.2s; */
-        }
-
-        ul.gc-navseq-fa li span.fa-li {
-            height: 1.3em;
-            width: 1.3em;
-            margin-left: -2.3em;
-        }
-
-        ul.gc-navseq>li>:first-child::before {
-            height: 0.8em;
-            width: 0.8em;
-            margin-left: -2.05em;
-            content: "";
-        }
-
-        @-moz-document url-prefix() {
-            ul.gc-navseq>li>:first-child::before {
-                margin-left: -2.0em;
-            }
-        }
-
-        .gc-navseq li a::before {
-            text-decoration: underline;
-        }
-
-        ul.gc-navseq.noline>li {
-            border-left: 5px solid transparent
-        }
-
-        .gc-navseq>li:last-child,
-        .gc-navseq>li.completed:last-child,
-        ul.gc-navseq-fa li:last-child {
-            border-left: 5px solid transparent;
-            padding-bottom: 0;
-        }
-
-        ul.gc-navseq.noline>li>:first-child::before {
-            margin-top: 0.2em
-        }
-
-        /*active*/
-        .gc-navseq li.active>:first-child::before,
-        .gc-navseq-fa li.active span.fa-li {
-            background-color: #26374a;
-            color: #fff;
-        }
-
-        /*sub-steps*/
-        .gc-navseq li ul {
-            margin-top: 16px !important;
-        }
-
-        /*Hover animation */
-        ul.gc-navseq>li>a[href]:hover::before {
-            width: 0.83em;
-            height: 0.83em;
-            margin-top: -0.1em;
-            font-size: 1.2em;
-            margin-left: -1.775em;
-            line-height: 1.55;
-        }
-
-        ul.gc-navseq.noline>li>a[href]:hover::before {
-            margin-top: 0.15em;
-        }
-
-        .gc-navseq-fa>li>a[href]:hover span.fa-li {
-            width: 1.55em;
-            height: 1.55em;
-            margin-top: -0.05em;
-            margin-left: -2.45em;
-        }
-
-        .gc-navseq-fa>li>a[href]:hover span.fa-li::before {
-            margin-top: -0.1em;
-        }
-
-        /*Vertical steps in mobile */
-        @media screen and (max-width:991px) {
-            section.gc-nav {
-                margin-top: 30px;
-                border-right: 5px solid #26374a;
-                border-top: 5px solid #26374a;
-                border-radius: 0 6px 6px 0;
-            }
-
-            section.gc-nav nav>.gc-navseq {
-                padding-top: 15px;
-                margin-top: -18px;
-                clear: both;
-            }
-
-            section.gc-nav nav>.gc-navseq>li:last-child {
-                border-bottom: 5px solid #26374a;
-                border-left: 5px solid #26374a;
-                border-bottom-left-radius: 6px;
-                padding-bottom: 24px;
-            }
-
-            section.gc-nav h1 {
-                margin-bottom: -18px;
-                margin-right: 20px;
-                background-color: white;
-                padding: 20px 10px 10px 20px;
-                display: block;
-                margin-left: -20px;
-                margin-top: -40px;
-                float: left;
-            }
-        }
-
-        /*nav buttons */
-        .gc-navseq-nav-btn:hover,
-        .gc-navseq-nav-btn:focus,
-        .gc-navseq-nav-btn:visited {
-            display: inline-block;
-            color: #fff;
-            text-decoration: none;
-            padding: 5px;
-        }
-
-        .gc-navseq-nav-btn {
-            background-color: #26374a;
-        }
-
-        .gc-navseq-nav-btn:hover {
-            background-color: #444;
-        }
-
-        .gc-navseq-nav-btn:not(:focus) {
-            clip: rect(1px, 1px, 1px, 1px);
-            height: 1px;
-            margin: 0;
-            overflow: hidden;
-            position: absolute;
-            width: 1px;
-        }
-
-        @media all and (min-width:992px) {
-            #gc-navseq-nav {
-                display: flex;
-            }
-        }
-
-        /*Navigation template in mobile */
-        @media all and (max-width:991px) {
-            .gc-nav nav {
-                padding-top: 40px;
-            }
-        }
-
-        #gc-navseq-nav {
-            margin-bottom: 0;
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .gc-navseq-nav-btn:focus {
-            position: relative;
-        }
-
-        /* new topic style */
-        h1 {
-            border-bottom: none;
-        }
-
-        h1#wb-cont::after {
-            content: "";
-            /* This is necessary for the pseudo element to work. */
-            display: block;
-            /* This will put the pseudo element on its own line. */
-            width: 70px;
-            /* Change this to whatever width you want to have before hover. */
-            padding-bottom: 8px;
-            /* This creates some space between the element and the border. */
-            border-bottom: .18em solid #af3c43;
-            /* This creates the border. Replace black with whatever color you want. */
-        }
-
-        /* Styled ordered list design */
-        ol.lst-stps,
-        .lst-stps {
-            counter-reset: item;
-        }
-
-        ol.lst-stps,
-        .lst-stps {
-            margin: 15px 0 15px 0px;
-            padding-left: 0;
-            position: relative;
-        }
-
-        ol.lst-stps>li,
-        .lst-stps>.lst-item {
-            counter-increment: item;
-        }
-
-        ol.lst-stps>li,
-        .lst-stps .lst-item {
-            list-style: none;
-            margin-top: 30px;
-            position: relative;
-            padding-left: 60px;
-            padding-right: 15px;
-            min-height: 2.2em;
-        }
-
-        ol.lst-stps fieldset {
-            padding-top: 0;
-        }
-
-        ol.lst-stps li>*:last-child,
-        .lst-stps .lst-item>*:last-child {
-            margin-bottom: 0px;
-        }
-
-        ol.lst-stps>li:before,
-        .lst-stps .lst-item:before {
-            content: counter(item);
-        }
-
-        ol.lst-stps li>ol,
-        .lst-stps .lst-item>.sub-lst-stps {
-            counter-reset: subitem;
-        }
-
-        ol.lst-stps li>ol {
-            margin-left: -35px;
-        }
-
-        .lst-stps .lst-item {
-            position: relative;
-            padding-left: 60px;
-            margin-top: 30px;
-        }
-
-        ol.lst-stps li:before,
-        .lst-stps .lst-item:before {
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-            border: 3px solid #26374a;
-            background-color: #fff;
-            float: left;
-            position: absolute;
-            box-sizing: content-box;
-            line-height: 2.2;
-            text-align: center;
-            font-weight: 600;
-            height: 2.2em;
-            width: 2.2em;
-            left: 0px;
-            margin-top: -8px;
-        }
-
-        ol.lst-stps>li>ol>li:before,
-        .lst-stps>.lst-item>.sub-lst-stps>.lst-item:before {
-            counter-increment: subitem;
-            content: counter(item) ""counter(subitem, lower-alpha) "";
-        }
-
-        .sub-lst-stps>.lst-item:last-child {
-            margin-bottom: 0px
-        }
-
-        .lst-stps-striped>li ol,
-        .lst-stps-striped>.lst-item>.sub-lst-stps {
-            margin-top: 15px;
-        }
-
-        .lst-stps.lst-stps-striped li,
-        .lst-stps.lst-stps-striped .lst-item {
-            padding-top: 23px;
-            padding-bottom: 23px;
-            margin-top: 0px;
-        }
-
-        .lst-stps-striped>li:nth-child(odd),
-        .lst-stps-striped>li:nth-child(even)>ol>li:nth-child(odd),
-        .lst-stps-striped>li:nth-child(odd)>ol>li:nth-child(even),
-        .lst-stps-striped>.lst-item:nth-child(odd),
-        .lst-stps-striped>.lst-item:nth-child(even)>.sub-lst-stps>.lst-item:nth-child(odd),
-        .lst-stps-striped>.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(even) {
-            background-color: #f5f5f5;
-        }
-
-        .lst-stps-striped>li:nth-child(odd)>ol>li:nth-child(odd),
-        .lst-stps-striped>.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(odd) {
-            background-color: #fff !important;
-        }
-
-        .lst-stps-striped>li:nth-child(even)>ol>li:nth-child(even):last-child,
-        .lst-stps-striped>li:nth-child(odd)>ol>li:nth-child(even):last-child,
-        .lst-stps-striped>.lst-item:nth-child(even)>.sub-lst-stps>.lst-item:nth-child(even):last-child,
-        .lst-stps-striped>.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(even):last-child {
-            padding-bottom: 0px;
-        }
-
-        ol.lst-stps li>:first-child,
-        .lst-stps .lst-item>:first-child {
-            margin-top: auto;
-        }
-
-        ol.lst-stps.lst-stps-striped li,
-        .lst-stps.lst-stps-striped .lst-item {
-            padding-left: 75px;
-        }
-
-        .lst-stps-striped li:before,
-        .lst-stps-striped .lst-item:before {
-            margin-left: 15px;
-        }
-
-        /* ol.lst-stps li ul, ol.lst-stps li ul li, ol.lst-stps.lst-stps-striped li ul, ol.lst-stps.lst-stps-striped li ul li { padding-left: 0px; } */
-        @media all and (max-width: 767px) {
-
-            ol.lst-stps li:before,
-            .lst-stps .lst-item:before {
-                font-size: 0.8em;
-                line-height: 2;
-                height: 2em;
-                width: 2em;
-                margin-top: -3px;
-                font-weight: 600;
-            }
-
-            ol.lst-stps>li,
-            .lst-stps>.lst-item {
-                padding-left: 45px
-            }
-
-
-            .lst-stps.lst-stps-striped li,
-            .lst-stps.lst-stps-striped .lst-item {
-                padding-top: 19px;
-                padding-bottom: 19px;
-                margin-top: 0px;
-            }
-        }
-
-        .lst-lwr-alph {
-            list-style-position: outside;
-        }
-
-        .callout {
-            padding: 19px;
-            margin-bottom: 20px;
-            border: 1px solid #e3e3e3;
-            box-shadow: 0px 0px 10px #ddd;
-        }
-
-        /*Checkbox/Fieldflow radio input sizing,positioning*/
-        .checkbox-lg>li.checkbox {
-            margin-top: 0px;
-        }
-
-        .checkbox-lg>li {
-            margin-left: -40px;
-            padding-left: 40px;
-            padding-top: 5px;
-            padding-bottom: 10px;
-            margin-bottom: 5px;
-            padding-right: 15px;
-        }
-
-        .checkbox-zebra>li:nth-child(2n+1) {
-            background-color: #f5f5f5;
-            padding-top: 10px;
-            padding-bottom: 15px;
-        }
-
-        .checkbox-lg>li.checkbox input[type=checkbox],
-        .fieldflow-lg .radio input[type=radio] {
-            margin-top: 12px;
-            transform: scale(2);
-        }
-
-        .checkbox-lg label,
-        .fieldflow-lg,
-        .fieldflow-lg label,
-        .fieldflow-lg div,
-        .fieldflow-lg select,
-        .std-blt {
-            font-size: 20px;
-            line-height: 1.65em;
-        }
-
-        .std-blt {
-            list-style-type: disc;
-        }
-
-        .std-blt li label {
-            display: block;
-            padding-left: 0px;
-        }
-
-        .fieldflow-lg .radio label {
-            margin-left: 40px;
-        }
-
-        .fieldflow-lg .radio input[type=radio] {
-            margin-left: -40px;
-        }
-
-        .fieldflow-lg fieldset legend {
-            font-size: 22px;
-            margin-top: 0px;
-        }
-
-        /*Hide arrows in Chrome/FF for number input*/
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        /* Firefox */
-        input[type=number] {
-            appearance: textfield;
-        }
-
-        output.wb-calc {
-            display: inline;
-        }
-
-        /*Validation invisible text appearance */
-        .wb-frmvld #errors-default .wb-inv,
-        .wb-frmvld .has-error .wb-inv {
-            clip: inherit;
-            height: inherit;
-            margin: inherit;
-            overflow: inherit;
-            position: inherit;
-            width: inherit;
-        }
-
-        .wb-frmvld .has-error .wb-inv {
-            color: #333;
-        }
-
-        :not(#wb-srch) main form:not(#gc-pg-hlpfl-frm),
-        main .checkbox,
-        main .checkbox-inline,
-        main .radio,
-        main .radio-inline,
-        main form:not(#gc-pg-hlpfl-frm) :not(.btn-call-to-action).btn,
-        main form :not(.btn-primary).btn {
-            font-size: 20px !important;
-            line-height: 1.65em !important;
-        }
-
-        /*Lower opacity for placeholders */
-        ::-webkit-input-placeholder {
-            /* Edge */
-            opacity: 0.5;
-        }
-
-        :-ms-input-placeholder {
-            /* Internet Explorer 10-11 */
-            opacity: 0.5;
-        }
-
-        input::placeholder {
-            opacity: 0.5;
-        }
-
-        /*placholder disappears on focus */
-        input:focus::-webkit-input-placeholder {
-            opacity: 0;
-        }
-
-        input:focus::placeholder {
-            opacity: 0;
-        }
-
-        /*CSS eqht experimental */
-        .wb-eqht-css {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: stretch;
-            height: 100%;
-        }
-
-        .wb-eqht-css .wb-eqht-grid {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .wb-eqht-css .hght-inhrt-css {
-            display: flex;
-            flex-direction: column;
-            flex: 1 1 auto;
-        }
-
-        .wb-eqht-css .hght-inhrt-css .eqht-trgt-css {
-            flex: 1 1 auto;
-        }
-    </style>
-
-    <style>
-        .provisional.wb-steps .wb-tggle-fildst>legend:before {
-            background-color: #fff;
-            padding: 4px;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-            border: 3px solid #6f6f6f;
-            height: 1.2em;
-            width: 1.2em;
-            box-sizing: content-box;
-            margin-right: 10px;
-            display: inline-block;
-            text-align: center;
-            line-height: 1.2;
-            content: counter(fieldset_counter);
-        }
-
-        .panel-default>.panel-heading.wb-steps-active {
-            background-color: #fff;
-        }
-
-        .provisional.wb-steps .wb-tggle-fildst>legend.wb-steps-active:before {
-            background-color: #1c578a;
-            border-color: #1c578a;
-            color: #fff;
-        }
-
-        .provisional.wb-steps .wb-tggle-fildst>legend:not(.wb-steps-active) {
-            font-size: 18px;
-        }
-
-        .provisional.wb-steps .wb-tggle-fildst>legend.wb-steps-active {
-            font-weight: bold;
-        }
-
-        fieldset+.buttons {
-            margin-left: 15px;
-        }
-
-        .wb-steps-active .panel-title {
-            font-size: 1.3em;
-        }
-
-        fieldset fieldset {
-            min-width: 1px;
-        }
-
-        .ds-example {
-            margin-top: 15px;
-            border: 1px solid #e3e3e3;
-            box-shadow: 0px 0px 8px #e3e3e3;
-        }
-
-        .ds-example>.wb-tabs>.tabpanels {
-            background: #f9f9f9;
-        }
-
-        .ds-example>.wb-tabs>.tabpanels legend {
-            font-size: 80%;
-            font-weight: 700;
-            margin: 0 0 5px;
-        }
-
-        .ds-example>.wb-tabs>.tabpanels fieldset {
-            padding-top: 0;
-        }
-
-        .ds-example>.wb-tabs>.tabpanels>details>summary {
-            background: #fff;
-            border-radius: 0;
-        }
-
-        .ds-example>.wb-tabs [role=tablist]>li:focus,
-        .ds-example>.wb-tabs [role=tablist]>li:hover {
-            background: #ddd;
-        }
-
-        .ds-example>.wb-tabs {
-            margin-bottom: 0;
-        }
-
-        .ds-example>.wb-tabs>.tabpanels>details {
-            margin-bottom: 0;
-        }
-
-        .ds-example .panel-body {
-            box-shadow: none;
-        }
-
-        @media screen and (max-width: 991px) {
-            .ds-example>.wb-tabs .tgl-panel {
-                margin-top: 15px;
-            }
-        }
-
-        @media screen and (min-width: 992px) {
-            .ds-example>.wb-tabs>.tabpanels>details {
-                border: none;
-                padding: 15px;
-            }
-
-            .ds-example>.wb-tabs [role=tablist]>li {
-                border: none;
-                background: none;
-            }
-
-            .ds-example>.wb-tabs [role=tablist]>li.active a {
-                border-width: 0 0 4px;
-            }
-
-            .ds-example>.wb-tabs>.tabpanels>details {
-                padding: 30px;
-            }
-
-            .ds-example>.wb-tabs>.tabpanels>details {
-                background: #f9f9f9;
-                padding: 30px;
-                margin-bottom: 0;
-            }
-        }
-
-        .prev-wb-step .btn-lgnd {
-            margin: 1px;
-            text-decoration-line: underline;
-        }
-
-        .prev-wb-step:focus,
-        .prev-wb-step:hover {
-            color: #0535d2;
-        }
-
-        .prev-wb-step:focus {
-            outline: 5px auto;
-            outline-offset: -2px;
-        }
-    </style>
-    <style>
-        [class*=cnjnctn-type-] {
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            margin-bottom: 15px;
-            margin-left: 5px;
-            margin-right: 0px;
-            margin-top: 15px;
-            position: relative;
-            min-height: 60px;
-        }
-
-        [class*=cnjnctn-type-] [class*=cnjnctn-col]:not(:first-child):after {
-            background-image: linear-gradient(to bottom, #6f6f6f, #6f6f6f);
-            background-size: 3px;
-            content: ' ';
-            height: 100%;
-            margin-left: -15px;
-            position: absolute;
-            top: 0;
-            width: 3px;
-        }
-
-        [class*=cnjnctn-type-] [class*=cnjnctn-col] {
-            padding-left: 15px;
-            padding-right: 15px;
-            width: 100%;
-        }
-
-        [class*=cnjnctn-type-] [class*=cnjnctn-col]> :first-child:not([class*=mrgn-tp-]) {
-            margin-top: 0px;
-        }
-
-        [class*=cnjnctn-type-] [class*=cnjnctn-col]> :last-child:not([class*=mrgn-bttm-]) {
-            margin-bottom: 0px;
-        }
-
-        [class*=cnjnctn-type-] [class*=cnjnctn-col]:not(:last-child) {
-            margin-bottom: 30px;
-            margin-right: 30px;
-        }
-
-        [class*=cnjnctn-type-] [class*=cnjnctn-col]:not(:first-child) {
-            margin-top: 30px;
-        }
-
-        [class*=cnjnctn-type-] [class*=cnjnctn-col]:not(:first-child):before {
-            border-color: #6f6f6f;
-            border-style: solid;
-            box-sizing: content-box;
-            font-size: 16px;
-            font-weight: 600;
-            height: 30px;
-            line-height: 28px;
-            margin-top: -53px;
-            padding: 4px;
-            position: absolute;
-            text-align: center;
-            width: 30px;
-        }
-
-        .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
-            border-radius: 50%;
-            border-width: 3px;
-        }
-
-        .cnjnctn-type-and [class*=cnjnctn-col]:not(:first-child):before {
-            border-width: 0px 3px 0px 3px;
-        }
-
-        html:lang(en) .cnjnctn-type-and [class*=cnjnctn-col]:not(:first-child):before {
-            content: "and";
-        }
-
-        html:lang(fr) .cnjnctn-type-and [class*=cnjnctn-col]:not(:first-child):before {
-            content: "et";
-        }
-
-        html:lang(en) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
-            content: "or";
-        }
-
-        html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
-            content: "ou";
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-90 {
-            flex-basis: 90%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-80 {
-            flex-basis: 80%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-75 {
-            flex-basis: 75%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-70 {
-            flex-basis: 70%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-60 {
-            flex-basis: 60%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-50 {
-            flex-basis: 50%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-40 {
-            flex-basis: 40%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-30 {
-            flex-basis: 30%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-25 {
-            flex-basis: 25%
-        }
-
-        [class*=cnjnctn-type-] .cnjnctn-col-20 {
-            flex-basis: 20%
-        }
-
-        [class*=cnjnctn-type-].cnjnctn-xs {
-            flex-direction: row;
-            margin-left: -15px;
-            margin-right: -15px;
-        }
-
-        [class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):after {
-            background-image: linear-gradient(to bottom, #6f6f6f 6px, #6f6f6f 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 46px, #6f6f6f 46px, #6f6f6f 46px);
-        }
-
-        [class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child) {
-            margin-left: 30px;
-        }
-
-        [class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):after {
-            margin-left: -46px;
-        }
-
-        .cnjnctn-type-or.cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):before {
-            margin-left: -67px;
-        }
-
-        .cnjnctn-type-and.cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):before {
-            margin-left: -65.5px;
-        }
-
-        [class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):before {
-            margin-top: 4px;
-        }
-
-        [class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:last-child) {
-            margin-bottom: 0px;
-        }
-
-        [class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child) {
-            margin-top: 0px;
-        }
-
-        .cnjnctn-type-and.cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):before {
-            border-width: 3px 0px 3px 0px;
-        }
-
-        @media all and (min-width: 768px) {
-            [class*=cnjnctn-type-].cnjnctn-sm {
-                border-left: 0px solid transparent;
-                flex-direction: row;
-                margin-left: -15px;
-                margin-right: -15px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child) {
-                margin-left: 30px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):after {
-                margin-left: -46px;
-            }
-
-            .cnjnctn-type-or.cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):before {
-                margin-left: -67px;
-            }
-
-            .cnjnctn-type-and.cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):before {
-                margin-left: -65.5px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):before {
-                margin-top: 4px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:last-child) {
-                margin-bottom: 0px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child) {
-                margin-top: 0px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):after {
-                background-image: linear-gradient(to bottom, #6f6f6f 6px, #6f6f6f 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 46px, #6f6f6f 46px, #6f6f6f 46px);
-            }
-
-            .cnjnctn-type-and.cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):before {
-                border-width: 3px 0px 3px 0px;
-            }
-        }
-
-        @media all and (min-width: 992px) {
-            [class*=cnjnctn-type-].cnjnctn-md {
-                border-left: 0px solid transparent;
-                flex-direction: row;
-                margin-left: -15px;
-                margin-right: -15px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child) {
-                margin-left: 30px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child):after {
-                margin-left: -46px;
-            }
-
-            .cnjnctn-type-or.cnjnctn-md [class*=cnjnctn-col]:not(:first-child):before {
-                margin-left: -67px;
-            }
-
-            .cnjnctn-type-and.cnjnctn-md [class*=cnjnctn-col]:not(:first-child):before {
-                margin-left: -65.5px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child):before {
-                margin-top: 4px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:last-child) {
-                margin-bottom: 0px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child) {
-                margin-top: 0px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child):after {
-                background-image: linear-gradient(to bottom, #6f6f6f 6px, #6f6f6f 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 46px, #6f6f6f 46px, #6f6f6f 46px);
-            }
-
-            .cnjnctn-type-and.cnjnctn-md [class*=cnjnctn-col]:not(:first-child):before {
-                border-width: 3px 0px 3px 0px;
-            }
-        }
-
-        @media all and (min-width: 1200px) {
-            [class*=cnjnctn-type-].cnjnctn-lg {
-                border-left: 0px solid transparent;
-                flex-direction: row;
-                margin-left: -15px;
-                margin-right: -15px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child) {
-                margin-left: 30px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):after {
-                margin-left: -46px;
-            }
-
-            .cnjnctn-type-or.cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):before {
-                margin-left: -67px;
-            }
-
-            .cnjnctn-type-and.cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):before {
-                margin-left: -65.5px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):before {
-                margin-top: 4px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:last-child) {
-                margin-bottom: 0px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child) {
-                margin-top: 0px;
-            }
-
-            [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):after {
-                background-image: linear-gradient(to bottom, #6f6f6f 6px, #6f6f6f 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 46px, #6f6f6f 46px, #6f6f6f 46px);
-            }
-
-            .cnjnctn-type-and.cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):before {
-                border-width: 3px 0px 3px 0px;
-            }
-        }
-    </style>
+/* CSS Document */
+h1#wb-cont {
+    border-bottom: none;
+}
+
+/* Remove text decoration for abbr tags (equations) */
+abbr.brdr-0 {
+    text-decoration: none !important;
+}
+
+section.gc-nav h1 {
+    font-size: 1.3em;
+    color: #555;
+    border-bottom: none;
+}
+
+/*page structure desktop (new) */
+@media all and (min-width:992px) {
+    section.gc-nav nav {
+        position: relative;
+        width: 33.33%;
+        left: 66.66%;
+        float: left;
+        padding-left: 15px;
+        margin-bottom: 30px;
+    }
+
+    section.gc-nav h1 {
+        width: 66.66%;
+        padding-right: 15px;
+        margin-top: 20px;
+        margin-bottom: -5px;
+        font-weight: 200;
+    }
+
+    section.gc-nav-section {
+        position: relative;
+        width: 66.66%;
+        float: left;
+        padding-right: 15px;
+    }
+
+    section.gc-nav~section.gc-nav-section {
+        right: 33.33%;
+    }
+
+    section.gc-nav~section.gc-nav-section h1 {
+        margin-top: 0px
+    }
+
+    section.gc-nav-section+.pagedetails {
+        clear: both;
+    }
+}
+
+#gc-navseq-header {
+    font-size: 1.2em;
+    margin-top: 0px;
+}
+
+.gc-navseq {
+    padding-left: 0.9em;
+}
+
+.gc-navseq .small,
+.gc-navseq small {
+    line-height: 0em;
+}
+
+.gc-navseq * {
+    font-weight: inherit !important;
+    line-height: inherit !important
+}
+
+.gc-navseq>li,
+ul.gc-navseq-fa>li {
+    padding-bottom: 20px;
+    padding-right: 20px;
+    list-style: none;
+    padding-left: 1.2em;
+    border-left: 5px solid #26374a;
+    position: relative;
+}
+
+ul.gc-navseq-fa>li .fa-li {
+    left: 0em;
+    position: relative;
+}
+
+ul.gc-navseq-fa {
+    margin-left: 0.9em
+}
+
+li .gc-navseq {
+    margin-top: 16px;
+}
+
+.gc-navseq>li>:first-child::before,
+ul.gc-navseq-fa li span.fa-li {
+    border-radius: 50%;
+    border: 3px solid #26374a;
+    background-color: #fff;
+    float: left;
+    text-decoration: none;
+    box-sizing: content-box;
+    line-height: 1.3em;
+    text-align: center;
+    padding: 3px;
+    font-size: 1.0em;
+    /* transition: width 0.2s, height 0.2s, margin-top 0.2s, font-size 0.2s, margin-left 0.2s, line-height 0.2s; */
+}
+
+ul.gc-navseq-fa li span.fa-li {
+    height: 1.3em;
+    width: 1.3em;
+    margin-left: -2.3em;
+}
+
+ul.gc-navseq>li>:first-child::before {
+    height: 0.8em;
+    width: 0.8em;
+    margin-left: -2.05em;
+    content: "";
+}
+
+@-moz-document url-prefix() {
+    ul.gc-navseq>li>:first-child::before {
+        margin-left: -2.0em;
+    }
+}
+
+.gc-navseq li a::before {
+    text-decoration: underline;
+}
+
+ul.gc-navseq.noline>li {
+    border-left: 5px solid transparent
+}
+
+.gc-navseq>li:last-child,
+.gc-navseq>li.completed:last-child,
+ul.gc-navseq-fa li:last-child {
+    border-left: 5px solid transparent;
+    padding-bottom: 0;
+}
+
+ul.gc-navseq.noline>li>:first-child::before {
+    margin-top: 0.2em
+}
+
+/*active*/
+.gc-navseq li.active>:first-child::before,
+.gc-navseq-fa li.active span.fa-li {
+    background-color: #26374a;
+    color: #fff;
+}
+
+/*sub-steps*/
+.gc-navseq li ul {
+    margin-top: 16px !important;
+}
+
+/*Hover animation */
+ul.gc-navseq>li>a[href]:hover::before {
+    width: 0.83em;
+    height: 0.83em;
+    margin-top: -0.1em;
+    font-size: 1.2em;
+    margin-left: -1.775em;
+    line-height: 1.55;
+}
+
+ul.gc-navseq.noline>li>a[href]:hover::before {
+    margin-top: 0.15em;
+}
+
+.gc-navseq-fa>li>a[href]:hover span.fa-li {
+    width: 1.55em;
+    height: 1.55em;
+    margin-top: -0.05em;
+    margin-left: -2.45em;
+}
+
+.gc-navseq-fa>li>a[href]:hover span.fa-li::before {
+    margin-top: -0.1em;
+}
+
+/*Vertical steps in mobile */
+@media screen and (max-width:991px) {
+    section.gc-nav {
+        margin-top: 30px;
+        border-right: 5px solid #26374a;
+        border-top: 5px solid #26374a;
+        border-radius: 0 6px 6px 0;
+    }
+
+    section.gc-nav nav>.gc-navseq {
+        padding-top: 15px;
+        margin-top: -18px;
+        clear: both;
+    }
+
+    section.gc-nav nav>.gc-navseq>li:last-child {
+        border-bottom: 5px solid #26374a;
+        border-left: 5px solid #26374a;
+        border-bottom-left-radius: 6px;
+        padding-bottom: 24px;
+    }
+
+    section.gc-nav h1 {
+        margin-bottom: -18px;
+        margin-right: 20px;
+        background-color: white;
+        padding: 20px 10px 10px 20px;
+        display: block;
+        margin-left: -20px;
+        margin-top: -40px;
+        float: left;
+    }
+}
+
+/*nav buttons */
+.gc-navseq-nav-btn:hover,
+.gc-navseq-nav-btn:focus,
+.gc-navseq-nav-btn:visited {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.gc-navseq-nav-btn {
+    background-color: #26374a;
+}
+
+.gc-navseq-nav-btn:hover {
+    background-color: #444;
+}
+
+.gc-navseq-nav-btn:not(:focus) {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+
+@media all and (min-width:992px) {
+    #gc-navseq-nav {
+        display: flex;
+    }
+}
+
+/*Navigation template in mobile */
+@media all and (max-width:991px) {
+    .gc-nav nav {
+        padding-top: 40px;
+    }
+}
+
+#gc-navseq-nav {
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.gc-navseq-nav-btn:focus {
+    position: relative;
+}
+
+/* new topic style */
+h1 {
+    border-bottom: none;
+}
+
+h1#wb-cont::after {
+    content: "";
+    /* This is necessary for the pseudo element to work. */
+    display: block;
+    /* This will put the pseudo element on its own line. */
+    width: 70px;
+    /* Change this to whatever width you want to have before hover. */
+    padding-bottom: 8px;
+    /* This creates some space between the element and the border. */
+    border-bottom: .18em solid #af3c43;
+    /* This creates the border. Replace black with whatever color you want. */
+}
+
+/* Styled ordered list design */
+ol.lst-stps,
+.lst-stps {
+    counter-reset: item;
+}
+
+ol.lst-stps,
+.lst-stps {
+    margin: 15px 0 15px 0px;
+    padding-left: 0;
+    position: relative;
+}
+
+ol.lst-stps>li,
+.lst-stps>.lst-item {
+    counter-increment: item;
+}
+
+ol.lst-stps>li,
+.lst-stps .lst-item {
+    list-style: none;
+    margin-top: 30px;
+    position: relative;
+    padding-left: 60px;
+    padding-right: 15px;
+    min-height: 2.2em;
+}
+
+ol.lst-stps fieldset {
+    padding-top: 0;
+}
+
+ol.lst-stps li>*:last-child,
+.lst-stps .lst-item>*:last-child {
+    margin-bottom: 0px;
+}
+
+ol.lst-stps>li:before,
+.lst-stps .lst-item:before {
+    content: counter(item);
+}
+
+ol.lst-stps li>ol,
+.lst-stps .lst-item>.sub-lst-stps {
+    counter-reset: subitem;
+}
+
+ol.lst-stps li>ol {
+    margin-left: -35px;
+}
+
+.lst-stps .lst-item {
+    position: relative;
+    padding-left: 60px;
+    margin-top: 30px;
+}
+
+ol.lst-stps li:before,
+.lst-stps .lst-item:before {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 3px solid #26374a;
+    background-color: #fff;
+    float: left;
+    position: absolute;
+    box-sizing: content-box;
+    line-height: 2.2;
+    text-align: center;
+    font-weight: 600;
+    height: 2.2em;
+    width: 2.2em;
+    left: 0px;
+    margin-top: -8px;
+}
+
+ol.lst-stps>li>ol>li:before,
+.lst-stps>.lst-item>.sub-lst-stps>.lst-item:before {
+    counter-increment: subitem;
+    content: counter(item) ""counter(subitem, lower-alpha) "";
+}
+
+.sub-lst-stps>.lst-item:last-child {
+    margin-bottom: 0px
+}
+
+.lst-stps-striped>li ol,
+.lst-stps-striped>.lst-item>.sub-lst-stps {
+    margin-top: 15px;
+}
+
+.lst-stps.lst-stps-striped li,
+.lst-stps.lst-stps-striped .lst-item {
+    padding-top: 23px;
+    padding-bottom: 23px;
+    margin-top: 0px;
+}
+
+.lst-stps-striped>li:nth-child(odd),
+.lst-stps-striped>li:nth-child(even)>ol>li:nth-child(odd),
+.lst-stps-striped>li:nth-child(odd)>ol>li:nth-child(even),
+.lst-stps-striped>.lst-item:nth-child(odd),
+.lst-stps-striped>.lst-item:nth-child(even)>.sub-lst-stps>.lst-item:nth-child(odd),
+.lst-stps-striped>.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.lst-stps-striped>li:nth-child(odd)>ol>li:nth-child(odd),
+.lst-stps-striped>.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(odd) {
+    background-color: #fff !important;
+}
+
+.lst-stps-striped>li:nth-child(even)>ol>li:nth-child(even):last-child,
+.lst-stps-striped>li:nth-child(odd)>ol>li:nth-child(even):last-child,
+.lst-stps-striped>.lst-item:nth-child(even)>.sub-lst-stps>.lst-item:nth-child(even):last-child,
+.lst-stps-striped>.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(even):last-child {
+    padding-bottom: 0px;
+}
+
+ol.lst-stps li>:first-child,
+.lst-stps .lst-item>:first-child {
+    margin-top: auto;
+}
+
+ol.lst-stps.lst-stps-striped li,
+.lst-stps.lst-stps-striped .lst-item {
+    padding-left: 75px;
+}
+
+.lst-stps-striped li:before,
+.lst-stps-striped .lst-item:before {
+    margin-left: 15px;
+}
+
+/* ol.lst-stps li ul, ol.lst-stps li ul li, ol.lst-stps.lst-stps-striped li ul, ol.lst-stps.lst-stps-striped li ul li { padding-left: 0px; } */
+@media all and (max-width: 767px) {
+
+    ol.lst-stps li:before,
+    .lst-stps .lst-item:before {
+        font-size: 0.8em;
+        line-height: 2;
+        height: 2em;
+        width: 2em;
+        margin-top: -3px;
+        font-weight: 600;
+    }
+
+    ol.lst-stps>li,
+    .lst-stps>.lst-item {
+        padding-left: 45px
+    }
+
+
+    .lst-stps.lst-stps-striped li,
+    .lst-stps.lst-stps-striped .lst-item {
+        padding-top: 19px;
+        padding-bottom: 19px;
+        margin-top: 0px;
+    }
+}
+
+.lst-lwr-alph {
+    list-style-position: outside;
+}
+
+.callout {
+    padding: 19px;
+    margin-bottom: 20px;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0px 0px 10px #ddd;
+}
+
+/*Checkbox/Fieldflow radio input sizing,positioning*/
+.checkbox-lg>li.checkbox {
+    margin-top: 0px;
+}
+
+.checkbox-lg>li {
+    margin-left: -40px;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    padding-right: 15px;
+}
+
+.checkbox-zebra>li:nth-child(2n+1) {
+    background-color: #f5f5f5;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.checkbox-lg>li.checkbox input[type=checkbox],
+.fieldflow-lg .radio input[type=radio] {
+    margin-top: 12px;
+    transform: scale(2);
+}
+
+.checkbox-lg label,
+.fieldflow-lg,
+.fieldflow-lg label,
+.fieldflow-lg div,
+.fieldflow-lg select,
+.std-blt {
+    font-size: 20px;
+    line-height: 1.65em;
+}
+
+.std-blt {
+    list-style-type: disc;
+}
+
+.std-blt li label {
+    display: block;
+    padding-left: 0px;
+}
+
+.fieldflow-lg .radio label {
+    margin-left: 40px;
+}
+
+.fieldflow-lg .radio input[type=radio] {
+    margin-left: -40px;
+}
+
+.fieldflow-lg fieldset legend {
+    font-size: 22px;
+    margin-top: 0px;
+}
+
+/*Hide arrows in Chrome/FF for number input*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: textfield;
+}
+
+output.wb-calc {
+    display: inline;
+}
+
+/*Validation invisible text appearance */
+.wb-frmvld #errors-default .wb-inv,
+.wb-frmvld .has-error .wb-inv {
+    clip: inherit;
+    height: inherit;
+    margin: inherit;
+    overflow: inherit;
+    position: inherit;
+    width: inherit;
+}
+
+.wb-frmvld .has-error .wb-inv {
+    color: #333;
+}
+
+:not(#wb-srch) main form:not(#gc-pg-hlpfl-frm),
+main .checkbox,
+main .checkbox-inline,
+main .radio,
+main .radio-inline,
+main form:not(#gc-pg-hlpfl-frm) :not(.btn-call-to-action).btn,
+main form :not(.btn-primary).btn {
+    font-size: 20px !important;
+    line-height: 1.65em !important;
+}
+
+/*Lower opacity for placeholders */
+::-webkit-input-placeholder {
+    /* Edge */
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    opacity: 0.5;
+}
+
+input::placeholder {
+    opacity: 0.5;
+}
+
+/*placholder disappears on focus */
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+input:focus::placeholder {
+    opacity: 0;
+}
+
+/*CSS eqht experimental */
+.wb-eqht-css {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    height: 100%;
+}
+
+.wb-eqht-css .wb-eqht-grid {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.wb-eqht-css .hght-inhrt-css {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.wb-eqht-css .hght-inhrt-css .eqht-trgt-css {
+    flex: 1 1 auto;
+}
+</style>
+
+<style>
+.provisional.wb-steps .wb-tggle-fildst>legend:before {
+    background-color: #fff;
+    padding: 4px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 3px solid #6f6f6f;
+    height: 1.2em;
+    width: 1.2em;
+    box-sizing: content-box;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+    content: counter(fieldset_counter);
+}
+
+.panel-default>.panel-heading.wb-steps-active {
+    background-color: #fff;
+}
+
+.provisional.wb-steps .wb-tggle-fildst>legend.wb-steps-active:before {
+    background-color: #1c578a;
+    border-color: #1c578a;
+    color: #fff;
+}
+
+.provisional.wb-steps .wb-tggle-fildst>legend:not(.wb-steps-active) {
+    font-size: 18px;
+}
+
+.provisional.wb-steps .wb-tggle-fildst>legend.wb-steps-active {
+    font-weight: bold;
+}
+
+fieldset+.buttons {
+    margin-left: 15px;
+}
+
+.wb-steps-active .panel-title {
+    font-size: 1.3em;
+}
+
+fieldset fieldset {
+    min-width: 1px;
+}
+
+.ds-example {
+    margin-top: 15px;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0px 0px 8px #e3e3e3;
+}
+
+.ds-example>.wb-tabs>.tabpanels {
+    background: #f9f9f9;
+}
+
+.ds-example>.wb-tabs>.tabpanels legend {
+    font-size: 80%;
+    font-weight: 700;
+    margin: 0 0 5px;
+}
+
+.ds-example>.wb-tabs>.tabpanels fieldset {
+    padding-top: 0;
+}
+
+.ds-example>.wb-tabs>.tabpanels>details>summary {
+    background: #fff;
+    border-radius: 0;
+}
+
+.ds-example>.wb-tabs [role=tablist]>li:focus,
+.ds-example>.wb-tabs [role=tablist]>li:hover {
+    background: #ddd;
+}
+
+.ds-example>.wb-tabs {
+    margin-bottom: 0;
+}
+
+.ds-example>.wb-tabs>.tabpanels>details {
+    margin-bottom: 0;
+}
+
+.ds-example .panel-body {
+    box-shadow: none;
+}
+
+@media screen and (max-width: 991px) {
+    .ds-example>.wb-tabs .tgl-panel {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .ds-example>.wb-tabs>.tabpanels>details {
+        border: none;
+        padding: 15px;
+    }
+
+    .ds-example>.wb-tabs [role=tablist]>li {
+        border: none;
+        background: none;
+    }
+
+    .ds-example>.wb-tabs [role=tablist]>li.active a {
+        border-width: 0 0 4px;
+    }
+
+    .ds-example>.wb-tabs>.tabpanels>details {
+        padding: 30px;
+    }
+
+    .ds-example>.wb-tabs>.tabpanels>details {
+        background: #f9f9f9;
+        padding: 30px;
+        margin-bottom: 0;
+    }
+}
+
+.prev-wb-step .btn-lgnd {
+    margin: 1px;
+    text-decoration-line: underline;
+}
+
+.prev-wb-step:focus,
+.prev-wb-step:hover {
+    color: #0535d2;
+}
+
+.prev-wb-step:focus {
+    outline: 5px auto;
+    outline-offset: -2px;
+}
+</style>
+<style>
+[class*=cnjnctn-type-] {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 0px;
+    margin-top: 15px;
+    position: relative;
+    min-height: 60px;
+}
+
+[class*=cnjnctn-type-] [class*=cnjnctn-col]:not(:first-child):after {
+    background-image: linear-gradient(to bottom, #6f6f6f, #6f6f6f);
+    background-size: 3px;
+    content: ' ';
+    height: 100%;
+    margin-left: -15px;
+    position: absolute;
+    top: 0;
+    width: 3px;
+}
+
+[class*=cnjnctn-type-] [class*=cnjnctn-col] {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+}
+
+[class*=cnjnctn-type-] [class*=cnjnctn-col]> :first-child:not([class*=mrgn-tp-]) {
+    margin-top: 0px;
+}
+
+[class*=cnjnctn-type-] [class*=cnjnctn-col]> :last-child:not([class*=mrgn-bttm-]) {
+    margin-bottom: 0px;
+}
+
+[class*=cnjnctn-type-] [class*=cnjnctn-col]:not(:last-child) {
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+[class*=cnjnctn-type-] [class*=cnjnctn-col]:not(:first-child) {
+    margin-top: 30px;
+}
+
+[class*=cnjnctn-type-] [class*=cnjnctn-col]:not(:first-child):before {
+    border-color: #6f6f6f;
+    border-style: solid;
+    box-sizing: content-box;
+    font-size: 16px;
+    font-weight: 600;
+    height: 30px;
+    line-height: 28px;
+    margin-top: -53px;
+    padding: 4px;
+    position: absolute;
+    text-align: center;
+    width: 30px;
+}
+
+.cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
+    border-radius: 50%;
+    border-width: 3px;
+}
+
+.cnjnctn-type-and [class*=cnjnctn-col]:not(:first-child):before {
+    border-width: 0px 3px 0px 3px;
+}
+
+html:lang(en) .cnjnctn-type-and [class*=cnjnctn-col]:not(:first-child):before {
+    content: "and";
+}
+
+html:lang(fr) .cnjnctn-type-and [class*=cnjnctn-col]:not(:first-child):before {
+    content: "et";
+}
+
+html:lang(en) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
+    content: "or";
+}
+
+html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
+    content: "ou";
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-90 {
+    flex-basis: 90%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-80 {
+    flex-basis: 80%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-75 {
+    flex-basis: 75%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-70 {
+    flex-basis: 70%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-60 {
+    flex-basis: 60%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-50 {
+    flex-basis: 50%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-40 {
+    flex-basis: 40%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-30 {
+    flex-basis: 30%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-25 {
+    flex-basis: 25%
+}
+
+[class*=cnjnctn-type-] .cnjnctn-col-20 {
+    flex-basis: 20%
+}
+
+[class*=cnjnctn-type-].cnjnctn-xs {
+    flex-direction: row;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+[class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):after {
+    background-image: linear-gradient(to bottom, #6f6f6f 6px, #6f6f6f 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 46px, #6f6f6f 46px, #6f6f6f 46px);
+}
+
+[class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child) {
+    margin-left: 30px;
+}
+
+[class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):after {
+    margin-left: -46px;
+}
+
+.cnjnctn-type-or.cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):before {
+    margin-left: -67px;
+}
+
+.cnjnctn-type-and.cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):before {
+    margin-left: -65.5px;
+}
+
+[class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):before {
+    margin-top: 4px;
+}
+
+[class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:last-child) {
+    margin-bottom: 0px;
+}
+
+[class*=cnjnctn-type-].cnjnctn-xs [class*=cnjnctn-col]:not(:first-child) {
+    margin-top: 0px;
+}
+
+.cnjnctn-type-and.cnjnctn-xs [class*=cnjnctn-col]:not(:first-child):before {
+    border-width: 3px 0px 3px 0px;
+}
+
+@media all and (min-width: 768px) {
+    [class*=cnjnctn-type-].cnjnctn-sm {
+        border-left: 0px solid transparent;
+        flex-direction: row;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child) {
+        margin-left: 30px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):after {
+        margin-left: -46px;
+    }
+
+    .cnjnctn-type-or.cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):before {
+        margin-left: -67px;
+    }
+
+    .cnjnctn-type-and.cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):before {
+        margin-left: -65.5px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):before {
+        margin-top: 4px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:last-child) {
+        margin-bottom: 0px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child) {
+        margin-top: 0px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):after {
+        background-image: linear-gradient(to bottom, #6f6f6f 6px, #6f6f6f 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 46px, #6f6f6f 46px, #6f6f6f 46px);
+    }
+
+    .cnjnctn-type-and.cnjnctn-sm [class*=cnjnctn-col]:not(:first-child):before {
+        border-width: 3px 0px 3px 0px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    [class*=cnjnctn-type-].cnjnctn-md {
+        border-left: 0px solid transparent;
+        flex-direction: row;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child) {
+        margin-left: 30px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child):after {
+        margin-left: -46px;
+    }
+
+    .cnjnctn-type-or.cnjnctn-md [class*=cnjnctn-col]:not(:first-child):before {
+        margin-left: -67px;
+    }
+
+    .cnjnctn-type-and.cnjnctn-md [class*=cnjnctn-col]:not(:first-child):before {
+        margin-left: -65.5px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child):before {
+        margin-top: 4px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:last-child) {
+        margin-bottom: 0px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child) {
+        margin-top: 0px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-md [class*=cnjnctn-col]:not(:first-child):after {
+        background-image: linear-gradient(to bottom, #6f6f6f 6px, #6f6f6f 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 46px, #6f6f6f 46px, #6f6f6f 46px);
+    }
+
+    .cnjnctn-type-and.cnjnctn-md [class*=cnjnctn-col]:not(:first-child):before {
+        border-width: 3px 0px 3px 0px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    [class*=cnjnctn-type-].cnjnctn-lg {
+        border-left: 0px solid transparent;
+        flex-direction: row;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child) {
+        margin-left: 30px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):after {
+        margin-left: -46px;
+    }
+
+    .cnjnctn-type-or.cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):before {
+        margin-left: -67px;
+    }
+
+    .cnjnctn-type-and.cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):before {
+        margin-left: -65.5px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):before {
+        margin-top: 4px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:last-child) {
+        margin-bottom: 0px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child) {
+        margin-top: 0px;
+    }
+
+    [class*=cnjnctn-type-].cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):after {
+        background-image: linear-gradient(to bottom, #6f6f6f 6px, #6f6f6f 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 46px, #6f6f6f 46px, #6f6f6f 46px);
+    }
+
+    .cnjnctn-type-and.cnjnctn-lg [class*=cnjnctn-col]:not(:first-child):before {
+        border-width: 3px 0px 3px 0px;
+    }
+}
+</style>
 </head>
 
 <body vocab="http://schema.org/" typeof="WebPage">
@@ -1157,65 +1157,167 @@
                       resident in 2021 - deemed or factual
                       marital status - if separated/divorced/widowed, then when?
                     -->
-                    <fieldset id="residency" class="panel-default chckbxrdio-grp provisional p-0">
+
+                  <fieldset id="marital" class="panel-default p-0">
+                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Marital status</span></legend>
+                    <div class="panel-body mrgn-lft-sm">
+
+                      <fieldset id="non-resident-ties" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">What was your Marital status as of December 1, 2022? <strong class="required">(required)</strong></span></legend>
+                        
+                        <p><a href="#maritalStatus-help" aria-controls="maritalStatus-help" class="wb-lbx" role="button">What is living common law? <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                        <section id="maritalStatus-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                          <header class="modal-header">
+                            <h2 class="modal-title">What is living common law?</h2>
+                          </header>
+                          <div class="modal-body">
+                              <p>This applies to a person <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
+                              <!-- <dt class="mrgn-tp-lg">Separated</dt>
+                              <dd class="mrgn-tp-md">You are separated when you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</dd> -->
+                            <!-- </dl> -->
+                            <!-- <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html#def" target="help" rel="noopener noreferrer">marital status</a> for more information</p> -->
+                          </div>
+                        </section>
+
+                        <ul class="list-unstyled">
+                          <li class="radio">
+                            <input type="radio" name="maritalStatus" id="marital-single" value="false" data-rule-required="true">
+                            <label for="marital-single">Single</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="maritalStatus" id="marital-spouse" value="true" data-rule-required="true">
+                            <label for="marital-spouse">Spouse</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="maritalStatus" id="marital-common" value="true" data-rule-required="true">
+                            <label for="marital-common">Living common law</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="maritalStatus" id="marital-divorced" value="false" data-rule-required="true">
+                            <label for="marital-divorced">Divorced</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="maritalStatus" id="marital-separated" value="false" data-rule-required="true">
+                            <label for="marital-separated">Separated</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="maritalStatus" id="marital-widowed" value="false" data-rule-required="true">
+                            <label for="marital-widowed">Widowed</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+
+
+                      <fieldset id="marital-change" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> occur during the year 2021? <strong class="required">(required)</strong></span></legend>
+                        <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">Determine if you had close residential ties</a></p>
+                        <ul class="list-unstyled">
+                          <li class="radio">
+                            <input type="radio" name="maritalChange" id="marital-change-yes" value="true" data-rule-required="true">
+                            <label for="marital-change-yes">Yes</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="maritalChange" id="marital-change-no" value="false" data-rule-required="true">
+                            <label for="marital-change-no">No</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+
+                      <fieldset id="dependents-question" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> occur during the year 2021? <strong class="required">(required)</strong></span></legend>
+                        <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">Determine if you had close residential ties</a></p>
+                        <ul class="list-unstyled">
+                          <li class="radio">
+                            <input type="radio" name="dependents" id="dependent-yes" value="true" data-rule-required="true">
+                            <label for="dependent-yes">Yes</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="dependents" id="dependent-no" value="false" data-rule-required="true">
+                            <label for="dependent-no">No</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+
+                      <div class="well text-muted mrgn-tp-md" id="marital-summary">
+                        <h3 class="mrgn-tp-0">Summary of marital status</h3>
+                        <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
+                       
+                        <p class="marital-true hidden">Go to the next step to calculate your and your partner's average family net income. </p>
+                        <p class="marital-change-true hidden">Because there was a change in marital status during 2021, the average family net income will be calculated in two parts.</p>
+                        <p class="marital-false hidden">Go to the next step to calculate your individual average family net income.</p>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset id="residency" class="panel-default provisional p-0">
                     <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Residency status</span></legend>
                     <div class="panel-body mrgn-lft-sm">
-                      <div class="form-group">
-                        <legend class="h5 required">Were you resident in Canada throughout all of 2021? <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>
-                        <div class="radio">
-                          <label for="resident-true"><input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">Yes</label>
-                        </div>
-                        <div class="radio">
-                          <label for="resident-false"><input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">No</label>
-                        </div>
-                      </div>
-                    
+                      <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Were you <span class="field-name">resident in Canada</span> throughout all of 2021? <strong class="required">(required)</strong></span></legend>
+                        <ul class="list-unstyled">
+                          <li class="radio">
+                            <input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">
+                            <label for="resident-true">Yes</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">
+                            <label for="resident-false">No</label>
+                          </li>
+                        </ul>
+                      </fieldset>
 
 
                       <!-- If not resident through all of 2021, need to ask deemed vs factual -->
 
 
-                      <div id="non-resident-ties" class="hidden">
-                        <div class="form-group">
-                          <legend class="h5 required">When resident abroad in 2021, did you maintain significant residential ties in Canada? <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>
-                          <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">Determine if you had close residential ties</a></p>
-                          
-                          <div class="radio">
-                            <label for="non-resident-ties-yes"><input type="radio" name="nonResidentTies" id="non-resident-ties-yes" value="true" data-rule-required="true">Yes (factual resident)</label>
-                          </div>
-                          <div class="radio">
-                            <label for="non-resident-ties-yes-but"><input type="radio" name="nonResidentTies" id="non-resident-ties-yes-but" value="true-false" data-rule-required="true">Yes but income tax was paid to the other country</label>
-                          </div>
-                          <div class="radio">
-                            <label for="non-resident-ties-no"><input type="radio" name="nonResidentTies" id="non-resident-ties-no" value="false" data-rule-required="true">No (no significant residential ties)</label>
-                          </div>
-                        </div>
-                      </div>
+                      <fieldset id="non-resident-ties" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When resident abroad in 2021, did you maintain close residential ties in Canada? <strong class="required">(required)</strong></span></legend>
+                        <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">Determine if you had close residential ties</a></p>
+                        <ul class="list-unstyled">
+                          <li class="radio">
+                            <input type="radio" name="nonResidentTies" id="non-resident-ties-yes" value="true" data-rule-required="true">
+                            <label for="non-resident-ties-yes">Yes (factual resident)</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="nonResidentTies" id="non-resident-ties-yes-but" value="true-false" data-rule-required="true">
+                            <label for="non-resident-ties-yes-but">Yes but income tax was paid to the other country</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="nonResidentTies" id="non-resident-ties-no" value="false" data-rule-required="true">
+                            <label for="non-resident-ties-no">No (no significant residential ties)</label>
+                          </li>
+                        </ul>
+                      </fieldset>
 
-                      <div id="deemed-residency" class="hidden">
-                        <div class="form-group">
-                          <legend class="h5 required">When you were non-resident in Canada in 2021, did any of the following apply to you? <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>                          
-                          <div class="checkbox">
-                            <label for="deemed-resident-183"><input type="checkbox" name="deemedResidency" id="deemed-resident-183" value="true" data-rule-required="true">You stayed in Canada for 183 days or more during 2021 and are not considered resident of another country under the terms of a tax treaty between Canada and that country</label>
-                          </div>
-                          <div class="checkbox">
-                            <label for="deemed-resident-government"><input type="checkbox" name="deemedResidency" id="deemed-resident-government" value="true" data-rule-required="true">You are a Canadian government employee (any jurisdiction)</label>
-                          </div>
-                          <div class="checkbox">
-                            <label for="deemed-resident-forces"><input type="checkbox" name="deemedResidency" id="deemed-resident-forces" value="true" data-rule-required="true">You are a member of the Canadian Forces (or their overseas staff)</label>
-                          </div>
-                          <div class="checkbox">
-                            <label for="deemed-resident-development"><input type="checkbox" name="deemedResidency" id="deemed-resident-development" value="true" data-rule-required="true">You are working under a Canadian International Development Agency (CIDA) assistance program</label>
-                          </div>
-                          <div class="checkbox">
-                            <label for="deemed-resident-family"><input type="checkbox" name="deemedResidency" id="deemed-resident-family" value="true" data-rule-required="true">You are a family member of one of the above</label>
-                          </div>
-                          <div class="checkbox">
-                            <label for="deemed-resident-none"><input type="checkbox" name="deemedResidency" id="deemed-resident-none" value="false" data-rule-required="true">None of the above apply</label>
-                          </div>
-                        </div>
-                      </div>
-
+                      <fieldset id="deemed-residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When you were non-resident in Canada in 2021, did any of the following apply to you? <strong class="required">(required)</strong></span></legend>
+                        <ul class="list-unstyled">
+                          <li class="checkbox">
+                            <input type="checkbox" name="deemedResidency" id="deemed-resident-183" value="true" data-rule-required="true">
+                            <label for="deemed-resident-183">You stayed in Canada for 183 days or more during 2021 and are not considered resident of another country under the terms of a tax treaty between Canada and that country</label>
+                          </li>
+                          <li class="radio">
+                            <input type="checkbox" name="deemedResidency" id="deemed-resident-government" value="true" data-rule-required="true">
+                            <label for="deemed-resident-government">You are a Canadian government employee (any jurisdiction)</label>
+                          </li>
+                          <li class="radio">
+                            <input type="checkbox" name="deemedResidency" id="deemed-resident-forces" value="true" data-rule-required="true">
+                            <label for="deemed-resident-forces">You are a member of the Canadian Forces (or their overseas staff)</label>
+                          </li>
+                          <li class="radio">
+                            <input type="checkbox" name="deemedResidency" id="deemed-resident-development" value="true" data-rule-required="true">
+                            <label for="deemed-resident-development">You are working under a Canadian International Development Agency (CIDA) assistance program</label>
+                          </li>
+                          <li class="radio">
+                            <input type="checkbox" name="deemedResidency" id="deemed-resident-family" value="true" data-rule-required="true">
+                            <label for="deemed-resident-family">You are a family member of one of the above</label>
+                          </li>
+                          <li class="radio">
+                            <input type="checkbox" name="deemedResidency" id="deemed-resident-none" value="false" data-rule-required="true">
+                            <label for="deemed-resident-none">None of the above apply</label>
+                          </li>
+                        </ul>
+                      </fieldset>
 
                         <!-- pop-ups
                         <section id="factualResident-help" class="mfp-hide modal-dialog modal-content overlay-def">
@@ -1249,125 +1351,29 @@
                   </fieldset>
 
 
-                  <fieldset id="marital" class="panel-default p-0">
-                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Marital status</span></legend>
-                    <div class="panel-body mrgn-lft-sm">
-
-
-                      <div id="marital-status">
-                        <div class="form-group">
-                          <legend class="h5 required">What was your Marital status as of December 1, 2022 <strong class="required">(required)</strong> <a href="#factualResident-help" aria-controls="factualResident-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is a factual and deemed resident</span></a></legend>
-                          
-                          <p><a href="#maritalStatus-help" aria-controls="maritalStatus-help" class="wb-lbx" role="button">What is living common law? <span class="glyphicon glyphicon-question-sign"></span></a></p>
-                          <section id="maritalStatus-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                            <header class="modal-header">
-                              <h2 class="modal-title">What is living common law?</h2>
-                            </header>
-                            <div class="modal-body">
-                                <p>This applies to a person <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
-                                <!-- <dt class="mrgn-tp-lg">Separated</dt>
-                                <dd class="mrgn-tp-md">You are separated when you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</dd> -->
-                              <!-- </dl> -->
-                              <!-- <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html#def" target="help" rel="noopener noreferrer">marital status</a> for more information</p> -->
-                            </div>
-                          </section>
-
-                          <div class="radio">
-                            <label for="marital-single"><input type="radio" name="maritalStatus" id="marital-single" value="false" data-rule-required="true">Single</label>
-                          </div>
-                          <div class="radio">
-                            <label for="marital-spouse"><input type="radio" name="maritalStatus" id="marital-spouse" value="true" data-rule-required="true">Spouse</label>
-                          </div>
-                          <div class="radio">
-                            <label for="marital-common"><input type="radio" name="maritalStatus" id="marital-common" value="true" data-rule-required="true">Living common law</label>
-                          </div>
-                          <div class="radio">
-                            <label for="marital-divorced"><input type="radio" name="maritalStatus" id="marital-divorced" value="false" data-rule-required="true">Divorced</label>
-                          </div>
-                          <div class="radio">
-                            <label for="marital-separated"><input type="radio" name="maritalStatus" id="marital-separated" value="false" data-rule-required="true">Separated</label>
-                          </div>
-                          <div class="radio">
-                            <label for="marital-widowed"><input type="radio" name="maritalStatus" id="marital-widowed" value="false" data-rule-required="true">Widowed</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div id="marital-change" class="hidden">
-                        <div class="form-group">
-                          <legend class="h5 required">Did the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> occur during the year 2021?<strong class="required">(required)</strong></legend>
-                          <div class="radio">
-                            <label for="marital-change-yes"><input type="radio" name="maritalChange" id="marital-change-yes" value="true" data-rule-required="true">Yes</label>
-                          </div>
-                          <div class="radio">
-                            <label for="marital-change-no"><input type="radio" name="maritalChange" id="marital-change-no" value="false" data-rule-required="true">No</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div id="dependents-question" class="hidden">
-                        <div class="form-group">
-                          <legend class="h5 required">Did  ?<strong class="required">(required)</strong></legend>
-                          <div class="radio">
-                            <label for="dependent-yes"><input type="radio" name="dependents" id="dependent-yes" value="true" data-rule-required="true">Yes</label>
-                          </div>
-                          <div class="radio">
-                            <label for="dependent-no"><input type="radio" name="dependents" id="dependent-no" value="false" data-rule-required="true">No</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="well text-muted mrgn-tp-md" id="marital-summary">
-                        <h3 class="mrgn-tp-0">Summary of marital status</h3>
-                        <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
-                       
-                        <p class="marital-true hidden">Go to the next step to calculate your and your partner's average family net income. </p>
-                        <p class="marital-change-true hidden">Because there was a change in marital status during 2021, the average family net income will be calculated in two parts.</p>
-                        <p class="marital-false hidden">Go to the next step to calculate your individual average family net income.</p>
-                      </div>
-                    </div>
-                  </fieldset>
-
-
                   <fieldset id="income" class="panel-default p-0">
                     <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Household net income</span></legend>
                     <div class="panel-body mrgn-lft-sm">
                       <div class="form-group">
                         <label for="netIncome" class="required">Your <span class="field-name">net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
-                        <a href="#netIncome-help" aria-controls="netIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your net income</span></a>
                         <div class="input-group col-sm-3">
                           <span class="input-group-addon">$</span>
                           <input type="text" name="netIncome" size="7" maxlength="7" value="" id="netIncome" class="form-control text-right" data-rule-digits="true" required="required">
                           <span class="input-group-addon">.00</span>
                         </div>
+                        <p class="small">This is line 23600 of your 2021 tax return.</p>
                       </div>
-                      <section id="netIncome-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                        <header class="modal-header">
-                          <h2 class="modal-title">Net Income</h2>
-                        </header>
-                        <div class="modal-body">
-                          <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-23600-net-income.html" target="help" rel="noopener noreferrer">Line 23600</a> on your tax return and/or <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/help-page-child-family-benefits-calculator.html" target="help" rel="noopener noreferrer">world income</a> (if applicable).</p>
-                          <p>If your net income is negative, enter '0'.</p>
-                        </div>
-                      </section>
+                      
                       <div id="spouseNetIncomeElm" class="form-group hidden">
-                        <label for="spouseNetIncome" class="required">Your <span class="field-name">spouse's net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span><strong class="required">(required)</strong></label>
-                        <a href="#spouse_netIncome-help" aria-controls="spouse_netIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your spouse's net income</span></a>
+                        <label for="spouseNetIncome" class="required">Your <span class="field-name"><span class="spouse-label">spouse</span>'s net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span><strong class="required">(required)</strong></label>
                         <div class="input-group col-sm-3">
                           <span class="input-group-addon">$</span>
                           <input type="text" name="spouse.netIncome" size="7" maxlength="7" value="" id="spouseNetIncome" class="form-control text-right" data-rule-digits="true">
                           <span class="input-group-addon">.00</span>
                         </div>
+                        <p class="small">This is line 23600 of your <span class="spouse-label">spouse</span>'s 2021 tax return.</p>
                       </div>
-                      <section id="spouse_netIncome-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                        <header class="modal-header">
-                          <h2 class="modal-title">Spouse's Net Income</h2>
-                        </header>
-                        <div class="modal-body">
-                          <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-23600-net-income.html" target="help" rel="noopener noreferrer">Line 23600</a> on your spouse's tax return and/or <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/help-page-child-family-benefits-calculator.html" target="help" rel="noopener noreferrer">world income</a> (if applicable).</p>
-                          <p>If your spouse's net income is negative, enter '0'.</p>
-                        </div>
-                      </section>
+
                       <div id="worldIncomeElm" class="form-group hidden">
                         <label for="worldIncome" class="required">Your <span class="field-name">household world income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
                         <a href="#worldIncome-help" aria-controls="worldIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your households world income</span></a>
@@ -1431,6 +1437,44 @@
                       </section>
                     </div>
                   </fieldset>
+                  
+                  
+                  <fieldset id="rent-check" class="panel-default p-0">
+                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Rend paid in 2022</span></legend>
+                    <div class="panel-body mrgn-lft-sm">
+                      
+                      <div class="form-group">
+                        <label for="rent-paid-2022"><span class="field-name">Rent paid in 2022 <span class="wb-inv">(dollars only, no cents)</span></label>
+                        <!-- <a href="#uccbAndRdspIncome-help" aria-controls="uccbAndRdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your UCCB and RDSP income</span></a> -->
+                        <div class="input-group col-sm-3">
+                          <span class="input-group-addon">$</span>
+                          <input type="text" name="rentPaid2022" size="7" maxlength="7" value="" id="rentPaid2022" class="form-control text-right" data-rule-digits="true">
+                          <span class="input-group-addon">.00</span>
+                        </div>
+                      </div>
+
+                      <!-- <div class="form-group">
+                        <label for="uccbAndRdspRepayment"><span class="field-name"><abbr title="Universal child care benefit">UCCB</abbr> and <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span> <span class="wb-inv">(dollars only, no cents)</span></label>
+                        <a href="#uccbAndRdspRepayment-help" aria-controls="uccbAndRdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for UCCB and RDSP repayment</span></a>
+                        <div class="input-group col-sm-3">
+                          <span class="input-group-addon">$</span>
+                          <input type="text" name="uccbAndRdspRepayment" size="7" maxlength="7" value="" id="uccbAndRdspRepayment" class="form-control text-right" data-rule-digits="true">
+                          <span class="input-group-addon">.00</span>
+                        </div>
+                      </div>
+                      <section id="uccbAndRdspRepayment-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                        <header class="modal-header">
+                          <h2 class="modal-title">UCCB and RDSP repayment</h2>
+                        </header>
+                        <div class="modal-body">
+                          <p>Repayment claimed by you or your spouse (<a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-21300-universal-child-care-benefit-uccb-repayment.html" target="help" rel="noopener noreferrer">line 21300</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-23200-other-deductions/line-23200-income-amounts-repaid.html" target="help" rel="noopener noreferrer">line 23200</a> of your or your spouse's tax return).</p>
+                          <p>If field left blank, we will assume it is zero.</p>
+                        </div>
+                      </section> -->
+                    </div>
+                  </fieldset>
+
+
                   <input id="calc-famly-income" class="btn btn-primary" type="submit" value="Check if your family income qualifies">
                 </form>
               </div>
@@ -1537,6 +1581,53 @@
           maritalQuestions(target);
         }
       });
+      
+      function maritalQuestions(target) {
+        $("#marital-change").addClass("hidden");
+        $(".marital-unanswered").removeClass("hidden");
+        $(".marital-true").addClass("hidden");
+        $(".marital-change-true").addClass("hidden");
+        $(".marital-false").addClass("hidden");
+        $(".divorce-label").addClass("hidden");
+        $(".separation-label").addClass("hidden");
+        $(".death-label").addClass("hidden");
+        $("#spouseNetIncomeElm").addClass("hidden");
+
+        if ($('#marital-single:checked').length > 0) {
+          $(".marital-unanswered").addClass("hidden");
+          $(".marital-false").removeClass("hidden");
+        } else if ($('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
+          $(".marital-unanswered").addClass("hidden");
+          $(".marital-true").removeClass("hidden");
+          if ($('#marital-spouse:checked').length > 0) {
+            $(".spouse-label").html("spouse");
+          } else {
+            $(".spouse-label").html("common law partner");
+          }
+          $("#spouseNetIncomeElm").removeClass("hidden");
+        } else if ($('#marital-divorced:checked').length > 0) {
+          $(".divorce-label").removeClass("hidden");
+          maritalChangeQuestion(target);
+        } else if ($('#marital-separated:checked').length > 0) {
+          $(".separation-label").removeClass("hidden");
+          maritalChangeQuestion(target);
+        } else if ($('#marital-widowed:checked').length > 0) {
+          $(".death-label").removeClass("hidden");
+          maritalChangeQuestion(target);
+        }
+      }
+
+      function maritalChangeQuestion(target) {
+        $("#marital-change").removeClass("hidden");
+        if ($('#marital-change-yes:checked').length > 0) {
+          $(".marital-unanswered").addClass("hidden");
+          $(".marital-change-true").removeClass("hidden");
+        } else if ($('#marital-change-no:checked').length > 0) {
+          $(".marital-unanswered").addClass("hidden");
+          $(".marital-false").removeClass("hidden");
+        }
+      }
+
 
       function residencyQuestions(target) {
         //resets
@@ -1576,44 +1667,7 @@
         }
       }
 
-      function maritalQuestions(target) {
-        $("#marital-change").addClass("hidden");
-        $(".marital-unanswered").removeClass("hidden");
-        $(".marital-true").addClass("hidden");
-        $(".marital-change-true").addClass("hidden");
-        $(".marital-false").addClass("hidden");
-        $(".divorce-label").addClass("hidden");
-        $(".separation-label").addClass("hidden");
-        $(".death-label").addClass("hidden");
-
-        if ($('#marital-single:checked').length > 0) {
-          $(".marital-unanswered").addClass("hidden");
-          $(".marital-false").removeClass("hidden");
-        } else if ($('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
-          $(".marital-unanswered").addClass("hidden");
-          $(".marital-true").removeClass("hidden");
-        } else if ($('#marital-divorced:checked').length > 0) {
-          $(".divorce-label").removeClass("hidden");
-          maritalChangeQuestion(target);
-        } else if ($('#marital-separated:checked').length > 0) {
-          $(".separation-label").removeClass("hidden");
-          maritalChangeQuestion(target);
-        } else if ($('#marital-widowed:checked').length > 0) {
-          $(".death-label").removeClass("hidden");
-          maritalChangeQuestion(target);
-        }
-      }
-
-      function maritalChangeQuestion(target) {
-        $("#marital-change").removeClass("hidden");
-        if ($('#marital-change-yes:checked').length > 0) {
-          $(".marital-unanswered").addClass("hidden");
-          $(".marital-change-true").removeClass("hidden");
-        } else if ($('#marital-change-no:checked').length > 0) {
-          $(".marital-unanswered").addClass("hidden");
-          $(".marital-false").removeClass("hidden");
-        }
-      }
+      
 
       // $("input[type=radio][name=non-residency-ties]", "#housing_cal_form").change(function () {
       //   residency = $(this).data("residency");
