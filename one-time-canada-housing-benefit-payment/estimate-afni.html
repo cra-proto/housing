@@ -1101,6 +1101,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             }, {
                 title: "Tax credits and benefits for individuals",
                 href: "https://www.canada.ca/en/services/taxes/child-and-family-benefits.html"
+            }, {
+                title: "One-time top-up to the Canada Housing Benefit",
+                href: "../one-time-canada-housing-benefit-payment.html"
             }],
             search: true,
             siteMenu: true,
@@ -1160,11 +1163,11 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     -->
 
                   <fieldset id="marital" class="panel-default p-0">
-                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Marital status</span></legend>
+                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Family status</span></legend>
                     <div class="panel-body mrgn-lft-sm">
 
                       <fieldset id="marital-question" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">What was your Marital status on December 1, 2022? <strong class="required">(required)</strong></span></legend>
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">What was your marital status on December 1, 2022? <strong class="required">(required)</strong></span></legend>
                         
                         <p><a href="#maritalStatus-help" aria-controls="maritalStatus-help" class="wb-lbx" role="button">What is living common law? <span class="glyphicon glyphicon-question-sign"></span></a></p>
                         <section id="maritalStatus-help" class="mfp-hide modal-dialog modal-content overlay-def">
@@ -1173,6 +1176,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                           </header>
                           <div class="modal-body">
                               <p>This applies to a person <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
+                              <p>In cases where you had a different marital status on file with the CRA on December 1, 2022, the CRA will use your reported marital status to calculate your eligibility, and not your actual marital status. <a href="contact.html">Contact the CRA</a> if this was not incorrect.</p>
                               <!-- <dt class="mrgn-tp-lg">Separated</dt>
                               <dd class="mrgn-tp-md">You are separated when you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</dd> -->
                             <!-- </dl> -->
@@ -1187,7 +1191,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                           </li>
                           <li class="radio">
                             <input type="radio" name="maritalStatus" id="marital-spouse" value="true" data-rule-required="true">
-                            <label for="marital-spouse">Spouse</label>
+                            <label for="marital-spouse">Married</label>
                           </li>
                           <li class="radio">
                             <input type="radio" name="maritalStatus" id="marital-common" value="true" data-rule-required="true">
@@ -1204,6 +1208,31 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                           <li class="radio">
                             <input type="radio" name="maritalStatus" id="marital-widowed" value="false" data-rule-required="true">
                             <label for="marital-widowed">Widowed</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+
+                      <fieldset id="dependents-q" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you have one or more dependents (a child, minor or disabled adult) on December 1, 2022? <strong class="required">(required)</strong></span></legend>
+                        
+                        <p><a href="#dependent-help" aria-controls="dependent-help" class="wb-lbx" role="button">Who counts as a dependent? <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                        <section id="dependent-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                          <header class="modal-header">
+                            <h2 class="modal-title">Who counts as a dependent?</h2>
+                          </header>
+                          <div class="modal-body">
+                              <p>Placeholder</p>
+                          </div>
+                        </section>
+
+                        <ul class="list-unstyled">
+                          <li class="radio">
+                            <input type="radio" name="dependent-2022" id="dependent-2022-yes" value="true" data-rule-required="true">
+                            <label for="dependent-2022-yes">Yes</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="dependent-2022" id="dependent-2022-no" value="false" data-rule-required="true">
+                            <label for="dependent-2022-no">No</label>
                           </li>
                         </ul>
                       </fieldset>
@@ -1240,9 +1269,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div class="well text-muted mrgn-tp-md" id="marital-summary">
                         <h3 class="mrgn-tp-0">Summary of marital status</h3>
                         <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
-                       
-                        <p class="marital-true hidden">Go to the next step to calculate your and your partner's average family net income. </p>
-                        <p class="marital-change-true hidden">Because there was a change in marital status during 2022, the rent as a percentage of income will be calculated in two parts.</p>
+                        <p class="marital-depedents hidden">As you had depedents, your average family net income must be $35,000 or less. Go to the next step to continue the calculation. </p>
+                        <p class="marital-true hidden">You and your partner's average family net income must be $35,000 or less. Go to the next step to continue the calculation. </p>
+                        <p class="marital-change-true hidden">Because there was a change in marital status during 2022, your average net income must be $20,000 or less. Your rent will be calculated as 50% of your rent before the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> and 100% of rent afterwards. the rent as a percentage of income will be calculated in two parts.</p>
                         <p class="marital-false hidden">Go to the next step to continue the calculation.</p>
                       </div>
                     </div>
@@ -1651,8 +1680,19 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $(".rent-paid-separation").addClass("hidden");
 
         if ($('#marital-single:checked').length > 0) {
-          $(".marital-unanswered").addClass("hidden");
-          $(".marital-false").removeClass("hidden");
+          // $(".marital-unanswered").addClass("hidden");
+          //$(".marital-false").removeClass("hidden");
+          // $(".marital-unanswered").addClass("hidden");
+          $("#dependents-q").removeClass("hidden");
+          // $(".spouse-specific").removeClass("hidden");
+          if ($('#dependent-2022-yes:checked').length > 0) {
+            $(".indfam").html("family");
+            $(".marital-unanswered").addClass("hidden");
+            $(".marital-dependents").removeClass("hidden");
+          } else if ($('#dependent-2022-no:checked').length > 0) {
+            $(".spouse-label").html("common law partner");
+          }
+          $("#spouseNetIncomeElm").removeClass("hidden");
         } else if ($('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
           $(".indfam").html("family");
           $(".marital-unanswered").addClass("hidden");
