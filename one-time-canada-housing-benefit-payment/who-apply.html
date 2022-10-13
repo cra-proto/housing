@@ -590,34 +590,34 @@ margin-left: -2.0em;
         <ul class="checkbox-lg checkbox-zebra">
           <li class="checkbox">
             <input type="checkbox" id="eg1" class="action-checkbox cb-dmm">
-		  <label for="eg1">You were born <strong>on or before December 1, 2007</strong> (at least 15 years old on December 1, 2022)</label>
+		        <label for="eg1">You were born <strong>on or before December 1, 2007</strong> (at least 15 years old on December 1, 2022)</label>
           </li>
 	        <li class="checkbox">
             <input type="checkbox" id="eg2" class="action-checkbox cb-dmm">
             <label for="eg2">Your principal residence was in Canada on December 1, 2022</label>
-	    <details class="mrgn-lft-md mrgn-tp-md">
-                  <summary>What is a principal residence</summary>
-                  <p class="mrgn-tp-md">[explanation of principal residence]</p>
+            <details class="mrgn-lft-md mrgn-tp-md">
+              <summary>What is a principal residence</summary>
+              <p class="mrgn-tp-md">[explanation of principal residence]</p>
             </details>
           </li>
 	        <li class="checkbox">
             <input type="checkbox" id="eg3" class="action-checkbox cb-dmm">
             <label for="eg3">You were a resident of Canada in 2022 for tax purposes</label>
-	    <details class="mrgn-lft-md mrgn-tp-md">
-                  <summary>Who is considered a resident of Canada</summary>
-                  <p class="mrgn-tp-md">[explanation of resident of Canada for tax purposes]</p>
+	          <details class="mrgn-lft-md mrgn-tp-md">
+              <summary>Who is considered a resident of Canada</summary>
+              <p class="mrgn-tp-md">[explanation of resident of Canada for tax purposes]</p>
             </details>
           </li>
 	        <li class="checkbox">
             <input type="checkbox" id="eg4" class="action-checkbox cb-dmm">
             <label for="eg4">You have filed your 2021 income tax return or statement of income by March 1, 2023</label>
-	            <details class="mrgn-lft-md mrgn-tp-md">
-                <summary>What to do if you did not earn income in Canada in 2021</summary>
-                <p class="mrgn-tp-md">[explanation of nil returns and statement of income]</p>
+            <details class="mrgn-lft-md mrgn-tp-md">
+              <summary>What to do if you did not earn income in Canada in 2021</summary>
+              <p class="mrgn-tp-md">[explanation of nil returns and statement of income]</p>
             </details>
           </li>
           <li class="checkbox">
-            <input type="checkbox" id="eg5 class="action-checkbox cb-dmm">
+            <input type="checkbox" id="eg5" class="action-checkbox cb-dmm">
             <label for="eg5">
               <p>You meet <strong>both</strong> of the following adjusted net income related criteria:</p>
               <div class="mrgn-lft-lg">
@@ -940,33 +940,32 @@ margin-left: -2.0em;
       <script>
         $(".action-checkbox").change(function(){
           if ($(".action-checkbox:checked")) {
-            console.log("hi");
             $("#default-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
           if ($(".action-checkbox:not(:checked)").length == 5) {
-            console.log("hi2");
             $("#noaction-msg").addClass("hidden");
+            $("#default-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 6) {
+          if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 5) {
             console.log("hi3");
-            $("#action-msg1").removeClass("hidden");
+            $("#action-msg").removeClass("hidden");
             $("#noaction-msg").addClass("hidden");
-            $("#action-msg2").addClass("hidden");
+            $("#action-msg").addClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 6) {
+          if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 5) {
             console.log("hi4");
-            $("#action-msg1").addClass("hidden");
+            $("#action-msg").addClass("hidden");
             $("#noaction-msg").addClass("hidden");
-            $("#action-msg2").removeClass("hidden");
+            $("#action-msg").removeClass("hidden");
           }
           if ($(".cb-dmm:not(:checked), #eg5:not(:checked)").length == 1)  {
             console.log("hi5");
-            $("#action-msg1").addClass("hidden");
+            $("#action-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
           if ($(".cb-dmm:not(:checked), #eg5:not(:checked), #eg6:not(:checked)").length == 1)  {
-            $("#action-msg2").addClass("hidden");
+            $("#action-msg").addClass("hidden");
           }
         });
       </script>
