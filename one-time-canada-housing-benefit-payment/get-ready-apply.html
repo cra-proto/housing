@@ -595,20 +595,16 @@ margin-left: -2.0em;
             <input type="checkbox" id="eg1" class="action-checkbox cb-dmm">
             <label for="eg1">Record of rent you paid in 2022 for your principal residence</label>
           </li>
-	  <li class="checkbox">
+	        <li class="checkbox">
             <input type="checkbox" id="eg2" class="action-checkbox cb-dmm">
             <label for="eg2">Address of your principal residence in 2022</label>
           </li>
-	  <li class="checkbox">
+	        <li class="checkbox">
             <input type="checkbox" id="eg3" class="action-checkbox cb-dmm">
             <label for="eg3">Name and contact information of the person to whom the rent was paid</label>
           </li>
-
-        <div class="mrgn-lft-lg">
-
-        </div>
       </ul>
-      <div class="alert alert-warning provisional hidden" id="noaction-msg1">
+      <div class="alert alert-warning provisional hidden" id="noaction-msg">
 	      <p>You need <strong>all</strong> of the above to be eligible for the one-time payment.</p>
       </div>	
       <div class="alert alert-success hidden provisional" id="action-msg">
@@ -1039,7 +1035,7 @@ margin-left: -2.0em;
 
        <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
       <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
-<script>
+<!-- <script>
 		(function( $, document, wb ) {
 	"use strict";
 	$('.data-ajax').on( "wb-contentupdated", function( event, data ){
@@ -1058,7 +1054,39 @@ margin-left: -2.0em;
 		 */
 		return true;
 	});
-})( jQuery, document, wb );</script>
+})( jQuery, document, wb );</script> -->
 
    </body>
+   <script>
+    $(".action-checkbox").change(function(){
+      if ($(".action-checkbox:checked")) {
+        $("#default-msg").addClass("hidden");
+        $("#noaction-msg").removeClass("hidden");
+      }
+      if ($(".action-checkbox:not(:checked)").length == 3) {
+        $("#noaction-msg").addClass("hidden");
+        $("#default-msg").removeClass("hidden");
+      }
+      if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 3) {
+        console.log("hi3");
+        $("#action-msg").removeClass("hidden");
+        $("#noaction-msg").addClass("hidden");
+        $("#action-msg").addClass("hidden");
+      }
+      if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 3) {
+        console.log("hi4");
+        $("#action-msg").addClass("hidden");
+        $("#noaction-msg").addClass("hidden");
+        $("#action-msg").removeClass("hidden");
+      }
+      if ($(".cb-dmm:not(:checked), #eg5:not(:checked)").length == 1)  {
+        console.log("hi5");
+        $("#action-msg").addClass("hidden");
+        $("#noaction-msg").removeClass("hidden");
+      }
+      if ($(".cb-dmm:not(:checked), #eg5:not(:checked), #eg6:not(:checked)").length == 1)  {
+        $("#action-msg").addClass("hidden");
+      }
+    });
+  </script>
 </html>
