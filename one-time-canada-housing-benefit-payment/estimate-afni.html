@@ -1197,7 +1197,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                             <input type="radio" name="maritalStatus" id="marital-common" value="true" data-rule-required="true">
                             <label for="marital-common">Living common law</label>
                           </li>
-                          <li class="radio">
+                          <!-- <li class="radio">
                             <input type="radio" name="maritalStatus" id="marital-divorced" value="false" data-rule-required="true">
                             <label for="marital-divorced">Divorced</label>
                           </li>
@@ -1208,6 +1208,32 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                           <li class="radio">
                             <input type="radio" name="maritalStatus" id="marital-widowed" value="false" data-rule-required="true">
                             <label for="marital-widowed">Widowed</label>
+                          </li> -->
+                        </ul>
+                      </fieldset>
+
+
+                      <fieldset id="marital-change" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you become separated, divorced or widowed during 2022? <strong class="required">(required)</strong></span></legend>
+                        
+                        <p><a href="#separated-help" aria-controls="dependant-help" class="wb-lbx" role="button">You are only considered separated after 90 days <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                        <section id="separated-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                          <header class="modal-header">
+                            <h2 class="modal-title">You are only considered separated after 90 days</h2>
+                          </header>
+                          <div class="modal-body">
+                              <p>You are considered separated by the CRA if you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</p>
+                            </div>
+                        </section>
+                        
+                        <ul class="list-unstyled">
+                          <li class="radio">
+                            <input type="radio" name="maritalChange" id="marital-change-yes" value="true" data-rule-required="true">
+                            <label for="marital-change-yes">Yes</label>
+                          </li>
+                          <li class="radio">
+                            <input type="radio" name="maritalChange" id="marital-change-no" value="false" data-rule-required="true">
+                            <label for="marital-change-no">No</label>
                           </li>
                         </ul>
                       </fieldset>
@@ -1243,21 +1269,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         </ul>
                       </fieldset>
 
-
-                      <fieldset id="marital-change" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> occur during the year 2022? <strong class="required">(required)</strong></span></legend>
-                        <ul class="list-unstyled">
-                          <li class="radio">
-                            <input type="radio" name="maritalChange" id="marital-change-yes" value="true" data-rule-required="true">
-                            <label for="marital-change-yes">Yes</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="maritalChange" id="marital-change-no" value="false" data-rule-required="true">
-                            <label for="marital-change-no">No</label>
-                          </li>
-                        </ul>
-                      </fieldset>
-
                       <fieldset id="dependants-question" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
                         <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> occur during the year 2021? <strong class="required">(required)</strong></span></legend>
                         <ul class="list-unstyled">
@@ -1277,8 +1288,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
                         <p class="marital-dependants hidden">As you had dependants, your average family net income must be $35,000 or less.</p>
                         <p class="marital-true hidden">You and your partner's average family net income must be $35,000 or less.</p>
-                        <p class="marital-change-true hidden">As you were single on December 1, 2022, your net income must be $20,000 or less. Because of the change in marital status, your rent will be calculated as 50% of your rent before the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> and 100% afterwards.</p>
                         <p class="marital-false hidden">As you were single, your average net income must be $20,000 or less.</p>
+                        <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p>
                         <p class="marital-false marital-change-true marital-true marital-dependants hidden">Go to the next step to continue the calculation.</p>
                       </div>
                     </div>
@@ -1688,7 +1699,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
       });
       
       function maritalQuestions(target) {
-        $("#marital-change").addClass("hidden");
         $(".marital-unanswered").removeClass("hidden");
         $(".marital-true").addClass("hidden");
         $(".marital-change-true").addClass("hidden");
@@ -1704,57 +1714,50 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $(".rent-paid-separation").addClass("hidden");
         $(".marital-dependants").addClass("hidden");
         $("#dependants-q").addClass("hidden");
-
-        if ($('#marital-single:checked').length > 0) {
-          $("#dependants-q").removeClass("hidden");
-          if ($('#dependant-2022-yes:checked').length > 0) {
-            $(".indfam").html("family");
-            $(".marital-unanswered").addClass("hidden");
-            $(".marital-dependants").removeClass("hidden");
-          } else if ($('#dependant-2022-no:checked').length > 0) {
-            $(".spouse-label").html("common law partner");
-            $(".marital-unanswered").addClass("hidden");
-            $(".marital-false").removeClass("hidden");
-          }
-        } else if ($('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
-          $(".indfam").html("family");
-          $(".marital-unanswered").addClass("hidden");
-          $(".marital-true").removeClass("hidden");
-          $(".spouse-specific").removeClass("hidden");
-          if ($('#marital-spouse:checked').length > 0) {
-            $(".spouse-label").html("spouse");
-          } else {
-            $(".spouse-label").html("common law partner");
-          }
-          $("#spouseNetIncomeElm").removeClass("hidden");
-        } else if ($('#marital-divorced:checked').length > 0) {
-          $(".divorce-label").removeClass("hidden");
-          maritalChangeQuestion(target);
-        } else if ($('#marital-separated:checked').length > 0) {
-          $(".separation-label").removeClass("hidden");
-          maritalChangeQuestion(target);
-        } else if ($('#marital-widowed:checked').length > 0) {
-          $(".death-label").removeClass("hidden");
-          maritalChangeQuestion(target);
+        if ($('#marital-single:checked').length > 0 || $('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
+          $("#marital-change").removeClass("hidden");
+        } else {
+          $("#marital-change").addClass("hidden");
         }
-      }
 
-      function maritalChangeQuestion(target) {
-        $("#marital-change").removeClass("hidden");
         if ($('#marital-change-yes:checked').length > 0) {
-          $(".marital-unanswered").addClass("hidden");
           $(".marital-change-true").removeClass("hidden");
-          // $(".spouse-specific").removeClass("hidden");
-          // $(".spouse-label").html("spouse or common law partner");
-          // $("#spouseNetIncomeElm").removeClass("hidden");
           $(".rent-paid-no-separation").addClass("hidden");
           $(".rent-paid-separation").removeClass("hidden");
         } else if ($('#marital-change-no:checked').length > 0) {
+          $(".marital-change-true").addClass("hidden");
           $(".marital-unanswered").addClass("hidden");
           $(".marital-false").removeClass("hidden");
         }
+        
+        if ($('#marital-single:checked').length > 0) {
+          if ($('#marital-change-yes:checked').length > 0 || $('#marital-change-no:checked').length > 0) {
+            $("#dependants-q").removeClass("hidden");
+            if ($('#dependant-2022-yes:checked').length > 0) {
+              $(".indfam").html("family");
+              $(".marital-unanswered").addClass("hidden");
+              $(".marital-dependants").removeClass("hidden");
+            } else if ($('#dependant-2022-no:checked').length > 0) {
+              $(".spouse-label").html("common law partner");
+              $(".marital-unanswered").addClass("hidden");
+              $(".marital-false").removeClass("hidden");
+            }
+          }
+        } else if ($('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
+          if ($('#marital-change-yes:checked').length > 0 || $('#marital-change-no:checked').length > 0) {
+            $(".indfam").html("family");
+            $(".marital-unanswered").addClass("hidden");
+            $(".marital-true").removeClass("hidden");
+            $(".spouse-specific").removeClass("hidden");
+            if ($('#marital-spouse:checked').length > 0) {
+              $(".spouse-label").html("spouse");
+            } else {
+              $(".spouse-label").html("common law partner");
+            }
+            $("#spouseNetIncomeElm").removeClass("hidden");
+          }
+        }
       }
-
 
       function residencyQuestions(target) {
         //resets
