@@ -1746,7 +1746,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
                         <!-- <ul class="fa-ul"> -->
-                          <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span class="eligibility-verb">qualifies</span> as an <span class="indfam">individual</span>.</p>
+                          <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span id="qualify" class="hidden">qualifies</span><span id="doesnt-qualify" class="hidden">doesn't qualify</span> as an <span class="indfam">individual</span>.</p>
                           <p>Your rent paid in 2022 is <output class="h4 mrgn-tp-0" style="display: inline;" name="rent-percentage"><strong>%0</strong></output> of your 2021 income and would qualify for the benefit.</p>
                         <!-- </ul> -->
                         <p>Ensure you meet <a href="who-apply.html">all the other eligibility criteria</a> before you apply.</p>
@@ -1915,7 +1915,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/js/theme.min.js"></script>
 
   <script type="text/javascript">
-      var claimPeriod, nonresident, relationship;
+      var claimPeriod, nonresident, familyStatus;
       var $document = wb.doc;
       rdsp = function() {
         return $(":input[type=radio][name=rdsp]:checked", "#housing_cal_form").data("rdsp") || false;
@@ -1966,6 +1966,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         } else {
           $("#marital-change").addClass("hidden");
         }
+        familyStatus = "ind";
 
         if ($('#marital-change-yes:checked').length > 0) {
           $(".marital-change-true").removeClass("hidden");
@@ -1984,6 +1985,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               $(".indfam").html("family");
               $(".marital-unanswered").addClass("hidden");
               $(".marital-dependants").removeClass("hidden");
+              familyStatus = "fam";
             } else if ($('#dependant-2022-no:checked').length > 0) {
               $(".spouse-label").html("common law partner");
               $(".marital-unanswered").addClass("hidden");
@@ -1993,6 +1995,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         } else if ($('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
           if ($('#marital-change-yes:checked').length > 0 || $('#marital-change-no:checked').length > 0) {
             $(".indfam").html("family");
+            familyStatus = "fam";
             $(".marital-unanswered").addClass("hidden");
             $(".marital-true").removeClass("hidden");
             $(".spouse-specific").removeClass("hidden");
@@ -2074,14 +2077,14 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
 
 
-      $("#maritalStatus", "#housing_cal_form").change(function () {
-        // relationship = $(this).find(":selected").data("marital-add");
-        if (relationship === true) {
-          $("#spouseNetIncomeElm").removeClass("hidden");
-        } else {
-          $("#spouseNetIncomeElm").addClass("hidden");
-        }
-      });
+      // $("#maritalStatus", "#housing_cal_form").change(function () {
+      //   // relationship = $(this).find(":selected").data("marital-add");
+      //   if (relationship === true) {
+      //     $("#spouseNetIncomeElm").removeClass("hidden");
+      //   } else {
+      //     $("#spouseNetIncomeElm").addClass("hidden");
+      //   }
+      // });
 
       $document.on("click vclick touchstart", "input[type=radio][name=rdsp]", function (event) {
         if (rdsp() === true) {
@@ -2111,26 +2114,41 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           style: "currency",
           currency: "CAD"
         }),
+        rentPercentage = 0;
         netIncome = parseInt($("#netIncome").val(), 10) || 0,
         spousalNetIncome = parseInt($("#spouseNetIncome").val(), 10) || 0,
         worldIncome = parseInt($("#worldIncome").val(), 10) || 0,
         spouseWorldIncome = parseInt($("#spouseWorldIncome").val(), 10) || 0,
         uccbAndRdspIncome = parseInt($("#uccbAndRdspIncome").val(), 10) || 0,
-        uccbAndRdspRepayment = parseInt($("#uccbAndRdspRepayment").val(), 10) || 0;
-        rentAmount = parseInt($("#rent-paid-2022").val(), 10) || 0;
+        uccbAndRdspRepayment = parseInt($("#uccbAndRdspRepayment").val(), 10) || 0,
+        rentAmount = parseInt($("#rent-paid-2022").val(), 10) || 0,
+        rentAmountBefore = parseInt($("#rent-paid-2022-before").val(), 10) || 0,
+        rentAmountAfter = parseInt($("#rent-paid-2022-after").val(), 10) || 0;
+
         afni = netIncome + spousalNetIncome + worldIncome + spouseWorldIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
-        rentPercentage = rentAmount / afni;
+        if ($('#marital-change-yes:checked').length > 0) {
+          rentPercentage = ((rentAmountBefore / 2) + rentAmountAfter) / afni;
+        } else if ($('#marital-change-no:checked').length > 0) {
+          rentPercentage = rentAmount / afni;
+        }
+        
         /*  Generate results  */
         $("#results").removeClass("hidden");
+        $("#qualify").addClass("hidden");
+        $("#doesnt-qualify").addClass("hidden");
         $("output[name=net-income-value]").html(formatter.format(netIncome));
         $("output[name=spouse-net-income-value]").html(formatter.format(spousalNetIncome));
         $("output[name=household-income-value]").html(formatter.format(netIncome + spousalNetIncome + worldIncome + spouseWorldIncome));
         $("output[name=avg-fam-net-income-value]").html(formatter.format(afni));
         $("output[name=rent-percentage]").html(toPercent(rentPercentage * 100));
-        if (afni <= eligible_annual_household_income) {
+        console.log("familyStatus:" + familyStatus);
+        console.log("afni:" + afni);
+        if ((afni <= 35000 && familyStatus == "fam") || (afni <= 20000 && familyStatus == "ind")) {
           $("#qualify").removeClass("hidden");
+          console.log("qualify");
         } else {
           $("#doesnt-qualify").removeClass("hidden");
+          console.log("doesn't qualify");
         }
         //event.preventDefault();
       }
