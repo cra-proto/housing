@@ -2104,7 +2104,10 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         }
         updateResults();
       });
-      
+
+      $("#rent-paid-2022, #rent-paid-2022-before, #rent-paid-2022-after", "#housing_cal_form").change(function () {
+        updateResults();
+      });
 
      
       function updateResults() {
@@ -2115,15 +2118,15 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           currency: "CAD"
         }),
         rentPercentage = 0;
-        netIncome = parseInt($("#netIncome").val(), 10) || 0,
-        spousalNetIncome = parseInt($("#spouseNetIncome").val(), 10) || 0,
-        worldIncome = parseInt($("#worldIncome").val(), 10) || 0,
-        spouseWorldIncome = parseInt($("#spouseWorldIncome").val(), 10) || 0,
-        uccbAndRdspIncome = parseInt($("#uccbAndRdspIncome").val(), 10) || 0,
-        uccbAndRdspRepayment = parseInt($("#uccbAndRdspRepayment").val(), 10) || 0,
-        rentAmount = parseInt($("#rent-paid-2022").val(), 10) || 0,
-        rentAmountBefore = parseInt($("#rent-paid-2022-before").val(), 10) || 0,
-        rentAmountAfter = parseInt($("#rent-paid-2022-after").val(), 10) || 0;
+        netIncome = zeroIfEmpty($("#netIncome").val(), 10) || 0,
+        spousalNetIncome = zeroIfEmpty($("#spouseNetIncome").val(), 10) || 0,
+        worldIncome = zeroIfEmpty($("#worldIncome").val(), 10) || 0,
+        spouseWorldIncome = zeroIfEmpty($("#spouseWorldIncome").val(), 10) || 0,
+        uccbAndRdspIncome = zeroIfEmpty($("#uccbAndRdspIncome").val(), 10) || 0,
+        uccbAndRdspRepayment = zeroIfEmpty($("#uccbAndRdspRepayment").val(), 10) || 0,
+        rentAmount = zeroIfEmpty($("#rent-paid-2022").val(), 10) || 0,
+        rentAmountBefore = zeroIfEmpty($("#rent-paid-2022-before").val(), 10) || 0,
+        rentAmountAfter = zeroIfEmpty($("#rent-paid-2022-after").val(), 10) || 0;
 
         afni = netIncome + spousalNetIncome + worldIncome + spouseWorldIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
         if ($('#marital-change-yes:checked').length > 0) {
@@ -2140,6 +2143,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $("output[name=spouse-net-income-value]").html(formatter.format(spousalNetIncome));
         $("output[name=household-income-value]").html(formatter.format(netIncome + spousalNetIncome + worldIncome + spouseWorldIncome));
         $("output[name=avg-fam-net-income-value]").html(formatter.format(afni));
+        console.log("rentPercentage: " + rentPercentage);
         $("output[name=rent-percentage]").html(toPercent(rentPercentage * 100));
         console.log("familyStatus:" + familyStatus);
         console.log("afni:" + afni);
@@ -2179,6 +2183,17 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           return parseFloat(percentage).toFixed(2) + '\xa0%';
         } else {
           return parseFloat(percentage).toFixed(2) + '%';
+        }
+      }
+       /**
+       * zeroIfEmpty()
+       * return 0 if the number cannot be parsed into a float; does not account * for letter values.
+       */
+       function zeroIfEmpty(fieldVal) {
+        if (fieldVal != null && fieldVal != "") {
+          return parseFloat(fieldVal);
+        } else {
+          return 0;
         }
       }
     </script>
