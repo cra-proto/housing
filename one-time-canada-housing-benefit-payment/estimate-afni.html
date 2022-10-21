@@ -1743,30 +1743,52 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Estimated benefit amount</span></legend>
                     <div class="panel-body mrgn-lft-sm">
 
-                      <p>Based on the amounts you entered:</p>
-                      <!-- <ul class="fa-ul"> -->
-                        <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span class="eligibility-verb">qualifies</span> as an <span class="indfam">individual</span>.</p>
-                        <p>Your rent paid in 2022 is <output class="h4 mrgn-tp-0" style="display: inline;" name="rent-percentage"><strong>%0</strong></output> of your 2021 income and would qualify for the benefit.</p>
-                      <!-- </ul> -->
-                      <p>Ensure you meet <a href="who-apply.html">all the other eligibility criteria</a> before you apply.</p>
+                      <div id="afni-statement">
+                        <p>Based on the amounts you entered:</p>
+                        <!-- <ul class="fa-ul"> -->
+                          <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span class="eligibility-verb">qualifies</span> as an <span class="indfam">individual</span>.</p>
+                          <p>Your rent paid in 2022 is <output class="h4 mrgn-tp-0" style="display: inline;" name="rent-percentage"><strong>%0</strong></output> of your 2021 income and would qualify for the benefit.</p>
+                        <!-- </ul> -->
+                        <p>Ensure you meet <a href="who-apply.html">all the other eligibility criteria</a> before you apply.</p>
 
-                      <details class="mrgn-bttm-md">
-                        <summary>Show the math for your average family net income</summary>
-                        <p>Your adjusted family net income (AFNI) for this benefit is:</p>
-                        <ul class="fa-ul lst-spcd">
-                            <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="net-income-value">$0</output><span class="text-muted"> (your net income)</span></span></li>
-                            <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="spouse-net-income-value">$0</output><span class="text-muted"> (your spouse's net income)</span></span></li>
-                            <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
-                        </ul>
-                        <br>
-                        <ul class="fa-ul lst-spcd">
-                            <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
-                            <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-income-value">$0</output><span class="text-muted"> (UCCB and RDSP income)</span></span></li>
-                            <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-payment-value">$0</output><span class="text-muted"> (UCCB and RDSP repayment)</span></span></li>
-                            <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="avg-fam-net-income-value">$0</output><span class="text-muted"> (your adjusted family net income)</span></span></li>
-                        </ul>
-                      </details>
+                        <details class="mrgn-bttm-md">
+                          <summary>Show the math for your average family net income</summary>
+                          <p>Your adjusted family net income (AFNI) for this benefit is:</p>
+                          <ul class="fa-ul lst-spcd">
+                              <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="net-income-value">$0</output><span class="text-muted"> (your net income)</span></span></li>
+                              <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="spouse-net-income-value">$0</output><span class="text-muted"> (your spouse's net income)</span></span></li>
+                              <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
+                          </ul>
+                          <br>
+                          <ul class="fa-ul lst-spcd">
+                              <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
+                              <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-income-value">$0</output><span class="text-muted"> (UCCB and RDSP income)</span></span></li>
+                              <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-payment-value">$0</output><span class="text-muted"> (UCCB and RDSP repayment)</span></span></li>
+                              <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="avg-fam-net-income-value">$0</output><span class="text-muted"> (your adjusted family net income)</span></span></li>
+                          </ul>
+                        </details>
+                      </div>
 
+                      <p class="hidden-print"><a href="#pp-statement" class="wb-lbx btn btn-default btn-lg" role="button"><span class="h3"><span class="glyphicon glyphicon-print"></span> Print preview<span class="wb-inv"> AFNI and rent statement</span></span></a></p>
+                      <section id="pp-statement" class="mfp-hide modal-dialog modal-content overlay-def experimental">
+                        <header class="modal-header">
+                          <h2 class="modal-title">Print preview for AFNI and rent statement</h2>
+                        </header>
+                        <div class="modal-body">
+                          <div data-ajax-replace=" #afni-statement"></div>
+                          <ul class="list-inline">
+                            <li>
+                              <button type="button" onclick="window.print()" class="btn btn-success btn-lg"><span
+                                      class="glyphicon glyphicon-print"></span> Print this statement</button>
+                            </li>
+                            <li class="pull-right">
+                              <button type="button" title="Close overlay" class="btn btn-sm btn-default pull-right popup-modal-dismiss"
+                                    >Close<span class="wb-inv"> overlay</span></button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer hidden"> </div>
+                      </section>
 
 
                         <!-- 
@@ -1813,7 +1835,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   </fieldset>
 
 
-                  <input id="calc-famly-income" class="btn btn-primary" type="submit" value="Check if your family income qualifies">
+                  <input id="calc-famly-income" class="btn btn-primary hidden" type="submit" value="Check if your family income qualifies">
                 </form>
               </div>
             </div>
