@@ -1746,7 +1746,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
                         <!-- <ul class="fa-ul"> -->
-                          <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span id="qualify" class="hidden">qualifies</span><span id="doesnt-qualify" class="hidden">doesn't qualify</span> as an <span class="indfam">individual</span>.</p>
+                          <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span id="qualify" class="hidden">qualifies</span><span id="doesnt-qualify" class="hidden">doesn't qualify</span> as <span class="">a</span><span class="">an</span> <span class="indfam">individual</span>.</p>
                           <p>Your rent paid in 2022 is <output class="h4 mrgn-tp-0" style="display: inline;" name="rent-percentage"><strong>%0</strong></output> of your 2021 income and would qualify for the benefit.</p>
                         <!-- </ul> -->
                         <p>Ensure you meet <a href="who-apply.html">all the other eligibility criteria</a> before you apply.</p>
@@ -1967,6 +1967,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           $("#marital-change").addClass("hidden");
         }
         familyStatus = "ind";
+        $(".indfam-prep").html("an");
 
         if ($('#marital-change-yes:checked').length > 0) {
           $(".marital-change-true").removeClass("hidden");
@@ -1983,6 +1984,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             $("#dependants-q").removeClass("hidden");
             if ($('#dependant-2022-yes:checked').length > 0) {
               $(".indfam").html("family");
+              $(".indfam-prep").html("a");
               $(".marital-unanswered").addClass("hidden");
               $(".marital-dependants").removeClass("hidden");
               familyStatus = "fam";
@@ -1995,6 +1997,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         } else if ($('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
           if ($('#marital-change-yes:checked').length > 0 || $('#marital-change-no:checked').length > 0) {
             $(".indfam").html("family");
+            $(".indfam-prep").html("a");
             familyStatus = "fam";
             $(".marital-unanswered").addClass("hidden");
             $(".marital-true").removeClass("hidden");
