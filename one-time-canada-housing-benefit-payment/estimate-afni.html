@@ -1146,12 +1146,12 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
     </aside>//-->
     <section class="gcnav-section">
       <h1 property="name" id="wb-cont">Estimate your income and rent</h1>
-      <p>Estimate your average family net income for the housing benefit to check if:</p>
+      <p>Estimate your adjusted family net income for the housing benefit to check if:</p>
       <ul>
         <li>it is $35,000 or less for families, or $20,000 or less for individuals</li>
-        <li>you paid at least 30% of that average family net income in rent</li>
+        <li>you paid at least 30% of that adjusted family net income in rent</li>
       </ul>
-      <p>If you have access a CRA <a href="">My Account</a>, you can alternatively look up your average family net income for the benefit by going to the application form.</p>
+      <p>If you have access a CRA <a href="">My Account</a>, you can alternatively look up your adjusted family net income for the benefit by going to the application form.</p>
       <p><strong class="text-warning">Warning:</strong> This is an online estimator, <strong>not the application</strong>. This page does not save any data, so if you leave or refresh the page you may need to enter the information again.</p>
               <div class="row mrgn-tp-lg">
                 <div class="wb-frmvld col-sm-12 provisional wb-steps">
@@ -1286,8 +1286,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div class="well text-muted mrgn-tp-md" id="marital-summary">
                         <h3 class="mrgn-tp-0">Summary of marital status</h3>
                         <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
-                        <p class="marital-dependants hidden">As you had dependants, your average family net income must be $35,000 or less.</p>
-                        <p class="marital-true hidden">You and your partner's average family net income must be $35,000 or less.</p>
+                        <p class="marital-dependants hidden">As you had dependants, your adjusted family net income must be $35,000 or less.</p>
+                        <p class="marital-true hidden">You and your partner's adjusted family net income must be $35,000 or less.</p>
                         <p class="marital-false hidden">As you were single, your average net income must be $20,000 or less.</p>
                         <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p>
                         <p class="marital-false marital-change-true marital-true marital-dependants hidden">Go to the next step to continue the calculation.</p>
@@ -1752,7 +1752,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <p>Ensure you meet <a href="who-apply.html">all the other eligibility criteria</a> before you apply.</p>
 
                         <details class="mrgn-bttm-md">
-                          <summary>Show the math for your average family net income</summary>
+                          <summary>Show the math for your adjusted family net income</summary>
                           <p>Your adjusted family net income (AFNI) for this benefit is:</p>
                           <ul class="fa-ul lst-spcd">
                               <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="net-income-value">$0</output><span class="text-muted"> (your net income)</span></span></li>
@@ -1843,19 +1843,19 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
 <!--               
                 <div id="crb-statement">
-                  <p>Your average family net income (<abbr title="Average Family Net Income">AFNI</abbr>) is:</p>
+                  <p>Your adjusted family net income (<abbr title="Adjusted Family Net Income">AFNI</abbr>) is:</p>
                   <ul class="fa-ul lst-spcd">
                       <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="net-income-value">$0</output><span class="text-muted"> (your net income)</span></span></li>
                       <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="spouse-net-income-value">$0</output><span class="text-muted"> (your spouse's net income)</span></span></li>
                       <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
                   </ul>
                   <div class="alert alert-success provisional hidden" id="qualify">
-                      <p>Your <abbr title="Average Family Net Income">AFNI</abbr> is <span class="mrgn-tp-0 h5"><output style="display: inline;" name="avg-fam-net-income-value">$0</output></span></p>
+                      <p>Your <abbr title="Adjusted Family Net Income">AFNI</abbr> is <span class="mrgn-tp-0 h5"><output style="display: inline;" name="avg-fam-net-income-value">$0</output></span></p>
                       <h3>Based on the information you entered, your income and rent would qualify for the one-time payment</h3>
                       <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In justo nulla, porttitor ut euismod sed, lacinia sit amet turpis.</p>
                   </div>
                   <div class="alert alert-danger provisional hidden" id="doesnt-qualify">
-                      <p>Your <abbr title="Average Family Net Income">AFNI</abbr> is <span class="mrgn-tp-0 h5"><output style="display: inline;" name="avg-fam-net-income-value">$0</output></span></p>
+                      <p>Your <abbr title="Adjusted Family Net Income">AFNI</abbr> is <span class="mrgn-tp-0 h5"><output style="display: inline;" name="avg-fam-net-income-value">$0</output></span></p>
                       <h3>You do not qualify</h3>
                       <p class="text-muted small">Phasellus congue mauris ipsum, at faucibus tellus euismod at.</p>
                   </div>
