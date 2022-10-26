@@ -1716,8 +1716,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Rent paid in 2022</span></legend>
                     <div class="panel-body mrgn-lft-sm">
                       <p>Indicate your rent costs for your principal residence(s) during 2022.</p>
+                      <p class="not-single hidden">If you were divorced, separated or widowed <span class="spouse-specific">in a previous marriage or common law relationship</span> during 2022, you should only include rent you paid and not your previous spouse. This might be from a formal contractual arrangement or a verbal agreement with your previous spouse.</p>
                       <p>If you lived at more than one address during 2022, add the rent for each principal residence. Do not include rent from more than one residence for overlapping time periods.</p>
-
 
                       <div class="form-group rent-paid-no-separation">
                         <label for="rent-paid-2022"><span class="field-name">Rent paid for your principal residence in 2022 <span class="wb-inv">(dollars only, no cents)</span></label>
@@ -1777,7 +1777,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
                         <!-- <ul class="fa-ul"> -->
-                          <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span id="qualify" class="hidden">qualifies</span><span id="doesnt-qualify" class="hidden">doesn't qualify</span> as <span class="">a</span><span class="">an</span> <span class="indfam">individual</span>.</p>
+                          <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span id="qualify" class="hidden">qualifies</span><span id="doesnt-qualify" class="hidden">doesn't qualify</span> as <span class="indfam-prep">an</span> <span class="indfam">individual</span>.</p>
                           <p>Your rent paid in 2022 is <output class="h4 mrgn-tp-0" style="display: inline;" name="rent-percentage"><strong>%0</strong></output> of your 2021 income and would qualify for the benefit.</p>
                         <!-- </ul> -->
                         <p>Ensure you meet <a href="who-apply.html">all the other eligibility criteria</a> before you apply.</p>
@@ -1992,6 +1992,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $(".rent-paid-separation").addClass("hidden");
         $(".marital-dependants").addClass("hidden");
         $("#dependants-q").addClass("hidden");
+        $(".not-single").removeClass("hidden");
+
         // if ($('#marital-single:checked').length > 0 || $('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
         //   $("#marital-change").removeClass("hidden");
         // } else {
@@ -2011,6 +2013,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         // }
         
         if ($('#marital-single:checked').length > 0) {
+          $(".not-single").addClass("hidden");
+          $(".spouse-label").html("single");
           // if ($('#marital-change-yes:checked').length > 0 || $('#marital-change-no:checked').length > 0) {
             $("#dependants-q").removeClass("hidden");
             if ($('#dependant-2022-yes:checked').length > 0) {
