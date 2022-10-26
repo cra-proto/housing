@@ -1847,8 +1847,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                           <br>
                           <ul class="fa-ul lst-spcd">
                               <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
-                              <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-income-value">$0</output><span class="text-muted"> (UCCB and RDSP income)</span></span></li>
-                              <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-payment-value">$0</output><span class="text-muted"> (UCCB and RDSP repayment)</span></span></li>
+                              <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span> <span class="h5"><output style="display: inline;" name="uccb-rdsp-income-value">$0</output><span class="text-muted"> (UCCB and RDSP income)</span></span></li>
+                              <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="uccb-rdsp-repayment-value">$0</output><span class="text-muted"> (UCCB and RDSP repayment)</span></span></li>
                               <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="avg-fam-net-income-value">$0</output><span class="text-muted"> (your adjusted net income)</span></span></li>
                           </ul>
                         </details>
@@ -2259,9 +2259,13 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $("#results").removeClass("hidden");
         $(".qualify").addClass("hidden");
         $(".doesnt-qualify").addClass("hidden");
-        $("output[name=net-income-value]").html(formatter.format(netIncome));
-        $("output[name=spouse-net-income-value]").html(formatter.format(spousalNetIncome));
+        $("output[name=net-income-value]").html(formatter.format(netIncome + worldIncome));
+        $("output[name=spouse-net-income-value]").html(formatter.format(spousalNetIncome + spouseWorldIncome));
         $("output[name=household-income-value]").html(formatter.format(netIncome + spousalNetIncome + worldIncome + spouseWorldIncome));
+        
+        $("output[name=uccb-rdsp-income-value]").html(formatter.format(uccbAndRdspIncome));
+        $("output[name=uccb-rdsp-repayment-value]").html(formatter.format(uccbAndRdspRepayment));
+
         $("output[name=avg-fam-net-income-value]").html(formatter.format(afni));
         $("output[name=rent-percentage]").html(toPercent(rentPercentage * 100));
         if ((afni <= 35000 && familyStatus == "fam") || (afni <= 20000 && familyStatus == "ind")) {
