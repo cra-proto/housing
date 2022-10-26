@@ -1149,15 +1149,15 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
     </aside>//-->
     <section class="gcnav-section">
       <h1 property="name" id="wb-cont">Estimate your income and rent</h1>
-      <p>Estimate your adjusted family net income for the housing benefit to check if:</p>
+      <p>Estimate your adjusted net income for the housing benefit to check if:</p>
       <ul>
         <li>it is $35,000 or less for families, or $20,000 or less for individuals</li>
-        <li>you paid at least 30% of that adjusted family net income in rent</li>
+        <li>you paid at least 30% of that adjusted net income in rent</li>
       </ul>
-      <p>If you have access a CRA <a href="">My Account</a>, you can alternatively look up your adjusted family net income for the benefit by going to the application form.</p>
+      <p>If you have access a CRA <a href="">My Account</a>, you can alternatively look up your adjusted net income for the benefit by going to the application form.</p>
       <details class="mrgn-lft-md mrgn-tp-md">
-      <summary>What is adjusted family net income</summary>
-              <p class="mrgn-tp-md">Adjusted family net income is your household net income, minus any universal child care benefit (UCCB) and registered disability savings plan (RDSP) income received, plus any UCCB and RDSP amounts repaid.</p>
+      <summary>What is adjusted net income</summary>
+              <p class="mrgn-tp-md">Adjusted net income is your household net income, minus any universal child care benefit (UCCB) and registered disability savings plan (RDSP) income received, plus any UCCB and RDSP amounts repaid.</p>
               <p class="mrgn-tp-md">Your household net income includes your net income and your spouse's net income from all sources inside and outside Canada.</p>		    
       </details>
       <details class="mrgn-lft-md mrgn-tp-md">
@@ -1320,8 +1320,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div class="well text-muted mrgn-tp-md" id="marital-summary">
                         <h3 class="mrgn-tp-0">Summary of marital status</h3>
                         <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
-                        <p class="marital-dependants hidden">As you had dependants, your adjusted family net income must be $35,000 or less.</p>
-                        <p class="marital-true hidden">You and your partner's adjusted family net income must be $35,000 or less.</p>
+                        <p class="marital-dependants hidden">As you had dependants, your adjusted net income must be $35,000 or less.</p>
+                        <p class="marital-true hidden">You and your partner's adjusted net income must be $35,000 or less.</p>
                         <p class="marital-false hidden">As you were <span class="separationORsingle">single</span>, your adjusted net income must be $20,000 or less.</p>
                         <!-- <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p> -->
                         <p class="marital-false marital-change-true marital-true marital-dependants hidden">Go to the next step to continue the calculation.</p>
@@ -1780,14 +1780,14 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
                         <!-- <ul class="fa-ul"> -->
-                          <p>Your adjusted family net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span id="qualify" class="hidden">qualifies</span><span id="doesnt-qualify" class="hidden">doesn't qualify</span> as <span class="indfam-prep">an</span> <span class="indfam">individual</span>.</p>
+                          <p>Your adjusted net income (<output class="h4 mrgn-tp-0" style="display: inline;" name="avg-fam-net-income-value"><strong>$0</strong></output>) <span id="qualify" class="hidden">qualifies</span><span id="doesnt-qualify" class="hidden">doesn't qualify</span> as <span class="indfam-prep">an</span> <span class="indfam">individual</span>.</p>
                           <p>Your rent paid in 2022 is <output class="h4 mrgn-tp-0" style="display: inline;" name="rent-percentage"><strong>%0</strong></output> of your 2021 income and would qualify for the benefit.</p>
                         <!-- </ul> -->
                         <p>Ensure you meet <a href="who-apply.html">all the other eligibility criteria</a> before you apply.</p>
 
                         <details class="mrgn-bttm-md">
-                          <summary>Show the math for your adjusted family net income</summary>
-                          <p>Your adjusted family net income (AFNI) for this benefit is:</p>
+                          <summary>Show the math for your adjusted net income</summary>
+                          <p>Your adjusted net income for this benefit is:</p>
                           <ul class="fa-ul lst-spcd">
                               <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="net-income-value">$0</output><span class="text-muted"> (your net income)</span></span></li>
                               <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="spouse-net-income-value">$0</output><span class="text-muted"> (your spouse's net income)</span></span></li>
@@ -1798,7 +1798,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                               <li><span class="mrgn-tp-0 h5"><output style="display: inline;" name="household-income-value">$0</output><span class="text-muted"> (your household net income)</span></span></li>
                               <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-income-value">$0</output><span class="text-muted"> (UCCB and RDSP income)</span></span></li>
                               <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><output style="display: inline;" name="adjusted-payment-value">$0</output><span class="text-muted"> (UCCB and RDSP repayment)</span></span></li>
-                              <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="avg-fam-net-income-value">$0</output><span class="text-muted"> (your adjusted family net income)</span></span></li>
+                              <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><output style="display: inline;" name="avg-fam-net-income-value">$0</output><span class="text-muted"> (your adjusted net income)</span></span></li>
                           </ul>
                         </details>
                       </div>
@@ -1827,10 +1827,10 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                         <!-- 
                         <div id="crb-statement">
-                            <p>Based on the amounts you entered, your adjusted family net income for this benefit is: <span class="mrgn-tp-0 h5"><strong><span data-output="avg-fam-net-income-value">$0</span></strong></span></p>
+                            <p>Based on the amounts you entered, your adjusted net income for this benefit is: <span class="mrgn-tp-0 h5"><strong><span data-output="avg-fam-net-income-value">$0</span></strong></span></p>
                             <details class="mrgn-bttm-md">
                                 <summary>Show the math for this amount</summary>
-                                <p>Your adjusted family net income (AFNI) for this benefit is:</p>
+                                <p>Your adjusted net income for this benefit is:</p>
                                 <ul class="fa-ul lst-spcd">
                                     <li id="netIncomeResult"><span class="mrgn-tp-0 h5"><span data-output="net-income-value">$0</span><span class="text-muted"> (your net income)</span></span></li>
                                     <li id="partnerNetIncomeResult"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span><span class="h5"><span data-output="partner-net-income-value">$0</span><span class="text-muted"> (your <span data-partner-case="false">spouse</span>'s net income)</span></span></li>
@@ -1842,7 +1842,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                                     <li><span class="mrgn-tp-0 h5"><span data-output="household-income-value">$0</span><span class="text-muted"> (your household net income)</span></span></li>
                                     <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span><span class="h5"><span data-output="adjusted-income-value">$0</span><span class="text-muted"> (<abbr title="universal child care benefit">UCCB</abbr> and <abbr title="Registered disability savings plan">RDSP</abbr> income)</span></span></li>
                                     <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span><span class="h5"><span data-output="adjusted-payment-value">$0</span><span class="text-muted"> (<abbr title="universal child care benefit">UCCB</abbr> and <abbr title="Registered disability savings plan">RDSP</abbr> repayment)</span></span></li>
-                                    <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span><span class="mrgn-tp-0 h4"><span data-output="avg-fam-net-income-value">$0</span><span class="text-muted"> (your adjusted family net income)</span></span></li>
+                                    <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span><span class="mrgn-tp-0 h4"><span data-output="avg-fam-net-income-value">$0</span><span class="text-muted"> (your adjusted net income)</span></span></li>
                                 </ul>
                             </details>
                             
@@ -1857,7 +1857,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                             </div>
                             
                             <div class="alert alert-danger provisional hidden" id="doesnt-qualify">
-                                <p>Based on the amounts you entered, your adjusted family net income does not qualify for this benefit.</p>
+                                <p>Based on the amounts you entered, your adjusted net income does not qualify for this benefit.</p>
                             </div>
                             
                             <p class="text-muted small">This result is an estimate based on the information you entered. The CRA will determine your benefit amount when you apply.</p>
