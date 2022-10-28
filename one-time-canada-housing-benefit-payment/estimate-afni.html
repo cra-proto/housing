@@ -1862,12 +1862,10 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                           <div data-ajax-replace=" #afni-statement"></div>
                           <ul class="list-inline">
                             <li>
-                              <button type="button" onclick="window.print()" class="btn btn-success btn-lg"><span
-                                      class="glyphicon glyphicon-print"></span> Print this statement</button>
+                              <button type="button" onclick="window.print()" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-print"></span> Print this statement</button>
                             </li>
                             <li class="pull-right">
-                              <button type="button" title="Close overlay" class="btn btn-sm btn-default pull-right popup-modal-dismiss"
-                                    >Close<span class="wb-inv"> overlay</span></button>
+                              <button type="button" title="Close overlay" class="btn btn-sm btn-default pull-right popup-modal-dismiss">Close<span class="wb-inv"> overlay</span></button>
                             </li>
                           </ul>
                         </div>
@@ -2210,6 +2208,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $("#pp-statement #math-results-summary").attr("open", "open");
       });
 
+      // $document.on("click vclick touchstart", "#print-prev-button", function (event) {
+            
+      //     });
 
       $document.on("click vclick touchstart", "input[type=radio][name=uccb]", function (event) {
         if (uccb() === true) {
@@ -2285,7 +2286,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         }
         //event.preventDefault();
       }
-
       $(document).on("click", ".steps-wrapper button", function (event) {
         $("legend.wb-steps-active").parents().prevAll().find("legend.panel-heading").addClass("prev-wb-step");
         $("legend.wb-steps-active").parents().nextAll().find("legend.panel-heading").removeClass("prev-wb-step");
