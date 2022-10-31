@@ -13,18 +13,18 @@
     <!-- Meta data -->
     <!-- Meta data-->
     <!-- Load closure template scripts -->
-    <script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/cdts/compiled/soyutils.js"></script>
-    <script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/cdts/compiled/wet-en.js"></script>
+    <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/cdts/compiled/soyutils.js"></script>
+    <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/cdts/compiled/wet-en.js"></script>
 
     <!-- Write closure template -->
-    <script type="text/javascript">
+    <script >
         document.write(wet.builder.refTop({}));
     </script>
-    <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/méli-mélo/2022-06-banff.min.css">
-    <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css" />
+    <!-- <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/méli-mélo/2022-06-banff.min.css"> -->
+    <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/méli-mélo/2023-10-mount-revelstoke.css">
+    <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
     <link href="https://test.canada.ca/cra/css/custom.css" rel="stylesheet">
     <style>
-        @charset "utf-8";
 
 /* CSS Document */
 h1#wb-cont {
@@ -1084,7 +1084,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
     <div id="def-top">
     </div>
     <!-- Write closure template -->
-    <script type="text/javascript">
+    <script >
         var defTop = document.getElementById("def-top");
         defTop.outerHTML = wet.builder.top({
             lngLinks: [{
@@ -1116,7 +1116,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
     
     <main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
-      <div class="mwsgeneric-base-html parbase section">
 
 
     
@@ -1156,519 +1155,521 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
       </ul>
       <p>If you have access a CRA <a href="">My Account</a>, you can alternatively look up your adjusted net income for the benefit by going to the application form.</p>
       <details class="mrgn-lft-md mrgn-tp-md">
-      <summary>What is adjusted net income</summary>
-              <p class="mrgn-tp-md">Adjusted net income is your household net income, minus any universal child care benefit (UCCB) and registered disability savings plan (RDSP) income received, plus any UCCB and RDSP amounts repaid.</p>
-              <p class="mrgn-tp-md">Your household net income includes your net income and your spouse's net income from all sources inside and outside Canada.</p>		    
+        <summary>What is adjusted net income</summary>
+        <p class="mrgn-tp-md">Adjusted net income is your household net income, minus any universal child care benefit (UCCB) and registered disability savings plan (RDSP) income received, plus any UCCB and RDSP amounts repaid.</p>
+        <p class="mrgn-tp-md">Your household net income includes your net income and your spouse's net income from all sources inside and outside Canada.</p>		    
       </details>
       <details class="mrgn-lft-md mrgn-tp-md">
-      <summary>What is rent</summary>
-              <p class="mrgn-tp-md">Rent is payments you made in 2022 under a lease, licence or similar arrangement to occupy a principal residence in 2022.</p>
-              <p class="mrgn-tp-md">Rent includes payments:</p>		    
-                <ul>
-                  <li>for utilities or property taxes if <strong>all</strong> of the following are true</li>
-			<ul>
-				<li>utilities or property taxes were part of the rental arrangement</li>
-				<li>utilities or property taxes were paid to a person or entity who was a party to the lease, licence or arrangement</li>
-			</ul>
-                  <li>to a person related to you <strong>only</strong> if they reported it as other income on their tax return</li>			
-                </ul>
-              <p class="mrgn-tp-md">Rent does <strong>not</strong> include payments:</p>		    
-                <ul>
-                  <li>for utilities or property taxes if <strong>any</strong> of the following are true</li>
-			<ul>
-				<li>utilities or property taxes were <strong>not</strong> part of the rental arrangement</li>
-				<li>utilities or property taxes were paid to a person or entity who was <strong>not</strong> a party to the lease, licence or arrangement</li>
-			</ul>
-                  <li>to a person related to you if they did <strong>not</strong> report it as other income on their tax return</li>			
-                  <li>that will be deducted as a business expense</li>			
-                  <li>specified that are allocated to pay for meals, board or other services (if there is an amount of rent that is not identified on the lease that goes towards meals, board, or other services, only 90% of the rent is allowed to be included)</li>						
-                  <li>for a capital lease (“rent-to-own”)</li>				
-                </ul>		    
-      </details>
+        <summary>What is rent</summary>
+        <p class="mrgn-tp-md">Rent is payments you made in 2022 under a lease, licence or similar arrangement to occupy a principal residence in 2022.</p>
+        <p class="mrgn-tp-md">Rent includes payments:</p>		    
+          <ul>
+            <li>for utilities or property taxes if <strong>all</strong> of the following are true
+              <ul>
+                <li>utilities or property taxes were part of the rental arrangement</li>
+                <li>utilities or property taxes were paid to a person or entity who was a party to the lease, licence or arrangement</li>
+              </ul>
+            </li>
+            <li>to a person related to you <strong>only</strong> if they reported it as other income on their tax return</li>			
+          </ul>
+        <p class="mrgn-tp-md">Rent does <strong>not</strong> include payments:</p>		    
+          <ul>
+            <li>for utilities or property taxes if <strong>any</strong> of the following are true
+              <ul>
+                <li>utilities or property taxes were <strong>not</strong> part of the rental arrangement</li>
+                <li>utilities or property taxes were paid to a person or entity who was <strong>not</strong> a party to the lease, licence or arrangement</li>
+              </ul>
+            </li>
+            <li>to a person related to you if they did <strong>not</strong> report it as other income on their tax return</li>			
+            <li>that will be deducted as a business expense</li>			
+            <li>specified that are allocated to pay for meals, board or other services (if there is an amount of rent that is not identified on the lease that goes towards meals, board, or other services, only 90% of the rent is allowed to be included)</li>						
+            <li>for a capital lease (“rent-to-own”)</li>				
+          </ul>		    
+        </details>
         
-      <p><strong class="text-warning">Warning:</strong> This is an estimator, <strong>not the application</strong>. This page does not save any data, so if you leave or refresh the page you may need to enter the information again.</p>
-              <div class="row mrgn-tp-lg">
-                <div class="wb-frmvld col-sm-12 provisional wb-steps">
-                  <form id="housing_cal_form" name="proc_personal" action="#" method="get" autocomplete="off" class="panel panel-default">
+        <p><strong class="text-warning">Warning:</strong> This is an estimator, <strong>not the application</strong>. This page does not save any data, so if you leave or refresh the page you may need to enter the information again.</p>
+        <div class="row mrgn-tp-lg">
+          <div class="wb-frmvld col-sm-12 provisional wb-steps">
+            <form id="housing_cal_form" name="proc_personal" action="#" method="get" autocomplete="off" class="panel panel-default">
 
-                    <!--
-                      resident in 2021 - deemed or factual
-                      marital status - if separated/divorced/widowed, then when?
-                    -->
+              <!--
+                resident in 2021 - deemed or factual
+                marital status - if separated/divorced/widowed, then when?
+              -->
 
-                  <fieldset id="marital" class="panel-default p-0">
-                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Family status</span></legend>
-                    <div class="panel-body mrgn-lft-sm">
+            <fieldset id="marital" class="panel-default p-0">
+              <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Family status</span></legend>
+              <div class="panel-body mrgn-lft-sm">
 
-                      <fieldset id="marital-question" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">What was your marital status on December 1, 2022? <strong class="required">(required)</strong></span></legend>
-                        
-                        <p><a href="#maritalStatus-help" aria-controls="maritalStatus-help" class="wb-lbx" role="button">What is living common law? <span class="glyphicon glyphicon-question-sign"></span></a></p>
-                        <section id="maritalStatus-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                          <header class="modal-header">
-                            <h2 class="modal-title">What is living common law?</h2>
-                          </header>
-                          <div class="modal-body">
-                              <p>This applies to a person <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
-                              <p>In cases where you had a different marital status on file with the CRA on December 1, 2022, the CRA will use your reported marital status to calculate your eligibility, and not your actual marital status. <a href="contact.html">Contact the CRA</a> if this was not correct.</p>
-                              <!-- <dt class="mrgn-tp-lg">Separated</dt>
-                              <dd class="mrgn-tp-md">You are separated when you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</dd> -->
-                            <!-- </dl> -->
-                            <!-- <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html#def" target="help" rel="noopener noreferrer">marital status</a> for more information</p> -->
-                          </div>
-                        </section>
+                <fieldset id="marital-question" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">What was your marital status on December 1, 2022? <strong class="required">(required)</strong></span></legend>
+                  
+                  <p><a href="#maritalStatus-help" aria-controls="maritalStatus-help" class="wb-lbx" role="button">What is living common law? <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                  <section id="maritalStatus-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                    <header class="modal-header">
+                      <h2 class="modal-title">What is living common law?</h2>
+                    </header>
+                    <div class="modal-body">
+                        <p>This applies to a person <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
+                        <p>In cases where you had a different marital status on file with the CRA on December 1, 2022, the CRA will use your reported marital status to calculate your eligibility, and not your actual marital status. <a href="contact.html">Contact the CRA</a> if this was not correct.</p>
+                        <!-- <dt class="mrgn-tp-lg">Separated</dt>
+                        <dd class="mrgn-tp-md">You are separated when you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</dd> -->
+                      <!-- </dl> -->
+                      <!-- <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html#def" target="help" rel="noopener noreferrer">marital status</a> for more information</p> -->
+                    </div>
+                  </section>
 
-                        <ul class="list-unstyled">
-                          <li class="radio">
-                            <input type="radio" name="maritalStatus" id="marital-single" value="false" data-rule-required="true">
-                            <label for="marital-single">Single</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="maritalStatus" id="marital-spouse" value="true" data-rule-required="true">
-                            <label for="marital-spouse">Married</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="maritalStatus" id="marital-common" value="true" data-rule-required="true">
-                            <label for="marital-common">Living common law</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="maritalStatus" id="marital-divorced" value="false" data-rule-required="true">
-                            <label for="marital-divorced">Divorced</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="maritalStatus" id="marital-separated" value="false" data-rule-required="true">
-                            <label for="marital-separated">Separated</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="maritalStatus" id="marital-widowed" value="false" data-rule-required="true">
-                            <label for="marital-widowed">Widowed</label>
-                          </li>
+                  <ul class="list-unstyled">
+                    <li class="radio">
+                      <input type="radio" name="maritalStatus" id="marital-single" value="false" data-rule-required="true">
+                      <label for="marital-single">Single</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="maritalStatus" id="marital-spouse" value="true" data-rule-required="true">
+                      <label for="marital-spouse">Married</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="maritalStatus" id="marital-common" value="true" data-rule-required="true">
+                      <label for="marital-common">Living common law</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="maritalStatus" id="marital-divorced" value="false" data-rule-required="true">
+                      <label for="marital-divorced">Divorced</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="maritalStatus" id="marital-separated" value="false" data-rule-required="true">
+                      <label for="marital-separated">Separated</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="maritalStatus" id="marital-widowed" value="false" data-rule-required="true">
+                      <label for="marital-widowed">Widowed</label>
+                    </li>
+                  </ul>
+                </fieldset>
+
+
+                <!-- <fieldset id="marital-change" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you become separated, divorced or widowed during 2022? <strong class="required">(required)</strong></span></legend>
+                  
+                  <p><a href="#separated-help" aria-controls="dependant-help" class="wb-lbx" role="button">You are only considered separated after 90 days <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                  <section id="separated-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                    <header class="modal-header">
+                      <h2 class="modal-title">You are only considered separated after 90 days</h2>
+                    </header>
+                    <div class="modal-body">
+                        <p>You are considered separated by the CRA if you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</p>
+                      </div>
+                  </section>
+                  
+                  <ul class="list-unstyled">
+                    <li class="radio">
+                      <input type="radio" name="maritalChange" id="marital-change-yes" value="true" data-rule-required="true">
+                      <label for="marital-change-yes">Yes</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="maritalChange" id="marital-change-no" value="false" data-rule-required="true">
+                      <label for="marital-change-no">No</label>
+                    </li>
+                  </ul>
+                </fieldset> -->
+
+                <fieldset id="dependants-q" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you have one or more dependants (a child, minor or disabled adult) on December 1, 2022? <strong class="required">(required)</strong></span></legend>
+                  
+                  <p><a href="#dependant-help" aria-controls="dependant-help" class="wb-lbx" role="button">Who counts as a dependant? <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                  <section id="dependant-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                    <header class="modal-header">
+                      <h2 class="modal-title">Who counts as a dependant?</h2>
+                    </header>
+                    <div class="modal-body">
+                        <p>A dependant is someone who lives with you and relies on you for financial support. This includes:</p>
+                        <ul>
+                          <li>your parent or grandparent</li>
+                          <li>your child, grandchild, or sibling under 18 years of age</li>
+                          <li>your child, grandchild, or sibling 18 years of age or older with an impairment in physical or mental functions</li>
                         </ul>
-                      </fieldset>
+                        <p>If your dependant usually lives with you when not in school, the CRA considers that dependant to live with you.</p>
+                    </div>
+                  </section>
+
+                  <ul class="list-unstyled">
+                    <li class="radio">
+                      <input type="radio" name="dependant-2022" id="dependant-2022-yes" value="true" data-rule-required="true">
+                      <label for="dependant-2022-yes">Yes</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="dependant-2022" id="dependant-2022-no" value="false" data-rule-required="true">
+                      <label for="dependant-2022-no">No</label>
+                    </li>
+                  </ul>
+                </fieldset>
+
+                <!-- <fieldset id="divorce-question" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> occur during the year 2021? <strong class="required">(required)</strong></span></legend>
+                  <ul class="list-unstyled">
+                    <li class="radio">
+                      <input type="radio" name="dependants" id="dependant-yes" value="true" data-rule-required="true">
+                      <label for="dependant-yes">Yes</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="dependants" id="dependant-no" value="false" data-rule-required="true">
+                      <label for="dependant-no">No</label>
+                    </li>
+                  </ul>
+                </fieldset> -->
+
+                <div class="well text-muted mrgn-tp-md" id="marital-summary">
+                  <h3 class="mrgn-tp-0">Summary of marital status</h3>
+                  <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
+                  <p class="marital-dependants hidden">As you had dependants, your adjusted net income must be $35,000 or less.</p>
+                  <p class="marital-true hidden">You and your partner's adjusted net income must be $35,000 or less.</p>
+                  <p class="marital-false hidden">As you were <span class="separationORsingle">single</span>, your adjusted net income must be $20,000 or less.</p>
+                  <!-- <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p> -->
+                  <p class="marital-false marital-change-true marital-true marital-dependants hidden">Go to the next step to continue the calculation.</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- <fieldset id="residency" class="panel-default provisional p-0">
+              <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Residency status</span></legend>
+              <div class="panel-body mrgn-lft-sm">
+                <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Were you <span class="spouse-specific">and your <span class="spouse-label">spouse</span> </span><span class="field-name">resident in Canada</span> throughout all of 2021? <strong class="required">(required)</strong></span></legend>
+                  <ul class="list-unstyled">
+                    <li class="radio">
+                      <input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">
+                      <label for="resident-true">Yes</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">
+                      <label for="resident-false">No</label>
+                    </li>
+                  </ul>
+                </fieldset>
 
 
-                      <!-- <fieldset id="marital-change" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you become separated, divorced or widowed during 2022? <strong class="required">(required)</strong></span></legend>
-                        
-                        <p><a href="#separated-help" aria-controls="dependant-help" class="wb-lbx" role="button">You are only considered separated after 90 days <span class="glyphicon glyphicon-question-sign"></span></a></p>
-                        <section id="separated-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                          <header class="modal-header">
-                            <h2 class="modal-title">You are only considered separated after 90 days</h2>
-                          </header>
-                          <div class="modal-body">
-                              <p>You are considered separated by the CRA if you start living separate and apart from your spouse or common law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong> and you have not reconciled.</p>
-                            </div>
-                        </section>
-                        
+
+
+                <fieldset id="non-resident-ties" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When resident abroad in 2021, did you <span class="spouse-specific">and your <span class="spouse-label">spouse</span> </span>maintain close residential ties in Canada? <strong class="required">(required)</strong></span></legend>
+                  <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">What are close residential ties? <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                  <ul class="list-unstyled">
+                    <li class="radio">
+                      <input type="radio" name="nonResidentTies" id="non-resident-ties-yes" value="true" data-rule-required="true">
+                      <label for="non-resident-ties-yes">Yes (factual resident)</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="nonResidentTies" id="non-resident-ties-yes-but" value="true-false" data-rule-required="true">
+                      <label for="non-resident-ties-yes-but">Yes but income tax was paid to the other country</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="nonResidentTies" id="non-resident-ties-no" value="false" data-rule-required="true">
+                      <label for="non-resident-ties-no">No (no significant residential ties)</label>
+                    </li>
+                  </ul>
+                </fieldset>
+
+                <fieldset id="deemed-residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>were non-resident in Canada in 2021, did any of the following apply to you? <strong class="required">(required)</strong></span></legend>
+                  <ul class="list-unstyled">
+                    <li class="checkbox">
+                      <input type="checkbox" name="deemedResidency" id="deemed-resident-183" value="true" data-rule-required="true">
+                      <label for="deemed-resident-183">Stayed in Canada for 183 days or more during 2021 and are not considered resident of another country under the terms of a tax treaty between Canada and that country</label>
+                    </li>
+                    <li class="radio">
+                      <input type="checkbox" name="deemedResidency" id="deemed-resident-government" value="true" data-rule-required="true">
+                      <label for="deemed-resident-government">Are a Canadian government employee (any jurisdiction)</label>
+                    </li>
+                    <li class="radio">
+                      <input type="checkbox" name="deemedResidency" id="deemed-resident-forces" value="true" data-rule-required="true">
+                      <label for="deemed-resident-forces">Are a member of the Canadian Forces (or their overseas staff)</label>
+                    </li>
+                    <li class="radio">
+                      <input type="checkbox" name="deemedResidency" id="deemed-resident-development" value="true" data-rule-required="true">
+                      <label for="deemed-resident-development">Are working under a Canadian International Development Agency (CIDA) assistance program</label>
+                    </li>
+                    <li class="radio">
+                      <input type="checkbox" name="deemedResidency" id="deemed-resident-family" value="true" data-rule-required="true">
+                      <label for="deemed-resident-family">Are a family member of one of the above</label>
+                    </li>
+                    <li class="radio">
+                      <input type="checkbox" name="deemedResidency" id="deemed-resident-none" value="false" data-rule-required="true">
+                      <label for="deemed-resident-none">None of the above apply</label>
+                    </li>
+                  </ul>
+                </fieldset>
+
+
+
+                  <div class="well text-muted mrgn-tp-md" id="resident-summary">
+                    <h3 class="mrgn-tp-0">Summary of residency status</h3>
+                    <p class="residency-unanswered">Answer the questions above to determine your residency status. This will affect how you calculate your income for the tax year 2021.</p>
+                    <p class="canadian-resident hidden">You have indicated you were resident in Canada throughout 2021. Go to the next step to continue the calculation.</p>
+                    <p class="factual-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (factual resident). This might be because you were temporarily:</p>
+                    <ul class="factual-resident hidden">
+                      <li>working temporarily outside Canada</li>
+                      <li>teaching or attending school in another country</li>
+                      <li>commuting (going back and forth daily or weekly) from Canada to your place of work in the United States (U.S.)</li>
+                      <li>vacationing outside Canada</li>
+                      <li>spending part of the year in the <abbr title="United States"><span class="nowrap">U.S</span>.</abbr>, for example, for health reasons or on vacation</li>
+                    </ul>
+                    <p class="factual-resident hidden">Go to the next step to continue the calculation.</p>
+                    <p class="deemed-non-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (factual resident). Go to the next step to continue the calculation.</p>
+                    <p class="deemed-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (deemed resident). Go to the next step to continue the calculation.</p>
+                    <p class="non-resident hidden">Based on your responses, you were a non-resident of Canada for tax purposes for at least part of 2021.</p>
+                    <p class="non-resident hidden">To be eligible for the one-time Canada Housing Benefit payment, you must have been resident for at least part of 2021 and a tax return must be filed with the CRA before you can apply. If you were a resident for part of the year, go to the next step to continue the calculation.</p>
+                  </div>
+                </div>
+            </fieldset> -->
+
+
+            <fieldset id="income" class="panel-default p-0">
+              <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Household net income</span></legend>
+              <div class="panel-body mrgn-lft-sm">
+                <div class="form-group">
+                  <label for="netIncome" class="required">Your <span class="field-name">net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
+                  <div class="input-group col-sm-5">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" name="netIncome" size="7" maxlength="7" value="" id="netIncome" class="form-control text-right" data-rule-digits="true" required="required">
+                    <span class="input-group-addon">.00</span>
+                  </div>
+                  <p class="small">This is line 23600 of your 2021 tax return.</p>
+                </div>
+                
+                <div class="marital-true form-group hidden">
+                  <label for="spouseNetIncome" class="required">Your <span class="field-name"><span class="spouse-label">spouse</span>'s net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span><strong class="required">(required)</strong></label>
+                  <div class="input-group col-sm-5">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" name="spouse.netIncome" size="7" maxlength="7" value="" id="spouseNetIncome" class="form-control text-right" data-rule-digits="true">
+                    <span class="input-group-addon">.00</span>
+                  </div>
+                  <p class="small">This is line 23600 of your <span class="spouse-label">spouse</span>'s 2021 tax return.</p>
+                </div>
+
+                <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>report income in another country during 2021? <strong class="required">(required)</strong></span></legend>
+                  <p>You might have world income to report if you were resident in another country for part of 2021. Make sure to submit a sechedule X or RCXX with your 2021 tax return to declare your foreign income before you apply.</p>
+                  <ul class="list-unstyled">
+                    <li class="radio">
+                      <input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">
+                      <label for="resident-false">Yes</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">
+                      <label for="resident-true">No</label>
+                    </li>
+                  </ul>
+                </fieldset>
+
+                <div id="worldIncomeElm" class="form-group hidden">
+                  <label for="worldIncome" class="required">Your <span class="field-name">world income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
+                  <a href="#worldIncome-help" aria-controls="worldIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is world income?</span></a>
+                  <div class="input-group col-sm-5">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" name="worldIncome" size="7" maxlength="7" value="" id="worldIncome" class="form-control text-right" data-rule-digits="true">
+                    <span class="input-group-addon">.00</span>
+                  </div>
+                  <div class="marital-true hidden">
+                    <label for="spouseWorldIncome" class="required">Your <span class="field-name"><span class="spouse-label">spouse</span>'s world income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
+                    <a href="#worldIncome-help" aria-controls="worldIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is world income?</span></a>
+                    <div class="input-group col-sm-5">
+                      <span class="input-group-addon">$</span>
+                      <input type="text" name="spouseWorldIncome" size="7" maxlength="7" value="" id="spouseWorldIncome" class="form-control text-right" data-rule-digits="true">
+                      <span class="input-group-addon">.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <section id="worldIncome-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                  <header class="modal-header">
+                    <h2 class="modal-title">Household World Income</h2>
+                  </header>
+                  <div class="modal-body">
+                    <p></p>
+                    <p>If your households world income is negative, enter '0'.</p>
+                  </div>
+                </section>
+              </div>
+            </fieldset>
+
+
+            <fieldset id="uccbAndRdsp" class="panel-default p-0">
+              <legend class="panel-heading mrgn-bttm-0"><span class="panel-title"><abbr title="Universal child care benefit">UCCB</abbr> and <abbr title="Registered disability savings plan">RDSP</abbr></span></legend>
+              <div class="panel-body mrgn-lft-sm gc-font-2019">
+                
+                <!--RDSP-->
+                <p class="h2 mrgn-tp-md">Registered disability savings plan (RDSP)</p>
+                <fieldset id="includeRDSP" class="gc-chckbxrdio chckbxrdio-grp provisional form-group">
+                    <!-- <div class=""> -->
+                        <legend class="h5 required" tabindex="-1"><span class="field-name">Did you claim <abbr title="Registered disability savings plan">RDSP</abbr> Income or make a <abbr title="Registered disability savings plan">RDSP</abbr> repayment in <time data-eligible="year">2021</time>?</span> <strong class="required">(required)</strong></legend>
+                        <p><a href="#rdsp-help" aria-controls="rdsp-help" class="wb-lbx" role="button">What is the registered disability savings plan&nbsp;<span class="glyphicon glyphicon-question-sign"></span></a></p>
                         <ul class="list-unstyled">
-                          <li class="radio">
-                            <input type="radio" name="maritalChange" id="marital-change-yes" value="true" data-rule-required="true">
-                            <label for="marital-change-yes">Yes</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="maritalChange" id="marital-change-no" value="false" data-rule-required="true">
-                            <label for="marital-change-no">No</label>
-                          </li>
+                            <li class="radio">
+                                <input type="radio" name="rdsp" id="rdspTRUE" value="true" data-rdsp="true" data-rule-required="true">
+                                <label for="rdspTRUE">Yes</label>
+                            </li>
+                            <li class="radio">
+                                <input type="radio" name="rdsp" id="rdspFALSE" value="false" data-rdsp="false" data-rule-required="true">
+                                <label for="rdspFALSE">No</label>
+                            </li>
                         </ul>
-                      </fieldset> -->
-
-                      <fieldset id="dependants-q" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you have one or more dependants (a child, minor or disabled adult) on December 1, 2022? <strong class="required">(required)</strong></span></legend>
-                        
-                        <p><a href="#dependant-help" aria-controls="dependant-help" class="wb-lbx" role="button">Who counts as a dependant? <span class="glyphicon glyphicon-question-sign"></span></a></p>
-                        <section id="dependant-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                          <header class="modal-header">
-                            <h2 class="modal-title">Who counts as a dependant?</h2>
-                          </header>
-                          <div class="modal-body">
-                              <p>A dependant is someone who lives with you and relies on you for financial support. This includes:</p>
-                              <ul>
-                                <li>your parent or grandparent</li>
-                                <li>your child, grandchild, or sibling under 18 years of age</li>
-                                <li>your child, grandchild, or sibling 18 years of age or older with an impairment in physical or mental functions</li>
-                              </ul>
-                              <p>If your dependant usually lives with you when not in school, the CRA considers that dependant to live with you.</p>
-                          </div>
-                        </section>
-
-                        <ul class="list-unstyled">
-                          <li class="radio">
-                            <input type="radio" name="dependant-2022" id="dependant-2022-yes" value="true" data-rule-required="true">
-                            <label for="dependant-2022-yes">Yes</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="dependant-2022" id="dependant-2022-no" value="false" data-rule-required="true">
-                            <label for="dependant-2022-no">No</label>
-                          </li>
-                        </ul>
-                      </fieldset>
-
-                      <!-- <fieldset id="divorce-question" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did the <span class="divorce-label hidden">divorce</span><span class="separation-label hidden">separation</span><span class="death-label hidden">death</span> occur during the year 2021? <strong class="required">(required)</strong></span></legend>
-                        <ul class="list-unstyled">
-                          <li class="radio">
-                            <input type="radio" name="dependants" id="dependant-yes" value="true" data-rule-required="true">
-                            <label for="dependant-yes">Yes</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="dependants" id="dependant-no" value="false" data-rule-required="true">
-                            <label for="dependant-no">No</label>
-                          </li>
-                        </ul>
-                      </fieldset> -->
-
-                      <div class="well text-muted mrgn-tp-md" id="marital-summary">
-                        <h3 class="mrgn-tp-0">Summary of marital status</h3>
-                        <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time Canada Housing Benefit payment.</p>
-                        <p class="marital-dependants hidden">As you had dependants, your adjusted net income must be $35,000 or less.</p>
-                        <p class="marital-true hidden">You and your partner's adjusted net income must be $35,000 or less.</p>
-                        <p class="marital-false hidden">As you were <span class="separationORsingle">single</span>, your adjusted net income must be $20,000 or less.</p>
-                        <!-- <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p> -->
-                        <p class="marital-false marital-change-true marital-true marital-dependants hidden">Go to the next step to continue the calculation.</p>
+                    <!-- </div> -->
+                </fieldset>                                                        
+                <div id="rdspfields" class="row hidden">
+                    
+                    <div id="rdspAmounts" class="col-md-6 wb-eqht">
+                      <p class="text-muted">Leave fields blank if amounts are zero.</p>
+                      <div class="form-group">
+                        <label for="rdspIncome"><span class="field-name"><time data-eligible="year">2021</time> <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                        <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
+                        <div class="input-group col-sm-7">
+                          <span class="input-group-addon">$</span>
+                          <input type="text" name="rdspIncome" size="7" maxlength="7" value="" id="rdspIncome" class="form-control text-right" data-rule-digits="true">
+                          <span class="input-group-addon">.00</span>
+                        </div>
+                        <p class="small">This is line 12500 of your <time data-eligible="year">2021</time> tax return.</p>
+                      </div>
+                      <div class="form-group">
+                        <label for="rdspRepayment"><span class="field-name"><time data-eligible="year">2021</time> <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                        <!--<a href="#rdspRepayment-help" aria-controls="rdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span></a>-->
+                        <div class="input-group input col-sm-7">
+                          <span class="input-group-addon">$</span>
+                          <input type="text" name="rdspRepayment" size="7" maxlength="7" value="" id="rdspRepayment" class="form-control text-right" data-rule-digits="true">
+                          <span class="input-group-addon">.00</span>
+                        </div>
+                        <p class="small">This is line 23200 of your <time data-eligible="year">2021</time> tax return.</p>
                       </div>
                     </div>
-                  </fieldset>
-
-                  <!-- <fieldset id="residency" class="panel-default provisional p-0">
-                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Residency status</span></legend>
-                    <div class="panel-body mrgn-lft-sm">
-                      <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Were you <span class="spouse-specific">and your <span class="spouse-label">spouse</span> </span><span class="field-name">resident in Canada</span> throughout all of 2021? <strong class="required">(required)</strong></span></legend>
-                        <ul class="list-unstyled">
-                          <li class="radio">
-                            <input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">
-                            <label for="resident-true">Yes</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">
-                            <label for="resident-false">No</label>
-                          </li>
-                        </ul>
-                      </fieldset>
-
-
-
-
-                      <fieldset id="non-resident-ties" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When resident abroad in 2021, did you <span class="spouse-specific">and your <span class="spouse-label">spouse</span> </span>maintain close residential ties in Canada? <strong class="required">(required)</strong></span></legend>
-                        <p><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html" target="_Blank">What are close residential ties? <span class="glyphicon glyphicon-question-sign"></span></a></p>
-                        <ul class="list-unstyled">
-                          <li class="radio">
-                            <input type="radio" name="nonResidentTies" id="non-resident-ties-yes" value="true" data-rule-required="true">
-                            <label for="non-resident-ties-yes">Yes (factual resident)</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="nonResidentTies" id="non-resident-ties-yes-but" value="true-false" data-rule-required="true">
-                            <label for="non-resident-ties-yes-but">Yes but income tax was paid to the other country</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="nonResidentTies" id="non-resident-ties-no" value="false" data-rule-required="true">
-                            <label for="non-resident-ties-no">No (no significant residential ties)</label>
-                          </li>
-                        </ul>
-                      </fieldset>
-
-                      <fieldset id="deemed-residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">When you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>were non-resident in Canada in 2021, did any of the following apply to you? <strong class="required">(required)</strong></span></legend>
-                        <ul class="list-unstyled">
-                          <li class="checkbox">
-                            <input type="checkbox" name="deemedResidency" id="deemed-resident-183" value="true" data-rule-required="true">
-                            <label for="deemed-resident-183">Stayed in Canada for 183 days or more during 2021 and are not considered resident of another country under the terms of a tax treaty between Canada and that country</label>
-                          </li>
-                          <li class="radio">
-                            <input type="checkbox" name="deemedResidency" id="deemed-resident-government" value="true" data-rule-required="true">
-                            <label for="deemed-resident-government">Are a Canadian government employee (any jurisdiction)</label>
-                          </li>
-                          <li class="radio">
-                            <input type="checkbox" name="deemedResidency" id="deemed-resident-forces" value="true" data-rule-required="true">
-                            <label for="deemed-resident-forces">Are a member of the Canadian Forces (or their overseas staff)</label>
-                          </li>
-                          <li class="radio">
-                            <input type="checkbox" name="deemedResidency" id="deemed-resident-development" value="true" data-rule-required="true">
-                            <label for="deemed-resident-development">Are working under a Canadian International Development Agency (CIDA) assistance program</label>
-                          </li>
-                          <li class="radio">
-                            <input type="checkbox" name="deemedResidency" id="deemed-resident-family" value="true" data-rule-required="true">
-                            <label for="deemed-resident-family">Are a family member of one of the above</label>
-                          </li>
-                          <li class="radio">
-                            <input type="checkbox" name="deemedResidency" id="deemed-resident-none" value="false" data-rule-required="true">
-                            <label for="deemed-resident-none">None of the above apply</label>
-                          </li>
-                        </ul>
-                      </fieldset>
-
-
-
-                        <div class="well text-muted mrgn-tp-md" id="resident-summary">
-                          <h3 class="mrgn-tp-0">Summary of residency status</h3>
-                          <p class="residency-unanswered">Answer the questions above to determine your residency status. This will affect how you calculate your income for the tax year 2021.</p>
-                          <p class="canadian-resident hidden">You have indicated you were resident in Canada throughout 2021. Go to the next step to continue the calculation.</p>
-                          <p class="factual-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (factual resident). This might be because you were temporarily:</p>
-                          <ul class="factual-resident hidden">
-                            <li>working temporarily outside Canada</li>
-                            <li>teaching or attending school in another country</li>
-                            <li>commuting (going back and forth daily or weekly) from Canada to your place of work in the United States (U.S.)</li>
-                            <li>vacationing outside Canada</li>
-                            <li>spending part of the year in the <abbr title="United States"><span class="nowrap">U.S</span>.</abbr>, for example, for health reasons or on vacation</li>
-                          </ul>
-                          <p class="factual-resident hidden">Go to the next step to continue the calculation.</p>
-                          <p class="deemed-non-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (factual resident). Go to the next step to continue the calculation.</p>
-                          <p class="deemed-resident hidden">Although you left Canada, you were still considered to be a resident of Canada for income tax purposes (deemed resident). Go to the next step to continue the calculation.</p>
-                          <p class="non-resident hidden">Based on your responses, you were a non-resident of Canada for tax purposes for at least part of 2021.</p>
-                          <p class="non-resident hidden">To be eligible for the one-time Canada Housing Benefit payment, you must have been resident for at least part of 2021 and a tax return must be filed with the CRA before you can apply. If you were a resident for part of the year, go to the next step to continue the calculation.</p>
-                        </div>
-                      </div>
-                  </fieldset> -->
-
-
-                  <fieldset id="income" class="panel-default p-0">
-                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title">Household net income</span></legend>
-                    <div class="panel-body mrgn-lft-sm">
+                    <div id="rdspPartner" class="marital-true col-md-6 wb-eqht hidden">
                       <div class="form-group">
-                        <label for="netIncome" class="required">Your <span class="field-name">net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
-                        <div class="input-group col-sm-5">
+                        <label for="partnerRdspIncome"><span class="field-name"><time data-eligible="year">2021</time> <span data-partner-case="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                        <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
+                        <div class="input-group col-sm-7">
                           <span class="input-group-addon">$</span>
-                          <input type="text" name="netIncome" size="7" maxlength="7" value="" id="netIncome" class="form-control text-right" data-rule-digits="true" required="required">
+                          <input type="text" name="partnerRdspIncome" size="7" maxlength="7" value="" id="partnerRdspIncome" class="form-control text-right" data-rule-digits="true">
                           <span class="input-group-addon">.00</span>
                         </div>
-                        <p class="small">This is line 23600 of your 2021 tax return.</p>
+                        <p class="small">This is line 12500 of your <span data-partner-case="false">spouse</span>'s <time data-eligible="year">2021</time> tax return.</p>
                       </div>
-                      
-                      <div class="marital-true form-group hidden">
-                        <label for="spouseNetIncome" class="required">Your <span class="field-name"><span class="spouse-label">spouse</span>'s net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span><strong class="required">(required)</strong></label>
-                        <div class="input-group col-sm-5">
+                      <div class="form-group">
+                        <label for="partnerRdspRepayment"><span class="field-name"><time data-eligible="year">2021</time> <span data-partner-case="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                        <!--<a href="#rdspRepayment-help" aria-controls="rdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span></a>-->
+                        <div class="input-group col-sm-7">
                           <span class="input-group-addon">$</span>
-                          <input type="text" name="spouse.netIncome" size="7" maxlength="7" value="" id="spouseNetIncome" class="form-control text-right" data-rule-digits="true">
+                          <input type="text" name="partnerRdspRepayment" size="7" maxlength="7" value="" id="partnerRdspRepayment" class="form-control text-right" data-rule-digits="true">
                           <span class="input-group-addon">.00</span>
                         </div>
-                        <p class="small">This is line 23600 of your <span class="spouse-label">spouse</span>'s 2021 tax return.</p>
+                        <p class="small">This is line 23200 of your <span data-partner-case="false">spouse</span>'s <time data-eligible="year">2021</time> tax return.</p>
                       </div>
-
-                      <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
-                        <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>report income in another country during 2021? <strong class="required">(required)</strong></span></legend>
-                        <p>You might have world income to report if you were resident in another country for part of 2021. Make sure to submit a sechedule X or RCXX with your 2021 tax return to declare your foreign income before you apply.</p>
-                        <ul class="list-unstyled">
-                          <li class="radio">
-                            <input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">
-                            <label for="resident-false">Yes</label>
-                          </li>
-                          <li class="radio">
-                            <input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">
-                            <label for="resident-true">No</label>
-                          </li>
-                        </ul>
-                      </fieldset>
-
-                      <div id="worldIncomeElm" class="form-group hidden">
-                        <label for="worldIncome" class="required">Your <span class="field-name">world income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
-                        <a href="#worldIncome-help" aria-controls="worldIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is world income?</span></a>
-                        <div class="input-group col-sm-5">
-                          <span class="input-group-addon">$</span>
-                          <input type="text" name="worldIncome" size="7" maxlength="7" value="" id="worldIncome" class="form-control text-right" data-rule-digits="true">
-                          <span class="input-group-addon">.00</span>
-                        </div>
-                        <div class="marital-true hidden">
-                          <label for="spouseWorldIncome" class="required">Your <span class="field-name"><span class="spouse-label">spouse</span>'s world income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
-                          <a href="#worldIncome-help" aria-controls="worldIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is world income?</span></a>
-                          <div class="input-group col-sm-5">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" name="spouseWorldIncome" size="7" maxlength="7" value="" id="spouseWorldIncome" class="form-control text-right" data-rule-digits="true">
-                            <span class="input-group-addon">.00</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <section id="worldIncome-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                    </div>
+                    <section id="rdsp-help" class="mfp-hide modal-dialog modal-content overlay-def">
                         <header class="modal-header">
-                          <h2 class="modal-title">Household World Income</h2>
+                            <h2 class="modal-title">Registered disability savings plan</h2>
                         </header>
                         <div class="modal-body">
-                          <p></p>
-                          <p>If your households world income is negative, enter '0'.</p>
+                            <p>A registered disability savings plan (RDSP) is a savings plan intended to help parents and others save for the long term financial security of a person who is eligible for the disability tax credit (DTC).</p>
+                            <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/registered-disability-savings-plan-rdsp.html" target="help" rel="noopener noreferrer">Registered disability savings plan</a> for more information</p>
                         </div>
-                      </section>
+                    </section>
+                  <!--
+                    <section id="uccbAndRdspIncome-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                        <header class="modal-header">
+                            <h2 class="modal-title"><abbr title="universal child care benefit">UCCB</abbr> and <abbr title="Registered disability savings plan">RDSP</abbr> income</h2>
+                        </header>
+                        <div class="modal-body">
+                            <p>Income claimed by you or your spouse or common law partner (<a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-11700-universal-child-care-benefit-uccb.html" target="help" rel="noopener noreferrer">line 11700</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-125-registered-disability-savings-plan-rdsp-income.html" target="help" rel="noopener noreferrer">line 12500</a> of your or your spouse or common law partner's tax return).</p>
+                            <p>If field left blank, we will assume it is zero.</p>
+                        </div>
+                    </section>
+                -->
+                </div>
+                <div class="clearfix"></div>
+                <!--UCCB-->
+                <p class="h2">Universal child care benefit (UCCB)</p>
+                <fieldset id="includeUCCB" class="gc-chckbxrdio chckbxrdio-grp provisional form-group">
+                    <!-- <div class=""> -->
+                        <legend class="h5 required" tabindex="-1"><span class="field-name">Did you claim <abbr title="Universal child care benefit">UCCB</abbr> Income or make a <abbr title="Universal child care benefit">UCCB</abbr> repayment in <time data-eligible="year">2021</time>?</span> <strong class="required">(required)</strong></legend>
+                        <p><a href="#uccb-help" aria-controls="uccb-help" class="wb-lbx" role="button">What is the universal child care benefit&nbsp;<span class="glyphicon glyphicon-question-sign"></span></a></p>
+                        <ul class="list-unstyled">
+                            <li class="radio">
+                                <input type="radio" name="uccb" id="uccbTRUE" value="true" data-uccb="true" data-rule-required="true">
+                                <label for="uccbTRUE">Yes</label>
+                            </li>
+                            <li class="radio">
+                                <input type="radio" name="uccb" id="uccbFALSE" value="false" data-uccb="false" data-rule-required="true">
+                                <label for="uccbFALSE">No</label>
+                            </li>
+                        </ul>
+                    <!-- </div> -->
+                </fieldset>
+                <div id="uccbfields" class="row hidden">
+                  <div id="uccbAmounts" class="col-md-6 wb-eqht">
+                    <p class="text-muted">Leave fields blank if amounts are zero.</p>
+                    <div class="form-group">
+                      <label for="uccbIncome"><span class="field-name"><time data-eligible="year">2021</time> <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
+                      <div class="input-group col-sm-7">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" name="uccbIncome" size="7" maxlength="7" value="" id="uccbIncome" class="form-control text-right" data-rule-digits="true">
+                        <span class="input-group-addon">.00</span>
+                      </div>
+                      <p class="small">This is line 11700 of your <time data-eligible="year">2021</time> tax return.</p>
                     </div>
-                  </fieldset>
-
-
-                  <fieldset id="uccbAndRdsp" class="panel-default p-0">
-                    <legend class="panel-heading mrgn-bttm-0"><span class="panel-title"><abbr title="Universal child care benefit">UCCB</abbr> and <abbr title="Registered disability savings plan">RDSP</abbr></span></legend>
-                    <div class="panel-body mrgn-lft-sm gc-font-2019">
-                      
-                      <!--RDSP-->
-                      <p class="h2 mrgn-tp-md">Registered disability savings plan (RDSP)</p>
-                      <fieldset id="includeRDSP" class="gc-chckbxrdio chckbxrdio-grp provisional">
-                          <div class="form-group">
-                              <legend class="h5 required" tabindex="-1"><span class="field-name">Did you claim <abbr title="Registered disability savings plan">RDSP</abbr> Income or make a <abbr title="Registered disability savings plan">RDSP</abbr> repayment in <time data-eligible="year">2021</time>?</span> <strong class="required">(required)</strong></legend>
-                              <p><a href="#rdsp-help" aria-controls="rdsp-help" class="wb-lbx" role="button">What is the registered disability savings plan&nbsp;<span class="glyphicon glyphicon-question-sign"></span></a></p>
-                              <ul class="list-unstyled">
-                                  <li class="radio">
-                                      <input type="radio" name="rdsp" id="rdspTRUE" value="true" data-rdsp="true" data-rule-required="true">
-                                      <label for="rdspTRUE">Yes</label>
-                                  </li>
-                                  <li class="radio">
-                                      <input type="radio" name="rdsp" id="rdspFALSE" value="false" data-rdsp="false" data-rule-required="true">
-                                      <label for="rdspFALSE">No</label>
-                                  </li>
-                              </ul>
-                          </div>
-                      </fieldset>                                                        
-                      <div id="rdspfields" class="row hidden">
-                          
-                          <div id="rdspAmounts" class="col-md-6 wb-eqht">
-                            <p class="text-muted">Leave fields blank if amounts are zero.</p>
-                            <div class="form-group">
-                              <label for="rdspIncome"><span class="field-name"><time data-eligible="year">2021</time> <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
-                              <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
-                              <div class="input-group col-sm-7">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" name="rdspIncome" size="7" maxlength="7" value="" id="rdspIncome" class="form-control text-right" data-rule-digits="true">
-                                <span class="input-group-addon">.00</span>
-                              </div>
-                              <p class="small">This is line 12500 of your <time data-eligible="year">2021</time> tax return.</p>
-                            </div>
-                            <div class="form-group">
-                              <label for="rdspRepayment"><span class="field-name"><time data-eligible="year">2021</time> <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
-                              <!--<a href="#rdspRepayment-help" aria-controls="rdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span></a>-->
-                              <div class="input-group input col-sm-7">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" name="rdspRepayment" size="7" maxlength="7" value="" id="rdspRepayment" class="form-control text-right" data-rule-digits="true">
-                                <span class="input-group-addon">.00</span>
-                              </div>
-                              <p class="small">This is line 23200 of your <time data-eligible="year">2021</time> tax return.</p>
-                            </div>
-                          </div>
-                          <div id="rdspPartner" class="marital-true col-md-6 wb-eqht hidden">
-                            <div class="form-group">
-                              <label for="partnerRdspIncome"><span class="field-name"><time data-eligible="year">2021</time> <span data-partner-case="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
-                              <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
-                              <div class="input-group col-sm-7">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" name="partnerRdspIncome" size="7" maxlength="7" value="" id="partnerRdspIncome" class="form-control text-right" data-rule-digits="true">
-                                <span class="input-group-addon">.00</span>
-                              </div>
-                              <p class="small">This is line 12500 of your <span data-partner-case="false">spouse</span>'s <time data-eligible="year">2021</time> tax return.</p>
-                            </div>
-                            <div class="form-group">
-                              <label for="partnerRdspRepayment"><span class="field-name"><time data-eligible="year">2021</time> <span data-partner-case="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
-                              <!--<a href="#rdspRepayment-help" aria-controls="rdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span></a>-->
-                              <div class="input-group col-sm-7">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" name="partnerRdspRepayment" size="7" maxlength="7" value="" id="partnerRdspRepayment" class="form-control text-right" data-rule-digits="true">
-                                <span class="input-group-addon">.00</span>
-                              </div>
-                              <p class="small">This is line 23200 of your <span data-partner-case="false">spouse</span>'s <time data-eligible="year">2021</time> tax return.</p>
-                            </div>
-                          </div>
-                          <section id="rdsp-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                              <header class="modal-header">
-                                  <h2 class="modal-title">Registered disability savings plan</h2>
-                              </header>
-                              <div class="modal-body">
-                                  <p>A registered disability savings plan (RDSP) is a savings plan intended to help parents and others save for the long term financial security of a person who is eligible for the disability tax credit (DTC).</p>
-                                  <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/registered-disability-savings-plan-rdsp.html" target="help" rel="noopener noreferrer">Registered disability savings plan</a> for more information</p>
-                              </div>
-                          </section>
-<!--
-                          <section id="uccbAndRdspIncome-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                              <header class="modal-header">
-                                  <h2 class="modal-title"><abbr title="universal child care benefit">UCCB</abbr> and <abbr title="Registered disability savings plan">RDSP</abbr> income</h2>
-                              </header>
-                              <div class="modal-body">
-                                  <p>Income claimed by you or your spouse or common law partner (<a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-11700-universal-child-care-benefit-uccb.html" target="help" rel="noopener noreferrer">line 11700</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-125-registered-disability-savings-plan-rdsp-income.html" target="help" rel="noopener noreferrer">line 12500</a> of your or your spouse or common law partner's tax return).</p>
-                                  <p>If field left blank, we will assume it is zero.</p>
-                              </div>
-                          </section>
+                    <div class="form-group">
+                      <label for="uccbRepayment"><span class="field-name"><time data-eligible="year">2021</time> <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
+                      <div class="input-group col-sm-7">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" name="uccbRepayment" size="7" maxlength="7" value="" id="uccbRepayment" class="form-control text-right" data-rule-digits="true">
+                        <span class="input-group-addon">.00</span>
+                      </div>
+                      <p class="small">This is line 21300 of your <time data-eligible="year">2021</time> tax return.</p>
+                    </div>
+                  </div>
+                  <div id="uccbPartner" class="marital-true col-md-6 wb-eqht hidden">
+                    <div class="form-group">
+                      <label for="partnerUccbIncome"><span class="field-name"><time data-eligible="year">2021</time> <span data-partner-case="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
+                      <div class="input-group col-sm-7">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" name="partnerUccbIncome" size="7" maxlength="7" value="" id="partnerUccbIncome" class="form-control text-right" data-rule-digits="true">
+                        <span class="input-group-addon">.00</span>
+                      </div>
+                      <p class="small">This is line 11700 of your <span data-partner-case="false">spouse</span>'s <time data-eligible="year">2021</time> tax return.</p>
+                    </div>
+                    <div class="form-group">
+                      <label for="partnerUccbRepayment"><span class="field-name"><time data-eligible="year">2021</time> <span data-partner-case="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
+                      <div class="input-group col-sm-7">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" name="partnerUccbRepayment" size="7" maxlength="7" value="" id="partnerUccbRepayment" class="form-control text-right" data-rule-digits="true">
+                        <span class="input-group-addon">.00</span>
+                      </div>
+                      <p class="small">This is line 21300 of your <span data-partner-case="false">spouse</span>'s <time data-eligible="year">2021</time> tax return.</p>
+                    </div>
+                  </div>
+                  <section id="uccb-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                    <header class="modal-header">
+                      <h2 class="modal-title">Universal child care benefit</h2>
+                    </header>
+                    <div class="modal-body">
+                      <p>The <abbr title="universal child care benefit">UCCB</abbr> was a taxable benefit paid for children under 18 years of age, available to all eligible individuals, regardless of their income. Payments ended as of July 2016, but lump-sum amounts continue to be paid for months prior to that date. The Canada Child Benefit (CCB), which is an income-tested, non-taxable benefit, replaced the <abbr title="universal child care benefit">UCCB</abbr> in 2016.</p>
+                      <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-11700-universal-child-care-benefit-uccb.html" target="help" rel="noopener noreferrer">Line 11700 – Universal child care benefit (UCCB)</a> for more information</p>
+                    </div>
+                  </section>
+                  <!--
+                    <section id="uccbAndRdspRepayment-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                        <header class="modal-header">
+                            <h2 class="modal-title"><abbr title="universal child care benefit">UCCB</abbr>and <abbr title="Registered disability savings plan">RDSP</abbr> repayment</h2>
+                        </header>
+                        <div class="modal-body">
+                            <p>Repayment claimed by you or your spouse or common law partner (<a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-21300-universal-child-care-benefit-uccb-repayment.html" target="help" rel="noopener noreferrer">line 21300</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-23200-other-deductions/line-23200-income-amounts-repaid.html" target="help" rel="noopener noreferrer">line 23200</a> of your or your spouse or common law partner's tax return).</p>
+                        </div>
+                    </section>
                       -->
-                      </div>
-                      <div class="clearfix"></div>
-                      <!--UCCB-->
-                      <p class="h2">Universal child care benefit (UCCB)</p>
-                      <fieldset id="includeUCCB" class="gc-chckbxrdio chckbxrdio-grp provisional">
-                          <div class="form-group">
-                              <legend class="h5 required" tabindex="-1"><span class="field-name">Did you claim <abbr title="Universal child care benefit">UCCB</abbr> Income or make a <abbr title="Universal child care benefit">UCCB</abbr> repayment in <time data-eligible="year">2021</time>?</span> <strong class="required">(required)</strong></legend>
-                              <p><a href="#uccb-help" aria-controls="uccb-help" class="wb-lbx" role="button">What is the universal child care benefit&nbsp;<span class="glyphicon glyphicon-question-sign"></span></a></p>
-                              <ul class="list-unstyled">
-                                  <li class="radio">
-                                      <input type="radio" name="uccb" id="uccbTRUE" value="true" data-uccb="true" data-rule-required="true">
-                                      <label for="uccbTRUE">Yes</label>
-                                  </li>
-                                  <li class="radio">
-                                      <input type="radio" name="uccb" id="uccbFALSE" value="false" data-uccb="false" data-rule-required="true">
-                                      <label for="uccbFALSE">No</label>
-                                  </li>
-                              </ul>
-                          </div>
-                      </fieldset>
-                      <div id="uccbfields" class="row hidden">
-                        <div id="uccbAmounts" class="col-md-6 wb-eqht">
-                          <p class="text-muted">Leave fields blank if amounts are zero.</p>
-                          <div class="form-group">
-                            <label for="uccbIncome"><span class="field-name"><time data-eligible="year">2021</time> <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
-                            <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
-                            <div class="input-group col-sm-7">
-                              <span class="input-group-addon">$</span>
-                              <input type="text" name="uccbIncome" size="7" maxlength="7" value="" id="uccbIncome" class="form-control text-right" data-rule-digits="true">
-                              <span class="input-group-addon">.00</span>
-                            </div>
-                            <p class="small">This is line 11700 of your <time data-eligible="year">2021</time> tax return.</p>
-                          </div>
-                          <div class="form-group">
-                            <label for="uccbRepayment"><span class="field-name"><time data-eligible="year">2021</time> <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
-                            <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
-                            <div class="input-group col-sm-7">
-                              <span class="input-group-addon">$</span>
-                              <input type="text" name="uccbRepayment" size="7" maxlength="7" value="" id="uccbRepayment" class="form-control text-right" data-rule-digits="true">
-                              <span class="input-group-addon">.00</span>
-                            </div>
-                            <p class="small">This is line 21300 of your <time data-eligible="year">2021</time> tax return.</p>
-                          </div>
-                        </div>
-                        <div id="uccbPartner" class="marital-true col-md-6 wb-eqht hidden">
-                          <div class="form-group">
-                            <label for="partnerUccbIncome"><span class="field-name"><time data-eligible="year">2021</time> <span data-partner-case="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
-                            <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
-                            <div class="input-group col-sm-7">
-                              <span class="input-group-addon">$</span>
-                              <input type="text" name="partnerUccbIncome" size="7" maxlength="7" value="" id="partnerUccbIncome" class="form-control text-right" data-rule-digits="true">
-                              <span class="input-group-addon">.00</span>
-                            </div>
-                            <p class="small">This is line 11700 of your <span data-partner-case="false">spouse</span>'s <time data-eligible="year">2021</time> tax return.</p>
-                          </div>
-                          <div class="form-group">
-                            <label for="partnerUccbRepayment"><span class="field-name"><time data-eligible="year">2021</time> <span data-partner-case="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
-                            <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
-                            <div class="input-group col-sm-7">
-                              <span class="input-group-addon">$</span>
-                              <input type="text" name="partnerUccbRepayment" size="7" maxlength="7" value="" id="partnerUccbRepayment" class="form-control text-right" data-rule-digits="true">
-                              <span class="input-group-addon">.00</span>
-                            </div>
-                            <p class="small">This is line 21300 of your <span data-partner-case="false">spouse</span>'s <time data-eligible="year">2021</time> tax return.</p>
-                          </div>
-                        </div>
-                        <section id="uccb-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                          <header class="modal-header">
-                            <h2 class="modal-title">Universal child care benefit</h2>
-                          </header>
-                          <div class="modal-body">
-                            <p>The <abbr title="universal child care benefit">UCCB</abbr> was a taxable benefit paid for children under 18 years of age, available to all eligible individuals, regardless of their income. Payments ended as of July 2016, but lump-sum amounts continue to be paid for months prior to that date. The Canada Child Benefit (CCB), which is an income-tested, non-taxable benefit, replaced the <abbr title="universal child care benefit">UCCB</abbr> in 2016.</p>
-                            <p class="mrgn-tp-lg">Refer to <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-11700-universal-child-care-benefit-uccb.html" target="help" rel="noopener noreferrer">Line 11700 – Universal child care benefit (UCCB)</a> for more information</p>
-                          </div>
-                        </section>
-<!--
-                          <section id="uccbAndRdspRepayment-help" class="mfp-hide modal-dialog modal-content overlay-def">
-                              <header class="modal-header">
-                                  <h2 class="modal-title"><abbr title="universal child care benefit">UCCB</abbr>and <abbr title="Registered disability savings plan">RDSP</abbr> repayment</h2>
-                              </header>
-                              <div class="modal-body">
-                                  <p>Repayment claimed by you or your spouse or common law partner (<a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-21300-universal-child-care-benefit-uccb-repayment.html" target="help" rel="noopener noreferrer">line 21300</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-23200-other-deductions/line-23200-income-amounts-repaid.html" target="help" rel="noopener noreferrer">line 23200</a> of your or your spouse or common law partner's tax return).</p>
-                              </div>
-                          </section>
--->
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
                     
                     
                     <!--
@@ -1721,7 +1722,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <p>If you lived at more than one address during 2022, add the rent for each principal residence. Do not include rent from more than one residence for overlapping time periods.</p>
 
                       <div class="form-group rent-paid-no-separation">
-                        <label for="rent-paid-2022"><span class="field-name">Rent paid for your principal residence in 2022 <span class="wb-inv">(dollars only, no cents)</span></label>
+                        <label for="rent-paid-2022"><span class="field-name">Rent paid for your principal residence in 2022</span> <span class="wb-inv">(dollars only, no cents)</span></label>
                         <!-- <a href="#uccbAndRdspIncome-help" aria-controls="uccbAndRdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your UCCB and RDSP income</span></a> -->
                         <div class="input-group col-sm-5">
                           <span class="input-group-addon">$</span>
@@ -1923,7 +1924,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             </div>
 
 
-<!--               
+                <!--               
                 <div id="crb-statement">
                   <p>Your adjusted family net income (<abbr title="Adjusted Family Net Income">AFNI</abbr>) is:</p>
                   <ul class="fa-ul lst-spcd">
@@ -1942,8 +1943,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <p class="text-muted small">Phasellus congue mauris ipsum, at faucibus tellus euismod at.</p>
                   </div>
                 </div> -->
-              </div>
-            </div>
+              <!-- </div> -->
+            <!-- </div> -->
 
 
 
@@ -1959,7 +1960,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
   <div id="def-preFooter">
   </div>
   <!-- Write closure template -->
-  <script type="text/javascript">
+  <script >
       var defPreFooter = document.getElementById("def-preFooter");
       defPreFooter.outerHTML = wet.builder.preFooter({
           dateModified: "2022-09-12",
@@ -1975,7 +1976,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
 </div>
 <!-- Write closure template -->
-<script type="text/javascript">
+<script >
   var defFooter = document.getElementById("def-footer");
   defFooter.outerHTML = wet.builder.footer({
       showFooter: true,
@@ -1983,7 +1984,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
   });
 </script>
 <!-- Write closure template -->
-<script type="text/javascript">
+<script >
   document.write(wet.builder.refFooter({}));
 </script>
 <!--[if gte IE 9 | !IE ]><!-->
@@ -1996,7 +1997,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 <![endif]-->
 <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/js/theme.min.js"></script>
 
-  <script type="text/javascript">
+  <script >
       var claimPeriod, nonresident, familyStatus;
       var $document = wb.doc;
       rdsp = function() {
