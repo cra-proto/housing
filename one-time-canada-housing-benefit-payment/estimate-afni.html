@@ -2069,7 +2069,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           case (6): // (6) widowed
           case (5): // (5) separated
           case (4): // (4) divorced 
-            $(".marital-unanswered", "#dependants-q", ".not-single").removeClass("hidden");
+            $(".marital-unanswered, #dependants-q, .not-single").removeClass("hidden");
             $(".spouse-specific").addClass("hidden");
             spouseLabel = "";
             $("[data-has-partner=true]").addClass("hidden");
@@ -2078,8 +2078,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             break;
           case (3): // (3) common law 
           case (2): // (2) married 
-            $(".marital-unanswered", "#dependants-q").addClass("hidden");
-            $(".spouse-specific", ".not-single").removeClass("hidden");
+            $(".marital-unanswered, #dependants-q").addClass("hidden");
+            $(".spouse-specific, .not-single").removeClass("hidden");
             spouseLabel = marital.status;
             $("[data-has-partner=true]").removeClass("hidden");
             $("[data-has-partner=false]").addClass("hidden");
@@ -2088,8 +2088,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             break;
           case (1): // (1) single 
           default:
-            $(".marital-unanswered", "#dependants-q").removeClass("hidden");
-            $(".spouse-specific", ".not-single").addClass("hidden");
+            $(".marital-unanswered, #dependants-q").removeClass("hidden");
+            $(".spouse-specific, .not-single").addClass("hidden");
             spouseLabel = marital.status;
             $("[data-has-partner=true]").addClass("hidden");
             $("[data-has-partner=false]").removeClass("hidden");
