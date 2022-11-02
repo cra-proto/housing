@@ -1224,27 +1224,27 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                   <ul class="list-unstyled">
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-single" value="single" data-maritalOption="1" data-entityType="individual" data-entityPrep="an" data-separateStatus="single" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-single" value="single" data-marital-option="1" data-entity-type="individual" data-entity-prep="an" data-separate-status="single" data-rule-required="true">
                       <label for="marital-single">Single</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-spouse" value="spouse" data-maritalOption="2"  data-entityType="family" data-entityPrep="a" data-separateStatus="single" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-spouse" value="spouse" data-marital-option="2"  data-entity-type="family" data-entity-prep="a" data-separate-status="single" data-rule-required="true">
                       <label for="marital-spouse">Married</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-common" value="common law partner" data-maritalOption="3" data-entityType="family" data-entityPrep="a" data-separateStatus="single" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-common" value="common law partner" data-marital-option="3" data-entity-type="family" data-entity-prep="a" data-separate-status="single" data-rule-required="true">
                       <label for="marital-common">Living common law</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-divorced" value="divorced" data-maritalOption="4" data-entityType="individual" data-entityPrep="an" data-separateStatus="divorced" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-divorced" value="divorced" data-marital-option="4" data-entity-type="individual" data-entity-prep="an" data-separate-status="divorced" data-rule-required="true">
                       <label for="marital-divorced">Divorced</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-separated" value="separated" data-maritalOption="5" data-entityType="individual" data-entityPrep="an" data-separateStatus="separated" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-separated" value="separated" data-marital-option="5" data-entity-type="individual" data-entity-prep="an" data-separate-status="separated" data-rule-required="true">
                       <label for="marital-separated">Separated</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-widowed" value="widowed" data-maritalOption="6" data-entityType="individual" data-entityPrep="an" data-separateStatus="widowed" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-widowed" value="widowed" data-marital-option="6" data-entity-type="individual" data-entity-prep="an" data-separate-status="widowed" data-rule-required="true">
                       <label for="marital-widowed">Widowed</label>
                     </li>
                   </ul>
@@ -2003,13 +2003,13 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
       },
       maritalObj = function(maritalStatus) {
         let maritalData = {
-                    status: maritalStatus.val() || $("#marital-single").val(),
-                    option: maritalStatus.data("maritalOption") || 1,
-                    entityType: maritalStatus.data("entityType") || $("#marital-single").data("entityType"),
-                    entityPrep: maritalStatus.data("entityPrep") || $("#marital-single").data("entityPrep"),
-                    separateStatus: maritalStatus.data("separateStatus") || $("#marital-single").data("separateStatus"),
-                };
-                return maritalData;
+          status: maritalStatus.val() || $("#marital-single").val(),
+          option: maritalStatus.data("marital-option") || 1,
+          entityType: maritalStatus.data("entity-type") || $("#marital-single").data("entityType"),
+          entityPrep: maritalStatus.data("entity-prep") || $("#marital-single").data("entityPrep"),
+          separateStatus: maritalStatus.data("separate-status") || $("#marital-single").data("separateStatus")
+        };
+        return maritalData;
       };
       //Radio event listener
 
