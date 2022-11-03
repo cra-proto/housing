@@ -2005,7 +2005,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
       
       function maritalQuestions(target) {
         let spouseLabel,
-          individual = true,
           maritalStatusElm = $(":input[type=radio][name=maritalStatus]:checked", formId), 
           marital = maritalObj(maritalStatusElm), 
           entityType = marital.entityType,
@@ -2041,6 +2040,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             }
           };
 
+        individual = true;
+        //$(".marital-change-true").addClass("hidden");
         //$(".marital-change-true").addClass("hidden");
         //$(".divorce-label").addClass("hidden");
         //$(".separation-label").addClass("hidden");
