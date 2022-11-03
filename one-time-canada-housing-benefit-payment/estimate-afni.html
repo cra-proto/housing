@@ -1309,7 +1309,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   <p class="marital-true hidden" data-has-partner="true">You and your partner's adjusted net income must be $35,000 or less.</p>
                   <p class="marital-false hidden" data-has-partner="false">As you were <span class="separationORsingle">single</span>, your adjusted net income must be $20,000 or less.</p>
                   <!-- <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p> -->
-                  <p class="marital-change-true marital-dependants hidden">Go to the next step to continue the calculation.</p>
+                  <p class="marital-answered hidden">Go to the next step to continue the calculation.</p>
                 </div>
               </div>
             </fieldset>
@@ -2036,12 +2036,15 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             if ($('#dependant-2022-yes:checked').length > 0) {
               $(".marital-unanswered").addClass("hidden");
               $(".marital-dependants").removeClass("hidden");
+              $(".marital-false").addClass("hidden");
+              $(".marital-answered").removeClass("hidden");
               individual = false;
               entityType = maritalCommom.entityType;
               entityPrep = maritalCommom.entityPrep;
               rdspUccbMaritalUpdate(true);
             } else if ($('#dependant-2022-no:checked').length > 0) {
               $(".marital-unanswered").addClass("hidden");
+              $(".marital-answered").removeClass("hidden");
               $("[data-has-partner=true]").addClass("hidden");
               $("[data-has-partner=false]").removeClass("hidden");
               spouseLabel = maritalCommom.status;
@@ -2078,6 +2081,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           case (5): // (5) separated
           case (4): // (4) divorced 
             $(".marital-unanswered, #dependants-q, .not-single").removeClass("hidden");
+            $(".marital-answered").addClass("hidden");
             $(".spouse-specific").addClass("hidden");
             spouseLabel = "";
             $("[data-has-partner=true]").addClass("hidden");
@@ -2087,6 +2091,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           case (3): // (3) common law 
           case (2): // (2) married 
             $(".marital-unanswered, #dependants-q").addClass("hidden");
+            $(".marital-answered").removeClass("hidden");
             $(".spouse-specific, .not-single").removeClass("hidden");
             spouseLabel = marital.status;
             $("[data-has-partner=true]").removeClass("hidden");
@@ -2097,6 +2102,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           case (1): // (1) single 
           default:
             $(".marital-unanswered, #dependants-q").removeClass("hidden");
+            $(".marital-answered").addClass("hidden");
             $(".spouse-specific, .not-single").addClass("hidden");
             spouseLabel = marital.status;
             $("[data-has-partner=true]").addClass("hidden");
