@@ -1995,17 +1995,19 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $("#result-alert").addClass("alert-warning");
         if ((afni <= famAFNIThreshhold && individual === false) || (afni <= indAFNIThreshhold && individual === true)) {
           $(".qualify").removeClass("hidden");
-          $(".rent-not-qualify").addClass("hidden");
+          //$(".rent-not-qualify").addClass("hidden");
           $(".rent-qualify").addClass("hidden");
           if (rentPercentage < rentPercentLimit || rentAmount <= 0) {
             $(".rent-not-qualify").removeClass("hidden");
           } else {
             $(".rent-qualify").removeClass("hidden");
+            $(".rent-not-qualify").addClass("hidden");
             $("#result-alert").removeClass("alert-warning");
             $("#result-alert").addClass("alert-success");
           }
         } else {
           $(".doesnt-qualify").removeClass("hidden");
+          $(".rent-not-qualify").removeClass("hidden");
         }
         //event.preventDefault();
       }
