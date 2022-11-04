@@ -548,20 +548,31 @@ margin-left: -2.0em;
                     <div class="mrgn-lft-lg">
                         <div class="wb-frmvld fieldflow-lg">
                             <form>
-                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                     <div class="wb-fieldflow-header">
                                         <p class="wb-fieldflow-label">Have you filed your 2021 income taxes?</p>
                                     </div>
                                     <ul>
-                                        <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
+                                        <li>Yes
+                                          <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                            <div class="wb-fieldflow-header">
+                                              <p class="wb-fieldflow-label">If you have a spouse or common-law partner who lives with you, have they also filed their 2021 taxes?</p>
+                                            </div>
+                                            <ul>
+                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes, they have filed</li>
+                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No, they have not filed yet</li>
+                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-5&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">I do not have a spouse or common-law partner</li>
+                                            </ul>
+                                          </div>
+                                        </li>
                                         <li>No
-                                          <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                          <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                             <div class="wb-fieldflow-header">
                                               <p class="wb-fieldflow-label">Did you earn all your income in 2021 outside of Canada?</p>
                                             </div>
                                             <ul>
                                               <li>Yes
-                                                <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                                <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                                   <div class="wb-fieldflow-header">
                                                     <p class="wb-fieldflow-label">Did you file a Statement of Income for the GST/HST Credit or Canada Child Benefit (CCB) in 2021?</p>
                                                   </div>
@@ -571,7 +582,7 @@ margin-left: -2.0em;
                                                   </ul>
                                                 </div>
                                               </li>
-                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
+                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-4&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
                                             </ul>
                                           </div>
                                         </li>
@@ -582,19 +593,14 @@ margin-left: -2.0em;
                         <div id="answers0">
                             <!--filed taxes-->
                             <div id="answer0-1" class="hidden alert alert-success alert0 provisional">
-                              <p>Great. We will need your 2021 income information to determine if you are eligible for the benefit.</p>
-                              <p>If you have a spouse or common-law partner, they will also need to file their 2021 taxes before you can apply.</p>
+                              <p>Great. We will need you and your spouse or common-law partner's 2021 income information to determine if you are eligible for the benefit.</p>
                               <div class="mrgn-tp-md">
-                              <p>Next, go to: <a href="#gather-documents"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="far fa-id-card fa-stack-1x"></span></span>Gather</span> your documents</a>.</p>
+                                <p>Next, go to: <a href="#gather-documents"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="far fa-id-card fa-stack-1x"></span></span>Gather</span> your documents</a>.</p>
                               </div>
                             </div>
-                            <!--Did not file-->
                             <div id="answer0-2" class="hidden alert alert-warning alert0 provisional">
-                              <p>You will need to file your 2021 taxes before you can apply.</p>
-                              <p>Generally, your return will be assessed within 2 weeks for electronically filed returns or 8 weeks for mailed returns. You should ensure your return is assessed before you apply for the one-time payment.</p>
-                              <p>If you have a spouse or common-law partner, they will also need to file their 2021 taxes.</p>
-                            <p>If you have no taxable income to report in 2021, you still need to report no income in a tax return for 2021 to qualify for the benefit.</p>
-                              <p>For information on how to file, go to: <a href="/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html" target="_blank" rel="noopener">Get ready to do your taxes<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a>.</p>
+                              <p>Your spouse or common-law partner <strong>who lives with you</strong> must also file their 2021 taxes before you can apply.</p>
+                              <p>For information on how to file, go to: <a href="https://www.canada.ca/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html">Get ready to do your taxes</a>.</p>
                             </div>
                             <div id="answer0-3" class="hidden alert alert-warning alert0 provisional">
                               <p>You will need to apply for either the Canada Child Benefit (CCB) or the GST/HST Credit to submit a statement of income for 2021.</p>
@@ -611,6 +617,21 @@ margin-left: -2.0em;
                               </details>
                               <p>If you have a spouse or common-law partner, they will also need to file their 2021 taxes or submit a statement of income.</p>
                             </div>
+                            <!--Did not file-->
+                            <div id="answer0-4" class="hidden alert alert-warning alert0 provisional">
+                              <p>You will need to file your 2021 taxes before you can apply.</p>
+                              <p>Generally, your return will be assessed within 2 weeks for electronically filed returns or 8 weeks for mailed returns. You should ensure your return is assessed before you apply for the one-time payment.</p>
+                              <p>If you have a spouse or common-law partner, they will also need to file their 2021 taxes.</p>
+                              <p>If you have no taxable income to report in 2021, you still need to report no income in a tax return for 2021 to qualify for the benefit.</p>
+                              <p>For information on how to file, go to: <a href="/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html" target="_blank" rel="noopener">Get ready to do your taxes<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a>.</p>
+                            </div>
+                            <div id="answer0-5" class="hidden alert alert-success alert0 provisional">
+                              <p>Great. We will need your 2021 income information to determine if you are eligible for the benefit.</p>
+                              <div class="mrgn-tp-md">
+                                <p>Next, go to: <a href="#gather-documents"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="far fa-id-card fa-stack-1x"></span></span>Gather</span> your documents</a>.</p>
+                              </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -747,18 +768,18 @@ margin-left: -2.0em;
                   <!-- <p>If you haven't registered or are locked out of My Account with CRA, find an alternative to apply online.</p> -->
                   <div class="wb-frmvld fieldflow-lg">
                     <form>
-                      <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
+                      <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
                         <p>Do you have a CRA My Account? <small class="text-muted">(CRA's online application)</small></p>
                         <ul>
                           <li> Yes 
-                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                               <div class="wb-fieldflow-header">
                                   <p class="wb-fieldflow-label">Are you able to successfully sign in?</p>
                               </div>
                               <ul>
                                 <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
                                 <li>No 
-                                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                     <div class="wb-fieldflow-header">
                                       <p class="wb-fieldflow-label">What problem are you having?</p>
                                     </div>
@@ -774,7 +795,7 @@ margin-left: -2.0em;
                             </div>
                           </li>
                           <li> No 
-                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;gcChckbxrdio&quot;:true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                               <div class="wb-fieldflow-header">
                                   <p class="wb-fieldflow-label">Do you have a My Service Canada Account?</p>
                               </div>
@@ -866,7 +887,7 @@ margin-left: -2.0em;
                         <p>Direct deposit is the fastest way to get payment for this benefit.</p>
                         <div class="wb-frmvld fieldflow-lg">
                             <form>
-                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert3, #bank-redir&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}}">
+                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert3, #bank-redir&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}}">
                                     <p>Is your direct deposit information up to date with the CRA?</p>
                                     <ul>
                                         <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer3-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
