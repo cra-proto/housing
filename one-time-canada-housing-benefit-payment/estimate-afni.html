@@ -1979,6 +1979,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
       uccb = function() {
         return $(":input[type=radio][name=uccb]:checked", formId).data("uccb") || false;
       },
+      resident = function() {
+        return $(":input[type=radio][name=residency]:checked", formId).val() || false;
+      },
       maritalObj = function(maritalStatus) {
         let maritalData = {
           status: maritalStatus.val() || $("#marital-single").val(),
@@ -2265,7 +2268,11 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         // rentAmountAfter = parseInt($("#rent-paid-2022-after").val(), 10) || 0, 
         uccbAndRdspIncome = rdspIncome + uccbIncome + rdspIncomeSpouse + uccbIncomeSpouse,
         uccbAndRdspRepayment = rdspRepayment + uccbRepayment + rdspRepaymentSpouse + uccbRepaymentSpouse;
-        afni = netIncome + spousalNetIncome + worldIncome + spouseWorldIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
+        if (resident() === true) {
+          afni = netIncome + spousalNetIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
+        } else {
+          afni = netIncome + spousalNetIncome + worldIncome + spouseWorldIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
+        }
         // if ($('#marital-change-yes:checked').length > 0) {
         //   rentPercentage = ((rentAmountBefore / 2) + rentAmountAfter) / afni;
         // } else if ($('#marital-change-no:checked').length > 0) {
@@ -2277,10 +2284,16 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $("#results").removeClass("hidden");
         $(".qualify").addClass("hidden");
         $(".doesnt-qualify").addClass("hidden");
-        $("[data-output=net-income-value]").html(currencyFormatter.format(netIncome + worldIncome));
-        $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(spousalNetIncome + spouseWorldIncome));
-        $("[data-output=household-income-value]").html(currencyFormatter.format(netIncome + spousalNetIncome + worldIncome + spouseWorldIncome));
-        
+        if (resident() === true) {
+          $("[data-output=net-income-value]").html(currencyFormatter.format(netIncome));
+          $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(spousalNetIncome));
+          $("[data-output=household-income-value]").html(currencyFormatter.format(netIncome + spousalNetIncome));
+        } else {
+          $("[data-output=net-income-value]").html(currencyFormatter.format(netIncome + worldIncome));
+          $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(spousalNetIncome + spouseWorldIncome));
+          $("[data-output=household-income-value]").html(currencyFormatter.format(netIncome + spousalNetIncome + worldIncome + spouseWorldIncome));
+        }
+
         $("[data-output=uccb-rdsp-income-value]").html(currencyFormatter.format(uccbAndRdspIncome));
         $("[data-output=uccb-rdsp-repayment-value]").html(currencyFormatter.format(uccbAndRdspRepayment));
 
