@@ -1539,7 +1539,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
-                        <div class="alert alert-success provisional">
+                        <div id="result-alert" class="alert alert-success provisional">
 
                           <!-- <ul class="fa-ul"> -->
                             <p>Your adjusted net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="qualify hidden">qualifies</span><span class="doesnt-qualify hidden">doesn't qualify</span> you as <span class="indfam-prep">an</span> <span class="indfam">individual</span></strong>.</p>
@@ -1991,6 +1991,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
         $("[data-output=rent-dollar-figure]").html(currencyFormatter.format(rentAmount));
         $("[data-output=rent-percentage]").html(percentFormatter.format(rentPercentage));
+        $("#result-alert").removeClass("alert-success");
+        $("#result-alert").addClass("alert-warning");
         if ((afni <= famAFNIThreshhold && individual === false) || (afni <= indAFNIThreshhold && individual === true)) {
           $(".qualify").removeClass("hidden");
           $(".rent-not-qualify").addClass("hidden");
@@ -1999,6 +2001,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             $(".rent-not-qualify").removeClass("hidden");
           } else {
             $(".rent-qualify").removeClass("hidden");
+            $("#result-alert").removeClass("alert-warning");
+            $("#result-alert").addClass("alert-success");
           }
         } else {
           $(".doesnt-qualify").removeClass("hidden");
