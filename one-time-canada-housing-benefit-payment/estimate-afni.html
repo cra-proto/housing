@@ -1930,19 +1930,31 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         spousalNetIncome = parseInt($("#spouseNetIncome").val(), 10) || 0,
         worldIncome = parseInt($("#worldIncome").val(), 10) || 0,
         spouseWorldIncome = parseInt($("#spouseWorldIncome").val(), 10) || 0,
-        rdspIncome = parseInt($("#rdspIncome").val(), 10) || 0,
-        rdspRepayment = parseInt($("#rdspRepayment").val(), 10) || 0,
-        rdspIncomeSpouse = parseInt($("#partnerRdspIncome").val(), 10) || 0,
-        rdspRepaymentSpouse = parseInt($("#partnerRdspRepayment").val(), 10) || 0,
-        uccbIncome = parseInt($("#uccbIncome").val(), 10) || 0,
-        uccbRepayment = parseInt($("#uccbRepayment").val(), 10) || 0,
-        uccbIncomeSpouse = parseInt($("#partnerUccbIncome").val(), 10) || 0,
-        uccbRepaymentSpouse = parseInt($("#partnerUccbRepayment").val(), 10) || 0,
-        rentAmount = parseInt($("#rent-paid-2022").val(), 10) || 0,
+        rdspIncome = 0,
+        rdspRepayment = 0,
+        rdspIncomeSpouse = 0,
+        rdspRepaymentSpouse = 0,
+        uccbIncome = 0,
+        uccbRepayment = 0,
+        uccbIncomeSpouse = 0,
+        uccbRepaymentSpouse = 0,
+        rentAmount = parseInt($("#rent-paid-2022").val(), 10) || 0;
         // rentAmountBefore = parseInt($("#rent-paid-2022-before").val(), 10) || 0,
         // rentAmountAfter = parseInt($("#rent-paid-2022-after").val(), 10) || 0, 
-        uccbAndRdspIncome = rdspIncome + uccbIncome + rdspIncomeSpouse + uccbIncomeSpouse,
-        uccbAndRdspRepayment = rdspRepayment + uccbRepayment + rdspRepaymentSpouse + uccbRepaymentSpouse;
+        if (rdsp() === true) {
+          rdspIncome = parseInt($("#rdspIncome").val(), 10) || 0;
+          rdspRepayment = parseInt($("#rdspRepayment").val(), 10) || 0;
+          rdspIncomeSpouse = parseInt($("#partnerRdspIncome").val(), 10) || 0;
+          rdspRepaymentSpouse = parseInt($("#partnerRdspRepayment").val(), 10) || 0;
+        }
+        if (uccb() === true) {
+          uccbIncome = parseInt($("#uccbIncome").val(), 10) || 0;
+          uccbRepayment = parseInt($("#uccbRepayment").val(), 10) || 0;
+          uccbIncomeSpouse = parseInt($("#partnerUccbIncome").val(), 10) || 0;
+          uccbRepaymentSpouse = parseInt($("#partnerUccbRepayment").val(), 10) || 0;
+        }
+        let uccbAndRdspIncome = rdspIncome + uccbIncome + rdspIncomeSpouse + uccbIncomeSpouse;
+        let uccbAndRdspRepayment = rdspRepayment + uccbRepayment + rdspRepaymentSpouse + uccbRepaymentSpouse;
         if (resident() === true) {
           afni = netIncome + spousalNetIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
         } else {
