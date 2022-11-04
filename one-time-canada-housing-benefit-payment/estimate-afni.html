@@ -1800,8 +1800,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
                         <!-- <ul class="fa-ul"> -->
-                          <p>Your adjusted family net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="qualify hidden">qualifies</span><span class="doesnt-qualify hidden">doesn't qualify</span> as <span class="indfam-prep">an</span> <span class="indfam">individual</span></strong>.</p>
-                          <p class="qualify">Your rent paid in 2022 is <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>%0</strong></span> of your 2021 income and would <strong><span class="rent-not-qualify">not</span> qualify</strong> for the benefit.</p>
+                          <p>Your adjusted net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="qualify hidden">qualifies</span><span class="doesnt-qualify hidden">doesn't qualify</span> you as <span class="indfam-prep">an</span> <span class="indfam">individual</span></strong>.</p>
+                          <p class="qualify">Your rent paid in 2022 <span class="h4 mrgn-tp-0">(<span data-output="rent-dollar-figure"></span>)</span> is <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>%0</strong></span> of your 2021 income and would <strong><span class="rent-not-qualify">not</span> qualify</strong> for the benefit.</p>
                         <!-- </ul> -->
                         <p class="h5"><span class="rent-not-qualify">You should not apply. </span>Your adjusted net income and rent would <span class="rent-not-qualify">not</span> qualify for the benefit.</p>
                         <p class="rent-qualify">Ensure you meet <a href="who-apply.html" target="_blank">all the other eligibility criteria >report 2021 income as a part of a tax return or statement of income before you apply <span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
@@ -1816,7 +1816,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                           </ul>
                           <br>
                           <ul class="fa-ul lst-spcd">
-                              <li><span class="mrgn-tp-0 h5"><span name="household-income-value">$0</span><span class="text-muted"> (your household net income)</span></span></li>
+                              <li><span class="mrgn-tp-0 h5"><span data-output="household-income-value">$0</span><span class="text-muted"> (your household net income)</span></span></li>
                               <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span> <span class="h5"><span data-output="uccb-rdsp-income-value">$0</span><span class="text-muted"> (UCCB and RDSP income)</span></span></li>
                               <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><span data-output="uccb-rdsp-repayment-value">$0</span><span class="text-muted"> (UCCB and RDSP repayment)</span></span></li>
                               <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><span data-output="avg-fam-net-income-value">$0</span><span class="text-muted"> (your adjusted net income)</span></span></li>
@@ -2046,6 +2046,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               spouseLabel = maritalCommom.status;
               rdspUccbMaritalUpdate(false);
             }
+            updateResults();
           };
 
         individual = true;
@@ -2112,6 +2113,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $(".spouse-label").html(spouseLabel);
         $(".indfam").html(entityType);
         $(".indfam-prep").html(entityPrep);
+        updateResults();
       }
 
       function residencyQuestions(target) {
@@ -2226,6 +2228,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         updateResults();
       });
 
+      $("#uccbAndRdsp input, #income input", formId).change(function () {
+        updateResults();
+      });
      
       function updateResults() {
         const famAFNIThreshhold = 35000;
@@ -2256,8 +2261,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         uccbIncomeSpouse = parseInt($("#partnerUccbIncome").val(), 10) || 0,
         uccbRepaymentSpouse = parseInt($("#partnerUccbRepayment").val(), 10) || 0,
         rentAmount = parseInt($("#rent-paid-2022").val(), 10) || 0,
-        rentAmountBefore = parseInt($("#rent-paid-2022-before").val(), 10) || 0,
-        rentAmountAfter = parseInt($("#rent-paid-2022-after").val(), 10) || 0, 
+        // rentAmountBefore = parseInt($("#rent-paid-2022-before").val(), 10) || 0,
+        // rentAmountAfter = parseInt($("#rent-paid-2022-after").val(), 10) || 0, 
         uccbAndRdspIncome = rdspIncome + uccbIncome + rdspIncomeSpouse + uccbIncomeSpouse,
         uccbAndRdspRepayment = rdspRepayment + uccbRepayment + rdspRepaymentSpouse + uccbRepaymentSpouse;
         afni = netIncome + spousalNetIncome + worldIncome + spouseWorldIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
@@ -2280,6 +2285,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         $("[data-output=uccb-rdsp-repayment-value]").html(currencyFormatter.format(uccbAndRdspRepayment));
 
         $("[data-output=avg-fam-net-income-value]").html(currencyFormatter.format(afni));
+
+        $("[data-output=rent-dollar-figure]").html(currencyFormatter.format(rentAmount));
         $("[data-output=rent-percentage]").html(percentFormatter.format(rentPercentage));
         if ((afni <= famAFNIThreshhold && individual === false) || (afni <= indAFNIThreshhold && individual === true)) {
           $(".qualify").removeClass("hidden");
