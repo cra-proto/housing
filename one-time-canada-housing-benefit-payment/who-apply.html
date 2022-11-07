@@ -624,9 +624,9 @@ margin-left: -2.0em;
           </li>
 	        <li id="tax-return-checkmark" class="checkbox">
             <input type="checkbox" id="eg4" class="action-checkbox cb-dmm">
-            <label for="eg4">You and your spouse or common-law partner who lives with you have filed your 2021 income tax return(s) or statement(s) of income</label>
+            <label for="eg4">You have filed your 2021 income tax return(s) or statement(s) of income</label>
             <details class="mrgn-lft-md mrgn-tp-md">
-              <summary>If you or your spouse or common-law partner didn't yet file a 2021 tax return or statement of income</summary>
+              <summary>If you didn't yet file a 2021 tax return or statement of income</summary>
               <p class="mrgn-tp-md">You can still apply for the One-time top-up to the Canada Housing Benefit as long as you or your spouse and common-law partner file your 2021 tax return or statement of income before applications are closed. To file a tax return, refer to: <a href="https://www.canada.ca/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html">Get ready to do your taxes</a>.</p>
               <p>Generally, your return will be assessed within 2 weeks for electronically filed returns or 8 weeks for mailed returns. You should ensure your return is assessed before you apply for the one-time payment.</p>
             <!-- <details class="mrgn-lft-md mrgn-tp-md">
@@ -644,9 +644,13 @@ margin-left: -2.0em;
               </ul>
             </details>
           </li>
-          <li class="checkbox">
+          <li id="tax-return-checkmark" class="checkbox">
             <input type="checkbox" id="eg5" class="action-checkbox cb-dmm">
-            <label for="eg5">
+            <label for="eg5">Your spouse or common-law partner who lives with you has filed their 2021 income tax return(s) or statement(s) of income</label>
+          </li>
+          <li class="checkbox">
+            <input type="checkbox" id="eg6" class="action-checkbox cb-dmm">
+            <label for="eg6">
               <p>You meet <strong>both</strong> of the following adjusted net income related criteria:</p>
               <div class="mrgn-lft-lg">
                 <ul class="list-unstyled cnjnctn-type-and">
@@ -1066,24 +1070,21 @@ margin-left: -2.0em;
             $("#default-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
-          if ($(".action-checkbox:not(:checked)").length == 5) {
+          if ($(".action-checkbox:not(:checked)").length == 6) {
             $("#noaction-msg").addClass("hidden");
             $("#default-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 5) {
-            console.log("hi3");
+          if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 6) {
             $("#action-msg").removeClass("hidden");
             $("#noaction-msg").addClass("hidden");
             $("#action-msg").addClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 5) {
-            console.log("hi4");
+          if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 6) {
             $("#action-msg").addClass("hidden");
             $("#noaction-msg").addClass("hidden");
             $("#action-msg").removeClass("hidden");
           }
           if ($(".cb-dmm:not(:checked), #eg5:not(:checked)").length == 1)  {
-            console.log("hi5");
             $("#action-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
