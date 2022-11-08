@@ -80,11 +80,13 @@
       <!--this page contains structured data--> 
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/wet-boew.min.css"/>
       <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.css"/>
+      <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/méli-mélo/2023-10-mount-revelstoke.css">
+
 <noscript>
          <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/noscript.min.css"/>
       </noscript>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-<meta name="description" content="How to apply for the one-time Canada Housing Benefit payment, get ready to apply, when to apply, when to re-apply, set up My Account, set up direct deposit" /> 
+<meta name="description" content="How to apply for the One-time top-up to the Canada Housing Benefit, get ready to apply, when to apply, when to re-apply, set up My Account, set up direct deposit" /> 
 <style type="text/css">
 /*h1 underline re-design*/ h1#wb-cont {
 border-bottom: none;
@@ -318,7 +320,7 @@ margin-left: -2.0em;
    "url":"https://www.canada.ca/en.html"
    },
 
-  "headline":"How to apply: One-time top-up to the Canada Housing Benefit","description":"How to apply for the one-time Canada Housing Benefit payment, get ready to apply, when to apply, when to re-apply, set up My Account, set up direct deposit",
+  "headline":"How to apply: One-time top-up to the Canada Housing Benefit","description":"How to apply for the One-time top-up to the Canada Housing Benefit, get ready to apply, when to apply, when to re-apply, set up My Account, set up direct deposit",
   "mainEntity": [{
     "@type": "Question",
     "name": "How to apply",
@@ -388,7 +390,7 @@ margin-left: -2.0em;
                 <p>Instructions</p>
                   <ol>
                     <li>Select your language preference: English or French</li>
-                    <li>Press '2' to apply for the One-time Canada Housing Benefit payment</li>
+                    <li>Press '2' to apply for the One-time top-up to the Canada Housing Benefit</li>
                     <li>Follow the prompts to enter your information, including:
                       <ul>
                         <li>your SIN</li>
@@ -538,7 +540,7 @@ margin-left: -2.0em;
     <section class="gcnav-section">
       <h1 property="name" id="wb-cont">Get ready to apply</h1>
  	
-  <p>Answer the questions below. Completing any steps you are missing will make it easier to apply.</p>
+  <p>Answer the questions below. Complete any steps you are missing to make it easier to apply for the benefit.</p>
         <div class="row mrgn-bttm-md">
             <div class="col-xs-12">
                 <div class="brdr-lft mrgn-lft-md mrgn-tp-sm">
@@ -546,24 +548,36 @@ margin-left: -2.0em;
                     <h3 class="pull-left mrgn-tp-0 mrgn-lft-lg h3 text-info" id="file-tax">File your income taxes</h3>
                     <div class="clearfix"></div>
                     <div class="mrgn-lft-lg">
+                <p class="text-muted small">Filing your income tax return is required to apply for this benefit.</p>			    
                         <div class="wb-frmvld fieldflow-lg">
                             <form>
-                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                     <div class="wb-fieldflow-header">
                                         <p class="wb-fieldflow-label">Have you filed your 2021 income taxes?</p>
                                     </div>
                                     <ul>
-                                        <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
+                                        <li>Yes
+                                          <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                            <div class="wb-fieldflow-header">
+                                              <p class="wb-fieldflow-label">If you have a spouse or common-law partner who lives with you, have they also filed their 2021 taxes?</p>
+                                            </div>
+                                            <ul>
+                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes, they have filed</li>
+                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No, they have not filed yet</li>
+                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-5&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">I do not have a spouse or common-law partner</li>
+                                            </ul>
+                                          </div>
+                                        </li>
                                         <li>No
-                                          <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                          <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                             <div class="wb-fieldflow-header">
                                               <p class="wb-fieldflow-label">Did you earn all your income in 2021 outside of Canada?</p>
                                             </div>
                                             <ul>
                                               <li>Yes
-                                                <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                                <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert0&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                                   <div class="wb-fieldflow-header">
-                                                    <p class="wb-fieldflow-label">Did you file a Statement of Income for the GST/HST Credit or Canada Child Benefit in 2021?</p>
+                                                    <p class="wb-fieldflow-label">Did you file a Statement of Income for the GST/HST Credit or Canada Child Benefit (CCB) in 2021?</p>
                                                   </div>
                                                   <ul>
                                                     <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
@@ -571,7 +585,7 @@ margin-left: -2.0em;
                                                   </ul>
                                                 </div>
                                               </li>
-                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
+                                              <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer0-4&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
                                             </ul>
                                           </div>
                                         </li>
@@ -582,34 +596,45 @@ margin-left: -2.0em;
                         <div id="answers0">
                             <!--filed taxes-->
                             <div id="answer0-1" class="hidden alert alert-success alert0 provisional">
-                              <p>Great. We will need your 2021 income information to determine if you are eligible for the benefit.</p>
-                              <p>If you have a spouse or common-law partner, they will also need to file their 2021 taxes before you can apply.</p>
+                              <p>Great. We will need you and your spouse or common-law partner's 2021 income information to determine if you are eligible for the benefit.</p>
                               <div class="mrgn-tp-md">
-                              <p>Next, go to: <a href="#gather-documents"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="far fa-id-card fa-stack-1x"></span></span>Gather</span> your documents</a>.</p>
+                                <p>Next, go to: <a href="#gather-documents"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="far fa-id-card fa-stack-1x"></span></span>Gather</span> your documents</a>.</p>
                               </div>
                             </div>
-                            <!--Did not file-->
                             <div id="answer0-2" class="hidden alert alert-warning alert0 provisional">
-                              <p>You will need to file your 2021 taxes before you can apply.</p>
-                              <p>If you have a spouse or common-law partner, they will also need to file their 2021 taxes.</p>
-                              <p>If you have no taxable income to report in 2021, you still need to report no income in a tax return for 2021 to qualify for the benefit.</p>
-                              <p>For information on how to file, go to: <a href="/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html" target="_blank" rel="noopener">Get ready to do your taxes<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a>.</p>
+                              <p>Your spouse or common-law partner <strong>who lives with you</strong> must also file their 2021 taxes before you can apply.</p>
+                              <p>For information on how to file, go to: <a href="https://www.canada.ca/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html">Get ready to do your taxes</a>.</p>
                             </div>
                             <div id="answer0-3" class="hidden alert alert-warning alert0 provisional">
-                              <p>You will need to apply for either the Canada Child Benefit or the GST/HST Credit to submit a statement of income for 2021.</p>
+                              <p>You will need to apply for either the Canada Child Benefit (CCB) or the GST/HST Credit to submit a statement of income for 2021.</p>
                               <details>
                                 <summary>If you had children under 18 years old in 2021</summary>
                                 <p>Submit a statement of income (RC66SCH) as part of your <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-apply.html">CCB application</a>.</p>
                                 <p>By applying for the CCB, you will also automatically apply for the GST/HST credit.</p>
-                                <p>We will need your 2021 income information before we can determine if you are eligible for the housing benefit payment.</p>
+                                <p>We will need your 2021 income information before we can determine if you are eligible for the One-time top-up to the Canada Housing Benefit.</p>
                               </details>
                               <details>
                                 <summary>If you did not have children under 18 years old in 2021</summary>
                                 <p>Submit a statement of income (RC151) as part of a <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/gsthstc-apply.html">GST/HST Credit application</a>.</p>
-                                <p>We will need your 2021 income information before we can determine if you are eligible for the housing benefit payment.</p>
+                                <p>We will need your 2021 income information before we can determine if you are eligible for the One-time top-up to the Canada Housing Benefit.</p>
                               </details>
                               <p>If you have a spouse or common-law partner, they will also need to file their 2021 taxes or submit a statement of income.</p>
                             </div>
+                            <!--Did not file-->
+                            <div id="answer0-4" class="hidden alert alert-warning alert0 provisional">
+                              <p>You will need to file your 2021 taxes before you can apply.</p>
+                              <p>Generally, your return will be assessed within 2 weeks for electronically filed returns or 8 weeks for mailed returns. You should ensure your return is assessed before you apply for the one-time payment.</p>
+                              <p>If you have a spouse or common-law partner, they will also need to file their 2021 taxes.</p>
+                              <p>If you have no taxable income to report in 2021, you still need to report no income in a tax return for 2021 to qualify for the benefit.</p>
+                              <p>For information on how to file, go to: <a href="/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html" target="_blank" rel="noopener">Get ready to do your taxes<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a>.</p>
+                            </div>
+                            <div id="answer0-5" class="hidden alert alert-success alert0 provisional">
+                              <p>Great. We will need your 2021 income information to determine if you are eligible for the benefit.</p>
+                              <div class="mrgn-tp-md">
+                                <p>Next, go to: <a href="#gather-documents"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="far fa-id-card fa-stack-1x"></span></span>Gather</span> your documents</a>.</p>
+                              </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -633,15 +658,15 @@ margin-left: -2.0em;
           </li>
 	        <li class="checkbox">
             <input type="checkbox" id="eg2" class="action-checkbox cb-dmm">
-            <label for="eg2">Address of your principal residence in 2022</label>
+            <label for="eg2">Address(es) of your principal residence(s) in 2022</label>
           </li>
 	        <li class="checkbox">
             <input type="checkbox" id="eg3" class="action-checkbox cb-dmm">
-            <label for="eg3">Name and contact information of the person to whom the rent was paid</label>
+            <label for="eg3">Name and contact information of the person(s) to whom the rent was paid</label>
           </li>
       </ul>
       <div class="alert alert-warning provisional hidden" id="noaction-msg">
-	      <p>We will need <strong>all</strong> of the above to determine if you are eligible for the one-time payment.</p>
+	      <p>We will need <strong>all</strong> of the above to determine if you are eligible for the benefit.</p>
       </div>	
       <div class="alert alert-success hidden provisional" id="action-msg">
         <p>Great. We will need this information to determine if you are eligible for the benefit.</p>
@@ -702,7 +727,7 @@ margin-left: -2.0em;
                                 <p>Great. Having a CRA My Account will make it easier to apply online.</p>
                                 <p>Next, go to: <a href="#deposit"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="fas fa-dollar-sign fa-stack-1x"></span></span>Set up</span> direct deposit</a>.</p>
                             </div>
-                            <div id="answer2-2-1" class="hidden alert alert-success alert2 provisional">
+                            <div id="answer2-2-1" class="hidden alert alert-warning alert2 provisional">
                                 <p>Call the general enquiries line <a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>&nbsp;1-800-959-8281</strong> for help to access your CRA My Account.</p>
                             </div>
                             <div id="answer2-2-2" class="hidden alert alert-warning alert2 provisional">
@@ -746,18 +771,18 @@ margin-left: -2.0em;
                   <!-- <p>If you haven't registered or are locked out of My Account with CRA, find an alternative to apply online.</p> -->
                   <div class="wb-frmvld fieldflow-lg">
                     <form>
-                      <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
+                      <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
                         <p>Do you have a CRA My Account? <small class="text-muted">(CRA's online application)</small></p>
                         <ul>
                           <li> Yes 
-                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                               <div class="wb-fieldflow-header">
                                   <p class="wb-fieldflow-label">Are you able to successfully sign in?</p>
                               </div>
                               <ul>
                                 <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
                                 <li>No 
-                                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                     <div class="wb-fieldflow-header">
                                       <p class="wb-fieldflow-label">What problem are you having?</p>
                                     </div>
@@ -773,7 +798,7 @@ margin-left: -2.0em;
                             </div>
                           </li>
                           <li> No 
-                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                            <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;gcChckbxrdio&quot;:true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                               <div class="wb-fieldflow-header">
                                   <p class="wb-fieldflow-label">Do you have a My Service Canada Account?</p>
                               </div>
@@ -792,10 +817,10 @@ margin-left: -2.0em;
                         <p>Great. Having a CRA My Account will make it easier to apply online.</p>
                         <p>Next, go to: <a href="#deposit"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="fas fa-dollar-sign fa-stack-1x"></span></span>Set up</span> direct deposit</a>.</p>
                       </div>
-                      <div id="answer1-2-1" class="hidden alert alert-success alert1 provisional">
+                      <div id="answer1-2-1" class="hidden alert alert-info alert1 provisional">
                           <p>Call the general enquiries line <a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>&nbsp;1-800-959-8281</strong> for help to access your CRA My Account.</p>
                       </div>
-                      <div id="answer1-2-2" class="hidden alert alert-warning alert1 provisional">
+                      <div id="answer1-2-2" class="hidden alert alert-info alert1 provisional">
                           <ol>
                               <li> You can recover your user ID or password by going to <a href="/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" target="_blank" rel="noopener">CRA My <span class="nowrap">Account<span class="far fa-window-restore mrgn-lft-sm"></span></span><span class="wb-inv"> (opens in new window)</span></a>
                                   <ul>
@@ -816,10 +841,10 @@ margin-left: -2.0em;
                               <li>If you can't recover your account, call the general enquiries line <a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>1-800-959-8281<span class="wb-inv"> (opens up phone application)</span></a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>&nbsp;1-800-959-8281</strong></li>
                           </ol>
                       </div>
-                      <div id="answer1-2-3" class="hidden alert alert-warning alert1 provisional">
+                      <div id="answer1-2-3" class="hidden alert alert-info alert1 provisional">
                           <p>Before contacting the CRA, you should contact your financial institution for assistance.</p>
                       </div>
-                      <div id="answer1-2-4" class="hidden alert alert-warning alert1 provisional">
+                      <div id="answer1-2-4" class="hidden alert alert-info alert1 provisional">
                           <p>For assistance with your:</p>
                           <ul>
                               <li>BC Services Card, go to <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp/troubleshooting" target="_blank" rel="noopener">BC Services Card App - Troubleshooting<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a></li>
@@ -827,19 +852,19 @@ margin-left: -2.0em;
                           </ul>
                       </div>
                       <div id="answer1-4" class="hidden alert alert-success alert1 provisional">
-                        <p>You can sign in to My Service Canada Account to access CRA My Account.</p>
+			      <p>You can <a href=https://www.canada.ca/en/employment-social-development/services/my-account.html>sign in to My Service Canada Account</a> to access CRA My Account.</p>
                         <p>In your My Service Canada Account:</p>
                         <ol>
-                          <li>Click on "<strong>Access CRA</strong></li>
-                          <li>Select "<strong>I agree</strong> on the Registration and Authentication page</li>
+                          <li>Click on "<strong>Access CRA</strong>"</li>
+                          <li>Select "<strong>I agree</strong>" on the Registration and Authentication page</li>
                         </ol>
-                        <p>After you are transferred to CRA My Account, you can update your direct deposit details and apply for the payment.</p>
-                        <p>Next, <span class="nowrap">sign in to <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">My</span> Service Canada Account</a>.</p>
+                        <p>This transfers you to CRA My Account.</p>
+                        <p>Next, go to: <a href="#deposit"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="fas fa-dollar-sign fa-stack-1x"></span></span>Set up</span> direct deposit</a>.</p>
                       </div>
-                      <div id="answer1-5" class="hidden alert alert-success alert1 provisional">
+                      <div id="answer1-5" class="hidden alert alert-info alert1 provisional">
                         <p>Having a CRA My Account will make it easier to apply online.</p>
-                        <p>If you don't have an account, <a href="">register for CRA My Account</a>. You can apply for the one-time Canada Housing Benefit payment right away, <strong>without waiting for a security code</strong>.</p>
-                        <p>Next, <span class="nowrap">register for <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">My Account</span></a>.</p>
+                        <p>If you don't have an account, <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">register for CRA My Account</a>. You can apply for the One-time top-up to the Canada Housing Benefit through My Account <strong>without waiting for a security code</strong>.</p>
+                        <p>Next, go to: <a href="#deposit"><span class="nowrap"><span class="fa-stack fa-xs mrgn-rght-sm"><span class="far fa-circle fa-stack-2x"></span><span class="fas fa-dollar-sign fa-stack-1x"></span></span>Set up</span> direct deposit</a>.</p>
                       </div>
                       <!-- <div id="answer1-6" class="hidden alert alert-warning alert1 provisional">
                         <p>If you are having trouble accessing your CRA My Account, you can call to unlock it.</p>
@@ -865,7 +890,7 @@ margin-left: -2.0em;
                         <p>Direct deposit is the fastest way to get payment for this benefit.</p>
                         <div class="wb-frmvld fieldflow-lg">
                             <form>
-                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert3, #bank-redir&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}}">
+                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;gcChckbxrdio&quot;:true, &quot;renderas&quot;:&quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert3, #bank-redir&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}}">
                                     <p>Is your direct deposit information up to date with the CRA?</p>
                                     <ul>
                                         <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer3-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
@@ -891,10 +916,10 @@ margin-left: -2.0em;
                                     <li><strong>Online:</strong> Confirm it's up to date in your <a href="/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" target="_blank">CRA My <span class="nowrap">Account<span class="far fa-window-restore mrgn-lft-sm"></span></span><span class="wb-inv"> (opens in new window)</span></a> under your personal profile</li>
                                     <li><strong>By phone:</strong> Call <a href="tel:18009598281" class="hidden-md hidden-lg nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>&nbsp;1-800-959-8281</a><strong class="hidden-xs hidden-sm nowrap"><span class="fas fa-phone fa-flip-horizontal"></span>&nbsp;1-800-959-8281</strong></li>
                                 </ul>
-                                <p class="mrgn-tp-lg"><strong>Reminder:</strong> Once your application is processed, direct deposit payment will take up&nbsp;to&nbsp;5 business days. A cheque will take about 10&nbsp;to 12&nbsp;business days.</p>
+                                <p class="mrgn-tp-lg">Once your application is processed, a cheque will take about <strong>10&nbsp;business days</strong>. If you want your payments faster, <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/direct-deposit.html#dd-individuals">direct deposit</a> payments will take up&nbsp;to&nbsp;5 business days.</p>
                             </div>
                             <div id="answer3-3" class="alert alert-info hidden alert3 provisional">
-                                <div class="cnjnctn-type-or">
+                                <div class="cnjnctn-type-or brdr-0">
                                     <div class="cnjnctn-col">
                                         <p>You can set up or change your direct deposit information within your personal profile in <a href="/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" target="_blank" rel="noopener">CRA My Account<span class=" far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a>.</p>
                                     </div>

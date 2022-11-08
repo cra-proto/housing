@@ -85,7 +85,7 @@
 <noscript>
          <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/noscript.min.css">
       </noscript>
-    <meta name="description" content="Who is eligible to apply for the one-time Canada Housing Benefit payment, eligibility criteria to get base amount, eligibility criteria for the top-up amount" >
+    <meta name="description" content="Who is eligible to apply for the One-time top-up to the Canada Housing Benefit, eligibility criteria to get base amount, eligibility criteria for the top-up amount" >
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link href="../css/cews.css" rel="stylesheet">
 <style type="text/css">
@@ -323,7 +323,7 @@ margin-left: -2.0em;
    "url":"https://www.canada.ca/en.html"
    },
 
-  "headline":"Who can apply: One-time top-up to the Canada Housing Benefit","description":"Who is eligible to apply for the one-time Canada Housing Benefit payment, eligibility criteria to get base amount, eligibility criteria for the top-up amount",
+  "headline":"Who can apply: One-time top-up to the Canada Housing Benefit","description":"Who is eligible to apply for the One-time top-up to the Canada Housing Benefit, eligibility criteria to get base amount, eligibility criteria for the top-up amount",
   "mainEntity": [{
     "@type": "Question",
     "name": "Who can apply",
@@ -448,7 +448,7 @@ margin-left: -2.0em;
     "acceptedAnswer": {
       "@type": "Answer",
       "url": "https://www.canada.ca/en/revenue-agency/services/benefits/emergency-student-benefit/who-apply.html",
-      "text": " <p>The Canada Revenue Agency (CRA) will verify your eligibility to receive the  CESB after you have applied. You may receive a  notice from the CRA asking you to contact the CRA to <a href='https://www.canada.ca/en/revenue-agency/services/benefits/apply-for-cerb-with-cra/keep-payment.html?utm_source=google&utm_medium=organic&utm_campaign=faq-data&utm_content=cesbwho-en-q3-001#h-1a'>validate  your application</a>. This is needed to verify your information and process  your application. </p>
+      "text": " <p>The Canada Revenue Agency (CRA) will verify your eligibility to receive the  CESB after you have applied. You may receive a  notice from the CRA asking you to contact the CRA to <a href='https://www.canada.ca/en/revenue-agency/services/benefits/apply-for-cerb-with-cra/keep-payment.html?utm_source=google&utm_medium=organic&utm_campaign=faq-data&utm_content=cesbwho-en-q3-001#h-1a'>validate  your application</a>.</p>
 <p>In  cases where claimants have received a  payment and are later found  to be ineligible, they will be contacted to make arrangements to repay any  applicable amounts. Canadians can also report suspected CESB misuse through the <a href='https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/suspected-tax-cheating-in-canada-overview.html?utm_source=google&utm_medium=organic&utm_campaign=faq-data&utm_content=cesbwho-en-q3-002'>CRA’s Leads program</a>.</p>"
  
     }
@@ -561,8 +561,8 @@ margin-left: -2.0em;
         <ul class="gcnav-steps">
           <li class="active"><a aria-current="page">Who can apply<span class="wb-inv">: One-time top-up to the Canada Housing Benefit</span></a>
             <ul class="gc-navseq noline">
-              <li><a href="estimate-afni.html">Estimate your income and rent</a></li>
               <li><a href="what-eligible-rent.html">What is eligible rent</a></li>
+              <li><a href="estimate-afni.html">Estimate your income and rent</a></li>
             </ul>
           </li>
           <li><a href="get-ready-apply.html">Get ready to apply<span class="wb-inv">: One-time top-up to the Canada Housing Benefit</span></a></li>
@@ -586,7 +586,7 @@ margin-left: -2.0em;
             <li><a href="#h-2">Verifying your eligibility</a></li>
         </ul>
       <h2 id="h-1">Eligibility criteria</h2>
-      <p class="lead">Check these boxes to see if you are eligible for the one-time Canada Housing Benefit payment:</p>
+      <p class="lead">Check these boxes to see if you are eligible for the One-time top-up to the Canada Housing Benefit:</p>
       <section>
         <ul class="checkbox-lg checkbox-zebra">
           <li class="checkbox">
@@ -600,13 +600,14 @@ margin-left: -2.0em;
               <summary>What is a principal residence</summary>
               <p class="mrgn-tp-md">For this benefit, your principal residence is the place where you normally live and pay rent.</p>
               <p class="mrgn-tp-md">This can be any abode, dwelling or other place rented. Examples of principal residence include a house, cottage, condominium, apartment in an apartment building, apartment in a duplex, college or university residence, trailer, mobile home, or houseboat.</p>
+              <p class="mrgn-tp-md">You can only have one principal residence at a time.</p>
             </details>
           </li>
 	        <li class="checkbox">
             <input type="checkbox" id="eg3" class="action-checkbox cb-dmm">
             <label for="eg3">You are a resident of Canada in 2022 for tax purposes</label>
-	    <details class="mrgn-lft-md mrgn-tp-md">
-	    <summary>Determine if you are resident of Canada for tax purposes</summary>
+            <details class="mrgn-lft-md mrgn-tp-md">
+              <summary>Determine if you are a resident of Canada for tax purposes</summary>
               <p class="mrgn-tp-md">You are <strong>not</strong> eligible for this one-time payment if you were considered a <strong>non-resident</strong> of Canada.</p>
               <p class="mrgn-tp-md">You were a non-resident of Canada in 2022 for income tax purposes if <strong>any</strong> of the following are true:</p>		    
                 <ul>
@@ -621,25 +622,35 @@ margin-left: -2.0em;
               <p class="mrgn-tp-md">Read more about <a href=https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html>determining your residency status</a>.</p>
             </details>
           </li>
-	        <li class="checkbox">
+	        <li id="tax-return-checkmark" class="checkbox">
             <input type="checkbox" id="eg4" class="action-checkbox cb-dmm">
-            <label for="eg4">You have filed your 2021 income tax return or statement of income <mark>by March 31, 2023 [no later than the 120th day after the reference day]</mark></label>
+            <label for="eg4">You have filed your 2021 income tax return or statement of income</label>
             <details class="mrgn-lft-md mrgn-tp-md">
-              <summary>File a tax return even if you did <strong>not</strong> earn income in 2021</summary>
-              <p class="mrgn-tp-md">You will need to submit a tax return for 2021 even with no income to report. For information on how to file, go to <a href="https://www.canada.ca/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html">Get ready to do your taxes</a>.</p>
-            </details>
+              <summary>If you didn't yet file a 2021 tax return or statement of income</summary>
+              <p class="mrgn-tp-md">You can still apply for the One-time top-up to the Canada Housing Benefit as long as you or your spouse and common-law partner file your 2021 tax return or statement of income before applications are closed. To file a tax return, refer to: <a href="https://www.canada.ca/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html">Get ready to do your taxes</a>.</p>
+              <p>Generally, your return will be assessed within 2 weeks for electronically filed returns or 8 weeks for mailed returns. You should ensure your return is assessed before you apply for the one-time payment.</p>
+            <!-- <details class="mrgn-lft-md mrgn-tp-md">
+              <summary>File a tax return even if you did <strong>not</strong> earn income in 2021</summary> -->
+              <p class="h4">File a tax return even if you did <strong>not</strong> earn income in 2021</p>
+              <p>You will need to submit a tax return for 2021 even with no income to report. For information on how to file, go to: <a href="https://www.canada.ca/en/services/taxes/income-tax/personal-income-tax/get-ready-taxes.html">Get ready to do your taxes</a>.</p>
+            <!-- </details>
             <details class="mrgn-lft-md mrgn-tp-md">
-              <summary>What to do if you <strong>only</strong> earned income outside of Canada in 2021</summary>
-              <p class="mrgn-tp-md">If you have not yet done so, you will need to submit a statement of income as part of an application for either the Canada Child Benefit (CCB) or the GST/HST Credit.</p>
+              <summary>What to do if you <strong>only</strong> earned income outside of Canada in 2021</summary> -->
+              <p class="h4">What to do if you <strong>only</strong> earned income outside of Canada in 2021</p>
+              <p id="outside-canada-income">If you have not yet done so, you will need to submit a statement of income as part of an application for either the Canada Child Benefit (CCB) or the GST/HST Credit.</p>
               <ul>
                 <li>If you had children under 18 in 2021, submit a statement of income (RC66SCH) as part of your <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-apply.html">Canada Child Benefit (CCB) application</a></li>
                 <li>If you did <strong>not</strong> have children under 18 years old in 2021, submit a statement of income (RC151) as part of a <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/gsthstc-apply.html">GST/HST Credit application</a></li>
               </ul>
             </details>
           </li>
-          <li class="checkbox">
+          <li id="tax-return-checkmark" class="checkbox">
             <input type="checkbox" id="eg5" class="action-checkbox cb-dmm">
-            <label for="eg5">
+            <label for="eg5">Your spouse or common-law partner who lives with you has filed their 2021 income tax return or statement of income</label>
+          </li>
+          <li class="checkbox">
+            <input type="checkbox" id="eg6" class="action-checkbox cb-dmm">
+            <label for="eg6">
               <p>You meet <strong>both</strong> of the following adjusted net income related criteria:</p>
               <div class="mrgn-lft-lg">
                 <ul class="list-unstyled cnjnctn-type-and">
@@ -659,26 +670,24 @@ margin-left: -2.0em;
               <p class="mrgn-tp-md">You are considered a family if <strong>any</strong> of the following applies:</p>
                 <ul>
                   <li>you are married or living common-law and you have <strong>not</strong> been separated because of a breakdown of your marriage or common-law partnership, for a period of at least 90 days on <mark>[the reference day]</mark></li>
-                  <li>you live and financially support any of the following dependants on <mark>[the reference day]</mark></li>
+                  <li>you live with and financially support your child, grandchild, or sibling <strong>under 18 years of age</strong> on <mark>[the reference day]</mark>
                 	<ul>
-                  	<li>your parent or grandparent</li>
-                  	<li>your child, grandchild, or sibling <strong>under 18 years of age</strong></li>
-                  	<li>your child, grandchild, or sibling <strong>18 years of age or older</strong> with impairment in physical or mental functions</li>				
-                	</ul>                
-		    </ul>		      
-	      <h3 class="mrgn-tp-md">Individual</h3>
-              <p class="mrgn-tp-md">If none of the above family criteria applies, you are considered an individual.</p>
+                  	<li><a href=https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-contact.html>add or update children under your care through the Canada Child Benefit (CCB)</a></li>
+                	</ul></li>
+                  <li>you claimed a deduction under <a href=https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-30400-amount-eligible-dependant/you-claim-amount-eligible-dependant.html>line 30400 of your 2021 income tax return</a> for <strong>any</strong> of the following:
+                    <ul>
+                      <li>your parent or grandparent</li>
+                      <li>your child, grandchild, or sibling <strong>18 years of age or older</strong> with impairment in physical or mental functions</li>				
+                    </ul>
+                  </li>                
+                </ul>		      
+                <h3 class="mrgn-tp-md">Individual</h3>
+                <p class="mrgn-tp-md">If none of the above family criteria applies, you are considered an individual.</p>
 
-	      <h3 class="mrgn-tp-md">Your marital status</h3>
-              <p class="mrgn-tp-md">Ensure you have updated <a href=https://www.canada.ca/en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html>your marital status information</a> with the CRA.</p>		    
+                <h3 class="mrgn-tp-md">Your marital status</h3>
+                <p class="mrgn-tp-md">Ensure you have updated <a href=https://www.canada.ca/en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html>your marital status information</a> with the CRA.</p>		    
 
-	     <h3 class="mrgn-tp-md">Your dependant information</h3>
-              <p class="mrgn-tp-md">Ensure you have updated your dependant information with the CRA through:</p>		    
-                	<ul>
-                  	<li><a href=https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html>your Canada Child Benefit (CCB) application</a></li>
-                  	<li><a href=https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-30400-amount-eligible-dependant/you-claim-amount-eligible-dependant.html>line 30400 (amount for an eligible dependant) on your 2021 income tax return</a></li>
-                	</ul> 
-	  </details>
+              </details>
             <!-- <details class="mrgn-lft-md mrgn-tp-md">
               <summary>What is rent</summary>
               <p class="mrgn-tp-md">Rent means a payment you made in 2022 under a lease, licence or similar arrangement to occupy a principal residence in 2022.</p>
@@ -766,7 +775,7 @@ margin-left: -2.0em;
             <ul class="list-unstyled cnjnctn-type-or cnjnctn-sm">
               <li class="cnjnctn-col">
                 <p class="h3 text-muted">View your net income in My Account<span class="wb-inv">: Option 1 of 2</span></p>
-                <p><a href="">Sign in to My Account</a> and you will be able to see your calculated net income at the top of the application for the housing benefit payment.</p>
+                <p><a href="">Sign in to My Account</a> and you will see your calculated net income at the top of the application for the one-time payment.</p>
               </li>
               <li class="cnjnctn-col">
                 <p class="h3 text-muted">Use the estimator<span class="wb-inv">: Option 2 of 2</span></p>
@@ -777,23 +786,23 @@ margin-left: -2.0em;
         </ul>
         <div class="alert alert-info provisional" id="default-msg">
           <p class="h3">You need all the above to be eligible</p>
-          <p>You must meet <strong>all</strong> the above criteria to be eligible for the one-time Canada Housing Benefit payment.</p>
+          <p>You must meet <strong>all</strong> the above criteria to be eligible for the One-time top-up to the Canada Housing Benefit.</p>
         </div>	
         <div class="alert alert-warning provisional hidden" id="noaction-msg">
           <p class="h3">You need all the above to be eligible</p>
-          <p>You must meet <strong>all</strong> the above criteria to be eligible for the one-time Canada Housing Benefit payment.</p>
+          <p>You must meet <strong>all</strong> the above criteria to be eligible for the One-time top-up to the Canada Housing Benefit.</p>
         </div>	
         <div class="alert alert-success hidden provisional" id="action-msg">
           <p class="h3">You may be eligible for the one-time payment of $500</p>
-          <p>Applications are open until March 1, 2023.</p>
+		<p>Applications are open until <mark>March 31, 2023</mark>.</p>
           <p><a href="get-ready-apply.html">Get ready to apply</a>.</p>
         </div>
     </section>
 
       <h2 id="h-2">Verifying your eligibility</h2>
-      <p>The CRA will verify if you are eligible to receive the one-time Canada Housing Benefit payment.</p>
-      <p>You or your landlord may receive a notice asking you to contact us to <a href="application-validation.html">validate  your application</a>. This is needed to verify your information and process your application. </p>
-      <p>If you have received a payment and are later found to be ineligible, you will be contacted to make arrangements to return or repay the payment. If you are found to have intentionally misrepresented or concealed information to make a fraudulent claim, additional consequences and penalties may also be applied.</p>
+      <p>The CRA routinely checks to confirm that recipients were entitled to the payment they received.</p>
+      <p><a href=application-validation.html>If your application requires further validation</a>, the CRA may ask you to provide additional information.</p>
+      <p>If you have received a payment and are later found to be ineligible, you will be contacted to make arrangements to <a href=return-payment.html>return or repay the payment</a>. If you are found to have intentionally misrepresented or concealed information to make a fraudulent claim, additional consequences and penalties may also be applied.</p>
       <p>You can report suspected misuse through the <a href="https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/suspected-tax-cheating-in-canada-overview.html">CRA’s Leads program</a>.</p>
       <nav role="navigation" class="mrgn-bttm-lg mrgn-tp-lg">
         <h3 class="wb-inv">Document navigation</h3>
@@ -1061,24 +1070,21 @@ margin-left: -2.0em;
             $("#default-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
-          if ($(".action-checkbox:not(:checked)").length == 5) {
+          if ($(".action-checkbox:not(:checked)").length == 6) {
             $("#noaction-msg").addClass("hidden");
             $("#default-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 5) {
-            console.log("hi3");
+          if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 6) {
             $("#action-msg").removeClass("hidden");
             $("#noaction-msg").addClass("hidden");
             $("#action-msg").addClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 5) {
-            console.log("hi4");
+          if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 6) {
             $("#action-msg").addClass("hidden");
             $("#noaction-msg").addClass("hidden");
             $("#action-msg").removeClass("hidden");
           }
           if ($(".cb-dmm:not(:checked), #eg5:not(:checked)").length == 1)  {
-            console.log("hi5");
             $("#action-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
