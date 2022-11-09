@@ -1529,11 +1529,11 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <div class="panel-body mrgn-lft-sm">
                       <p>Find out <a href="what-eligible-rent.html" target="_blank">what you can include as eligible rent<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a>. You might not be able to include certain amounts depending on your marital status, if you moved, paid board or utility costs, or other factors.</p>
                       <div class="form-group rent-paid-no-separation">
-                        <label for="rent-paid-2022"><span class="field-name">Rent paid for your principal residence in 2022</span> <span class="wb-inv">(dollars only, no cents)</span></label>
+                        <label for="rent-paid-2022" class="required"><span class="field-name">Rent paid for your principal residence in 2022</span> <span class="wb-inv">(dollars only, no cents)</span><strong class="required">(required)</strong></label>
                         <!-- <a href="#uccbAndRdspIncome-help" aria-controls="uccbAndRdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your UCCB and RDSP income</span></a> -->
                         <div class="input-group col-sm-5">
                           <span class="input-group-addon">$</span>
-                          <input type="text" name="rent-paid-2022" size="7" maxlength="7" value="" id="rent-paid-2022" class="form-control text-right" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
+                          <input type="text" name="rent-paid-2022" size="7" maxlength="7" value="" id="rent-paid-2022" class="form-control text-right" required="required" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
                           <span class="input-group-addon">.00</span>
                         </div>
                       </div>
