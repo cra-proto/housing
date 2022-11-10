@@ -28,233 +28,234 @@
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/wet-boew.min.css"/>
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.css"/>
 <link href="https://test.canada.ca/covid-19-guidance/proto/css/alpha-beta-banner.css" rel="stylesheet">
+<link href="https://www.canada.ca/etc/designs/canada/wet-boew/m%C3%A9li-m%C3%A9lo/2022-06-banff.min.css" rel="stylesheet">
 
 
 <noscript>
-<link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/noscript.min.css"/>
-</noscript>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-<style type="text/css">
-/*h1 underline re-design*/ h1#wb-cont {
-border-bottom: none;
-}
-h1#wb-cont::after {
-	content: "";
-	display: block;
-	width: 70px;
-	padding-bottom: 8px;
-	border-bottom: .18em solid #af3c43;
-}/*Section menu steps design*/
-ul.gcnav-steps {
-	list-style: none;
-	padding-left: 0.57em;
-	position: relative;
-}
-li ul.gcnav-steps {
-	margin-top: 20px;
-	padding-left: 0.55em;
-}
-ul.gcnav-steps>li {
-	border-left: 4px solid #26374a;
-	padding: 0px 20px 30px 1em;
-}
-ul.gcnav-steps.noline>li {
-	border-left: 4px solid transparent;
-}
-ul.gcnav-steps>li::first-line {
-	line-height: 1!important;
-}
-ul.gcnav-steps>li:last-child, ul.gcnav-steps>li.gcnav-steps-end {
-	border-left: 4px solid transparent;
-}
-li ul.gcnav-steps>li:last-child {
-	padding-bottom: 0px;
-}
-ul.gcnav-steps>li>:first-child::before {
-	border-radius: 50%;
-	border: 3px solid #26374a;
-	background-color: #fff;
-	position: absolute;
-	left: 0.05em;
-	content: "";
-	width: 1.2em;
-	height: 1.2em;
-	transition: width 0.2s, height 0.2s, left 0.2s, margin-top 0.2s;
-}
-ul.gcnav-steps>li.active>:first-child::before {
-	background-color: #26374a;
-}
-ul.gcnav-steps>li>a[href]:hover::before, .gcnav-steps>li>a[href]:focus::before {
-	width: 1.4em;
-	height: 1.4em;
-	left: -0.05em;
-	margin-top: -0.1em;
-}/*Section menu mobile*/
-.gcnav h1#wb-cont-parent {
-	border-bottom-width: 0px;
-	padding: 0px 20px 10px 12px;
-	background-color: #fff;
-	font-size: 1.3em;
-	color: #555;
-	margin-top: -19px;
-	float: left;
-	margin-right: 20px;
-}
-.gcnav-menu {
-	border-top: 4px solid #26374a;
-	border-right: 4px solid #26374a;
-	border-radius: 0px 6px 6px 0px;
-	margin-top: 38px;
-}
-.gcnav-menu .gcnav-steps {
-	padding-top: 10px;
-	clear: both;
-}
-.gcnav ul.gcnav-steps>li:last-child {
-	border-left: 4px solid #26374a;
-	border-bottom: 4px solid #26374a;
-	border-bottom-left-radius: 6px;
-}
-#gcnav-menu-header, .gcnav-menu-pager {
-	display: none;
-}/* Section menu desktop*/
-
-@media all and (min-width:992px) {
-.gcnav {
-	margin: 0px -15px 0px -15px;
-}
-.gcnav::after {
-	clear: both;
-}
-.gcnav::after, .gcnav::before {
-	content: " ";
-	display: table;
-}
-.gcnav-menu h1#wb-cont-parent {
-	font-weight: inherit;
-	padding-bottom: 0px!important;
-	margin-bottom: 0px;
-}
-.gcnav-section h1#wb-cont {
-	margin-top: 0px;
-}
-.gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager, .gcnav-section {
-	width: 66.66%;
-}
-.gcnav-menu nav, .gcnav aside.gcnav-side {
-	width: 33.33%;
-	float: right;
-}
-.gcnav-section {
-	display: inline-block;
-}
-.gcnav-menu nav {
-	margin-top: -20px;
-}
-.gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager, .gcnav-section, .gcnav-menu nav, .gcnav aside.gcnav-side {
-	position: relative;
-	min-height: 1px;
-	padding: 0px 15px 0px 15px;
-}
-.gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager {
-	float: left;
-}
-.gcnav aside.gcnav-side {
-	clear: right;
-}
-#gcnav-menu-header, .gcnav-menu-pager {
-	display: inherit;
-	margin-top: 0px;
-}
-.gcnav-menu #gcnav-menu-header {
-	font-size: 1.2em;
-}
-.gcnav-menu {
-	border-top: 0px;
-	border-right: 0px;
-}
-.gcnav ul.gcnav-steps > li:last-child {
-	border-left: 4px solid transparent;
-	border-bottom: 0px;
-}/*Section menu nav buttons*/
-ul.gcnav-menu-pager>li>a:hover, ul.gcnav-menu-pager>li>a:focus, ul.gcnav-menu-pager>li>a:visited {
-	display: inline-block;
-	color: #fff;
-	text-decoration: none;
-	padding: 5px;
-}
-ul.gcnav-menu-pager>li>a {
-	background-color: #26374a;
-}
-ul.gcnav-menu-pager>li>a:hover {
-	background-color: #444;
-}
-ul.gcnav-menu-pager>li>a:not(:focus) {
-	clip: rect(1px,1px,1px,1px);
-	height: 1px;
-	margin: 0;
-	overflow: hidden;
-	position: absolute;
-	width: 1px;
-}
-ul.gcnav-menu-pager>li>a:focus {
-	position: relative;
-}
-ul.gcnav-menu-pager {
-	display: flex;
-	margin-bottom: 0;
-	list-style: none;
-	padding-left: 0;
-}
-}
-@-moz-document url-prefix() {
-ul.gc-navseq>li>:first-child::before {
-margin-left: -2.0em;
-}
-}/*Checkbox/Fieldflow radio input sizing,positioning*/
-.checkbox-lg > li.checkbox {
-	margin-top: 0px;
-}
-.checkbox-lg > li {
-	margin-left: -40px;
-	padding-left: 40px;
-	padding-top: 5px;
-	padding-bottom: 10px;
-	margin-bottom: 5px;
-	padding-right: 15px;
-}
-.checkbox-zebra > li:nth-child(2n+1) {
-	background-color: #f5f5f5;
-	padding-top: 10px;
-	padding-bottom: 15px;
-}
-.checkbox-lg > li.checkbox input[type=checkbox], .fieldflow-lg .radio input[type=radio] {
-	margin-top: 12px;
-	transform: scale(2);
-}
-.checkbox-lg label, .fieldflow-lg, .fieldflow-lg label, .fieldflow-lg div, .fieldflow-lg select, .std-blt {
-	font-size: 20px;
-	line-height: 1.65em;
-}
-.std-blt {
-	list-style-type: disc;
-}
-.std-blt li label {
-	display: block;
-	padding-left: 0px;
-}
-.fieldflow-lg .radio label {
-	margin-left: 40px;
-}
-.fieldflow-lg .radio input[type=radio] {
-	margin-left: -40px;
-}
-.fieldflow-lg fieldset legend {
-	font-size: 22px;
-	margin-top: 0px;
-}
-</style>
-
+  <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/noscript.min.css"/>
+  </noscript>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+  <style type="text/css">
+    /*h1 underline re-design*/ h1#wb-cont {
+    border-bottom: none;
+    }
+    h1#wb-cont::after {
+      content: "";
+      display: block;
+      width: 70px;
+      padding-bottom: 8px;
+      border-bottom: .18em solid #af3c43;
+    }/*Section menu steps design*/
+    ul.gcnav-steps {
+      list-style: none;
+      padding-left: 0.57em;
+      position: relative;
+    }
+    li ul.gcnav-steps {
+      margin-top: 20px;
+      padding-left: 0.55em;
+    }
+    ul.gcnav-steps>li {
+      border-left: 4px solid #26374a;
+      padding: 0px 20px 30px 1em;
+    }
+    ul.gcnav-steps.noline>li {
+      border-left: 4px solid transparent;
+    }
+    ul.gcnav-steps>li::first-line {
+      line-height: 1!important;
+    }
+    ul.gcnav-steps>li:last-child, ul.gcnav-steps>li.gcnav-steps-end {
+      border-left: 4px solid transparent;
+    }
+    li ul.gcnav-steps>li:last-child {
+      padding-bottom: 0px;
+    }
+    ul.gcnav-steps>li>:first-child::before {
+      border-radius: 50%;
+      border: 3px solid #26374a;
+      background-color: #fff;
+      position: absolute;
+      left: 0.05em;
+      content: "";
+      width: 1.2em;
+      height: 1.2em;
+      transition: width 0.2s, height 0.2s, left 0.2s, margin-top 0.2s;
+    }
+    ul.gcnav-steps>li.active>:first-child::before {
+      background-color: #26374a;
+    }
+    ul.gcnav-steps>li>a[href]:hover::before, .gcnav-steps>li>a[href]:focus::before {
+      width: 1.4em;
+      height: 1.4em;
+      left: -0.05em;
+      margin-top: -0.1em;
+    }/*Section menu mobile*/
+    .gcnav h1#wb-cont-parent {
+      border-bottom-width: 0px;
+      padding: 0px 20px 10px 12px;
+      background-color: #fff;
+      font-size: 1.3em;
+      color: #555;
+      margin-top: -19px;
+      float: left;
+      margin-right: 20px;
+    }
+    .gcnav-menu {
+      border-top: 4px solid #26374a;
+      border-right: 4px solid #26374a;
+      border-radius: 0px 6px 6px 0px;
+      margin-top: 38px;
+    }
+    .gcnav-menu .gcnav-steps {
+      padding-top: 10px;
+      clear: both;
+    }
+    .gcnav ul.gcnav-steps>li:last-child {
+      border-left: 4px solid #26374a;
+      border-bottom: 4px solid #26374a;
+      border-bottom-left-radius: 6px;
+    }
+    #gcnav-menu-header, .gcnav-menu-pager {
+      display: none;
+    }/* Section menu desktop*/
+    
+    @media all and (min-width:992px) {
+    .gcnav {
+      margin: 0px -15px 0px -15px;
+    }
+    .gcnav::after {
+      clear: both;
+    }
+    .gcnav::after, .gcnav::before {
+      content: " ";
+      display: table;
+    }
+    .gcnav-menu h1#wb-cont-parent {
+      font-weight: inherit;
+      padding-bottom: 0px!important;
+      margin-bottom: 0px;
+    }
+    .gcnav-section h1#wb-cont {
+      margin-top: 0px;
+    }
+    .gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager, .gcnav-section {
+      width: 66.66%;
+    }
+    .gcnav-menu nav, .gcnav aside.gcnav-side {
+      width: 33.33%;
+      float: right;
+    }
+    .gcnav-section {
+      display: inline-block;
+    }
+    .gcnav-menu nav {
+      margin-top: -20px;
+    }
+    .gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager, .gcnav-section, .gcnav-menu nav, .gcnav aside.gcnav-side {
+      position: relative;
+      min-height: 1px;
+      padding: 0px 15px 0px 15px;
+    }
+    .gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager {
+      float: left;
+    }
+    .gcnav aside.gcnav-side {
+      clear: right;
+    }
+    #gcnav-menu-header, .gcnav-menu-pager {
+      display: inherit;
+      margin-top: 0px;
+    }
+    .gcnav-menu #gcnav-menu-header {
+      font-size: 1.2em;
+    }
+    .gcnav-menu {
+      border-top: 0px;
+      border-right: 0px;
+    }
+    .gcnav ul.gcnav-steps > li:last-child {
+      border-left: 4px solid transparent;
+      border-bottom: 0px;
+    }/*Section menu nav buttons*/
+    ul.gcnav-menu-pager>li>a:hover, ul.gcnav-menu-pager>li>a:focus, ul.gcnav-menu-pager>li>a:visited {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 5px;
+    }
+    ul.gcnav-menu-pager>li>a {
+      background-color: #26374a;
+    }
+    ul.gcnav-menu-pager>li>a:hover {
+      background-color: #444;
+    }
+    ul.gcnav-menu-pager>li>a:not(:focus) {
+      clip: rect(1px,1px,1px,1px);
+      height: 1px;
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
+    }
+    ul.gcnav-menu-pager>li>a:focus {
+      position: relative;
+    }
+    ul.gcnav-menu-pager {
+      display: flex;
+      margin-bottom: 0;
+      list-style: none;
+      padding-left: 0;
+    }
+    }
+    @-moz-document url-prefix() {
+    ul.gc-navseq>li>:first-child::before {
+    margin-left: -2.0em;
+    }
+    }/*Checkbox/Fieldflow radio input sizing,positioning*/
+    .checkbox-lg > li.checkbox {
+      margin-top: 0px;
+    }
+    .checkbox-lg > li {
+      margin-left: -40px;
+      padding-left: 40px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+      padding-right: 15px;
+    }
+    .checkbox-zebra > li:nth-child(2n+1) {
+      background-color: #f5f5f5;
+      padding-top: 10px;
+      padding-bottom: 15px;
+    }
+    .checkbox-lg > li.checkbox input[type=checkbox], .fieldflow-lg .radio input[type=radio] {
+      margin-top: 12px;
+      transform: scale(2);
+    }
+    .checkbox-lg label, .fieldflow-lg, .fieldflow-lg label, .fieldflow-lg div, .fieldflow-lg select, .std-blt {
+      font-size: 20px;
+      line-height: 1.65em;
+    }
+    .std-blt {
+      list-style-type: disc;
+    }
+    .std-blt li label {
+      display: block;
+      padding-left: 0px;
+    }
+    .fieldflow-lg .radio label {
+      margin-left: 40px;
+    }
+    .fieldflow-lg .radio input[type=radio] {
+      margin-left: -40px;
+    }
+    .fieldflow-lg fieldset legend {
+      font-size: 22px;
+      margin-top: 0px;
+    }
+    </style>
+    
 </head>
 
 <body vocab="http://schema.org/" typeof="WebPage" resource="#wb-webpage">
@@ -396,84 +397,83 @@ margin-left: -2.0em;
       <p class="mrgn-tp-md">S'il y a un montant de loyer qui n'est <strong>pas</strong> spécifié sur le bail et qui sert à payer les repas, la pension ou d'autres services, <strong>n'incluez que 90 %</strong> du loyer.</p>		    
 
       <h2 id="multiple-individuals" class="mrgn-tp-md">Les loyers partagés par plusieurs particuliers (colocataires) ou familles sont déclarés séparément</h2>
-      <p class="mrgn-tp-md">In the case of rent payments shared by multiple individuals (roommates) or families living at the same address, you would:</p>
+      <p class="mrgn-tp-md">Dans le cas de loyers partagés par plusieurs personnes (colocataires) ou familles vivant à la même adresse, vous devez :</p>
       <ul>
-        <li>each apply as separate family units or individuals</li>
-   		  <li>each claim the portion of the rent that you paid</li>
+        <li>faire chacun une demande en tant qu'unité familiale ou particulier distinct</li>
+   		  <li>demander chacun la part du loyer que vous avez payée</li>
       </ul>
 		    
       <h2 id="change-marital-status" class="mrgn-tp-md">Les changements d'état civil peuvent avoir une incidence sur la manière dont le loyer est déclaré</h2>
       <details class="mrgn-lft-md mrgn-tp-md">
-        <summary>If you got married in 2022</summary>
-        <h3 class="mrgn-tp-md">Before or on December 1, 2022:</h3>
-        <p class="mrgn-tp-md">If you got married in 2022 before or on December 1, 2022, only <strong>one</strong> spouse is eligible to receive the one-time payment. If you are the spouse who applies:</p>		    
+        <summary>Si vous vous êtes marié en 2022</summary>
+        <h3 class="mrgn-tp-md">Le [jour] ou avant :</h3>
+        <p class="mrgn-tp-md">Si vous vous êtes marié en 2022 le <mark>[jour]</mark> ou avant, <strong>un</strong> seul conjoint est admissible au paiement unique. Si vous êtes le conjoint qui fait la demande, incluez :</p>		    
         <ul>
-          <li>include rent you paid in 2022 before you were married</li>
-          <li>include rent your spouse paid in 2022 before you were married</li>
-          <li>include rent you paid as a married couple in 2022</li>
-	 </ul>
+          <li>le loyer que vous avez payé en 2022 avant votre mariage</li>
+          <li>le loyer que votre conjoint a payé en 2022 avant votre mariage</li>
+          <li>le loyer que vous avez payé en tant que couple marié en 2022</li>
+        </ul>
         
-        <h3 class="mrgn-tp-md">After December 1, 2022:</h3>
-        <p class="mrgn-tp-md">If you got married in 2022 after December 1, 2022, your marital status remains, for the purpose of this benefit, as it was prior to you getting married. This means, if you were single or widowed and you got married after December 1, 2022, then you would still be considered as single or widowed for this benefit.</p> 
-        <p>In your application:</p>
+        <h3 class="mrgn-tp-md">Après le <mark>[jour]</mark></h3>
+        <p class="mrgn-tp-md">Si vous vous êtes marié en 2022 après le [jour], votre état civil reste, en ce qui concerne cette prestation, tel qu'il était avant votre mariage. Autrement dit, si vous étiez célibataire ou veuf et que vous vous êtes marié après le <mark>[jour]</mark, vous serez toujours considéré comme célibataire ou veuf pour cette prestation.</p> 
+        <p>Dans votre demande :</p>
         <ul>
-          <li>include the total amount of rent you paid in 2022 up to the day before you got married</li>
-          <li>include your portion of the total amount of rent paid in 2022 by you and your cohabiting spouse or common-law partner from the day you got married</li>
+          <li>incluez le montant total du loyer que vous avez payé en 2022 jusqu'au jour précédant votre mariage</li>
+          <li>incluez votre part du montant total du loyer payé en 2022 par vous et votre époux ou conjoint de fait cohabitant à partir du jour où vous vous êtes marié</li>
         </ul>
       </details>
       <details class="mrgn-lft-md mrgn-tp-md">
-        <summary>If you got separated or divorced in 2022</summary>
-        <p class="mrgn-tp-md">Separation is when a married or common-law couple lives apart more than 90 days, due to a breakdown in their relationship. To be considered separated for this benefit, you must have been separated for 90 days or more by December 1, 2022.</p>		    
+        <summary>Si vous vous êtes séparé ou divorcé en 2022</summary>
+        <p class="mrgn-tp-md">On parle de séparation lorsqu'un couple marié ou en union libre vit séparément pendant plus de 90 jours en raison de la rupture de leur relation. Afin d’être considéré comme séparé pour cette prestation, vous devez avoir été séparé pendant 90 jours ou plus en date du <mark>[jour]</mark>.</p>		    
         
-        <h3 class="mrgn-tp-md">Before or on December 1, 2022:</h3>
-        <p class="mrgn-tp-md">If you got separated or divorced in 2022 before or on December 1, 2022, each spouse or common-law partner is eligible to receive the one-time payment.</p>
-        <p class="mrgn-tp-md">In your application:</p>
+        <h3 class="mrgn-tp-md">Le <mark>[jour]</mark> ou avant : </h3>
+        <p class="mrgn-tp-md">Si vous vous êtes séparé ou divorcé en 2022 le <mark>[jour]</mark> ou avant, chaque époux ou conjoint de fait a le droit de recevoir le paiement unique. </p>
+        <p class="mrgn-tp-md">Dans votre demande :</p>
         <ul>
-          <li>include your portion of the total amount of rent paid in 2022 by you and your cohabiting spouse or common-law partner up to the day before you started living separate and apart</li>
-          <li>include the total amount of rent you paid in 2022 starting on the first day you were living separate and apart</li>
+          <li>incluez votre part du montant total du loyer payé en 2022 par vous et votre époux ou conjoint de fait cohabitant jusqu'au jour précédant le jour où vous avez commencé à vivre séparés</li>
+          <li>incluez le montant total du loyer que vous avez payé en 2022 à partir du premier jour où vous avez commencé à vivre séparés</li>
         </ul>
-        <p class="mrgn-tp-md">In your former spouse’s or common-law partner’s application, they would:</p>
+        <p class="mrgn-tp-md">Dans la demande de votre ancien époux ou conjoint de fait, il doit :</p>
         <ul>
-          <li>include their portion of the total amount of rent paid in 2022 by you and your cohabiting spouse or common-law partner up to the day before you started living separate and apart</li>
-          <li>include the total amount of rent they paid in 2022 starting on the first day you were living separate and apart</li>
+          <li>inclure sa part du montant total du loyer payé en 2022 par vous et votre époux ou conjoint de fait cohabitant jusqu'au jour précédant le jour où vous avez commencé à vivre séparés</li>
+          <li>inclure le montant total du loyer qu'il a payé en 2022 à partir du premier jour où vous avez commencé à vivre séparés</li>
         </ul>
 
-        <h3 class="mrgn-tp-md">After December 1, 2022: </h3>
-        <p class="mrgn-tp-md">If you got separated or divorced in 2022 after December 1, 2022, your marital status remains, for the purpose of this benefit, as it was prior to you getting separated or divorced. This means you would still be considered married for this benefit.</p>
-        <p class="mrgn-tp-md">Only <strong>one</strong> spouse or common-law partner is eligible to receive the one-time payment. In your application:</p>
+        <h3 class="mrgn-tp-md">Après le <mark>[jour]</mark> :</h3>
+        <p class="mrgn-tp-md">Si vous vous êtes séparé ou divorcé en 2022 après le <mark>[jour]</mark>, votre état civil reste, en ce qui concerne cette prestation, tel qu'il était avant votre séparation ou votre divorce. Cela signifie que vous seriez toujours considéré comme marié pour cette prestation.</p>
+        <p class="mrgn-tp-md"><strong>Un</strong> seul époux ou conjoint de fait a le droit de recevoir le paiement unique.  Si vous faites une demande, incluez :</p>
         <ul>
-          <li>include rent you paid as a married couple in 2022 </li>
-          <li>include rent you paid in 2022 after you were separated or divorced</li>
-          <li>include rent your former spouse paid in 2022 after you were separated or divorced</li>
+          <li>le loyer que vous avez payé en tant que couple marié en 2022</li>
+          <li>le loyer que vous avez payé en 2022 après votre séparation ou votre divorce</li>
+          <li>le loyer que votre ex-conjoint a payé en 2022 après votre séparation ou votre divorce</li>
         </ul>
       </details>
       <details class="mrgn-lft-md mrgn-tp-md">
-        <summary>If you became widowed in 2022</summary>
-        <p class="mrgn-tp-md">If you became widowed <strong>in 2022</strong>, do the following in your application:</p>		    
+        <summary>Si vous êtes devenu veuf</summary>
+        <p class="mrgn-tp-md">Si vous êtes devenu veuf <strong>en 2022</strong>, dans votre demande :</p>		    
         <ul>
-          <li>include the total amount of rent paid in 2022 by you and your cohabiting spouse or common-law partner up to the day before you became widowed</li>
-          <li>include the total amount of rent you paid in 2022 starting on the first day you became widowed</li>
+          <li>incluez le montant total du loyer payé en 2022 par vous et votre époux ou conjoint de fait jusqu'au jour précédant le jour où vous êtes devenu veuf</li>
+          <li>incluez le montant total du loyer que vous avez payé en 2022 à partir du premier jour où vous êtes devenu veuf</li>
         </ul>
       </details>
 
-      <h2 id="more-principal-residences" class="mrgn-tp-md">More than one principal residence and how to claim rent</h2>
-      <h3 id="lived-apart" class="mrgn-tp-md">If you lived apart from your spouse or common-law partner</h3>
-      <p class="mrgn-tp-md">You and your spouse or common-law partner might live in two principal residences due to physical separation (for example, one spouse goes away to school or one common-law partner is away for work purposes).</p>	    
-      <p class="mrgn-tp-md">If you and your spouse or common-law partner lived in two different principal residences at any point in 2022, and living apart was <strong>not</strong> due to a breakdown in the relationship, only <strong>one</strong> spouse or common-law partner is eligible to receive the one-time payment. If you are the spouse or common-law partner who applies:</p>
+      <h2 id="more-principal-residences" class="mrgn-tp-md">Comment déclarer le loyer pour plusieurs résidences principales</h2>
+      <h3 id="lived-apart" class="mrgn-tp-md">Si vous n’habitiez pas avec votre époux ou conjoint de fait</h3>
+      <p class="mrgn-tp-md">Il se peut que vous et votre époux ou conjoint de fait viviez dans deux résidences principales en raison d'une séparation physique (par exemple, l'un des époux part à l'école ou l'un des conjoints de fait est absent pour des raisons professionnelles).</p>	    
+      <p class="mrgn-tp-md">Si vous et votre époux ou conjoint de fait avez vécu dans deux résidences principales différentes à un moment donné en 2022, et que le fait d’habiter séparément n'était <strong>pas</strong> dû à une rupture de la relation, <strong>un</strong> seul époux ou conjoint de fait est admissible au paiement unique. Si vous êtes l'époux ou le conjoint de fait qui fait la demande :</p>
       <ul>
-        <li>include the total amount of rent paid in 2022 for <strong>both</strong> principal residences, regardless of which spouse or common-law partner paid the rent</li>
+        <li>incluez le montant total du loyer payé en 2022 pour les <strong>deux</strong> résidences principales peu importe quel époux ou conjoint de fait a payé le loyer</li>
       </ul>
-      <h4>Living apart due to a breakdown in the relationship</h4>
-      <p class="mrgn-tp-md">If, due to a <strong>breakdown in the relationship</strong>, you and your spouse or common-law partner lived apart at least 90 days, you are considered separated by the CRA. <a href="#change-marital-status">Determine your rent if your marital status changed in 2022</a>.</p>
+      <h4>Vous viviez séparément en raison de la rupture de la relation</h4>
+      <p class="mrgn-tp-md">Si, en raison d'une <strong>rupture de la relation</strong>, vous et votre époux ou conjoint de fait avez habité séparément au moins 90 jours, vous êtes considérés comme séparés par l'ARC. <a href="#change-marital-status">Déterminez votre loyer si votre état civil a changé en 2022</a>.</p>
 
-
-      <h3 id="moved" class="mrgn-tp-md">If you moved</h3>
-      <p class="mrgn-tp-md">If you moved during 2022, include eligible rent paid in 2022 for all principal residences you lived in during 2022 for the time that they were your primary residence.</p>
+      <h3 id="moved" class="mrgn-tp-md">Si vous avez déménagé</h3>
+      <p class="mrgn-tp-md">Si vous avez déménagé en 2022, incluez le loyer admissible payé en 2022 pour toutes les résidences principales que vous avez habitées en 2022 pour la période où elles étaient votre résidence principale.</p>
 
         <nav role="navigation" class="mrgn-bttm-lg mrgn-tp-lg">
-        <h3 class="wb-inv">Document navigation</h3>
+        <h3 class="wb-inv">Navigation du document</h3>
         <ul class="pager">
-          <li class="next"><a href="get-ready-apply.html" rel="next"><span class="wb-inv">Next: </span>Get ready to apply</a></li>
+          <li class="next"><a href="preparez-faire-demande.html" rel="next"><span class="wb-inv">Suivant: </span>Préparez-vous à faire votre demande</a></li>
         </ul>
       </nav>
 	    
@@ -601,10 +601,6 @@ margin-left: -2.0em;
          <!-- <script  >_satellite.pageBottom();</script> -->
 
       
-      
-      
-      
-      
     
 <script   src="https://www.canada.ca/etc.clientlibs/clientlibs/granite/jquery.min.js"></script>
 <script   src="https://www.canada.ca/etc.clientlibs/clientlibs/granite/utils.min.js"></script>
@@ -617,7 +613,7 @@ margin-left: -2.0em;
 
       <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
       <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
-      <script src="../js/feedback-banner.js"></script>
+      <script src="../../js/fr-feedback-banner.js"></script>
       <script>
         $(".action-checkbox").change(function(){
           if ($(".action-checkbox:checked")) {
