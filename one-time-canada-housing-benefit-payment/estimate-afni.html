@@ -1152,12 +1152,12 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
     </aside>//-->
     <section class="gcnav-section">
       <h1 property="name" id="wb-cont">Estimate your income and rent</h1>
-      <p>Estimate your adjusted net income for the one-time top-up to the Canada Housing Benefit to check if:</p>
+      <p>Estimate your adjusted family net income for the one-time top-up to the Canada Housing Benefit to check if:</p>
       <ul>
         <li>it is $35,000 or less for families, or $20,000 or less for individuals</li>
-        <li>you paid at least 30% of that adjusted net income in rent</li>
+        <li>you paid at least 30% of your 2021 adjusted net income in rent in 2022</li>
       </ul>
-      <p>If you have access a CRA <a href="#myaccount-modal" aria-controls="myaccount-modal" class="wb-lbx">My Account</a>, you can alternatively look up your adjusted net income for the benefit by going to the application form.</p>
+      <p>If you have access to CRA <a href="#myaccount-modal" aria-controls="myaccount-modal" class="wb-lbx">My Account</a>, you can alternatively look up your adjusted net income for the benefit and check if your rent amount is eligible by going to the application form.</p>
       <section id="myaccount-modal" class="mfp-hide modal-dialog modal-content overlay-def">
         <header class="modal-header">
           <h2 class="modal-title">Go to the prototype CRA My Account</h2>
@@ -1169,9 +1169,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         </div>
       </section>  
       <details class="mrgn-lft-md mrgn-tp-md">
-        <summary>What is adjusted net income</summary>
-        <p class="mrgn-tp-md">Adjusted net income is your net income, minus any universal child care benefit (UCCB) and registered disability savings plan (RDSP) income received, plus any UCCB and RDSP amounts repaid.</p>
-        <p class="mrgn-tp-md">Your net income includes your net income and your spouse's net income from all sources inside and outside Canada.</p>		    
+        <summary>What is adjusted family net income</summary>
+        <p class="mrgn-tp-md">Adjusted family net income is your net income, minus any universal child care benefit (UCCB) and registered disability savings plan (RDSP) income received, plus any UCCB and RDSP amounts repaid.</p>
+        <p class="mrgn-tp-md">Your family net income includes your net income and, if you are married or in a common-law relationship, your spouse or common-law partner's net income from all sources inside and outside Canada.</p>		    
       </details>
         
         <p class="mrgn-tp-lg"><strong class="text-warning">Warning:</strong> This is an estimator, <strong>not the application</strong>. This page does not save any data, so if you leave or refresh the page you may need to enter the information again.</p>
@@ -1192,7 +1192,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <h2 class="modal-title">What is living common-law?</h2>
                     </header>
                     <div class="modal-body">
-                        <p>This applies to a person <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
+                        <p>This applies to a person to whom you are not married, <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
                         <p>In cases where you had a different marital status on file with the CRA on December 1, 2022, the CRA will use your reported marital status to calculate your eligibility, and not your actual marital status. <a href="contact.html">Contact the CRA</a> if this was not correct.</p>
                     </div>
                   </section>
@@ -1227,7 +1227,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
 
                 <fieldset id="dependants-q" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg hidden">
-                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you have one or more dependants (a child, minor or disabled adult) on December 1, 2022? <strong class="required">(required)</strong></span></legend>
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you have one or more dependants (a child, minor, parent, grandparent, or disabled adult) on December 1, 2022? <strong class="required">(required)</strong></span></legend>
                   
                   <p><a href="#dependant-help" aria-controls="dependant-help" class="wb-lbx" role="button">Who counts as a dependant? <span class="glyphicon glyphicon-question-sign"></span></a></p>
                   <section id="dependant-help" class="mfp-hide modal-dialog modal-content overlay-def">
@@ -1303,7 +1303,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <input type="text" name="netIncome" size="7" maxlength="7" value="" id="netIncome" class="form-control text-right" required="required" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
                     <span class="input-group-addon">.00</span>
                   </div>
-                  <p class="small">This is line 23600 of your 2021 tax return.</p>
+                  <p class="small">This is line 23600 of your 2021 tax return. If you were resident abroad for 2021, include any income reported outside of Canada.</p>
                 </div>
                 
                 <div class="marital-true form-group hidden" data-has-partner="true">
@@ -1313,10 +1313,10 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <input type="text" name="spouse.netIncome" size="7" maxlength="7" value="" id="spouseNetIncome" class="form-control text-right" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
                     <span class="input-group-addon">.00</span>
                   </div>
-                  <p class="small">This is line 23600 of your <span class="spouse-label">spouse</span>'s 2021 tax return.</p>
+                  <p class="small">This is line 23600 of your <span class="spouse-label">spouse</span>'s 2021 tax return. If they were resident abroad for 2021, include any income reported outside of Canada.</p>
                 </div>
 
-                <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
+                <!-- <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
                   <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>report income in another country during 2021? <strong class="required">(required)</strong></span></legend>
                   <p>You might have world income to include if you reported income in another country for part of 2021. Make sure to <a href="who-apply.html#tax-return-checkmark" target="_blank">report 2021 income as a part of a tax return or statement of income before you apply <span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a>.</p>
                   <ul class="list-unstyled">
@@ -1358,7 +1358,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <p></p>
                     <p>If world income is negative, enter '0'.</p>
                   </div>
-                </section>
+                </section> -->
               </div>
             </fieldset>
 
@@ -1553,36 +1553,36 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <div id="result-alert" class="alert alert-success provisional">
 
                           <!-- <ul class="fa-ul"> -->
-                            <p>Your adjusted net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="qualify hidden">would qualify</span><span class="doesnt-qualify hidden">would not qualify</span> you as <span class="indfam-prep">an</span> <span class="indfam">individual</span></strong>.</p>
+                            <p>Your adjusted family net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="qualify hidden">would qualify</span><span class="doesnt-qualify hidden">would not qualify</span> you as <span class="indfam-prep">an</span> <span class="indfam">individual</span></strong>.</p>
                             <p class="qualify">Your rent paid in 2022 <span class="h4 mrgn-tp-0">(<span data-output="rent-dollar-figure"></span>)</span> is <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>0%</strong></span> of your 2021 income and would <strong><span class="rent-not-qualify">not</span> qualify</strong> for the benefit.</p>
                           <!-- </ul> -->
-                          <p class="h5"><span class="rent-not-qualify">You should not apply. </span>Your adjusted net income and rent would <span class="rent-not-qualify">not</span> qualify for the benefit.</p>
+                          <p class="h5"><span class="rent-not-qualify">You should not apply. </span>Your adjusted family net income and rent would <span class="rent-not-qualify">not</span> qualify for the benefit.</p>
                           </div>
                           <p class="rent-qualify">Ensure you meet <a href="who-apply.html" target="_blank">all the other eligibility criteria <span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
 
                         <details id="math-results-summary" class="mrgn-bttm-md">
-                          <summary>Show the math for your adjusted net income</summary>
+                          <summary>Show the math for your adjusted family net income</summary>
                           <p>Your adjusted net income for this benefit is:</p>
                           <ul class="fa-ul lst-spcd">
                               <li><span class="mrgn-tp-0 h5"><span data-output="net-income-value">$0</span><span class="text-muted"> (your net income)</span></span></li>
                               <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><span data-output="spouse-net-income-value">$0</span><span class="text-muted"> (your spouse's net income)</span></span></li>
-                              <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><span data-output="household-income-value">$0</span><span class="text-muted"> (your net income)</span></span></li>
+                              <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><span data-output="household-income-value">$0</span><span class="text-muted"> (your family net income)</span></span></li>
                           </ul>
                           <br>
                           <ul class="fa-ul lst-spcd">
-                              <li><span class="mrgn-tp-0 h5"><span data-output="household-income-value">$0</span><span class="text-muted"> (your net income)</span></span></li>
+                              <li><span class="mrgn-tp-0 h5"><span data-output="household-income-value">$0</span><span class="text-muted"> (your family net income)</span></span></li>
                               <li><span class="fas fa-minus fa-li"><span class="wb-inv">minus</span></span> <span class="h5"><span data-output="uccb-rdsp-income-value">$0</span><span class="text-muted"> (UCCB and RDSP income)</span></span></li>
                               <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><span data-output="uccb-rdsp-repayment-value">$0</span><span class="text-muted"> (UCCB and RDSP repayment)</span></span></li>
-                              <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><span data-output="avg-fam-net-income-value">$0</span><span class="text-muted"> (your adjusted net income)</span></span></li>
+                              <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><span data-output="avg-fam-net-income-value">$0</span><span class="text-muted"> (your adjusted family net income)</span></span></li>
                           </ul>
                         </details>
                       </div>
                       <p class="text-muted small">This result is an estimate based on the information you entered. The CRA will determine your benefit amount when you apply.</p>
 
-                      <p class="hidden-print"><a href="#pp-statement" id="print-prev-button" class="wb-lbx btn btn-default btn-lg" role="button"><span class="h3"><span class="glyphicon glyphicon-print"></span> Print preview<span class="wb-inv"> AFNI and rent statement</span></span></a></p>
+                      <p class="hidden-print"><a href="#pp-statement" id="print-prev-button" class="wb-lbx btn btn-default btn-lg" role="button"><span class="h3"><span class="glyphicon glyphicon-print"></span> Print preview<span class="wb-inv"> Adjusted family net income and rent statement</span></span></a></p>
                       <section id="pp-statement" class="mfp-hide modal-dialog modal-content overlay-def experimental">
                         <header class="modal-header">
-                          <h2 class="modal-title">Print preview for AFNI and rent statement</h2>
+                          <h2 class="modal-title">Print preview for adjusted family net income and rent statement</h2>
                         </header>
                         <div class="modal-body">
                           <div data-ajax-replace=" #afni-statement"></div>
