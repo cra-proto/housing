@@ -656,37 +656,25 @@ margin-left: -2.0em;
           <li class="checkbox">
             <input type="checkbox" id="eg5" class="action-checkbox cb-dmm">
             <label for="eg5">
-              <p><strong>In 2022</strong>, you paid at least 30 per cent of your 2021 adjusted net income on eligible rent for your own principal residence in Canada</p>
-              <p>Find out <a href="what-eligible-rent.html">what you can include as eligible rent</a>.</p>
-            </label>
-            <p class="h4">Find out if your rent payments are 30% of your adjusted net income</p>
-            <p>Do you have CRA My Account or My Service Canada Account?</p>
-          
-            <details>
-              <summary>Yes - I can sign in to CRA My Account or My Service Canada Account</summary>
-              <p><a href="#myaccount-modal" aria-controls="myaccount-modal" class="wb-lbx">Sign in to My Account</a> and you will see your calculated net income at the top of the application for the one-time payment.</p>
-              <p>You can input your rent amount for 2022 and the form will help you check if it is 30 per cent of your adjusted net income.</p>
-            </details>
-            <details>
-              <summary>No - I need to estimate outside of My Account</summary>
-              <p>Answer a few questions to <a href="estimate-afni.html">estimate your income and rent</a> and determine if they qualify for the one-time payment.</p>
-            </details>
-          </li>
-          <li class="checkbox">
-            <input type="checkbox" id="eg6" class="action-checkbox cb-dmm">
-            <label for="eg6">
-              <p><strong>In 2021</strong>, you had an adjusted net income of:</p>
-              <ul>
-                <li>$35,000 or less for families</li>
-                <li>$20,000 or less for individuals</li>
-              </ul>
+              <p>You meet <strong>both</strong> of the following adjusted net income related criteria:</p>
+              <div class="mrgn-lft-lg">
+                <ul class="list-unstyled cnjnctn-type-and">
+                  <li class="cnjnctn-col">
+                    <p><strong>In 2021</strong>, you had an adjusted net income of $35,000 or less for families, or $20,000 or less for individuals</p>
+                  </li>
+                  <li class="cnjnctn-col">
+                    <p><strong>In 2022</strong>, you paid at least 30 per cent of your 2021 adjusted net income on eligible rent for your own principal residence in Canada</p>
+                  </li>
+                </ul>
+                <p>Find out <a href="what-eligible-rent.html">what you can include as eligible rent</a>.</p>
+              </div>
             </label>
             <details class="mrgn-lft-md mrgn-tp-md">
               <summary>What is a family or individual</summary>
-              <h3 class="mrgn-tp-md">Individual</h3>
-              <p class="mrgn-tp-md">If none of the above family criteria applies, you are considered an individual.</p>
-
-               <h3 class="mrgn-tp-md">Family</h3>
+                <h3 class="mrgn-tp-md">Individual</h3>
+                <p class="mrgn-tp-md">If none of the criteria for family (shown below) applies to you, you are considered an individual.</p>
+                <p class="mrgn-tp-md">If you have separated due to a breakdown in your relationship but you have not yet been separated for a period of at least 90 days, you will need to wait until 90 days have passed before you will be able to apply for this benefit as an individual.</p>
+	      <h3 class="mrgn-tp-md">Family</h3>
               <p class="mrgn-tp-md">You are considered a family if <strong>any</strong> of the following applies:</p>
                 <ul>
                   <li>you are married or living common-law and you have <strong>not</strong> been separated because of a breakdown of your marriage or common-law partnership, for a period of at least 90 days on December 1, 2022</li>
@@ -701,6 +689,8 @@ margin-left: -2.0em;
                     </ul>
                   </li>                
                 </ul>		      
+
+
                 <h3 class="mrgn-tp-md">Your marital status</h3>
                 <p class="mrgn-tp-md">Ensure you have updated <a href="en/revenue-agency/services/child-family-benefits/update-your-marital-status-canada-revenue-agency.html">your marital status information</a> with the CRA.</p>		    
 
@@ -787,6 +777,18 @@ margin-left: -2.0em;
               <p class="mrgn-tp-md">If you moved during 2022, include rent paid in 2022 for all principal residences you lived in during 2022 that meet the criteria for this one-time payment.</p>
 
 	</details> -->
+
+            <p class="mrgn-tp-lg">CRA already has your adjusted net income on file if you submitted your 2021 return. If you want to find out if your net income and rent qualify, you have 2 options:</p>
+            <ul class="list-unstyled cnjnctn-type-or cnjnctn-sm">
+              <li class="cnjnctn-col">
+                <p class="h3 text-muted">View your net income in My Account<span class="wb-inv">: Option 1 of 2</span></p>
+                <p><a href="#myaccount-modal" aria-controls="myaccount-modal" class="wb-lbx">Sign in to My Account</a> and you will see your calculated net income at the top of the application for the one-time payment.</p>
+              </li>
+              <li class="cnjnctn-col">
+                <p class="h3 text-muted">Use the estimator<span class="wb-inv">: Option 2 of 2</span></p>
+                <p>Answer a few questions to <a href="estimate-afni.html">estimate your income and rent</a> and determine if they qualify.</p>
+              </li>
+            </ul>
           </li>
         </ul>
         <div class="alert alert-info provisional" id="default-msg">
@@ -1087,25 +1089,25 @@ margin-left: -2.0em;
             $("#default-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
-          if ($(".action-checkbox:not(:checked)").length == 6) {
+          if ($(".action-checkbox:not(:checked)").length == 5) {
             $("#noaction-msg").addClass("hidden");
             $("#default-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 6) {
+          if ($(".cb-dmm:checked, #eg4:checked, #eg5:not(:checked)").length == 5) {
             $("#action-msg").removeClass("hidden");
             $("#noaction-msg").addClass("hidden");
             $("#action-msg").addClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 6) {
+          if ($(".cb-dmm:checked, #eg4:checked, #eg5:checked").length == 5) {
             $("#action-msg").addClass("hidden");
             $("#noaction-msg").addClass("hidden");
             $("#action-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:not(:checked), #eg6:not(:checked)").length == 1)  {
+          if ($(".cb-dmm:not(:checked), #eg5:not(:checked)").length == 1)  {
             $("#action-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:not(:checked), #eg5:not(:checked), #eg6:not(:checked)").length == 1)  {
+          if ($(".cb-dmm:not(:checked), #eg4:not(:checked), #eg5:not(:checked)").length == 1)  {
             $("#action-msg").addClass("hidden");
           }
         });
