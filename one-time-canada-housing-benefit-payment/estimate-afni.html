@@ -1155,9 +1155,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
       <p>Estimate your adjusted family net income for the one-time top-up to the Canada Housing Benefit to check if:</p>
       <ul>
         <li>it is $35,000 or less for families, or $20,000 or less for individuals</li>
-        <li>you paid at least 30% of your 2021 adjusted net income in rent in 2022</li>
+        <li>you paid at least 30% of your 2021 adjusted family net income in rent in 2022</li>
       </ul>
-      <p>If you have access to CRA <a href="#myaccount-modal" aria-controls="myaccount-modal" class="wb-lbx">My Account</a>, you can alternatively look up your adjusted net income for the benefit and check if your rent amount is eligible by going to the application form.</p>
+      <p>If you have access to CRA <a href="#myaccount-modal" aria-controls="myaccount-modal" class="wb-lbx">My Account</a>, you can alternatively look up your adjusted family net income for the benefit and check if your rent amount is eligible by going to the application form.</p>
       <section id="myaccount-modal" class="mfp-hide modal-dialog modal-content overlay-def">
         <header class="modal-header">
           <h2 class="modal-title">Go to the prototype CRA My Account</h2>
@@ -1186,15 +1186,31 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 <fieldset id="marital-question" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional">
                   <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">What was your marital status on December 1, 2022? <strong class="required">(required)</strong></span></legend>
                   
-                  <p><a href="#maritalStatus-help" aria-controls="maritalStatus-help" class="wb-lbx" role="button">What is living common-law? <span class="glyphicon glyphicon-question-sign"></span></a></p>
-                  <section id="maritalStatus-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                  <p><a href="#living-common-help" aria-controls="living-common-help-help" class="wb-lbx" role="button">What is living common-law? <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                  <section id="living-common-help" class="mfp-hide modal-dialog modal-content overlay-def">
                     <header class="modal-header">
                       <h2 class="modal-title">What is living common-law?</h2>
                     </header>
                     <div class="modal-body">
-                        <p>This applies to a person to whom you are not married, <strong>who is not your spouse</strong>, with whom you are living in a conjugal relationship.</p>
-                        <p>In cases where you had a different marital status on file with the CRA on December 1, 2022, the CRA will use your reported marital status to calculate your eligibility, and not your actual marital status. <a href="contact.html">Contact the CRA</a> if this was not correct.</p>
+                      <p>A person you are living with in a conjugal relationship, but are not married to, and one of the following situations apply:</p>
+                      <ul>
+                        <li>you have been living together for at least 12 continuous months during which you have not been separated due to a breakdown in the relationship for more than 90 days</li>
+                        <li>you have a child together by birth or adoption</li>
+                        <li>they have custody and control of your child (or did immediately before the child turned 19 years of age) and your child is wholly dependent on them for support</li>
+                      </ul>
+                      <p>In cases where you had a different marital status on file with the CRA on December 1, 2022, the CRA will use your reported marital status to calculate your eligibility, and not your actual marital status. <a href="contact.html">Contact the CRA</a> if this was not correct.</p>
                     </div>
+                  </section>
+
+                  <p><a href="#separated-help" aria-controls="separated-help" class="wb-lbx" role="button">You are considered separated after 90 days <span class="glyphicon glyphicon-question-sign"></span></a></p>
+                  <section id="separated-help" class="mfp-hide modal-dialog modal-content overlay-def">
+                    <header class="modal-header">
+                      <h2 class="modal-title">You are considered separated after 90 days</h2>
+                    </header>
+                    <div class="modal-body">
+                      <p>You are separated when you have been living apart from your spouse or common-law partner because of a breakdown in the relationship for a period of <strong>at least 90 days</strong>.</p>
+                      <p>Once you are considered separated, the day you started living apart is the effective date of your separation.</p>
+                  </div>
                   </section>
 
                   <ul class="list-unstyled">
@@ -1283,9 +1299,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 <div class="well text-muted mrgn-tp-md" id="marital-summary">
                   <h3 class="mrgn-tp-0">Summary of marital status</h3>
                   <p class="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time payment.</p>
-                  <p class="marital-dependants hidden">As you had dependants, your adjusted net income must be $35,000 or less.</p>
-                  <p class="marital-true hidden" data-has-partner="true">You and your partner's adjusted net income must be $35,000 or less.</p>
-                  <p class="marital-false hidden" data-has-partner="false">As you were <span class="separationORsingle">single</span>, your adjusted net income must be $20,000 or less.</p>
+                  <p class="marital-dependants hidden">As you had dependants, your adjusted family net income must be $35,000 or less.</p>
+                  <p class="marital-true hidden" data-has-partner="true">You and your partner's adjusted family net income must be $35,000 or less.</p>
+                  <p class="marital-false hidden" data-has-partner="false">As you were <span class="separationORsingle">single</span>, your adjusted family net income must be $20,000 or less.</p>
                   <!-- <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p> -->
                   <p class="marital-answered hidden">Go to the next step to continue the calculation.</p>
                 </div>
@@ -1303,22 +1319,22 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <input type="text" name="netIncome" size="7" maxlength="7" value="" id="netIncome" class="form-control text-right" required="required" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
                     <span class="input-group-addon">.00</span>
                   </div>
-                  <p class="small">This is line 23600 of your 2021 tax return. If you were resident abroad for 2021, include any income reported outside of Canada.</p>
+                  <p class="small">This is line 23600 of your 2021 tax return.</p>
                 </div>
                 
                 <div class="marital-true form-group hidden" data-has-partner="true">
                   <label for="spouseNetIncome" class="required">Your <span class="field-name"><span class="spouse-label">spouse</span>'s net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span><strong class="required">(required)</strong></label>
                   <div class="input-group col-sm-5">
                     <span class="input-group-addon">$</span>
-                    <input type="text" name="spouse.netIncome" size="7" maxlength="7" value="" id="spouseNetIncome" class="form-control text-right" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
+                    <input type="text" name="spouse.netIncome" size="7" maxlength="7" value="" id="spouseNetIncome" class="form-control text-right" required="required" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
                     <span class="input-group-addon">.00</span>
                   </div>
-                  <p class="small">This is line 23600 of your <span class="spouse-label">spouse</span>'s 2021 tax return. If they were resident abroad for 2021, include any income reported outside of Canada.</p>
+                  <p class="small">This is line 23600 of your <span class="spouse-label">spouse</span>'s 2021 tax return.</p>
                 </div>
 
-                <!-- <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
-                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Did you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>report income in another country during 2021? <strong class="required">(required)</strong></span></legend>
-                  <p>You might have world income to include if you reported income in another country for part of 2021. Make sure to <a href="who-apply.html#tax-return-checkmark" target="_blank">report 2021 income as a part of a tax return or statement of income before you apply <span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a>.</p>
+                <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Do you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>have world income in 2021? <strong class="required">(required)</strong></span></legend>
+                  <p>You might have world income to include if you received income in another country during 2021 when you were not a resident of Canada. Report 2021 income as a part of a <a href="who-apply.html#tax-return-checkmark" target="_blank">tax return or statement of income<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
                   <ul class="list-unstyled">
                     <li class="radio">
                       <input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">
@@ -1332,19 +1348,19 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 </fieldset>
 
                 <div id="worldIncomeElm" class="form-group hidden">
-                  <label for="worldIncome" class="required">Your <span class="field-name">world income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
+                  <label for="worldIncome" class="required">Your <span class="field-name">world income for 2021 in Canadian dollars</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
                   <a href="#worldIncome-help" aria-controls="worldIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is world income?</span></a>
                   <div class="input-group col-sm-5">
                     <span class="input-group-addon">$</span>
-                    <input type="text" name="worldIncome" size="7" maxlength="7" value="" id="worldIncome" class="form-control text-right" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
+                    <input type="text" name="worldIncome" size="7" maxlength="7" value="" id="worldIncome" class="form-control text-right" required="required" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
                     <span class="input-group-addon">.00</span>
                   </div>
                   <div class="marital-true hidden" data-has-partner="true">
-                    <label for="spouseWorldIncome" class="required">Your <span class="field-name"><span class="spouse-label">spouse</span>'s world income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
+                    <label for="spouseWorldIncome" class="required">Your <span class="field-name"><span class="spouse-label">spouse</span>'s world income for 2021 in Canadian dollars</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
                     <a href="#worldIncome-help" aria-controls="worldIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is world income?</span></a>
                     <div class="input-group col-sm-5">
                       <span class="input-group-addon">$</span>
-                      <input type="text" name="spouseWorldIncome" size="7" maxlength="7" value="" id="spouseWorldIncome" class="form-control text-right" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
+                      <input type="text" name="spouseWorldIncome" size="7" maxlength="7" value="" id="spouseWorldIncome" class="form-control text-right" required="required" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
                       <span class="input-group-addon">.00</span>
                     </div>
                   </div>
@@ -1355,10 +1371,10 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <h2 class="modal-title">World Income</h2>
                   </header>
                   <div class="modal-body">
-                    <p></p>
+                    <p>If you <span class="spouse-specific">or your <span class="spouse-label">spouse</span> </span>were a non-resident of Canada at any time in 2021, provide income received in another country when non-resident.</p>
                     <p>If world income is negative, enter '0'.</p>
                   </div>
-                </section> -->
+                </section>
               </div>
             </fieldset>
 
@@ -1562,7 +1578,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                         <details id="math-results-summary" class="mrgn-bttm-md">
                           <summary>Show the math for your adjusted family net income</summary>
-                          <p>Your adjusted net income for this benefit is:</p>
+                          <p>Your adjusted family net income for this benefit is:</p>
                           <ul class="fa-ul lst-spcd">
                               <li><span class="mrgn-tp-0 h5"><span data-output="net-income-value">$0</span><span class="text-muted"> (your net income)</span></span></li>
                               <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><span data-output="spouse-net-income-value">$0</span><span class="text-muted"> (your spouse's net income)</span></span></li>
