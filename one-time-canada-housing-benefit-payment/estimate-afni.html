@@ -1291,11 +1291,11 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                   <ul class="list-unstyled">
                     <li class="radio">
-                      <input type="radio" name="dependant-2022" id="dependant-2022-yes" value="true" data-rule-required="true">
+                      <input type="radio" name="dependant-2022" id="dependant-2022-yes" value="true" data-dependant="true" data-rule-required="true">
                       <label for="dependant-2022-yes">Yes</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="dependant-2022" id="dependant-2022-no" value="false" data-rule-required="true">
+                      <input type="radio" name="dependant-2022" id="dependant-2022-no" value="false" data-dependant="false" data-rule-required="true">
                       <label for="dependant-2022-no">No</label>
                     </li>
                   </ul>
@@ -1342,11 +1342,11 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   <p>You might have world income to include if you received income in another country during 2021 when you were not a resident of Canada. Report 2021 income as a part of a <a href="who-apply.html#tax-return-checkmark" target="_blank">tax return or statement of income<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
                   <ul class="list-unstyled">
                     <li class="radio">
-                      <input type="radio" name="residency" id="resident-false" value="false" data-rule-required="true">
+                      <input type="radio" name="residency" id="resident-false" value="false" data-residency="false" data-rule-required="true">
                       <label for="resident-false">Yes</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="residency" id="resident-true" value="true" data-rule-required="true">
+                      <input type="radio" name="residency" id="resident-true" value="true" data-residency="true" data-rule-required="true">
                       <label for="resident-true">No</label>
                     </li>
                   </ul>
@@ -1694,10 +1694,10 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               return maritalData;
           }, 
           residency = function() {
-              return $(":input[type=radio][name=residency]:checked", formId).val() || false;
+              return $(":input[type=radio][name=residency]:checked", formId).data("residency") || false;
           }, 
           dependant = function() {
-              return $(":input[type=radio][name=dependant-2022]:checked", formId).val() || false;
+              return $(":input[type=radio][name=dependant-2022]:checked", formId).data("dependant") || false;
           }, 
           relationship = function() {
               let relationOpt = $(":input[type=radio][name=maritalStatus]:checked", formId) || $(":input[type=radio][name=maritalStatus][data-marital-option=1]");
@@ -1850,7 +1850,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       spouseLabel = "";
                       $("[data-has-partner=true]").addClass("hidden");
                       $("[data-has-partner=false]").removeClass("hidden");
-                          dependantUpdate();
+                      dependantUpdate();
                       break;
                   case (3): // (3) common law 
                   case (2): // (2) married 
@@ -1869,8 +1869,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       spouseLabel = marital.status;
                       $("[data-has-partner=true]").addClass("hidden");
                       $("[data-has-partner=false]").removeClass("hidden");
-                      rdspUccbMaritalUpdate(false);
-                          dependantUpdate();
+                      dependantUpdate();
               }
               $("#separationORsingle").html(marital.separateStatus);
               $("[data-partner-case=false]").html(spouseLabel);
