@@ -1219,27 +1219,27 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                   <ul class="list-unstyled">
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-single" value="single" data-marital-option="1" data-entity-type="individual" data-entity-prep="an" data-separate-status="single" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-single" value="single" data-marital-option="1" data-entity-type="individual" data-entity-prep="an" data-separate-status="single" data-has-partner="false" data-rule-required="true">
                       <label for="marital-single">Single</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-spouse" value="spouse" data-marital-option="2"  data-entity-type="family" data-entity-prep="a" data-separate-status="single" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-spouse" value="spouse" data-marital-option="2" data-entity-type="family" data-entity-prep="a" data-separate-status="single" data-has-partner="true" data-rule-required="true">
                       <label for="marital-spouse">Married</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-common" value="common law partner" data-marital-option="3" data-entity-type="family" data-entity-prep="a" data-separate-status="single" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-common" value="common law partner" data-marital-option="3" data-entity-type="family" data-entity-prep="a" data-separate-status="single" data-has-partner="true" data-rule-required="true">
                       <label for="marital-common">Living common-law</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-divorced" value="divorced" data-marital-option="4" data-entity-type="individual" data-entity-prep="an" data-separate-status="divorced" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-divorced" value="divorced" data-marital-option="4" data-entity-type="individual" data-entity-prep="an" data-separate-status="divorced" data-has-partner="false" data-rule-required="true">
                       <label for="marital-divorced">Divorced</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-separated" value="separated" data-marital-option="5" data-entity-type="individual" data-entity-prep="an" data-separate-status="separated" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-separated" value="separated" data-marital-option="5" data-entity-type="individual" data-entity-prep="an" data-separate-status="separated" data-has-partner="false" data-rule-required="true">
                       <label for="marital-separated">Separated</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-widowed" value="widowed" data-marital-option="6" data-entity-type="individual" data-entity-prep="an" data-separate-status="widowed" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-widowed" value="widowed" data-marital-option="6" data-entity-type="individual" data-entity-prep="an" data-separate-status="widowed" data-has-partner="false" data-rule-required="true">
                       <label for="marital-widowed">Widowed</label>
                     </li>
                   </ul>
@@ -1677,13 +1677,11 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 <script src='https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/js/ie8-wet-boew2.min.js'></script>
 <![endif]-->
 <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/js/theme.min.js"></script>
-
 <script>
       "use strict";
 
       const rentPercentLimit = 0.3;
       let individual, 
-          $document = wb.doc, 
           formId = "#housing_cal_form", 
           maritalObj = function(maritalStatus) {
               let maritalData = {
@@ -1695,14 +1693,18 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               };
               return maritalData;
           }, 
-          relationship = function() {
-              return $(":input[type=radio][name=maritalStatus]:checked", formId) || null;
-          }, 
           residency = function() {
               return $(":input[type=radio][name=residency]:checked", formId).val() || false;
           }, 
           dependant = function() {
               return $(":input[type=radio][name=dependant-2022]:checked", formId).val() || false;
+          }, 
+          relationship = function() {
+              let relationOpt = $(":input[type=radio][name=maritalStatus]:checked", formId) || $(":input[type=radio][name=maritalStatus][data-marital-option=1]");
+  			  if (relationOpt.data("has-partner") === true || dependant() === true) {
+                  return true;
+              }
+              return false;
           }, 
           rdsp = function() {
               return $(":input[type=radio][name=rdsp]:checked", formId).data("rdsp") || false;
@@ -1714,8 +1716,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               return 0;
           }, 
           partnerRdspRepayment = function() {
-              let relation = relationship();
-              if (rdsp() === true && relation.partner === true) {
+              if (rdsp() === true && relationship() === true) {
                   return parseInt($("#partnerRdspRepayment").val(), 10) || 0;
               }
               return 0;
@@ -1730,8 +1731,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               return 0;
           }, 
           partnerUccbRepayment = function() {
-              let relation = relationship();
-              if (uccb() === true && relation.partner === true) {
+              if (uccb() === true && relationship() === true) {
                   return parseInt($("#partnerUccbRepayment").val(), 10) || 0;
               }
               return 0;
@@ -1746,8 +1746,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   return parseInt($("#netIncome").val(), 10) || 0;
               }, 
               partner: function() {
-                  let relation = relationship();
-                  if (relation.partner === true) {
+                  if (relationship() === true) {
                       return parseInt($("#spouseNetIncome").val(), 10) || 0;
                   }
                   return 0;
@@ -1774,8 +1773,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   return 0;
               }, 
               partnerRdsp: function() {
-                  let relation = relationship();
-                  if (rdsp() === true && relation.partner === true) {
+                  if (rdsp() === true && relationship() === true) {
                       return parseInt($("#partnerRdspIncome").val(), 10) || 0;
                   }
                   return 0;
@@ -1787,8 +1785,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   return 0;
               }, 
               partnerUccb: function() {
-                  let relation = relationship();
-                  if (uccb() === true && relation.partner === true) {
+                  if (uccb() === true && relationship() === true) {
                       return parseInt($("#partnerUccbIncome").val(), 10) || 0;
                   }
                   return 0;
