@@ -1338,17 +1338,17 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   <p class="small">This is line 23600 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
                 </div>
 
-                <fieldset id="residency" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
+                <fieldset id="includeWorldIncome" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
                   <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Do you <span data-has-partner="true">or your <span data-partner-case="false">spouse</span> </span>have world income in 2021? <strong class="required">(required)</strong></span></legend>
                   <p>You might have world income to include if you received income in another country during 2021 when you were not a resident of Canada. Report 2021 income as a part of a <a href="who-apply.html#tax-return-checkmark" target="_blank">tax return or statement of income<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
                   <ul class="list-unstyled">
                     <li class="radio">
-                      <input type="radio" name="residency" id="resident-true" value="true" data-residency="true" data-rule-required="true">
-                      <label for="resident-true">Yes</label>
+                      <input type="radio" name="hasWorldIncome" id="hasWorldIncome-true" value="true" data-world-income="true" data-rule-required="true">
+                      <label for="hasWorldIncome-true">Yes</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="residency" id="resident-false" value="false" data-residency="false" data-rule-required="true">
-                      <label for="resident-false">No</label>
+                      <input type="radio" name="hasWorldIncome" id="hasWorldIncome-false" value="false" data-world-income="false" data-rule-required="true">
+                      <label for="hasWorldIncome-false">No</label>
                     </li>
                   </ul>
                 </fieldset>
@@ -1429,7 +1429,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                    <div class="clearfix"></div>
                     <p class="small visible-sm visible-xs" data-partner-info="true">This is line 12500 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
                     <p class="small visible-md visible-lg">This is line 12500 on<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
                     <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
@@ -1451,7 +1450,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                    <div class="clearfix"></div>
                     <p class="small visible-sm visible-xs" data-partner-info="true">This is the <abbr title="Registered disability savings plan">RDSP</abbr> amounts that is entered on line 23200 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
                     <p class="small visible-md visible-lg">This is the <abbr title="Registered disability savings plan">RDSP</abbr> amounts that is entered on line 23200 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
                   </div>
@@ -1506,7 +1504,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                    <div class="clearfix"></div>
                     <p class="small visible-sm visible-xs" data-partner-info="true">This is line 11700 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
                     <p class="small visible-md visible-lg">This is line 11700 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
                     <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
@@ -1528,7 +1525,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                    <div class="clearfix"></div>
                     <p class="small visible-sm visible-xs" data-partner-info="true">This is line 21300 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
                     <p class="small visible-md visible-lg">This is line 21300 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
                   </div>
@@ -1697,9 +1693,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   separateStatus: maritalStatus.data("separate-status") || $("#marital-single").data("separateStatus")
               };
               return maritalData;
-          }, 
-          residency = function() {
-              return $(":input[type=radio][name=residency]:checked", formId).data("residency") || false;
           }, 
           dependant = function() {
               return $(":input[type=radio][name=dependant-2022]:checked", formId).data("dependant");
@@ -1927,8 +1920,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               }
           };
 
-        $(formId).on("click vclick touchstart", "input[type=radio][name=residency]", function (event) {
-            if (residency() === true) {
+        $(formId).on("click vclick touchstart", "input[type=radio][name=hasWorldIncome]", function (event) {
+            if (income.hasWorld() === true) {
                 $("#worldIncomeElm").removeClass("hidden");
             } else {
                 $("#worldIncomeElm").addClass("hidden");
