@@ -1307,7 +1307,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   <p id="marital-unanswered">Answer the question(s) above to indicate your marital status. This will affect how your income is calculated and what criteria it must meet to qualify for the one-time payment.</p>
                   <p id="marital-dependants" class="hidden">As you had dependants, your adjusted family net income must be $35,000 or less.</p>
                   <p class="hidden" data-has-partner="true">You and your partner's adjusted family net income must be $35,000 or less.</p>
-                  <p id="marital-false" class="hidden" data-has-partner="false">As you were <span id="separationORsingle">single</span>, your adjusted family net income must be $20,000 or less.</p>
+                  <p class="hidden" data-has-partner="false">As you were <span id="separationORsingle">single</span>, your adjusted family net income must be $20,000 or less.</p>
                   <!-- <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p> -->
                   <p id="marital-answered" class="hidden">Go to the next step to continue the calculation.</p>
                 </div>
@@ -1329,17 +1329,17 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 </div>
                 
                 <div class="form-group hidden" data-has-partner="true">
-                  <label for="spouseNetIncome" class="required">Your <span class="field-name"><span class="spouse-label" data-partner-case="false">spouse</span>'s net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span><strong class="required">(required)</strong></label>
+                  <label for="spouseNetIncome" class="required">Your <span class="field-name"><span data-partner-case="false">spouse</span>'s net income for 2021</span> <span class="wb-inv">(dollars only, no cents)</span><strong class="required">(required)</strong></label>
                   <div class="input-group col-sm-5">
                     <span class="input-group-addon">$</span>
                     <input type="text" name="spouse.netIncome" size="7" maxlength="7" value="" id="spouseNetIncome" class="form-control text-right" required="required" inputmode="decimal" pattern="-?[0-9]*" data-msg="Please enter only digits.">
                     <span class="input-group-addon">.00</span>
                   </div>
-                  <p class="small">This is line 23600 of your <span class="spouse-label" data-partner-case="false">spouse</span>'s 2021 tax return.</p>
+                  <p class="small">This is line 23600 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
                 </div>
 
                 <fieldset id="includeWorldIncome" class="gc-chckbxrdio chckbxrdio-grp gc-font-2019 provisional mrgn-tp-lg">
-                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Do you <span class="spouse-specific" data-has-partner="true">or your <span class="spouse-label" data-partner-case="false">spouse</span> </span>have world income in 2021? <strong class="required">(required)</strong></span></legend>
+                  <legend class="h5 required" tabindex="-1"><span class="gc-font-2019">Do you <span data-has-partner="true">or your <span data-partner-case="false">spouse</span> </span>have world income in 2021? <strong class="required">(required)</strong></span></legend>
                   <p>You might have world income to include if you received income in another country during 2021 when you were not a resident of Canada. Report 2021 income as a part of a <a href="who-apply.html#tax-return-checkmark" target="_blank">tax return or statement of income<span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
                   <ul class="list-unstyled">
                     <li class="radio">
@@ -1362,7 +1362,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <span class="input-group-addon">.00</span>
                   </div>
                   <div class="hidden" data-has-partner="true">
-                    <label for="spouseWorldIncome" class="required">Your <span class="field-name"><span class="spouse-label" data-partner-case="false">spouse</span>'s world income for 2021 in Canadian dollars</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
+                    <label for="spouseWorldIncome" class="required">Your <span class="field-name"><span data-partner-case="false">spouse</span>'s world income for 2021 in Canadian dollars</span> <span class="wb-inv">(dollars only, no cents)</span> <strong class="required">(required)</strong></label>
                     <a href="#worldIncome-help" aria-controls="worldIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">What is world income?</span></a>
                     <div class="input-group col-sm-5">
                       <span class="input-group-addon">$</span>
@@ -1377,7 +1377,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <h2 class="modal-title">World Income</h2>
                   </header>
                   <div class="modal-body">
-                    <p>If you <span class="spouse-specific" data-has-partner="true">or your <span class="spouse-label" data-partner-case="false">spouse</span> </span>were a non-resident of Canada at any time in 2021, provide income received in another country when non-resident.</p>
+                    <p>If you <span data-has-partner="true">or your <span data-partner-case="false">spouse</span> </span>were a non-resident of Canada at any time in 2021, provide income received in another country when non-resident.</p>
                     <p>If world income is negative, enter '0'.</p>
                   </div>
                 </section>
@@ -1421,7 +1421,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     </div>
                     <p class="small visible-sm visible-xs">This is line 12500 of your 2021 tax return.</p>
                     <div class="form-group col-md-6" data-has-partner="true">
-                      <label for="partnerRdspIncome"><span class="field-name">2021 <span class="spouse-label" data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <label for="partnerRdspIncome"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
                       <div class="input-group col-sm-7">
                         <span class="input-group-addon">$</span>
@@ -1429,8 +1429,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                    <p class="small visible-sm visible-xs hidden" data-has-partner="true" data-partner-info="true">This is line 12500 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
-                    <p class="small visible-md visible-lg">This is line 12500 on<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span class="spouse-label" data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
+                    <p class="hidden" data-partner-info="true">This is line 12500 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
+                    <p class="small visible-md visible-lg">This is line 12500 on<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
                     <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
                       <label for="rdspRepayment"><span class="field-name">2021 <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#rdspRepayment-help" aria-controls="rdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span></a>-->
@@ -1442,7 +1442,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     </div>
                     <p class="small visible-sm visible-xs">This is the <abbr title="Registered disability savings plan">RDSP</abbr> amounts that is entered on line 23200 of your 2021 tax return.</p>
                     <div class="form-group col-md-6" data-has-partner="true">
-                      <label for="partnerRdspRepayment"><span class="field-name">2021 <span class="spouse-label" data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <label for="partnerRdspRepayment"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#rdspRepayment-help" aria-controls="rdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span></a>-->
                       <div class="input-group col-sm-7">
                         <span class="input-group-addon">$</span>
@@ -1450,8 +1450,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                    <p class="small visible-sm visible-xs hidden" data-has-partner="true" data-partner-info="true">This is the <abbr title="Registered disability savings plan">RDSP</abbr> amounts that is entered on line 23200 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
-                    <p class="small visible-md visible-lg">This is the <abbr title="Registered disability savings plan">RDSP</abbr> amounts that is entered on line 23200 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span class="spouse-label" data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
+                    <p class="hidden" data-partner-info="true">This is the <abbr title="Registered disability savings plan">RDSP</abbr> amounts that is entered on line 23200 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
+                    <p class="small visible-md visible-lg">This is the <abbr title="Registered disability savings plan">RDSP</abbr> amounts that is entered on line 23200 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
                   </div>
                   <section id="rdsp-help" class="mfp-hide modal-dialog modal-content overlay-def">
                     <header class="modal-header">
@@ -1496,7 +1496,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     </div>
                     <p class="small visible-sm visible-xs">This is line 11700 of your 2021 tax return.</p>
                     <div class="form-group col-md-6" data-has-partner="true">
-                      <label for="partnerUccbIncome"><span class="field-name">2021 <span class="spouse-label" data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <label for="partnerUccbIncome"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
                       <div class="input-group col-sm-7">
                         <span class="input-group-addon">$</span>
@@ -1504,8 +1504,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                    <p class="small visible-sm visible-xs hidden" data-has-partner="true" data-partner-info="true">This is line 11700 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
-                    <p class="small visible-md visible-lg">This is line 11700 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span class="spouse-label" data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
+                    <p class="hidden" data-partner-info="true">This is line 11700 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
+                    <p class="small visible-md visible-lg">This is line 11700 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
                     <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
                       <label for="uccbRepayment"><span class="field-name">2021 <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
@@ -1517,7 +1517,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     </div>
                     <p class="small visible-sm visible-xs">This is line 21300 of your 2021 tax return.</p>
                     <div class="form-group col-md-6" data-has-partner="true">
-                      <label for="partnerUccbRepayment"><span class="field-name">2021 <span class="spouse-label" data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <label for="partnerUccbRepayment"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
                       <div class="input-group col-sm-7">
                         <span class="input-group-addon">$</span>
@@ -1525,8 +1525,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                    <p class="small visible-sm visible-xs hidden" data-has-partner="true" data-partner-info="true">This is line 21300 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
-                    <p class="small visible-md visible-lg">This is line 21300 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span class="spouse-label" data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
+                    <p class="hidden" data-partner-info="true">This is line 21300 of your <span data-partner-case="false">spouse</span>'s 2021 tax return.</p>
+                    <p class="small visible-md visible-lg">This is line 21300 of<span data-has-partner="true"> you and</span> your<span data-has-partner="true"> <span data-partner-case="false">spouse</span>'s</span> 2021 tax return.</p>
                   </div>
                   <section id="uccb-help" class="mfp-hide modal-dialog modal-content overlay-def">
                     <header class="modal-header">
@@ -1575,12 +1575,12 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                         <div id="result-alert" class="alert alert-success provisional">
 
                           <!-- <ul class="fa-ul"> -->
-                            <p>Your adjusted family net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="qualify hidden" data-qualify="true">would qualify</span><span class="doesnt-qualify hidden" data-qualify="false">is too high to qualify</span> you as <span id="indfam-prep">an</span> <span id="indfam">individual</span></strong>.</p>
-                            <p class="qualify" data-qualify="true">Your rent paid in 2022 <span class="h4 mrgn-tp-0">(<span data-output="rent-dollar-figure"></span>)</span> is <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>0%</strong></span> of your 2021 income and would <strong><span class="rent-not-qualify" data-rent-qualify="false">not</span> qualify</strong> for the benefit.</p>
+                            <p>Your adjusted family net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="hidden" data-qualify="true">would qualify</span><span class="hidden" data-qualify="false">is too high to qualify</span> you as <span id="indfam-prep">an</span> <span id="indfam">individual</span></strong>.</p>
+                            <p data-qualify="true">Your rent paid in 2022 <span class="h4 mrgn-tp-0">(<span data-output="rent-dollar-figure"></span>)</span> is <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>0%</strong></span> of your 2021 income and would <strong><span data-rent-qualify="false">not</span> qualify</strong> for the benefit.</p>
                           <!-- </ul> -->
-                          <p class="h5"><span class="rent-not-qualify" data-rent-qualify="false">You should not apply. </span>Your adjusted family net income and rent would <span class="rent-not-qualify" data-rent-qualify="false">not</span> qualify for the benefit.</p>
+                          <p class="h5"><span data-rent-qualify="false">You should not apply. </span>Your adjusted family net income and rent would <span data-rent-qualify="false">not</span> qualify for the benefit.</p>
                           </div>
-                          <p class="rent-qualify" data-rent-qualify="true">Ensure you meet <a href="who-apply.html" target="_blank">all the other eligibility criteria <span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
+                          <p data-rent-qualify="true">Ensure you meet <a href="who-apply.html" target="_blank">all the other eligibility criteria <span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
 
                         <details id="math-results-summary" class="mrgn-bttm-md">
                           <summary>Show the math for your adjusted family net income</summary>
@@ -1681,365 +1681,292 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 <script>
       "use strict";
 
-      let individual,
-      formId = "#housing_cal_form", 
-      maritalObj = function(maritalStatus) {
-        let maritalData = {
-          status: maritalStatus.val() || $("#marital-single").val(),
-          option: maritalStatus.data("marital-option") || 1,
-          entityType: maritalStatus.data("entity-type") || $("#marital-single").data("entityType"),
-          entityPrep: maritalStatus.data("entity-prep") || $("#marital-single").data("entityPrep"),
-          separateStatus: maritalStatus.data("separate-status") || $("#marital-single").data("separateStatus")
-        };
-        return maritalData;
-      },
-      rdsp = function() {
-        return $(":input[type=radio][name=rdsp]:checked", formId).data("rdsp") || false;
-      }, 
-      uccb = function() {
-        return $(":input[type=radio][name=uccb]:checked", formId).data("uccb") || false;
-      }, 
-      hasWorld = function() {
-        return $(":input[type=radio][name=hasWorldIncome]:checked", formId).data("world-income") || false;
-      };
-      //Radio event listener
-
-      function maritalQuestions() {
-        let spouseLabel,
-          maritalStatusElm = $(":input[type=radio][name=maritalStatus]:checked", formId), 
-          marital = maritalObj(maritalStatusElm), 
-          entityType = marital.entityType,
-          entityPrep = marital.entityPrep,
-          rdspUccbMaritalUpdate = function (hasPartner) {
-            if (hasPartner === true) {
-              $("[data-input-col1=true]").addClass("col-md-6");
-              $("[data-input-col1=true]").removeClass("col-md-12");
-              $("[data-input-col1=true] .input-group").addClass("col-sm-7 col-xs-8");
-              $("[data-input-col1=true] .input-group").removeClass("col-sm-4 col-xs-7");
-              $("[data-partner-info=true]").attr("class", "small visible-sm visible-xs");
-            } else {
-              $("[data-input-col1=true]").addClass("col-md-12");
-              $("[data-input-col1=true]").removeClass("col-md-6");
-              $("[data-input-col1=true] .input-group").addClass("col-sm-4 col-xs-7");
-              $("[data-input-col1=true] .input-group").removeClass("col-sm-7 col-xs-8");
-              $("[data-partner-info=true]").attr("class", "hidden");
-            }
+      const rentPercentLimit = 0.3;
+      let individual, 
+          formId = "#housing_cal_form", 
+          maritalObj = function(maritalStatus) {
+              let maritalData = {
+                  status: maritalStatus.val() || $("#marital-single").val(),
+                  option: maritalStatus.data("marital-option") || 1,
+                  entityType: maritalStatus.data("entity-type") || $("#marital-single").data("entityType"),
+                  entityPrep: maritalStatus.data("entity-prep") || $("#marital-single").data("entityPrep"),
+                  separateStatus: maritalStatus.data("separate-status") || $("#marital-single").data("separateStatus")
+              };
+              return maritalData;
+          }, 
+          dependant = function() {
+              return $(":input[type=radio][name=dependant-2022]:checked", formId).data("dependant");
+          }, 
+          relationship = function() {
+              let relationOpt = $(":input[type=radio][name=maritalStatus]:checked", formId) || $(":input[type=radio][name=maritalStatus][data-marital-option=1]");
+              if (relationOpt.data("has-partner") === true) {
+                  return true;
+              }
+              return false;
+          }, 
+          rdsp = function() {
+              return $(":input[type=radio][name=rdsp]:checked", formId).data("rdsp") || false;
+          }, 
+          rdspRepayment = function() {
+              if (rdsp() === true) {
+                  return parseInt($("#rdspRepayment").val(), 10) || 0;
+              }
+              return 0;
+          }, 
+          partnerRdspRepayment = function() {
+              if (rdsp() === true && relationship() === true) {
+                  return parseInt($("#partnerRdspRepayment").val(), 10) || 0;
+              }
+              return 0;
+          }, 
+          uccb = function() {
+              return $(":input[type=radio][name=uccb]:checked", formId).data("uccb") || false;
+          }, 
+          uccbRepayment = function() {
+              if (uccb() === true) {
+                  return parseInt($("#uccbRepayment").val(), 10) || 0;
+              }
+              return 0;
+          }, 
+          partnerUccbRepayment = function() {
+              if (uccb() === true && relationship() === true) {
+                  return parseInt($("#partnerUccbRepayment").val(), 10) || 0;
+              }
+              return 0;
+          }, 
+          rentAmount = function() {
+            return parseInt($("#rent-paid-2022").val(), 10) || 0;
+          }, 
+          income = {
+              famAFNIThreshhold: 35000, 
+              indAFNIThreshhold: 20000,
+              net: function() {
+                  return parseInt($("#netIncome").val(), 10) || 0;
+              }, 
+              partner: function() {
+                  if (relationship() === true) {
+                      return parseInt($("#spouseNetIncome").val(), 10) || 0;
+                  }
+                  return 0;
+              }, 
+              hasWorld: function() {
+                  return $(":input[type=radio][name=hasWorldIncome]:checked", formId).data("world-income") || false;
+              }, 
+              world: function() {
+                  if (this.hasWorld() === true) {
+                      return parseInt($("#worldIncome").val(), 10) || 0;
+                  }
+                  return 0;
+              },
+              partnerWorld: function() {
+                  if (this.hasWorld() === true) {
+                      return parseInt($("#spouseWorldIncome").val(), 10) || 0;
+                  }
+                  return 0;
+              },
+              rdsp: function() {
+                  if (rdsp() === true) {
+                      return parseInt($("#rdspIncome").val(), 10) || 0;
+                  }
+                  return 0;
+              }, 
+              partnerRdsp: function() {
+                  if (rdsp() === true && relationship() === true) {
+                      return parseInt($("#partnerRdspIncome").val(), 10) || 0;
+                  }
+                  return 0;
+              }, 
+              uccb: function() {
+                  if (uccb() === true) {
+                      return parseInt($("#uccbIncome").val(), 10) || 0;
+                  }
+                  return 0;
+              }, 
+              partnerUccb: function() {
+                  if (uccb() === true && relationship() === true) {
+                      return parseInt($("#partnerUccbIncome").val(), 10) || 0;
+                  }
+                  return 0;
+              }, 
+              household: function() {
+                  return this.net() + this.partner() + this.world() + this.partnerWorld();
+              },
+              avgFamNet: function() {
+                  return Math.max(0, this.household() - (this.rdsp() + this.partnerRdsp() + this.uccb() + this.partnerUccb()) + (rdspRepayment() + partnerRdspRepayment() + uccbRepayment() + partnerUccbRepayment()));
+              }
           },
-          dependantUpdate = function () {
-            $("#marital-unanswered").removeClass("hidden");
-            $("#marital-answered").addClass("hidden");
-            let maritalCommom = maritalObj($("#marital-common"));
-            if ($('#dependant-2022-yes:checked').length > 0) {
-              $("#marital-dependants").removeClass("hidden");
-              $("#marital-false").addClass("hidden");
-              $("#marital-unanswered").addClass("hidden");
-              $("#marital-answered").removeClass("hidden");
-              individual = false;
-              entityType = maritalCommom.entityType;
-              entityPrep = maritalCommom.entityPrep;
-            } else if ($('#dependant-2022-no:checked').length > 0) {
+          rentPercentage = function() {
+              if (income.avgFamNet() !== 0) {
+                  return rentAmount() / income.avgFamNet() || 0;
+              }
+              return 0;
+          }, 
+          maritalQuestions = function () {
+              let spouseLabel,
+                  maritalStatusElm = $(":input[type=radio][name=maritalStatus]:checked", formId), 
+                  marital = maritalObj(maritalStatusElm), 
+                  entityType = marital.entityType,
+                  entityPrep = marital.entityPrep,
+                  rdspUccbMaritalUpdate = function (hasPartner) {
+                      if (hasPartner === true) {
+                          $("[data-input-col1=true]").addClass("col-md-6");
+                          $("[data-input-col1=true]").removeClass("col-md-12");
+                          $("[data-input-col1=true] .input-group").addClass("col-sm-7 col-xs-8");
+                          $("[data-input-col1=true] .input-group").removeClass("col-sm-4 col-xs-7");
+                          $("[data-partner-info=true]").attr("class", "small visible-sm visible-xs");
+                      } else {
+                          $("[data-input-col1=true]").addClass("col-md-12");
+                          $("[data-input-col1=true]").removeClass("col-md-6");
+                          $("[data-input-col1=true] .input-group").addClass("col-sm-4 col-xs-7");
+                          $("[data-input-col1=true] .input-group").removeClass("col-sm-7 col-xs-8");
+                          $("[data-partner-info=true]").attr("class", "hidden");
+                      }
+                  },
+                  dependantUpdate = function () {
+                      $("#marital-unanswered").removeClass("hidden");
+                      $("#marital-answered").addClass("hidden");
+                      let maritalCommom = maritalObj($("#marital-common"));
+                      if (dependant() === true) {
+                          $("#marital-dependants").removeClass("hidden");
+                          $("[data-has-partner=false]").addClass("hidden");
+                          $("#marital-unanswered").addClass("hidden");
+                          $("#marital-answered").removeClass("hidden");
+                          individual = false;
+                          entityType = maritalCommom.entityType;
+                          entityPrep = maritalCommom.entityPrep;
+                      } else if (dependant() === false) {
+                          $("#marital-dependants").addClass("hidden");
+                          $("[data-has-partner=false]").removeClass("hidden");
+                          $("#marital-unanswered").addClass("hidden");
+                          $("#marital-answered").removeClass("hidden");
+                          spouseLabel = maritalCommom.status;
+                      }
+                  };
+              individual = true;
+              $("#rent-paid-no-separation").removeClass("hidden");
               $("#marital-dependants").addClass("hidden");
-              $("#marital-unanswered").addClass("hidden");
-              $("#marital-answered").removeClass("hidden");
-              $("[data-has-partner=true]").addClass("hidden");
-              $("[data-has-partner=false]").removeClass("hidden");
-              spouseLabel = maritalCommom.status;
-            }
-            updateResults();
+              switch (marital.option) {
+                  case (6): // (6) widowed
+                  case (5): // (5) separated
+                  case (4): // (4) divorced 
+                      $("#dependants-q").removeClass("hidden");
+                      spouseLabel = "";
+                      $("[data-has-partner=true]").addClass("hidden");
+                      $("[data-has-partner=false]").removeClass("hidden");
+                      rdspUccbMaritalUpdate(false);
+                      dependantUpdate();
+                      break;
+                  case (3): // (3) common law 
+                  case (2): // (2) married 
+                      $("#marital-unanswered, #dependants-q").addClass("hidden");
+                      spouseLabel = marital.status;
+                      $("[data-has-partner=true]").removeClass("hidden");
+                      $("[data-has-partner=false]").addClass("hidden");
+                      individual = false;
+                      rdspUccbMaritalUpdate(true);
+                      break;
+                  case (1): // (1) single 
+                  default:
+                      $("#dependants-q").removeClass("hidden");
+                      spouseLabel = marital.status;
+                      $("[data-has-partner=true]").addClass("hidden");
+                      $("[data-has-partner=false]").removeClass("hidden");
+                      rdspUccbMaritalUpdate(false);
+                      dependantUpdate();
+              }
+              $("#separationORsingle").html(marital.separateStatus);
+              $("[data-partner-case=false]").html(spouseLabel);
+              $("#indfam").html(entityType);
+              $("#indfam-prep").html(entityPrep);
+          }, 
+          updateResults = function () {
+              let currencyFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
+                  style: "currency",
+                  currency: "CAD",
+                 minimumFractionDigits: 0
+              }),
+              percentFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
+                  style: "percent",
+                  minimumFractionDigits: 2,
+                  roundingPriority: "auto"
+              });
+
+              /*  Generate results  */
+              $("[data-output=net-income-value]").html(currencyFormatter.format(income.net() + income.world()));
+              $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(income.partner() + income.partnerWorld()));
+              $("[data-output=household-income-value]").html(currencyFormatter.format(income.household()));
+              $("[data-output=uccb-rdsp-income-value]").html(currencyFormatter.format(income.rdsp() + income.uccb() + income.partnerRdsp() + income.partnerUccb()));
+              $("[data-output=uccb-rdsp-repayment-value]").html(currencyFormatter.format(rdspRepayment() + partnerRdspRepayment() + uccbRepayment() + partnerUccbRepayment()));
+              $("[data-output=avg-fam-net-income-value]").html(currencyFormatter.format(income.avgFamNet()));
+              $("[data-output=rent-dollar-figure]").html(currencyFormatter.format(rentAmount()));
+              $("[data-output=rent-percentage]").html(percentFormatter.format(rentPercentage()));
+              if ((income.avgFamNet() <= income.famAFNIThreshhold && individual === false) || (income.avgFamNet() <= income.indAFNIThreshhold && individual === true)) {
+                  $("[data-qualify=true]").removeClass("hidden");
+                  $("[data-qualify=false]").addClass("hidden");
+                  if (rentPercentage() < rentPercentLimit || rentAmount() <= 0) {
+                      $("[data-rent-qualify=true]").addClass("hidden");
+                      $("[data-rent-qualify=false]").removeClass("hidden");
+                      $("#result-alert").removeClass("alert-success");
+                      $("#result-alert").addClass("alert-warning");
+                  } else {
+                      $("[data-rent-qualify=true]").removeClass("hidden");
+                      $("[data-rent-qualify=false]").addClass("hidden");
+                      $("#result-alert").removeClass("alert-warning");
+                      $("#result-alert").addClass("alert-success");
+                  }
+              } else {
+                  $("[data-qualify=true]").addClass("hidden");
+                  $("[data-qualify=false]").removeClass("hidden");
+              }
           };
 
-        individual = true;
-        //$(".marital-change-true").addClass("hidden");
-        //$(".marital-change-true").addClass("hidden");
-        //$(".divorce-label").addClass("hidden");
-        //$(".separation-label").addClass("hidden");
-        //$(".death-label").addClass("hidden");
-        //$(".spouseElm").addClass("hidden");
-        $("#rent-paid-no-separation").removeClass("hidden");
-        //$(".rent-paid-separation").addClass("hidden");
-        $("#marital-dependants").addClass("hidden");
+        $(formId).on("click vclick touchstart", "input[type=radio][name=hasWorldIncome]", function (event) {
+            if (income.hasWorld() === true) {
+                $("#worldIncomeElm").removeClass("hidden");
+            } else {
+                $("#worldIncomeElm").addClass("hidden");
+            }
+        });
 
-        // if ($('#marital-single:checked').length > 0 || $('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
-        //   $("#marital-change").removeClass("hidden");
-        // } else {
-        //   $("#marital-change").addClass("hidden");
-        // }
-
-        // if ($('#marital-change-yes:checked').length > 0) {
-        //   $(".marital-change-true").removeClass("hidden");
-        //   $("#rent-paid-no-separation").addClass("hidden");
-        //   $(".rent-paid-separation").removeClass("hidden");
-        // } else if ($('#marital-change-no:checked').length > 0) {
-        //   $(".marital-change-true").addClass("hidden");
-        //   $("#marital-unanswered").addClass("hidden");
-        //   // $("#marital-false").removeClass("hidden");
-        // }
-        switch (marital.option) {
-          case (6): // (6) widowed
-          case (5): // (5) separated
-          case (4): // (4) divorced 
-            $("#dependants-q, .not-single").removeClass("hidden");
-            $(".spouse-specific").addClass("hidden");
-            spouseLabel = "";
-            $("[data-has-partner=true]").addClass("hidden");
-            $("[data-has-partner=false]").removeClass("hidden");
-            rdspUccbMaritalUpdate(false);
-            dependantUpdate();
-            break;
-          case (3): // (3) common law 
-          case (2): // (2) married 
-            $("#marital-unanswered, #dependants-q").addClass("hidden");
-            $(".spouse-specific, .not-single").removeClass("hidden");
-            spouseLabel = marital.status;
-            $("[data-has-partner=true]").removeClass("hidden");
-            $("[data-has-partner=false]").addClass("hidden");
-            individual = false;
-            rdspUccbMaritalUpdate(true);
-            break;
-          case (1): // (1) single 
-          default:
-            $("#dependants-q").removeClass("hidden");
-            $(".spouse-specific, .not-single").addClass("hidden");
-            spouseLabel = marital.status;
-            $("[data-has-partner=true]").addClass("hidden");
-            $("[data-has-partner=false]").removeClass("hidden");
-            rdspUccbMaritalUpdate(false);
-            dependantUpdate();
-        }
-        $("#separationORsingle").html(marital.separateStatus);
-        $(".spouse-label").html(spouseLabel);
-        $("#indfam").html(entityType);
-        $("#indfam-prep").html(entityPrep);
-        updateResults();
-      }
-
-      function updateResults() {
-        const famAFNIThreshhold = 35000;
-        const indAFNIThreshhold = 20000;
-        const rentPercentLimit = 0.3;
-        let afni,
-        currencyFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
-          style: "currency",
-          currency: "CAD",
-          minimumFractionDigits: 0
-        }),
-        percentFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
-          style: "percent",
-          minimumFractionDigits: 2,
-          roundingPriority: "auto"
-        }),
-        rentPercentage = 0, 
-        netIncome = parseInt($("#netIncome").val(), 10) || 0,
-        spousalNetIncome = parseInt($("#spouseNetIncome").val(), 10) || 0,
-        worldIncome = parseInt($("#worldIncome").val(), 10) || 0,
-        spouseWorldIncome = parseInt($("#spouseWorldIncome").val(), 10) || 0,
-        rdspIncome = 0,
-        rdspRepayment = 0,
-        rdspIncomeSpouse = 0,
-        rdspRepaymentSpouse = 0,
-        uccbIncome = 0,
-        uccbRepayment = 0,
-        uccbIncomeSpouse = 0,
-        uccbRepaymentSpouse = 0,
-        rentAmount = parseInt($("#rent-paid-2022").val(), 10) || 0;
-        // rentAmountBefore = parseInt($("#rent-paid-2022-before").val(), 10) || 0,
-        // rentAmountAfter = parseInt($("#rent-paid-2022-after").val(), 10) || 0, 
-        if (rdsp() === true) {
-          rdspIncome = parseInt($("#rdspIncome").val(), 10) || 0;
-          rdspRepayment = parseInt($("#rdspRepayment").val(), 10) || 0;
-          rdspIncomeSpouse = parseInt($("#partnerRdspIncome").val(), 10) || 0;
-          rdspRepaymentSpouse = parseInt($("#partnerRdspRepayment").val(), 10) || 0;
-        }
-        if (uccb() === true) {
-          uccbIncome = parseInt($("#uccbIncome").val(), 10) || 0;
-          uccbRepayment = parseInt($("#uccbRepayment").val(), 10) || 0;
-          uccbIncomeSpouse = parseInt($("#partnerUccbIncome").val(), 10) || 0;
-          uccbRepaymentSpouse = parseInt($("#partnerUccbRepayment").val(), 10) || 0;
-        }
-        let uccbAndRdspIncome = rdspIncome + uccbIncome + rdspIncomeSpouse + uccbIncomeSpouse;
-        let uccbAndRdspRepayment = rdspRepayment + uccbRepayment + rdspRepaymentSpouse + uccbRepaymentSpouse;
-        if (hasWorld() === true) {
-          afni = netIncome + spousalNetIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
-        } else {
-          afni = netIncome + spousalNetIncome + worldIncome + spouseWorldIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
-        }
-        afni = Math.max(0, afni); //if negative, make it 0$
-        // if ($('#marital-change-yes:checked').length > 0) {
-        //   rentPercentage = ((rentAmountBefore / 2) + rentAmountAfter) / afni;
-        // } else if ($('#marital-change-no:checked').length > 0) {
-          rentPercentage = rentAmount / afni || 0;
-        // }
-
-        /*  Generate results  */
-        $("#results").removeClass("hidden");
-        $(".qualify").addClass("hidden");
-        $(".doesnt-qualify").addClass("hidden");
-        if (hasWorld() === true) {
-          $("[data-output=net-income-value]").html(currencyFormatter.format(netIncome));
-          $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(spousalNetIncome));
-          $("[data-output=household-income-value]").html(currencyFormatter.format(netIncome + spousalNetIncome));
-        } else {
-          $("[data-output=net-income-value]").html(currencyFormatter.format(netIncome + worldIncome));
-          $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(spousalNetIncome + spouseWorldIncome));
-          $("[data-output=household-income-value]").html(currencyFormatter.format(netIncome + spousalNetIncome + worldIncome + spouseWorldIncome));
-        }
-
-        $("[data-output=uccb-rdsp-income-value]").html(currencyFormatter.format(uccbAndRdspIncome));
-        $("[data-output=uccb-rdsp-repayment-value]").html(currencyFormatter.format(uccbAndRdspRepayment));
-        $("[data-output=avg-fam-net-income-value]").html(currencyFormatter.format(afni));
-        $("[data-output=rent-dollar-figure]").html(currencyFormatter.format(rentAmount));
-        $("[data-output=rent-percentage]").html(percentFormatter.format(rentPercentage));
-        if ((afni <= famAFNIThreshhold && individual === false) || (afni <= indAFNIThreshhold && individual === true)) {
-          $(".qualify").removeClass("hidden");
-          //$(".rent-not-qualify").addClass("hidden");
-          $(".rent-qualify").addClass("hidden");
-          if (rentPercentage < rentPercentLimit || rentAmount <= 0) {
-            $(".rent-not-qualify").removeClass("hidden");
-            $("#result-alert").removeClass("alert-success");
-            $("#result-alert").addClass("alert-warning");
-          } else {
-            $(".rent-qualify").removeClass("hidden");
-            $(".rent-not-qualify").addClass("hidden");
-            $("#result-alert").removeClass("alert-warning");
-            $("#result-alert").addClass("alert-success");
-          }
-        } else {
-          $(".doesnt-qualify").removeClass("hidden");
-          $(".rent-not-qualify").removeClass("hidden");
-        }
-        //event.preventDefault();
-      }
-
-      $("#uccbAndRdsp input, #income input", formId).change(function () {
-        updateResults();
-      });
-     
-      function residencyQuestions(target) {
-        $("#worldIncomeElm").addClass("hidden");
-        if ($('#resident-true:checked').length > 0) {
+        $(formId).on("click vclick touchstart", "input[type=radio][name=dependant-2022]", function (event) {
+            maritalQuestions();
+            updateResults();
+        });
           
-        } else if ($('#resident-false:checked').length > 0) {
-          $("#worldIncomeElm").removeClass("hidden");
-        }
-      }
+        $(formId).on("click vclick touchstart", "input[type=radio][name=maritalStatus]", function (event) {
+            maritalQuestions();
+            updateResults();
+        });
 
-      $(formId).on("click", "input[type=radio]", function (event) {
-        var target = event.target;
-        if (target.name == "residency" || target.name == "nonResidentTies" || target.name == "deemedResidency") {
-          residencyQuestions(target);
-        }
-        if (target.name == "dependant-2022" || target.name == "maritalStatus" || target.name == "maritalChange") {
-          maritalQuestions(target);
-        }
-        updateResults();
-      });
+        $(formId).on("click vclick touchstart", "input[type=radio][name=rdsp]", function (event) {
+            if (rdsp() === true) {
+                $("#rdspfields").removeClass("hidden");
+            } else {
+                $("#rdspfields").addClass("hidden");
+            }
+            updateResults();
+        });
 
+        $(formId).on("click vclick touchstart", "input[type=radio][name=uccb]", function (event) {
+            if (uccb() === true) {
+                $("#uccbfields").removeClass("hidden");
+            } else {
+                $("#uccbfields").addClass("hidden");
+            }
+            updateResults();
+        });
 
-      $(formId).on("click vclick touchstart", "input[type=radio][name=rdsp]", function (event) {
-        if (rdsp() === true) {
-          $("#rdspfields").removeClass("hidden");
-        } else {
-          $("#rdspfields").addClass("hidden");
-        }
-        updateResults();
-      });
+        $("#rent-paid-2022, #rent-paid-2022-before, #rent-paid-2022-after, #uccbAndRdsp input, #income input", formId).change(function () {
+            updateResults();
+        });
 
-      $(formId).on("click vclick touchstart", "input[type=radio][name=uccb]", function (event) {
-        if (uccb() === true) {
-          $("#uccbfields").removeClass("hidden");
-        } else {
-          $("#uccbfields").addClass("hidden");
-        }
-        updateResults();
-      });
+        $(formId).on("click", "#print-prev-button", function (event) {
+            $("#pp-statement #math-results-summary").attr("open", "open");
+        });
 
-
-      $("#rent-paid-2022, #rent-paid-2022-before, #rent-paid-2022-after", formId).change(function () {
-        updateResults();
-      });
-
-      $(formId).on("click", "#print-prev-button", function (event) {
-        $("#pp-statement #math-results-summary").attr("open", "open");
-      });
-
-      $(formId).on("click vclick touchstart", "#print-statement-button", function (event) {
+        $(formId).on("click vclick touchstart", "#print-statement-button", function (event) {
             window.print();
-      });
-
-      //$(formId).on("click", "input[type=checkbox][name=deemedResidency]", function (event) {
-      //  residencyQuestions(event.target);
-      //  updateResults();
-      //});
-
-      // $(formId).on("click vclick touchstart", "#print-prev-button", function (event) {
-            
-      //     });
-
-      // function residencyQuestions(target) {
-      //   //resets
-      //   $("#worldIncomeElm").addClass("hidden");
-      //   $("spouseWorldIncomeElm").addClass("hidden");
-      //   $("#non-resident-ties").addClass("hidden");
-      //   $("#deemed-residency").addClass("hidden");
-      //   $(".residency-unanswered").removeClass("hidden");
-      //   $(".canadian-resident").addClass("hidden");
-      //   $(".factual-resident").addClass("hidden");
-      //   $(".deemed-non-resident").addClass("hidden");
-      //   $(".deemed-resident").addClass("hidden");
-      //   $(".non-resident").addClass("hidden");
-        
-      //   if ($('#resident-true:checked').length > 0) {
-      //     $(".canadian-resident").removeClass("hidden");
-      //     $(".residency-unanswered").addClass("hidden");
-      //   } else if ($('#resident-false:checked').length > 0) {
-      //     $("#non-resident-ties").removeClass("hidden"); //unhide follow on question
-      //     if ($('#non-resident-ties-yes:checked').length > 0) { //follow on question
-      //       $(".residency-unanswered").addClass("hidden");
-      //       $(".factual-resident").removeClass("hidden");
-      //     } else if ($('#non-resident-ties-yes-but:checked').length > 0) {
-      //       $("#worldIncomeElm").removeClass("hidden");
-      //       $("spouseWorldIncomeElm").removeClass("hidden");
-      //       $(".residency-unanswered").addClass("hidden");
-      //       $(".deemed-non-resident").removeClass("hidden");
-      //     } else if ($('#non-resident-ties-no:checked').length > 0) {
-      //       $("#deemed-residency").removeClass("hidden"); //unhide follow on question
-      //       if ($('#deemed-resident-government:checked').length > 0 || $('#deemed-resident-forces:checked').length > 0 || $('#deemed-resident-development:checked').length > 0 || $('#deemed-resident-family:checked').length > 0 || $('#deemed-resident-183:checked').length > 0) { //follow on question
-      //         $(".residency-unanswered").addClass("hidden");
-      //         $(".deemed-resident").removeClass("hidden");
-      //       } else if ($('#deemed-resident-none:checked').length > 0) {
-      //         $("#worldIncomeElm").removeClass("hidden");
-      //         $("spouseWorldIncomeElm").removeClass("hidden");
-      //         $(".residency-unanswered").addClass("hidden");
-      //         $(".non-resident").removeClass("hidden");
-      //       }
-      //     }
-      //   }
-      // }
-
-      // $("input[type=radio][name=non-residency-ties]", formId).change(function () {
-      //   residency = $(this).data("residency");
-      //   if (residency === true) {
-      //     $("#worldIncomeElm").removeClass("hidden");
-      //     $("#worldIncomeElm").val(0);
-      //   } else { //unhide follow up question
-      //     $("#non-residency-ties").removeClass("hidden");
-      //   }
-      // });
-
-
-
-      // $("#worldIncomeElm").addClass("hidden");
-
-
-
-      // $("#maritalStatus", formId).change(function () {
-      //   // relationship = $(this).find(":selected").data("marital-add");
-      //   if (relationship === true) {
-      //     $("#spouseNetIncomeElm").removeClass("hidden");
-      //   } else {
-      //     $("#spouseNetIncomeElm").addClass("hidden");
-      //   }
-      // });
+        });
     </script>
     <script>
       $(document).on("click", ".steps-wrapper div.buttons > :button", function (event) {
