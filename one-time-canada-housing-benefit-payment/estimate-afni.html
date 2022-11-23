@@ -1586,8 +1586,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                           <summary>Show the math for your adjusted family net income</summary>
                           <p>Your adjusted family net income for this benefit is:</p>
                           <ul class="fa-ul lst-spcd">
-                              <li><span class="mrgn-tp-0 h5"><span data-output="net-income-value">$0</span><span class="text-muted"> (your net income)</span></span></li>
-                              <li class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><span data-output="spouse-net-income-value">$0</span><span class="text-muted"> (your spouse's net income)</span></span></li>
+                              <li id="netIncomeResult"><span class="mrgn-tp-0 h5"><span data-output="net-income-value">$0</span><span class="text-muted"> (your net income)</span></span></li>
+                              <li id="partnerNetIncomeResult" class="brdr-bttm"><span class="fas fa-plus fa-li"><span class="wb-inv">plus</span></span> <span class="h5"><span data-output="spouse-net-income-value">$0</span><span class="text-muted"> (your spouse's net income)</span></span></li>
                               <li><span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 h4"><span data-output="household-income-value">$0</span><span class="text-muted"> (your family net income)</span></span></li>
                           </ul>
                           <br>
@@ -1892,6 +1892,15 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   roundingPriority: "auto",
                   roundingMode: "trunc"
               });
+
+              if (relationship() === true) {
+                  $("#netIncomeResult").removeClass("brdr-bttm");
+                  $("#partnerNetIncomeResult").removeClass("hidden");
+                  $("#partnerNetIncomeResult").addClass("brdr-bttm");
+              } else {
+                  $("#netIncomeResult").addClass("brdr-bttm");
+                  $("#partnerNetIncomeResult").addClass("hidden");
+              }
 
               /*  Generate results  */
               $("[data-output=net-income-value]").html(currencyFormatter.format(income.net() + income.world()));
