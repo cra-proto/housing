@@ -1759,7 +1759,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   return 0;
               },
               partnerWorld: function() {
-                  if (this.hasWorld() === true) {
+                  if (this.hasWorld() === true && relationship() === true) {
                       return parseInt($("#spouseWorldIncome").val(), 10) || 0;
                   }
                   return 0;
@@ -1883,7 +1883,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               let currencyFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
                   style: "currency",
                   currency: "CAD",
-                 minimumFractionDigits: 0
+                 minimumFractionDigits: 0,
+                 maximumFractionDigits: 0
               }),
               percentFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
                   style: "percent",
