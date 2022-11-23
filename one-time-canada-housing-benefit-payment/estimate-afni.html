@@ -1870,7 +1870,11 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         // if ($('#marital-change-yes:checked').length > 0) {
         //   rentPercentage = ((rentAmountBefore / 2) + rentAmountAfter) / afni;
         // } else if ($('#marital-change-no:checked').length > 0) {
+        if (afni !== 0) {  
           rentPercentage = rentAmount / afni || 0;
+        } else {
+          rentPercentage = 0;
+        }
         // }
 
         /*  Generate results  */
@@ -1921,9 +1925,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
      
       function residencyQuestions(target) {
         $("#worldIncomeElm").addClass("hidden");
-        if ($('#resident-true:checked').length > 0) {
+        if ($('#resident-false:checked').length > 0) {
           
-        } else if ($('#resident-false:checked').length > 0) {
+        } else if ($('#resident-true:checked').length > 0) {
           $("#worldIncomeElm").removeClass("hidden");
         }
       }
