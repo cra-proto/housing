@@ -1883,13 +1883,13 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               let currencyFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
                   style: "currency",
                   currency: "CAD",
-                 minimumFractionDigits: 0,
-                 maximumFractionDigits: 0
+                  minimumFractionDigits: 0
               }),
               percentFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
                   style: "percent",
-                  minimumFractionDigits: 2,
-                  roundingPriority: "auto"
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 2,
+                  roundingPriority: "trunc"
               });
 
               /*  Generate results  */
