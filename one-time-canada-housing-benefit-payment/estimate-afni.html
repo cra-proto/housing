@@ -1409,7 +1409,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 </fieldset>                                                        
                 <div id="rdspfields" class="row hidden">
                   <p class="text-muted">Leave fields blank if amounts are zero.</p>
-                  <div class="wb-eqht">
+                  <div>
                     <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
                       <label for="rdspIncome"><span class="field-name">2021 <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
@@ -1488,9 +1488,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
                       <label for="uccbIncome"><span class="field-name">2021 <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
-                      <div class="input-group col-sm-7">
+                      <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input type="text" name="uccbIncome" size="7" maxlength="7" value="" id="uccbIncome" class="form-control text-right" inputmode="numeric" pattern="[0-9]*" data-rule-digits="true">
+                        <input type="text" name="uccbIncome" size="7" maxlength="7" value="" id="uccbIncome" class="form-control text-right" inputmode="numeric">
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
@@ -1498,7 +1498,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     <div class="form-group col-md-6" data-has-partner="true">
                       <label for="partnerUccbIncome"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
-                      <div class="input-group col-sm-7">
+                      <div class="input-group">
                         <span class="input-group-addon">$</span>
                         <input type="text" name="partnerUccbIncome" size="7" maxlength="7" value="" id="partnerUccbIncome" class="form-control text-right" inputmode="numeric" pattern="[0-9]*" data-rule-digits="true">
                         <span class="input-group-addon">.00</span>
