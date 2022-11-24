@@ -1228,7 +1228,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <label for="marital-spouse">Married</label>
                     </li>
                     <li class="radio">
-                      <input type="radio" name="maritalStatus" id="marital-common" value="common law partner" data-marital-option="3" data-entity-type="family" data-entity-prep="a" data-separate-status="single" data-has-partner="true" data-rule-required="true">
+                      <input type="radio" name="maritalStatus" id="marital-common" value="common law partner" data-shortform="common-law" data-marital-option="3" data-entity-type="family" data-entity-prep="a" data-separate-status="single" data-has-partner="true" data-rule-required="true">
                       <label for="marital-common">Living common-law</label>
                     </li>
                     <li class="radio">
@@ -1409,7 +1409,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 </fieldset>                                                        
                 <div id="rdspfields" class="row hidden">
                   <p class="text-muted">Leave fields blank if amounts are zero.</p>
-                  <div class="wb-eqht">
+                  <div>
                     <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
                       <label for="rdspIncome"><span class="field-name">2021 <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
@@ -1421,7 +1421,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     </div>
                     <p class="small visible-sm visible-xs">This is line 12500 of your 2021 tax return.</p>
                     <div class="form-group col-md-6" data-has-partner="true">
-                      <label for="partnerRdspIncome"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <label for="partnerRdspIncome"><span class="field-name">2021 <span data-partner-case="true" data-shortform="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
                       <div class="input-group col-sm-7">
                         <span class="input-group-addon">$</span>
@@ -1442,7 +1442,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     </div>
                     <p class="small visible-sm visible-xs">This is the <abbr title="Registered disability savings plan">RDSP</abbr> amounts that is entered on line 23200 of your 2021 tax return.</p>
                     <div class="form-group col-md-6" data-has-partner="true">
-                      <label for="partnerRdspRepayment"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <label for="partnerRdspRepayment"><span class="field-name">2021 <span data-partner-case="true" data-shortform="true">Spouse</span>'s <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#rdspRepayment-help" aria-controls="rdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span></a>-->
                       <div class="input-group col-sm-7">
                         <span class="input-group-addon">$</span>
@@ -1484,7 +1484,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 </fieldset>
                 <div id="uccbfields" class="row hidden">
                   <p class="text-muted">Leave fields blank if amounts are zero.</p>
-                  <div class="wb-eqht">
+                  <div>
                     <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
                       <label for="uccbIncome"><span class="field-name">2021 <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
@@ -1496,7 +1496,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     </div>
                     <p class="small visible-sm visible-xs">This is line 11700 of your 2021 tax return.</p>
                     <div class="form-group col-md-6" data-has-partner="true">
-                      <label for="partnerUccbIncome"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <label for="partnerUccbIncome"><span class="field-name">2021 <span data-partner-case="true" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> income</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
                       <div class="input-group col-sm-7">
                         <span class="input-group-addon">$</span>
@@ -1517,7 +1517,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                     </div>
                     <p class="small visible-sm visible-xs">This is line 21300 of your 2021 tax return.</p>
                     <div class="form-group col-md-6" data-has-partner="true">
-                      <label for="partnerUccbRepayment"><span class="field-name">2021 <span data-partner-case="false" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
+                      <label for="partnerUccbRepayment"><span class="field-name">2021 <span data-partner-case="true" data-shortform="true">Spouse</span>'s <abbr title="Universal child care benefit">UCCB</abbr> repayment</span><span class="wb-inv"> (dollars only, no cents)</span></label>
                       <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
                       <div class="input-group col-sm-7">
                         <span class="input-group-addon">$</span>
@@ -1687,6 +1687,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               let maritalData = {
                   status: maritalStatus.val() || $("#marital-single").val(),
                   option: maritalStatus.data("marital-option") || 1,
+                  partnerShorten: maritalStatus.data("shortform") || null, 
                   entityType: maritalStatus.data("entity-type") || $("#marital-single").data("entityType"),
                   entityPrep: maritalStatus.data("entity-prep") || $("#marital-single").data("entityPrep"),
                   separateStatus: maritalStatus.data("separate-status") || $("#marital-single").data("separateStatus")
@@ -1806,13 +1807,17 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   marital = maritalObj(maritalStatusElm), 
                   entityType = marital.entityType,
                   entityPrep = marital.entityPrep,
-                  rdspUccbMaritalUpdate = function (hasPartner) {
+                  rdspUccbMaritalUpdate = function (maritalStatus, hasPartner) {
                       if (hasPartner === true) {
                           $("[data-input-col1=true]").addClass("col-md-6");
                           $("[data-input-col1=true]").removeClass("col-md-12");
                           $("[data-input-col1=true] .input-group").addClass("col-sm-7 col-xs-8");
                           $("[data-input-col1=true] .input-group").removeClass("col-sm-4 col-xs-7");
                           $("[data-partner-info=true]").attr("class", "small visible-sm visible-xs");
+                          if (maritalStatus.partnerShorten !== null) {
+                              $("[data-partner-case=true][data-shortform=true]").text(maritalStatus.partnerShorten);
+                              $("[data-partner-case=false][data-shortform=true]").text(maritalStatus.partnerShorten.toLowerCase());
+                          }
                       } else {
                           $("[data-input-col1=true]").addClass("col-md-12");
                           $("[data-input-col1=true]").removeClass("col-md-6");
@@ -1822,9 +1827,9 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       }
                   },
                   dependantUpdate = function () {
+                      let maritalCommom = maritalObj($("#marital-common"));
                       $("#marital-unanswered").removeClass("hidden");
                       $("#marital-answered").addClass("hidden");
-                      let maritalCommom = maritalObj($("#marital-common"));
                       if (dependant() === true) {
                           $("#marital-dependants").removeClass("hidden");
                           $("[data-has-partner=false]").addClass("hidden");
@@ -1844,6 +1849,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               individual = true;
               $("#rent-paid-no-separation").removeClass("hidden");
               $("#marital-dependants").addClass("hidden");
+              
               switch (marital.option) {
                   case (6): // (6) widowed
                   case (5): // (5) separated
@@ -1852,7 +1858,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       spouseLabel = "";
                       $("[data-has-partner=true]").addClass("hidden");
                       $("[data-has-partner=false]").removeClass("hidden");
-                      rdspUccbMaritalUpdate(false);
+                      rdspUccbMaritalUpdate(marital, false);
                       dependantUpdate();
                       break;
                   case (3): // (3) common law 
@@ -1862,7 +1868,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       $("[data-has-partner=true]").removeClass("hidden");
                       $("[data-has-partner=false]").addClass("hidden");
                       individual = false;
-                      rdspUccbMaritalUpdate(true);
+                      rdspUccbMaritalUpdate(marital, true);
                       break;
                   case (1): // (1) single 
                   default:
@@ -1870,7 +1876,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       spouseLabel = marital.status;
                       $("[data-has-partner=true]").addClass("hidden");
                       $("[data-has-partner=false]").removeClass("hidden");
-                      rdspUccbMaritalUpdate(false);
+                      rdspUccbMaritalUpdate(marital, false);
                       dependantUpdate();
               }
               $("#separationORsingle").html(marital.separateStatus);
