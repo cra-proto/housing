@@ -1573,11 +1573,10 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
                         <div id="result-alert" class="alert alert-success provisional">
-
-                          <!-- <ul class="fa-ul"> -->
-                            <p>Your adjusted family net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="hidden" data-qualify="true">would qualify</span><span class="hidden" data-qualify="false">is too high to qualify</span> you as <span id="indfam-prep">an</span> <span id="indfam">individual</span></strong>.</p>
+                          <p>Your adjusted family net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="hidden" data-qualify="true">would qualify</span><span class="hidden" data-qualify="false">is too high to qualify</span> you as <span id="indfam-prep">an</span> <span id="indfam">individual</span></strong>.</p>
+                          <div id="not-0-afni">
                             <p data-qualify="true">Your rent paid in 2022 <span class="h4 mrgn-tp-0">(<span data-output="rent-dollar-figure"></span>)</span> is <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>0%</strong></span> of your 2021 income and would <strong><span data-rent-qualify="false">not</span> qualify</strong> for the benefit.</p>
-                          <!-- </ul> -->
+                          </div>
                           <p class="h5"><span data-rent-qualify="false">You should not apply. </span>Your adjusted family net income and rent would <span data-rent-qualify="false">not</span> qualify for the benefit.</p>
                           </div>
                           <p data-rent-qualify="true">Ensure you meet <a href="who-apply.html" target="_blank">all the other eligibility criteria <span class="far fa-window-restore mrgn-lft-sm"></span><span class="wb-inv"> (opens in new window)</span></a> before you apply.</p>
@@ -1798,6 +1797,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           rentPercentage = function() {
               if (income.avgFamNet() !== 0) {
                   return rentAmount() / income.avgFamNet() || 0;
+              } else if (rentAmount() > 0) {
+                return "qualifies-with-no-income";
               }
               return 0;
           }, 
@@ -1910,11 +1911,22 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               $("[data-output=uccb-rdsp-repayment-value]").html(currencyFormatter.format(rdspRepayment() + partnerRdspRepayment() + uccbRepayment() + partnerUccbRepayment()));
               $("[data-output=avg-fam-net-income-value]").html(currencyFormatter.format(income.avgFamNet()));
               $("[data-output=rent-dollar-figure]").html(currencyFormatter.format(rentAmount()));
-              $("[data-output=rent-percentage]").html(percentFormatter.format(rentPercentage()));
+              if (rentPercentage() > 0) {
+                $("[data-output=rent-percentage]").html(percentFormatter.format(rentPercentage()));
+              } else {
+                $("[data-output=rent-percentage]").html(percentFormatter.format(0));
+              }
               if ((income.avgFamNet() <= income.famAFNIThreshhold && individual === false) || (income.avgFamNet() <= income.indAFNIThreshhold && individual === true)) {
                   $("[data-qualify=true]").removeClass("hidden");
                   $("[data-qualify=false]").addClass("hidden");
-                  if (rentPercentage() < rentPercentLimit || rentAmount() <= 0) {
+                  $("#not-0-afni").removeClass("hidden");
+                  if (rentPercentage() == "qualifies-with-no-income") {
+                      $("#not-0-afni").addClass("hidden");
+                      $("[data-rent-qualify=true]").removeClass("hidden");
+                      $("[data-rent-qualify=false]").addClass("hidden");
+                      $("#result-alert").removeClass("alert-warning");
+                      $("#result-alert").addClass("alert-success");
+                  } else if (rentPercentage() < rentPercentLimit || rentAmount() <= 0) {
                       $("[data-rent-qualify=true]").addClass("hidden");
                       $("[data-rent-qualify=false]").removeClass("hidden");
                       $("#result-alert").removeClass("alert-success");
