@@ -516,6 +516,19 @@ margin-left: -2.0em;
               </details>
             </li>
         </ul>
+        <div class="alert alert-info provisional" id="default-msg">
+          <p class="h3">Vous devez répondre à tous les critères ci-dessus pour être admissible</p>
+          <p>Vous devez répondre à <strong>tous</strong> les critères ci-dessus pour avoir droit au supplément unique à l'Allocation canadienne pour le logement.</p>
+        </div>	
+        <div class="alert alert-warning provisional hidden" id="noaction-msg">
+          <p class="h3">Vous devez répondre à tous les critères ci-dessus pour être admissible</p>
+          <p>Vous devez répondre à <strong>tous</strong> les critères ci-dessus pour avoir droit au supplément unique à l'Allocation canadienne pour le logement.</p>
+        </div>	
+        <div class="alert alert-success hidden provisional" id="action-msg">
+          <p class="h3">Vous pourriez avoir droit au paiement unique de 500 $</p>
+		      <p>Il est possible de faire une demande jusqu'au 31 mars 2023.</p>
+          <p><a href="preparez-faire-demande.html">Préparez-vous à faire une demande</a>.</p>
+        </div>
       </section>
 
       <h2 id="h-2">Vérification de votre admissibilité</h2>
@@ -688,25 +701,25 @@ margin-left: -2.0em;
             $("#default-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
-          if ($(".action-checkbox:not(:checked)").length == 5) {
+          if ($(".action-checkbox:not(:checked)").length == 6) {
             $("#noaction-msg").addClass("hidden");
             $("#default-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg4:checked, #eg5:not(:checked)").length == 5) {
+          if ($(".cb-dmm:checked, #eg5:checked, #eg6:not(:checked)").length == 6) {
             $("#action-msg").removeClass("hidden");
             $("#noaction-msg").addClass("hidden");
             $("#action-msg").addClass("hidden");
           }
-          if ($(".cb-dmm:checked, #eg4:checked, #eg5:checked").length == 5) {
+          if ($(".cb-dmm:checked, #eg5:checked, #eg6:checked").length == 6) {
             $("#action-msg").addClass("hidden");
             $("#noaction-msg").addClass("hidden");
             $("#action-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:not(:checked), #eg4:not(:checked)").length == 1)  {
+          if ($(".cb-dmm:not(:checked), #eg6:not(:checked)").length == 1)  {
             $("#action-msg").addClass("hidden");
             $("#noaction-msg").removeClass("hidden");
           }
-          if ($(".cb-dmm:not(:checked), #eg4:not(:checked), #eg5:not(:checked)").length == 1)  {
+          if ($(".cb-dmm:not(:checked), #eg5:not(:checked), #eg6:not(:checked)").length == 1)  {
             $("#action-msg").addClass("hidden");
           }
         });
