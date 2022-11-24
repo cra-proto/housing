@@ -1797,8 +1797,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
           rentPercentage = function() {
               if (income.avgFamNet() !== 0) {
                   return rentAmount() / income.avgFamNet() || 0;
-              } else if (rentAmount() > 0) {
-                return "qualifies-with-no-income";
               }
               return 0;
           }, 
@@ -1920,7 +1918,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   $("[data-qualify=true]").removeClass("hidden");
                   $("[data-qualify=false]").addClass("hidden");
                   $("#not-0-afni").removeClass("hidden");
-                  if (rentPercentage() == "qualifies-with-no-income") {
+                  if (income.avgFamNet() === 0 && rentAmount() > 0) {
                       $("#not-0-afni").addClass("hidden");
                       $("[data-rent-qualify=true]").removeClass("hidden");
                       $("[data-rent-qualify=false]").addClass("hidden");
