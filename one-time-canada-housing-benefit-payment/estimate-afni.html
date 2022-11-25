@@ -1807,17 +1807,13 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   marital = maritalObj(maritalStatusElm), 
                   entityType = marital.entityType,
                   entityPrep = marital.entityPrep,
-                  rdspUccbMaritalUpdate = function (maritalStatus, hasPartner) {
+                  rdspUccbMaritalUpdate = function (hasPartner) {
                       if (hasPartner === true) {
                           $("[data-input-col1=true]").addClass("col-md-6");
                           $("[data-input-col1=true]").removeClass("col-md-12");
                           $("[data-input-col1=true] .input-group").addClass("col-sm-7 col-xs-8");
                           $("[data-input-col1=true] .input-group").removeClass("col-sm-4 col-xs-7");
                           $("[data-partner-info=true]").attr("class", "small visible-sm visible-xs");
-                          if (maritalStatus.partnerShorten !== null) {
-                              $("[data-partner-case=true][data-shortform=true]").text(maritalStatus.partnerShorten);
-                              $("[data-partner-case=false][data-shortform=true]").text(maritalStatus.partnerShorten.toLowerCase());
-                          }
                       } else {
                           $("[data-input-col1=true]").addClass("col-md-12");
                           $("[data-input-col1=true]").removeClass("col-md-6");
@@ -1858,7 +1854,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       spouseLabel = "";
                       $("[data-has-partner=true]").addClass("hidden");
                       $("[data-has-partner=false]").removeClass("hidden");
-                      rdspUccbMaritalUpdate(marital, false);
+                      rdspUccbMaritalUpdate(false);
                       dependantUpdate();
                       break;
                   case (3): // (3) common law 
@@ -1868,7 +1864,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       $("[data-has-partner=true]").removeClass("hidden");
                       $("[data-has-partner=false]").addClass("hidden");
                       individual = false;
-                      rdspUccbMaritalUpdate(marital, true);
+                      rdspUccbMaritalUpdate(true);
                       break;
                   case (1): // (1) single 
                   default:
@@ -1876,11 +1872,15 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       spouseLabel = marital.status;
                       $("[data-has-partner=true]").addClass("hidden");
                       $("[data-has-partner=false]").removeClass("hidden");
-                      rdspUccbMaritalUpdate(marital, false);
+                      rdspUccbMaritalUpdate(false);
                       dependantUpdate();
               }
               $("#separationORsingle").html(marital.separateStatus);
               $("[data-partner-case=false]").html(spouseLabel);
+              if (marital.partnerShorten !== null) {
+                  $("[data-partner-case=true][data-shortform=true]").text(marital.partnerShorten);
+                  $("[data-partner-case=false][data-shortform=true]").text(marital.partnerShorten.toLowerCase());
+              }
               $("#indfam").html(entityType);
               $("#indfam-prep").html(entityPrep);
           }, 
