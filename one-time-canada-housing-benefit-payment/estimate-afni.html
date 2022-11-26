@@ -1995,7 +1995,8 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
             $("#pp-statement #math-results-summary").attr("open", "open");
         });
 
-        $(formId).on("click vclick touchstart", "#print-statement-button", function (event) {
+        $("#pp-statement").on("click vclick touchstart", "#print-statement-button", function (event) {
+          console.log("hi");
             window.print();
         });
     </script>
