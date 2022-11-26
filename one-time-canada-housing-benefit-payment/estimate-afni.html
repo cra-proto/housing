@@ -1944,6 +1944,10 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               } else {
                   $("[data-qualify=true]").addClass("hidden");
                   $("[data-qualify=false]").removeClass("hidden");
+                  $("[data-rent-qualify=true]").addClass("hidden");
+                  $("[data-rent-qualify=false]").removeClass("hidden");
+                  $("#result-alert").removeClass("alert-success");
+                  $("#result-alert").addClass("alert-warning");
               }
           };
 
