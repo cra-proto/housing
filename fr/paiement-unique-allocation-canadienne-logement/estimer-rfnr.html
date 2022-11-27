@@ -1365,7 +1365,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                 <h3 class="mrgn-tp-0">Résumé de l’état civil</h3>
                 <p id="marital-unanswered">Répondez à la ou aux questions ci-dessus pour indiquer votre état civil. Cela aura une incidence sur la façon dont votre revenu est calculé et sur les critères à remplir pour avoir droit au paiement unique.</p>
                 <p id="marital-dependants" class="hidden">Puisque vous aviez des personnes à charge, votre revenu familial net rajusté doit être de 35&nbsp;000&nbsp;$ ou moins.</p>
-                <p class="hidden" data-has-partner="true">Le revenu familial net rajusté de vous et votre conjoint doit être de 35&nbsp;000&nbsp;$ ou moins.</p>
+                <p class="hidden" data-has-partner="true">Le revenu familial net rajusté de vous et votre <span data-partner-case="true">conjoint de fait</span> doit être de 35&nbsp;000&nbsp;$ ou moins.</p>
                 <p class="hidden" data-has-partner="false">Puisque vous étiez <span id="separationORsingle">célibataire/divorcé/séparé/veuf</span>, votre revenu familial net rajusté doit être de 20&nbsp;000&nbsp;$ ou moins.</p>
                 <!-- <p class="marital-change-true hidden">Because of the change in marital status, your rent will be calculated as 50% of your rent before the death, separation or divorce and 100% afterwards (step 5).</p> -->
                 <p id="marital-answered" class="hidden">Passez à l'étape suivante pour poursuivre le calcul.</p>
@@ -1937,6 +1937,7 @@ let individual,
         }
         $("#separationORsingle").html(marital.separateStatus);
         $("[data-partner-case=false]").html(spouseLabel);
+        $("[data-partner-case=true]").html(spouseLabel);
         if (marital.partnerShorten !== null) {
             $("[data-partner-case=true][data-shortform=true]").text(marital.partnerShorten);
             $("[data-partner-case=false][data-shortform=true]").text(marital.partnerShorten.toLowerCase());
