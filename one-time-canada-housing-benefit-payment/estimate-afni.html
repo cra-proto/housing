@@ -1572,7 +1572,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
-                        <div id="result-alert" class="alert alert-success provisional">
+                        <div class="alert alert-success provisional result-alert">
                           <p>Your adjusted family net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="hidden" data-qualify="true">would qualify</span><span class="hidden" data-qualify="false">is too high to qualify</span> you as <span id="indfam-prep">an</span> <span id="indfam">individual</span></strong>.</p>
                           <div id="not-0-afni">
                             <p data-qualify="true">Your rent paid in 2022 <span class="h4 mrgn-tp-0">(<span data-output="rent-dollar-figure"></span>)</span> is <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>0%</strong></span> of your 2021 income and would <strong><span data-rent-qualify="false">not</span> qualify</strong> for the benefit.</p>
@@ -1928,26 +1928,26 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       $("#not-0-afni").addClass("hidden");
                       $("[data-rent-qualify=true]").removeClass("hidden");
                       $("[data-rent-qualify=false]").addClass("hidden");
-                      $("#result-alert").removeClass("alert-warning");
-                      $("#result-alert").addClass("alert-success");
+                      $(".result-alert").removeClass("alert-warning");
+                      $(".result-alert").addClass("alert-success");
                   } else if (rentPercentage() < rentPercentLimit || rentAmount() <= 0) {
                       $("[data-rent-qualify=true]").addClass("hidden");
                       $("[data-rent-qualify=false]").removeClass("hidden");
-                      $("#result-alert").removeClass("alert-success");
-                      $("#result-alert").addClass("alert-warning");
+                      $(".result-alert").removeClass("alert-success");
+                      $(".result-alert").addClass("alert-warning");
                   } else {
                       $("[data-rent-qualify=true]").removeClass("hidden");
                       $("[data-rent-qualify=false]").addClass("hidden");
-                      $("#result-alert").removeClass("alert-warning");
-                      $("#result-alert").addClass("alert-success");
+                      $(".result-alert").removeClass("alert-warning");
+                      $(".result-alert").addClass("alert-success");
                   }
               } else {
                   $("[data-qualify=true]").addClass("hidden");
                   $("[data-qualify=false]").removeClass("hidden");
                   $("[data-rent-qualify=true]").addClass("hidden");
                   $("[data-rent-qualify=false]").removeClass("hidden");
-                  $("#result-alert").removeClass("alert-success");
-                  $("#result-alert").addClass("alert-warning");
+                  $(".result-alert").removeClass("alert-success");
+                  $(".result-alert").addClass("alert-warning");
               }
           };
 
