@@ -1388,7 +1388,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               </div>
               
               <div class="form-group hidden" data-has-partner="true">
-                <label for="spouseNetIncome" class="required">Revenu net de <span class="field-name"><span data-partner-case="false">votre conjoint de fait</span> pour 2021</span> <span class="wb-inv">(dollars seulement, pas de cents)</span><strong class="required">(obligatoire) </strong></label>
+                <label for="spouseNetIncome" class="required"><span class="field-name">Revenu net de votre <span data-partner-case="false">conjoint de fait</span> pour 2021</span> <span class="wb-inv">(dollars seulement, pas de cents)</span><strong class="required">(obligatoire) </strong></label>
                 <div class="input-group col-sm-5">
                   <span class="input-group-addon">$</span>
                   <input type="text" name="spouse.netIncome" size="7" maxlength="7" value="" id="spouseNetIncome" class="form-control text-right" required inputmode="decimal" pattern="-?[0-9]*">
@@ -1480,7 +1480,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   </div>
                   <p class="small visible-sm visible-xs">Il s'agit de la ligne 12500 de votre déclaration de revenus de 2021.</p>
                   <div class="form-group col-md-6" data-has-partner="true">
-                    <label for="partnerRdspIncome"><span class="field-name">Revenu du</span> <span data-partner-case="true" data-shortform="true"><abbr title="Régime enregistré d'épargne-invalidité">REEI</abbr> de l’époux pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
+                    <label for="partnerRdspIncome"><span class="field-name">Revenu du <abbr title="Régime enregistré d'épargne-invalidité">REEI</abbr> de votre <span data-partner-case="true" data-shortform="true">époux</span> pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
                     <!--<a href="#rdspIncome-help" aria-controls="rdspIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Registered disability savings plan">RDSP</abbr> income</span></a>-->
                     <div class="input-group col-sm-7">
                       <span class="input-group-addon">$</span>
@@ -1501,7 +1501,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   </div>
                   <p class="small visible-sm visible-xs">Il s'agit des montants du <abbr title="Régime enregistré d'épargne-invalidité">REEI</abbr> qui sont inscrits à la ligne 23200 de votre déclaration de revenus de 2021</p>
                   <div class="form-group col-md-6" data-has-partner="true">
-                    <label for="partnerRdspRepayment"><span class="field-name">Remboursement <span data-partner-case="true" data-shortform="true">du <abbr title="Régime enregistré d'épargne-invalidité">REEI</abbr></span> de l’époux pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
+                    <label for="partnerRdspRepayment"><span class="field-name">Remboursement du <abbr title="Régime enregistré d'épargne-invalidité">REEI</abbr> de votre <span data-partner-case="true" data-shortform="true">époux</span> pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
                     <!--<a href="#rdspRepayment-help" aria-controls="rdspRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Registered disability savings plan">RDSP</abbr> repayment</span></a>-->
                     <div class="input-group col-sm-7">
                       <span class="input-group-addon">$</span>
@@ -1509,7 +1509,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       <span class="input-group-addon">.00</span>
                     </div>
                   </div>
-                  <p class="hidden" data-partner-info="true">Il s'agit des montants du <abbr title="Régime enregistré d'épargne-invalidité">REEI</abbr> qui sont inscrits à la ligne 23200 de votre <span data-partner-case="false">déclaration</span> de revenus de 2021 et de celle de votre époux.</p>
+                  <p class="hidden" data-partner-info="true">Il s'agit des montants du <abbr title="Régime enregistré d'épargne-invalidité">REEI</abbr> qui sont inscrits à la ligne 23200 de votre déclaration de revenus de 2021<span data-has-partner="true"> et de celle de votre <span data-partner-case="false">époux</span></span>.</p>
                   <p class="small visible-md visible-lg">Il s'agit des montants du <abbr title="Régime enregistré d'épargne-invalidité">REEI</abbr> qui sont inscrits à la ligne 23200 de votre déclaration de revenus de 2021<span data-has-partner="true"> et de celle de votre <span data-partner-case="false">époux</span></span>.</p>
                 </div>
                 <section id="rdsp-help" class="mfp-hide modal-dialog modal-content overlay-def">
@@ -1556,7 +1556,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   </div>
                   <p class="small visible-sm visible-xs">Il s'agit de la ligne 11700 de votre déclaration de revenus de 2021.</p>
                   <div class="form-group col-md-6" data-has-partner="true">
-                    <label for="partnerUccbIncome"><span class="field-name">Revenu de <span data-partner-case="true" data-shortform="true"><abbr title="Prestation universelle pour la garde d'enfants">PUGE</abbr> de</span> l’époux  pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
+                    <label for="partnerUccbIncome"><span class="field-name">Revenu de <abbr title="Prestation universelle pour la garde d'enfants">PUGE</abbr> de votre <span data-partner-case="true" data-shortform="true">époux</span> pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
                     <!--<a href="#uccbIncome-help" aria-controls="uccbIncome-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for your <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> income</span></a>-->
                     <div class="input-group col-sm-7">
                       <span class="input-group-addon">$</span>
@@ -1567,7 +1567,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   <p class="hidden" data-partner-info="true">Il s'agit de la ligne 11700 de votre déclaration de revenus de 2021 et de celle de votre <span data-partner-case="false">époux</span>.</p>
                   <p class="small visible-md visible-lg">Il s'agit de la ligne 11700 de votre déclaration de revenus de 2021<span data-has-partner="true"> et de celle de votre <span data-partner-case="false">époux</span></span>.</p>
                   <div class="form-group col-md-6 brdr-rght" data-input-col1="true">
-                    <label for="uccbRepayment"><span class="field-name">Remboursement de la <abbr title="Prestation universelle pour la garde d'enfants">PUGE</abbr> pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
+                    <label for="uccbRepayment"><span class="field-name">Remboursement d'une <abbr title="Prestation universelle pour la garde d'enfants">PUGE</abbr> pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
                     <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
                     <div class="input-group col-sm-7">
                       <span class="input-group-addon">$</span>
@@ -1577,7 +1577,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                   </div>
                   <p class="small visible-sm visible-xs">Il s'agit de la ligne 21300 de votre déclaration de revenus de 2021.</p>
                   <div class="form-group col-md-6" data-has-partner="true">
-                    <label for="partnerUccbRepayment"><span class="field-name">Remboursement de la <abbr title="Prestation universelle pour la garde d'enfants">PUGE</abbr> de <span data-partner-case="true" data-shortform="true">l’époux</span> pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
+                    <label for="partnerUccbRepayment"><span class="field-name">Remboursement de la <abbr title="Prestation universelle pour la garde d'enfants">PUGE</abbr> de votre <span data-partner-case="true" data-shortform="true">époux</span> pour 2021</span><span class="wb-inv"> (dollars seulement, pas de cents)</span></label>
                     <!--<a href="#uccbRepayment-help" aria-controls="uccbRepayment-help" class="wb-lbx" role="button"><span class="glyphicon glyphicon-question-sign"></span><span class="wb-inv">Help for <abbr title="Universal child care benefit">UCCB</abbr> repayment</span> repayment</span></a>-->
                     <div class="input-group col-sm-7">
                       <span class="input-group-addon">$</span>
