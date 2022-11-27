@@ -1933,6 +1933,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
               }
               $("#separationORsingle").html(marital.separateStatus);
               $("[data-partner-case=false]").html(spouseLabel);
+              $("[data-partner-case=true]").html(spouseLabel);
               if (marital.partnerShorten !== null) {
                   $("[data-partner-case=true][data-shortform=true]").text(marital.partnerShorten);
                   $("[data-partner-case=false][data-shortform=true]").text(marital.partnerShorten.toLowerCase());
