@@ -1738,371 +1738,327 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_31/js/theme.min.js"></script>
 
   <script>
-      "use strict";
+     "use strict";
 
-      let individual,
-      formId = "#housing_cal_form", 
-      $document = wb.doc, 
-      rdsp = function() {
-        return $(":input[type=radio][name=rdsp]:checked", formId).data("rdsp") || false;
-      }, 
-      uccb = function() {
-        return $(":input[type=radio][name=uccb]:checked", formId).data("uccb") || false;
-      },
-      resident = function() {
-        return $(":input[type=radio][name=residency]:checked", formId).val() || false;
-      },
-      maritalObj = function(maritalStatus) {
+const rentPercentLimit = 0.3;
+let individual, 
+    formId = "#housing_cal_form", 
+    maritalObj = function(maritalStatus) {
         let maritalData = {
-          status: maritalStatus.val() || $("#marital-single").val(),
-          option: maritalStatus.data("marital-option") || 1,
-          entityType: maritalStatus.data("entity-type") || $("#marital-single").data("entityType"),
-          entityPrep: maritalStatus.data("entity-prep") || $("#marital-single").data("entityPrep"),
-          separateStatus: maritalStatus.data("separate-status") || $("#marital-single").data("separateStatus")
+            status: maritalStatus.val() || $("#marital-single").val(),
+            option: maritalStatus.data("marital-option") || 1,
+            partnerShorten: maritalStatus.data("shortform") || null, 
+            entityType: maritalStatus.data("entity-type") || $("#marital-single").data("entityType"),
+            entityPrep: maritalStatus.data("entity-prep") || $("#marital-single").data("entityPrep"),
+            separateStatus: maritalStatus.data("separate-status") || $("#marital-single").data("separateStatus")
         };
         return maritalData;
-      };
-      //Radio event listener
-
-
-      //$(formId).on("click", "input[type=checkbox][name=deemedResidency]", function (event) {
-      //  residencyQuestions(event.target);
-      //  updateResults();
-      //});
-
-      $(formId).on("click", "input[type=radio]", function (event) {
-        var target = event.target;
-        if (target.name == "residency" || target.name == "nonResidentTies" || target.name == "deemedResidency") {
-          residencyQuestions(target);
+    }, 
+    dependant = function() {
+        return $(":input[type=radio][name=dependant-2022]:checked", formId).data("dependant");
+    }, 
+    relationship = function() {
+        let relationOpt = $(":input[type=radio][name=maritalStatus]:checked", formId) || $(":input[type=radio][name=maritalStatus][data-marital-option=1]");
+        if (relationOpt.data("has-partner") === true) {
+            return true;
         }
-        if (target.name == "dependant-2022" || target.name == "maritalStatus" || target.name == "maritalChange") {
-          maritalQuestions(target);
-        }
-        updateResults();
-      });
-      
-      function maritalQuestions(target) {
-        let spouseLabel,
-          maritalStatusElm = $(":input[type=radio][name=maritalStatus]:checked", formId), 
-          marital = maritalObj(maritalStatusElm), 
-          entityType = marital.entityType,
-          entityPrep = marital.entityPrep,
-          rdspUccbMaritalUpdate = function (hasPartner) {
-            if (hasPartner === true) {
-              $("[data-input-col1=true]").addClass("col-md-6");
-              $("[data-input-col1=true]").removeClass("col-md-12");
-              $("[data-input-col1=true] .input-group").addClass("col-sm-7 col-xs-8");
-              $("[data-input-col1=true] .input-group").removeClass("col-sm-4 col-xs-7");
-            } else {
-              $("[data-input-col1=true]").addClass("col-md-12");
-              $("[data-input-col1=true]").removeClass("col-md-6");
-              $("[data-input-col1=true] .input-group").addClass("col-sm-4 col-xs-7");
-              $("[data-input-col1=true] .input-group").removeClass("col-sm-7 col-xs-8");
-            }
-          },
-          dependantUpdate = function () {
-            let maritalCommom = maritalObj($("#marital-common"));
-            if ($('#dependant-2022-yes:checked').length > 0) {
-              $(".marital-unanswered").addClass("hidden");
-              $(".marital-dependants").removeClass("hidden");
-              $(".marital-false").addClass("hidden");
-              $(".marital-answered").removeClass("hidden");
-              individual = false;
-              entityType = maritalCommom.entityType;
-              entityPrep = maritalCommom.entityPrep;
-              rdspUccbMaritalUpdate(true);
-            } else if ($('#dependant-2022-no:checked').length > 0) {
-              $(".marital-unanswered").addClass("hidden");
-              $(".marital-answered").removeClass("hidden");
-              $("[data-has-partner=true]").addClass("hidden");
-              $("[data-has-partner=false]").removeClass("hidden");
-              spouseLabel = maritalCommom.status;
-              rdspUccbMaritalUpdate(false);
-            }
-            updateResults();
-          };
-
-        individual = true;
-        //$(".marital-change-true").addClass("hidden");
-        //$(".marital-change-true").addClass("hidden");
-        //$(".divorce-label").addClass("hidden");
-        //$(".separation-label").addClass("hidden");
-        //$(".death-label").addClass("hidden");
-        //$(".spouseElm").addClass("hidden");
-        $(".rent-paid-no-separation").removeClass("hidden");
-        //$(".rent-paid-separation").addClass("hidden");
-        $(".marital-dependants").addClass("hidden");
-
-        // if ($('#marital-single:checked').length > 0 || $('#marital-spouse:checked').length > 0 || $('#marital-common:checked').length > 0) {
-        //   $("#marital-change").removeClass("hidden");
-        // } else {
-        //   $("#marital-change").addClass("hidden");
-        // }
-
-        // if ($('#marital-change-yes:checked').length > 0) {
-        //   $(".marital-change-true").removeClass("hidden");
-        //   $(".rent-paid-no-separation").addClass("hidden");
-        //   $(".rent-paid-separation").removeClass("hidden");
-        // } else if ($('#marital-change-no:checked').length > 0) {
-        //   $(".marital-change-true").addClass("hidden");
-        //   $(".marital-unanswered").addClass("hidden");
-        //   // $(".marital-false").removeClass("hidden");
-        // }
-        switch (marital.option) {
-          case (6): // (6) widowed
-          case (5): // (5) separated
-          case (4): // (4) divorced 
-            $(".marital-unanswered, #dependants-q, .not-single").removeClass("hidden");
-            $(".marital-answered").addClass("hidden");
-            $(".spouse-specific").addClass("hidden");
-            spouseLabel = "";
-            $("[data-has-partner=true]").addClass("hidden");
-            $("[data-has-partner=false]").removeClass("hidden");
-            dependantUpdate();
-            break;
-          case (3): // (3) common law 
-          case (2): // (2) married 
-            $(".marital-unanswered, #dependants-q").addClass("hidden");
-            $(".marital-answered").removeClass("hidden");
-            $(".spouse-specific, .not-single").removeClass("hidden");
-            spouseLabel = marital.status;
-            $("[data-has-partner=true]").removeClass("hidden");
-            $("[data-has-partner=false]").addClass("hidden");
-            individual = false;
-            rdspUccbMaritalUpdate(true);
-            break;
-          case (1): // (1) single 
-          default:
-            $(".marital-unanswered, #dependants-q").removeClass("hidden");
-            $(".marital-answered").addClass("hidden");
-            $(".spouse-specific, .not-single").addClass("hidden");
-            spouseLabel = marital.status;
-            $("[data-has-partner=true]").addClass("hidden");
-            $("[data-has-partner=false]").removeClass("hidden");
-            rdspUccbMaritalUpdate(false);
-            dependantUpdate();
-        }
-        $(".separationORsingle").html(marital.separateStatus);
-        $(".spouse-label").html(spouseLabel);
-        $(".indfam").html(entityType);
-        $(".indfam-prep").html(entityPrep);
-        updateResults();
-      }
-
-      function residencyQuestions(target) {
-        $("#worldIncomeElm").addClass("hidden");
-        if ($('#resident-true:checked').length > 0) {
-          
-        } else if ($('#resident-false:checked').length > 0) {
-          $("#worldIncomeElm").removeClass("hidden");
-        }
-      }
-
-      // function residencyQuestions(target) {
-      //   //resets
-      //   $("#worldIncomeElm").addClass("hidden");
-      //   $("spouseWorldIncomeElm").addClass("hidden");
-      //   $("#non-resident-ties").addClass("hidden");
-      //   $("#deemed-residency").addClass("hidden");
-      //   $(".residency-unanswered").removeClass("hidden");
-      //   $(".canadian-resident").addClass("hidden");
-      //   $(".factual-resident").addClass("hidden");
-      //   $(".deemed-non-resident").addClass("hidden");
-      //   $(".deemed-resident").addClass("hidden");
-      //   $(".non-resident").addClass("hidden");
-        
-      //   if ($('#resident-true:checked').length > 0) {
-      //     $(".canadian-resident").removeClass("hidden");
-      //     $(".residency-unanswered").addClass("hidden");
-      //   } else if ($('#resident-false:checked').length > 0) {
-      //     $("#non-resident-ties").removeClass("hidden"); //unhide follow on question
-      //     if ($('#non-resident-ties-yes:checked').length > 0) { //follow on question
-      //       $(".residency-unanswered").addClass("hidden");
-      //       $(".factual-resident").removeClass("hidden");
-      //     } else if ($('#non-resident-ties-yes-but:checked').length > 0) {
-      //       $("#worldIncomeElm").removeClass("hidden");
-      //       $("spouseWorldIncomeElm").removeClass("hidden");
-      //       $(".residency-unanswered").addClass("hidden");
-      //       $(".deemed-non-resident").removeClass("hidden");
-      //     } else if ($('#non-resident-ties-no:checked').length > 0) {
-      //       $("#deemed-residency").removeClass("hidden"); //unhide follow on question
-      //       if ($('#deemed-resident-government:checked').length > 0 || $('#deemed-resident-forces:checked').length > 0 || $('#deemed-resident-development:checked').length > 0 || $('#deemed-resident-family:checked').length > 0 || $('#deemed-resident-183:checked').length > 0) { //follow on question
-      //         $(".residency-unanswered").addClass("hidden");
-      //         $(".deemed-resident").removeClass("hidden");
-      //       } else if ($('#deemed-resident-none:checked').length > 0) {
-      //         $("#worldIncomeElm").removeClass("hidden");
-      //         $("spouseWorldIncomeElm").removeClass("hidden");
-      //         $(".residency-unanswered").addClass("hidden");
-      //         $(".non-resident").removeClass("hidden");
-      //       }
-      //     }
-      //   }
-      // }
-
-      
-
-      // $("input[type=radio][name=non-residency-ties]", formId).change(function () {
-      //   residency = $(this).data("residency");
-      //   if (residency === true) {
-      //     $("#worldIncomeElm").removeClass("hidden");
-      //     $("#worldIncomeElm").val(0);
-      //   } else { //unhide follow up question
-      //     $("#non-residency-ties").removeClass("hidden");
-      //   }
-      // });
-
-
-
-      // $("#worldIncomeElm").addClass("hidden");
-
-
-
-      // $("#maritalStatus", formId).change(function () {
-      //   // relationship = $(this).find(":selected").data("marital-add");
-      //   if (relationship === true) {
-      //     $("#spouseNetIncomeElm").removeClass("hidden");
-      //   } else {
-      //     $("#spouseNetIncomeElm").addClass("hidden");
-      //   }
-      // });
-
-      $(formId).on("click vclick touchstart", "input[type=radio][name=rdsp]", function (event) {
+        return false;
+    }, 
+    rdsp = function() {
+        return $(":input[type=radio][name=rdsp]:checked", formId).data("rdsp") || false;
+    }, 
+    rdspRepayment = function() {
         if (rdsp() === true) {
-          $("#rdspfields").removeClass("hidden");
-        } else {
-          $("#rdspfields").addClass("hidden");
+            return parseInt($("#rdspRepayment").val(), 10) || 0;
         }
-        updateResults();
-      });
-
-
-      $(formId).on("click", "#print-prev-button", function (event) {
-        $("#pp-statement #math-results-summary").attr("open", "open");
-      });
-
-      // $(formId).on("click vclick touchstart", "#print-prev-button", function (event) {
-            
-      //     });
-
-      $(formId).on("click vclick touchstart", "#print-statement-button", function (event) {
-            window.print();
-      });
-
-      $(formId).on("click vclick touchstart", "input[type=radio][name=uccb]", function (event) {
+        return 0;
+    }, 
+    partnerRdspRepayment = function() {
+        if (rdsp() === true && relationship() === true) {
+            return parseInt($("#partnerRdspRepayment").val(), 10) || 0;
+        }
+        return 0;
+    }, 
+    uccb = function() {
+        return $(":input[type=radio][name=uccb]:checked", formId).data("uccb") || false;
+    }, 
+    uccbRepayment = function() {
         if (uccb() === true) {
-          $("#uccbfields").removeClass("hidden");
-        } else {
-          $("#uccbfields").addClass("hidden");
+            return parseInt($("#uccbRepayment").val(), 10) || 0;
         }
-        updateResults();
-      });
-
-      $("#rent-paid-2022, #rent-paid-2022-before, #rent-paid-2022-after", formId).change(function () {
-        updateResults();
-      });
-
-      $("#uccbAndRdsp input, #income input", formId).change(function () {
-        updateResults();
-      });
-     
-      function updateResults() {
-        const famAFNIThreshhold = 35000;
-        const indAFNIThreshhold = 20000;
-        const rentPercentLimit = 0.3;
-        let afni,
-        currencyFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
-          style: "currency",
-          currency: "CAD",
-          minimumFractionDigits: 0
+        return 0;
+    }, 
+    partnerUccbRepayment = function() {
+        if (uccb() === true && relationship() === true) {
+            return parseInt($("#partnerUccbRepayment").val(), 10) || 0;
+        }
+        return 0;
+    }, 
+    rentAmount = function() {
+      return parseInt($("#rent-paid-2022").val(), 10) || 0;
+    }, 
+    income = {
+        famAFNIThreshhold: 35000, 
+        indAFNIThreshhold: 20000,
+        net: function() {
+            return parseInt($("#netIncome").val(), 10) || 0;
+        }, 
+        partner: function() {
+            if (relationship() === true) {
+                return parseInt($("#spouseNetIncome").val(), 10) || 0;
+            }
+            return 0;
+        }, 
+        hasWorld: function() {
+            return $(":input[type=radio][name=hasWorldIncome]:checked", formId).data("world-income") || false;
+        }, 
+        world: function() {
+            if (this.hasWorld() === true) {
+                return parseInt($("#worldIncome").val(), 10) || 0;
+            }
+            return 0;
+        },
+        partnerWorld: function() {
+            if (this.hasWorld() === true && relationship() === true) {
+                return parseInt($("#spouseWorldIncome").val(), 10) || 0;
+            }
+            return 0;
+        },
+        rdsp: function() {
+            if (rdsp() === true) {
+                return parseInt($("#rdspIncome").val(), 10) || 0;
+            }
+            return 0;
+        }, 
+        partnerRdsp: function() {
+            if (rdsp() === true && relationship() === true) {
+                return parseInt($("#partnerRdspIncome").val(), 10) || 0;
+            }
+            return 0;
+        }, 
+        uccb: function() {
+            if (uccb() === true) {
+                return parseInt($("#uccbIncome").val(), 10) || 0;
+            }
+            return 0;
+        }, 
+        partnerUccb: function() {
+            if (uccb() === true && relationship() === true) {
+                return parseInt($("#partnerUccbIncome").val(), 10) || 0;
+            }
+            return 0;
+        }, 
+        household: function() {
+            return this.net() + this.partner() + this.world() + this.partnerWorld();
+        },
+        avgFamNet: function() {
+            return Math.max(0, this.household() - (this.rdsp() + this.partnerRdsp() + this.uccb() + this.partnerUccb()) + (rdspRepayment() + partnerRdspRepayment() + uccbRepayment() + partnerUccbRepayment()));
+        }
+    },
+    rentPercentage = function() {
+        if (income.avgFamNet() !== 0) {
+            return rentAmount() / income.avgFamNet() || 0;
+        }
+        return 0;
+    }, 
+    maritalQuestions = function () {
+        let spouseLabel,
+            maritalStatusElm = $(":input[type=radio][name=maritalStatus]:checked", formId), 
+            marital = maritalObj(maritalStatusElm), 
+            entityType = marital.entityType,
+            entityPrep = marital.entityPrep,
+            rdspUccbMaritalUpdate = function (hasPartner) {
+                if (hasPartner === true) {
+                    $("[data-input-col1=true]").addClass("col-md-6");
+                    $("[data-input-col1=true]").removeClass("col-md-12");
+                    //$("[data-input-col1=true] .input-group").addClass("col-sm-7 col-xs-8");
+                    //$("[data-input-col1=true] .input-group").removeClass("col-sm-4 col-xs-7");
+                    $("[data-partner-info=true]").attr("class", "small visible-sm visible-xs");
+                } else {
+                    $("[data-input-col1=true]").addClass("col-md-12");
+                    $("[data-input-col1=true]").removeClass("col-md-6");
+                    //$("[data-input-col1=true] .input-group").addClass("col-sm-4 col-xs-7");
+                    //$("[data-input-col1=true] .input-group").removeClass("col-sm-7 col-xs-8");
+                    $("[data-partner-info=true]").attr("class", "hidden");
+                }
+            },
+            dependantUpdate = function () {
+                let maritalCommom = maritalObj($("#marital-common"));
+                $("#marital-unanswered").removeClass("hidden");
+                $("#marital-answered").addClass("hidden");
+                if (dependant() === true) {
+                    $("#marital-dependants").removeClass("hidden");
+                    $("[data-has-partner=false]").addClass("hidden");
+                    $("#marital-unanswered").addClass("hidden");
+                    $("#marital-answered").removeClass("hidden");
+                    individual = false;
+                    entityType = maritalCommom.entityType;
+                    entityPrep = maritalCommom.entityPrep;
+                } else if (dependant() === false) {
+                    $("#marital-dependants").addClass("hidden");
+                    $("[data-has-partner=false]").removeClass("hidden");
+                    $("#marital-unanswered").addClass("hidden");
+                    $("#marital-answered").removeClass("hidden");
+                    spouseLabel = maritalCommom.status;
+                }
+            };
+        individual = true;
+        $("#rent-paid-no-separation").removeClass("hidden");
+        $("#marital-dependants").addClass("hidden");
+        
+        switch (marital.option) {
+            case (6): // (6) widowed
+            case (5): // (5) separated
+            case (4): // (4) divorced 
+                $("#dependants-q").removeClass("hidden");
+                spouseLabel = "";
+                $("[data-has-partner=true]").addClass("hidden");
+                $("[data-has-partner=false]").removeClass("hidden");
+                rdspUccbMaritalUpdate(false);
+                dependantUpdate();
+                break;
+            case (3): // (3) common law 
+            case (2): // (2) married 
+                $("#marital-unanswered, #dependants-q").addClass("hidden");
+                spouseLabel = marital.status;
+                $("[data-has-partner=true]").removeClass("hidden");
+                $("[data-has-partner=false]").addClass("hidden");
+                individual = false;
+                rdspUccbMaritalUpdate(true);
+                break;
+            case (1): // (1) single 
+            default:
+                $("#dependants-q").removeClass("hidden");
+                spouseLabel = marital.status;
+                $("[data-has-partner=true]").addClass("hidden");
+                $("[data-has-partner=false]").removeClass("hidden");
+                rdspUccbMaritalUpdate(false);
+                dependantUpdate();
+        }
+        $("#separationORsingle").html(marital.separateStatus);
+        $("[data-partner-case=false]").html(spouseLabel);
+        if (marital.partnerShorten !== null) {
+            $("[data-partner-case=true][data-shortform=true]").text(marital.partnerShorten);
+            $("[data-partner-case=false][data-shortform=true]").text(marital.partnerShorten.toLowerCase());
+        }
+        $("#indfam").html(entityType);
+        $("#indfam-prep").html(entityPrep);
+    }, 
+    updateResults = function () {
+        let currencyFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
+            style: "currency",
+            currency: "CAD",
+            minimumFractionDigits: 0
         }),
         percentFormatter = new Intl.NumberFormat(document.documentElement.lang + "-CA", {
-          style: "percent",
-          minimumFractionDigits: 2,
-          roundingPriority: "auto"
-        }),
-        rentPercentage = 0, 
-        netIncome = parseInt($("#netIncome").val(), 10) || 0,
-        spousalNetIncome = parseInt($("#spouseNetIncome").val(), 10) || 0,
-        worldIncome = parseInt($("#worldIncome").val(), 10) || 0,
-        spouseWorldIncome = parseInt($("#spouseWorldIncome").val(), 10) || 0,
-        rdspIncome = 0,
-        rdspRepayment = 0,
-        rdspIncomeSpouse = 0,
-        rdspRepaymentSpouse = 0,
-        uccbIncome = 0,
-        uccbRepayment = 0,
-        uccbIncomeSpouse = 0,
-        uccbRepaymentSpouse = 0,
-        rentAmount = parseInt($("#rent-paid-2022").val(), 10) || 0;
-        // rentAmountBefore = parseInt($("#rent-paid-2022-before").val(), 10) || 0,
-        // rentAmountAfter = parseInt($("#rent-paid-2022-after").val(), 10) || 0, 
-        if (rdsp() === true) {
-          rdspIncome = parseInt($("#rdspIncome").val(), 10) || 0;
-          rdspRepayment = parseInt($("#rdspRepayment").val(), 10) || 0;
-          rdspIncomeSpouse = parseInt($("#partnerRdspIncome").val(), 10) || 0;
-          rdspRepaymentSpouse = parseInt($("#partnerRdspRepayment").val(), 10) || 0;
-        }
-        if (uccb() === true) {
-          uccbIncome = parseInt($("#uccbIncome").val(), 10) || 0;
-          uccbRepayment = parseInt($("#uccbRepayment").val(), 10) || 0;
-          uccbIncomeSpouse = parseInt($("#partnerUccbIncome").val(), 10) || 0;
-          uccbRepaymentSpouse = parseInt($("#partnerUccbRepayment").val(), 10) || 0;
-        }
-        let uccbAndRdspIncome = rdspIncome + uccbIncome + rdspIncomeSpouse + uccbIncomeSpouse;
-        let uccbAndRdspRepayment = rdspRepayment + uccbRepayment + rdspRepaymentSpouse + uccbRepaymentSpouse;
-        if (resident() === true) {
-          afni = netIncome + spousalNetIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
+            style: "percent",
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 2,
+            roundingPriority: "auto",
+            roundingMode: "trunc"
+        });
+
+        if (relationship() === true) {
+            $("#netIncomeResult").removeClass("brdr-bttm");
+            $("#partnerNetIncomeResult").removeClass("hidden");
+            $("#partnerNetIncomeResult").addClass("brdr-bttm");
         } else {
-          afni = netIncome + spousalNetIncome + worldIncome + spouseWorldIncome - uccbAndRdspIncome + uccbAndRdspRepayment;
+            $("#netIncomeResult").addClass("brdr-bttm");
+            $("#partnerNetIncomeResult").addClass("hidden");
         }
-        afni = Math.max(0, afni); //if negative, make it 0$
-        // if ($('#marital-change-yes:checked').length > 0) {
-        //   rentPercentage = ((rentAmountBefore / 2) + rentAmountAfter) / afni;
-        // } else if ($('#marital-change-no:checked').length > 0) {
-          rentPercentage = rentAmount / afni || 0;
-        // }
 
         /*  Generate results  */
-        $("#results").removeClass("hidden");
-        $(".qualify").addClass("hidden");
-        $(".doesnt-qualify").addClass("hidden");
-        if (resident() === true) {
-          $("[data-output=net-income-value]").html(currencyFormatter.format(netIncome));
-          $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(spousalNetIncome));
-          $("[data-output=household-income-value]").html(currencyFormatter.format(netIncome + spousalNetIncome));
+        $("[data-output=net-income-value]").html(currencyFormatter.format(income.net() + income.world()));
+        $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(income.partner() + income.partnerWorld()));
+        $("[data-output=household-income-value]").html(currencyFormatter.format(income.household()));
+        $("[data-output=uccb-rdsp-income-value]").html(currencyFormatter.format(income.rdsp() + income.uccb() + income.partnerRdsp() + income.partnerUccb()));
+        $("[data-output=uccb-rdsp-repayment-value]").html(currencyFormatter.format(rdspRepayment() + partnerRdspRepayment() + uccbRepayment() + partnerUccbRepayment()));
+        $("[data-output=avg-fam-net-income-value]").html(currencyFormatter.format(income.avgFamNet()));
+        $("[data-output=rent-dollar-figure]").html(currencyFormatter.format(rentAmount()));
+        if (rentPercentage() > 0) {
+          $("[data-output=rent-percentage]").html(percentFormatter.format(rentPercentage()));
         } else {
-          $("[data-output=net-income-value]").html(currencyFormatter.format(netIncome + worldIncome));
-          $("[data-output=spouse-net-income-value]").html(currencyFormatter.format(spousalNetIncome + spouseWorldIncome));
-          $("[data-output=household-income-value]").html(currencyFormatter.format(netIncome + spousalNetIncome + worldIncome + spouseWorldIncome));
+          $("[data-output=rent-percentage]").html(percentFormatter.format(0));
         }
-
-        $("[data-output=uccb-rdsp-income-value]").html(currencyFormatter.format(uccbAndRdspIncome));
-        $("[data-output=uccb-rdsp-repayment-value]").html(currencyFormatter.format(uccbAndRdspRepayment));
-
-        $("[data-output=avg-fam-net-income-value]").html(currencyFormatter.format(afni));
-
-        $("[data-output=rent-dollar-figure]").html(currencyFormatter.format(rentAmount));
-        $("[data-output=rent-percentage]").html(percentFormatter.format(rentPercentage));
-        $("#result-alert").removeClass("alert-success");
-        $("#result-alert").addClass("alert-warning");
-        if ((afni <= famAFNIThreshhold && individual === false) || (afni <= indAFNIThreshhold && individual === true)) {
-          $(".qualify").removeClass("hidden");
-          //$(".rent-not-qualify").addClass("hidden");
-          $(".rent-qualify").addClass("hidden");
-          if (rentPercentage < rentPercentLimit || rentAmount <= 0) {
-            $(".rent-not-qualify").removeClass("hidden");
-          } else {
-            $(".rent-qualify").removeClass("hidden");
-            $(".rent-not-qualify").addClass("hidden");
-            $("#result-alert").removeClass("alert-warning");
-            $("#result-alert").addClass("alert-success");
-          }
+        if ((income.avgFamNet() <= income.famAFNIThreshhold && individual === false) || (income.avgFamNet() <= income.indAFNIThreshhold && individual === true)) {
+            $("[data-qualify=true]").removeClass("hidden");
+            $("[data-qualify=false]").addClass("hidden");
+            $("#not-0-afni").removeClass("hidden");
+            if (income.avgFamNet() === 0 && rentAmount() > 0) {
+                $("#not-0-afni").addClass("hidden");
+                $("[data-rent-qualify=true]").removeClass("hidden");
+                $("[data-rent-qualify=false]").addClass("hidden");
+                $(".result-alert").removeClass("alert-warning");
+                $(".result-alert").addClass("alert-success");
+            } else if (rentPercentage() < rentPercentLimit || rentAmount() <= 0) {
+                $("[data-rent-qualify=true]").addClass("hidden");
+                $("[data-rent-qualify=false]").removeClass("hidden");
+                $(".result-alert").removeClass("alert-success");
+                $(".result-alert").addClass("alert-warning");
+            } else {
+                $("[data-rent-qualify=true]").removeClass("hidden");
+                $("[data-rent-qualify=false]").addClass("hidden");
+                $(".result-alert").removeClass("alert-warning");
+                $(".result-alert").addClass("alert-success");
+            }
         } else {
-          $(".doesnt-qualify").removeClass("hidden");
-          $(".rent-not-qualify").removeClass("hidden");
+            $("[data-qualify=true]").addClass("hidden");
+            $("[data-qualify=false]").removeClass("hidden");
+            $("[data-rent-qualify=true]").addClass("hidden");
+            $("[data-rent-qualify=false]").removeClass("hidden");
+            $(".result-alert").removeClass("alert-success");
+            $(".result-alert").addClass("alert-warning");
         }
-        //event.preventDefault();
+    };
+
+  $(formId).on("click vclick touchstart", "input[type=radio][name=hasWorldIncome]", function (event) {
+      if (income.hasWorld() === true) {
+          $("#worldIncomeElm").removeClass("hidden");
+      } else {
+          $("#worldIncomeElm").addClass("hidden");
       }
+  });
+
+  $(formId).on("click vclick touchstart", "input[type=radio][name=dependant-2022]", function (event) {
+      maritalQuestions();
+      updateResults();
+  });
+    
+  $(formId).on("click vclick touchstart", "input[type=radio][name=maritalStatus]", function (event) {
+      maritalQuestions();
+      updateResults();
+  });
+
+  $(formId).on("click vclick touchstart", "input[type=radio][name=rdsp]", function (event) {
+      if (rdsp() === true) {
+          $("#rdspfields").removeClass("hidden");
+      } else {
+          $("#rdspfields").addClass("hidden");
+      }
+      updateResults();
+  });
+
+  $(formId).on("click vclick touchstart", "input[type=radio][name=uccb]", function (event) {
+      if (uccb() === true) {
+          $("#uccbfields").removeClass("hidden");
+      } else {
+          $("#uccbfields").addClass("hidden");
+      }
+      updateResults();
+  });
+
+  $("#rent-paid-2022, #rent-paid-2022-before, #rent-paid-2022-after, #uccbAndRdsp input, #income input", formId).change(function () {
+      updateResults();
+  });
+
+  $(formId).on("click", "#print-prev-button", function (event) {
+      $("#pp-statement #math-results-summary").attr("open", "open");
+  });
+
+  $("#pp-statement").on("click vclick touchstart", "#print-statement-button", function (event) {
+    console.log("hi");
+      window.print();
+  });
     </script>
     <script>
       $(document).on("click", ".steps-wrapper div.buttons > :button", function (event) {
