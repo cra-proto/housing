@@ -1628,7 +1628,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                       <div id="afni-statement">
                         <p>Based on the amounts you entered:</p>
-                        <div class="alert alert-success provisional result-alert">
+                        <div id="result-alert" data-result-alert="true" class="alert alert-success provisional result-alert">
                           <p>Your adjusted family net income (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="hidden" data-qualify="true">would qualify</span><span class="hidden" data-qualify="false">is too high to qualify</span> you as <span id="indfam-prep">an</span> <span id="indfam">individual</span></strong>.</p>
                           <div id="not-0-afni">
                             <p data-qualify="true">Your rent paid in 2022 <span class="h4 mrgn-tp-0">(<span data-output="rent-dollar-figure"></span>)</span> is <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>0%</strong></span> of your 2021 income and would <strong><span data-rent-qualify="false">not</span> qualify</strong> for the benefit.</p>
@@ -1932,8 +1932,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
                       dependantUpdate();
               }
               $("#separationORsingle").html(marital.separateStatus);
-              $("[data-partner-case=false]").html(spouseLabel);
-              $("[data-partner-case=true]").html(spouseLabel);
+              $("[data-partner-case]").html(spouseLabel);
               if (marital.partnerShorten !== null) {
                   $("[data-partner-case=true][data-shortform=true]").text(marital.partnerShorten);
                   $("[data-partner-case=false][data-shortform=true]").text(marital.partnerShorten.toLowerCase());
@@ -2053,7 +2052,6 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
         });
 
         $("#pp-statement").on("click vclick touchstart", "#print-statement-button", function (event) {
-          console.log("hi");
             window.print();
         });
     </script>
