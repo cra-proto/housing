@@ -1632,7 +1632,7 @@ html:lang(fr) .cnjnctn-type-or [class*=cnjnctn-col]:not(:first-child):before {
 
                     <div id="afni-statement">
                       <p>D'après les montants que vous avez entrés :</p>
-                      <div class="alert alert-success provisional result-alert">
+                      <div id="result-alert" data-result-alert="true" class="alert alert-success provisional result-alert">
                         <p>Votre revenu familial net rajusté (<span class="h4 mrgn-tp-0" data-output="avg-fam-net-income-value"><strong>$0</strong></span>) <strong><span class="hidden" data-qualify="true">vous permettrait d'être admissible</span><span class="hidden" data-qualify="false">est trop élevé pour que vous soyez admissible</span> en tant que <span id="indfam">particulier</span></strong>.</p>
                         <div id="not-0-afni">
                           <p data-qualify="true">Le loyer que vous avez payé en 2022 <span class="h4 mrgn-tp-0">(<span data-output="rent-dollar-figure"></span>)</span> représente <span class="h4 mrgn-tp-0" data-output="rent-percentage"><strong>0%</strong></span> de votre revenu de 2021 et <span data-rent-qualify="false">ne vous donne <strong>pas droit</strong></span><span data-rent-qualify="true">vous donnerait <strong>droit</strong></span> au paiement unique.</p>
@@ -1936,8 +1936,7 @@ let individual,
                 dependantUpdate();
         }
         $("#separationORsingle").html(marital.separateStatus);
-        $("[data-partner-case=false]").html(spouseLabel);
-        $("[data-partner-case=true]").html(spouseLabel);
+        $("[data-partner-case]").html(spouseLabel);
         if (marital.partnerShorten !== null) {
             $("[data-partner-case=true][data-shortform=true]").text(marital.partnerShorten);
             $("[data-partner-case=false][data-shortform=true]").text(marital.partnerShorten.toLowerCase());
@@ -2057,7 +2056,6 @@ let individual,
   });
 
   $("#pp-statement").on("click vclick touchstart", "#print-statement-button", function (event) {
-    console.log("hi");
       window.print();
   });
     </script>
