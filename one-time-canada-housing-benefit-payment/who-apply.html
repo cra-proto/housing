@@ -80,225 +80,641 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link href="../css/cews.css" rel="stylesheet">
 <style>
-/*h1 underline re-design*/ h1#wb-cont {
-border-bottom: none;
-}
-h1#wb-cont::after {
-  content: "";
-  display: block;
-  width: 70px;
-  padding-bottom: 8px;
-  border-bottom: .18em solid #af3c43;
-}/*Section menu steps design*/
-ul.gcnav-steps {
-  list-style: none;
-  padding-left: 0.57em;
-  position: relative;
-}
-li ul.gcnav-steps {
-  margin-top: 20px;
-  padding-left: 0.55em;
-}
-ul.gcnav-steps>li {
-  border-left: 4px solid #26374a;
-  padding: 0px 20px 30px 1em;
-}
-ul.gcnav-steps.noline>li {
-  border-left: 4px solid transparent;
-}
-ul.gcnav-steps>li::first-line {
-  line-height: 1!important;
-}
-ul.gcnav-steps>li:last-child, ul.gcnav-steps>li.gcnav-steps-end {
-  border-left: 4px solid transparent;
-}
-li ul.gcnav-steps>li:last-child {
-  padding-bottom: 0px;
-}
-ul.gcnav-steps>li>:first-child::before {
-  border-radius: 50%;
-  border: 3px solid #26374a;
-  background-color: #fff;
-  position: absolute;
-  left: 0.05em;
-  content: "";
-  width: 1.2em;
-  height: 1.2em;
-  transition: width 0.2s, height 0.2s, left 0.2s, margin-top 0.2s;
-}
-ul.gcnav-steps>li.active>:first-child::before {
-  background-color: #26374a;
-}
-ul.gcnav-steps>li>a[href]:hover::before, .gcnav-steps>li>a[href]:focus::before {
-  width: 1.4em;
-  height: 1.4em;
-  left: -0.05em;
-  margin-top: -0.1em;
-}/*Section menu mobile*/
-.gcnav h1#wb-cont-parent {
-  border-bottom-width: 0px;
-  padding: 0px 20px 10px 12px;
-  background-color: #fff;
-  font-size: 1.3em;
-  color: #555;
-  margin-top: -19px;
-  float: left;
-  margin-right: 20px;
-}
-.gcnav-menu {
-  border-top: 4px solid #26374a;
-  border-right: 4px solid #26374a;
-  border-radius: 0px 6px 6px 0px;
-  margin-top: 38px;
-}
-.gcnav-menu .gcnav-steps {
-  padding-top: 10px;
-  clear: both;
-}
-.gcnav ul.gcnav-steps>li:last-child {
-  border-left: 4px solid #26374a;
-  border-bottom: 4px solid #26374a;
-  border-bottom-left-radius: 6px;
-}
-#gcnav-menu-header, .gcnav-menu-pager {
-  display: none;
-}/* Section menu desktop*/
-
-@media all and (min-width:992px) {
-.gcnav {
-  margin: 0px -15px 0px -15px;
-}
-.gcnav::after {
-  clear: both;
-}
-.gcnav::after, .gcnav::before {
-  content: " ";
-  display: table;
-}
-.gcnav-menu h1#wb-cont-parent {
-  font-weight: inherit;
-  padding-bottom: 0px!important;
-  margin-bottom: 0px;
-}
-.gcnav-section h1#wb-cont {
-  margin-top: 0px;
-}
-.gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager, .gcnav-section {
-  width: 66.66%;
-}
-.gcnav-menu nav, .gcnav aside.gcnav-side {
-  width: 33.33%;
-  float: right;
-}
-.gcnav-section {
-  display: inline-block;
-}
-.gcnav-menu nav {
-  margin-top: -20px;
-}
-.gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager, .gcnav-section, .gcnav-menu nav, .gcnav aside.gcnav-side {
-  position: relative;
-  min-height: 1px;
-  padding: 0px 15px 0px 15px;
-}
-.gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager {
-  float: left;
-}
-.gcnav aside.gcnav-side {
-  clear: right;
-}
-#gcnav-menu-header, .gcnav-menu-pager {
-  display: inherit;
-  margin-top: 0px;
-}
-.gcnav-menu #gcnav-menu-header {
-  font-size: 1.2em;
-}
-.gcnav-menu {
-  border-top: 0px;
-  border-right: 0px;
-}
-.gcnav ul.gcnav-steps > li:last-child {
-  border-left: 4px solid transparent;
-  border-bottom: 0px;
-}/*Section menu nav buttons*/
-ul.gcnav-menu-pager>li>a:hover, ul.gcnav-menu-pager>li>a:focus, ul.gcnav-menu-pager>li>a:visited {
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-  padding: 5px;
-}
-ul.gcnav-menu-pager>li>a {
-  background-color: #26374a;
-}
-ul.gcnav-menu-pager>li>a:hover {
-  background-color: #444;
-}
-ul.gcnav-menu-pager>li>a:not(:focus) {
-  clip: rect(1px,1px,1px,1px);
-  height: 1px;
-  margin: 0;
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-}
-ul.gcnav-menu-pager>li>a:focus {
-  position: relative;
-}
-ul.gcnav-menu-pager {
-  display: flex;
-  margin-bottom: 0;
-  list-style: none;
-  padding-left: 0;
-}
-}
-@-moz-document url-prefix() {
-ul.gc-navseq>li>:first-child::before {
-margin-left: -2.0em;
-}
-}/*Checkbox/Fieldflow radio input sizing,positioning*/
-.checkbox-lg > li.checkbox {
-  margin-top: 0px;
-}
-.checkbox-lg > li {
-  margin-left: -40px;
-  padding-left: 40px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-  padding-right: 15px;
-}
-.checkbox-zebra > li:nth-child(2n+1) {
-  background-color: #f5f5f5;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
-.checkbox-lg > li.checkbox input[type=checkbox], .fieldflow-lg .radio input[type=radio] {
-  margin-top: 12px;
-  transform: scale(2);
-}
-.checkbox-lg label, .fieldflow-lg, .fieldflow-lg label, .fieldflow-lg div, .fieldflow-lg select, .std-blt {
-  font-size: 20px;
-  line-height: 1.65em;
-}
-.std-blt {
-  list-style-type: disc;
-}
-.std-blt li label {
-  display: block;
+  /*h1 underline re-design*/ h1#wb-cont {
+  border-bottom: none;
+  }
+  h1#wb-cont::after {
+    content: "";
+    display: block;
+    width: 70px;
+    padding-bottom: 8px;
+    border-bottom: .18em solid #af3c43;
+  }/*Section menu steps design*/
+  ul.gcnav-steps {
+    list-style: none;
+    padding-left: 0.57em;
+    position: relative;
+  }
+  li ul.gcnav-steps {
+    margin-top: 20px;
+    padding-left: 0.55em;
+  }
+  ul.gcnav-steps>li {
+    border-left: 4px solid #26374a;
+    padding: 0px 20px 30px 1em;
+  }
+  ul.gcnav-steps.noline>li {
+    border-left: 4px solid transparent;
+  }
+  ul.gcnav-steps>li::first-line {
+    line-height: 1!important;
+  }
+  ul.gcnav-steps>li:last-child, ul.gcnav-steps>li.gcnav-steps-end {
+    border-left: 4px solid transparent;
+  }
+  li ul.gcnav-steps>li:last-child {
+    padding-bottom: 0px;
+  }
+  ul.gcnav-steps>li>:first-child::before {
+    border-radius: 50%;
+    border: 3px solid #26374a;
+    background-color: #fff;
+    position: absolute;
+    left: 0.05em;
+    content: "";
+    width: 1.2em;
+    height: 1.2em;
+    transition: width 0.2s, height 0.2s, left 0.2s, margin-top 0.2s;
+  }
+  ul.gcnav-steps>li.active>:first-child::before {
+    background-color: #26374a;
+  }
+  ul.gcnav-steps>li>a[href]:hover::before, .gcnav-steps>li>a[href]:focus::before {
+    width: 1.4em;
+    height: 1.4em;
+    left: -0.05em;
+    margin-top: -0.1em;
+  }/*Section menu mobile*/
+  .gcnav h1#wb-cont-parent {
+    border-bottom-width: 0px;
+    padding: 0px 20px 10px 12px;
+    background-color: #fff;
+    font-size: 1.3em;
+    color: #555;
+    margin-top: -19px;
+    float: left;
+    margin-right: 20px;
+  }
+  .gcnav-menu {
+    border-top: 4px solid #26374a;
+    border-right: 4px solid #26374a;
+    border-radius: 0px 6px 6px 0px;
+    margin-top: 38px;
+  }
+  .gcnav-menu .gcnav-steps {
+    padding-top: 10px;
+    clear: both;
+  }
+  .gcnav ul.gcnav-steps>li:last-child {
+    border-left: 4px solid #26374a;
+    border-bottom: 4px solid #26374a;
+    border-bottom-left-radius: 6px;
+  }
+  #gcnav-menu-header, .gcnav-menu-pager {
+    display: none;
+  }/* Section menu desktop*/
+  
+  @media all and (min-width:992px) {
+  .gcnav {
+    margin: 0px -15px 0px -15px;
+  }
+  .gcnav::after {
+    clear: both;
+  }
+  .gcnav::after, .gcnav::before {
+    content: " ";
+    display: table;
+  }
+  .gcnav-menu h1#wb-cont-parent {
+    font-weight: inherit;
+    padding-bottom: 0px!important;
+    margin-bottom: 0px;
+  }
+  .gcnav-section h1#wb-cont {
+    margin-top: 0px;
+  }
+  .gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager, .gcnav-section {
+    width: 66.66%;
+  }
+  .gcnav-menu nav, .gcnav aside.gcnav-side {
+    width: 33.33%;
+    float: right;
+  }
+  .gcnav-section {
+    display: inline-block;
+  }
+  .gcnav-menu nav {
+    margin-top: -20px;
+  }
+  .gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager, .gcnav-section, .gcnav-menu nav, .gcnav aside.gcnav-side {
+    position: relative;
+    min-height: 1px;
+    padding: 0px 15px 0px 15px;
+  }
+  .gcnav-menu h1#wb-cont-parent, .gcnav-menu ul.gcnav-menu-pager {
+    float: left;
+  }
+  .gcnav aside.gcnav-side {
+    clear: right;
+  }
+  #gcnav-menu-header, .gcnav-menu-pager {
+    display: inherit;
+    margin-top: 0px;
+  }
+  .gcnav-menu #gcnav-menu-header {
+    font-size: 1.2em;
+  }
+  .gcnav-menu {
+    border-top: 0px;
+    border-right: 0px;
+  }
+  .gcnav ul.gcnav-steps > li:last-child {
+    border-left: 4px solid transparent;
+    border-bottom: 0px;
+  }/*Section menu nav buttons*/
+  ul.gcnav-menu-pager>li>a:hover, ul.gcnav-menu-pager>li>a:focus, ul.gcnav-menu-pager>li>a:visited {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+  }
+  ul.gcnav-menu-pager>li>a {
+    background-color: #26374a;
+  }
+  ul.gcnav-menu-pager>li>a:hover {
+    background-color: #444;
+  }
+  ul.gcnav-menu-pager>li>a:not(:focus) {
+    clip: rect(1px,1px,1px,1px);
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+  }
+  ul.gcnav-menu-pager>li>a:focus {
+    position: relative;
+  }
+  ul.gcnav-menu-pager {
+    display: flex;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+  }
+  }
+  @-moz-document url-prefix() {
+  ul.gc-navseq>li>:first-child::before {
+  margin-left: -2.0em;
+  }
+  }/* Styled ordered list design */
+  ol.lst-stps, .lst-stps {
+       counter-reset: item;
+  }
+   ol.lst-stps, .lst-stps {
+       margin: 15px 0 15px 0px;
+       padding-left: 0;
+       position: relative;
+  }
+   ol.lst-stps>li, .lst-stps>.lst-item {
+       counter-increment: item;
+  }
+   ol.lst-stps > li, .lst-stps .lst-item {
+       list-style: none;
+       margin-top: 30px;
+       position: relative;
+       padding-left:60px;
+       padding-right: 15px;
+       min-height: 2.2em;
+  }
+   ol.lst-stps fieldset {
+       padding-top:0;
+  }
+   ol.lst-stps li>*:last-child, .lst-stps .lst-item>*:last-child {
+      margin-bottom:0px;
+  }
+   ol.lst-stps>li:before, .lst-stps .lst-item:before {
+       content: counter(item);
+  }
+   ol.lst-stps li>ol, .lst-stps .lst-item>.sub-lst-stps {
+       counter-reset: subitem;
+  }
+   ol.lst-stps li>ol {
+       margin-left: -35px;
+  }
+   .lst-stps .lst-item {
+       position: relative;
+       padding-left: 60px;
+       margin-top: 30px;
+  }
+   ol.lst-stps li:before, .lst-stps .lst-item:before {
+       -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+       border-radius: 50%;
+       border: 3px solid #26374a;
+       background-color: #fff;
+       float: left;
+       position: absolute;
+       box-sizing: content-box;
+       line-height: 2.2;
+       text-align: center;
+       font-weight: 600;
+       height: 2.2em;
+       width: 2.2em;
+       left: 0px;
+       margin-top: -8px;
+  }
+   ol.lst-stps>li>ol>li:before, .lst-stps>.lst-item>.sub-lst-stps>.lst-item:before {
+       counter-increment: subitem;
+       content: counter(item) "" counter(subitem, lower-alpha) "";
+  }
+   .sub-lst-stps>.lst-item:last-child {
+       margin-bottom: 0px 
+  }
+   .lst-stps-striped>li ol, .lst-stps-striped > .lst-item > .sub-lst-stps {
+      margin-top:15px;
+  }
+   .lst-stps.lst-stps-striped li, .lst-stps.lst-stps-striped .lst-item {
+      padding-top: 23px;
+       padding-bottom:23px;
+       margin-top:0px;
+  }
+   .lst-stps-striped >li:nth-child(odd), .lst-stps-striped >li:nth-child(even)>ol>li:nth-child(odd), .lst-stps-striped >li:nth-child(odd)>ol>li:nth-child(even), .lst-stps-striped >.lst-item:nth-child(odd), .lst-stps-striped >.lst-item:nth-child(even)>.sub-lst-stps>.lst-item:nth-child(odd), .lst-stps-striped >.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(even) {
+       background-color: #f5f5f5;
+  }
+   .lst-stps-striped >li:nth-child(odd)>ol>li:nth-child(odd), .lst-stps-striped >.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(odd){
+       background-color: #fff!important;
+  }
+   .lst-stps-striped >li:nth-child(even)>ol>li:nth-child(even):last-child, .lst-stps-striped >li:nth-child(odd)>ol>li:nth-child(even):last-child, .lst-stps-striped >.lst-item:nth-child(even)>.sub-lst-stps>.lst-item:nth-child(even):last-child, .lst-stps-striped >.lst-item:nth-child(odd)>.sub-lst-stps>.lst-item:nth-child(even):last-child {
+       padding-bottom: 0px;
+  }
+   ol.lst-stps li>:first-child, .lst-stps .lst-item>:first-child {
+       margin-top:auto;
+  }
+   ol.lst-stps.lst-stps-striped li, .lst-stps.lst-stps-striped .lst-item {
+      padding-left: 75px;
+  }
+   .lst-stps-striped li:before, .lst-stps-striped .lst-item:before {
+      margin-left: 15px;
+  }
+   /* ol.lst-stps li ul, ol.lst-stps li ul li, ol.lst-stps.lst-stps-striped li ul, ol.lst-stps.lst-stps-striped li ul li {
+       padding-left: 0px;
+  }
+  */
+   @media all and (max-width: 767px) {
+       ol.lst-stps li:before, .lst-stps .lst-item:before {
+           font-size: 0.8em;
+           line-height: 2;
+           height: 2em;
+           width: 2em;
+           margin-top: -3px;
+           font-weight: 600;
+      }
+       ol.lst-stps>li, .lst-stps>.lst-item {
+           padding-left: 45px 
+      }
+  
+     
+       .lst-stps.lst-stps-striped li, .lst-stps.lst-stps-striped .lst-item {
+          padding-top: 19px;
+           padding-bottom:19px;
+           margin-top:0px;
+      }
+  }
+  
+  .lst-lwr-alph {
+    list-style-position: outside;
+  }
+  .callout {
+    padding: 19px;
+    margin-bottom: 20px;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0px 0px 10px #ddd;
+  }
+  /*Checkbox/Fieldflow radio input sizing,positioning*/
+  .checkbox-lg > li.checkbox {
+    margin-top: 0px;
+  }
+  .checkbox-lg > li {
+    margin-left: -40px;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    padding-right: 15px;
+  }
+  .checkbox-zebra > li:nth-child(2n) {
+    background-color: #f5f5f5;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  .checkbox-lg > li.checkbox input[type=checkbox], .fieldflow-lg .radio input[type=radio] {
+    margin-top: 12px;
+    transform: scale(2);
+  }
+  .checkbox-lg label, .fieldflow-lg, .fieldflow-lg label, .fieldflow-lg div, .fieldflow-lg select, .std-blt {
+    font-size: 20px;
+    line-height: 1.65em;
+  }
+  .std-blt {
+    list-style-type: disc;
+  }
+  .std-blt li label {
+    display: block;
+    padding-left: 0px;
+  }
+  .fieldflow-lg .radio label {
+    margin-left: 40px;
+  }
+  .fieldflow-lg .radio input[type=radio] {
+    margin-left: -40px;
+  }
+  .fieldflow-lg fieldset legend {
+    font-size: 22px;
+    margin-top: 0px;
+  }
+  /*fix fieldflow margin issue for radio buttons */
+  /*legend.h5 {
+    margin-top: 0px
+  }
+  input[type='radio'] {
+    margin-top: 12px !important;
+  }*/
+  /*Hide arrows in Chrome/FF for number input*/
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+  }
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  #results output, output.wb-calc {
+  display: inline;
+  }
+    /*Validation invisible text appearance */
+  .wb-frmvld #errors-default .wb-inv, .wb-frmvld .has-error .wb-inv {
+    clip: inherit;
+    height: inherit;
+    margin: inherit;
+    overflow: inherit;
+    position: inherit;
+    width: inherit;
+  }
+  .wb-frmvld .has-error .wb-inv {
+    color: #333;
+  }
+  :not(#wb-srch) main form:not(#gc-pg-hlpfl-frm), main .checkbox, main .checkbox-inline, main .radio, main .radio-inline, main form:not(#gc-pg-hlpfl-frm) :not(.btn-call-to-action).btn, main form :not(.btn-primary).btn {
+                 font-size: 20px !important;
+                 line-height: 1.65em !important;
+  }
+  
+  /*Stacked H1*/
+  h1 span.stacked {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: -9999px;
+  }
+  h1 span.stacked span:nth-child(1) {
+    margin-top: -1.1em;
+  }
+  h1 span.stacked span:nth-child(1), h1 span.stacked span:nth-child(2) {
+    margin-left: 9999px;
+  }
+  h1 span.stacked span:nth-child(2) {
+    font-size: 0.8em;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 0.17em;
+  }
+  /*Lower opacity for placeholders */
+  ::-webkit-input-placeholder { /* Edge */
+    opacity: 0.5;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    opacity: 0.5;
+  }
+  
+  input::placeholder {
+     opacity: 0.5;
+  }
+  /*placholder disappears on focus */
+  input:focus::-webkit-input-placeholder {
+    opacity: 0; 
+  }
+  
+  input:focus::placeholder {
+    opacity: 0; 
+  }
+  .inset {
+    border: 1px solid #e3e3e3 !important;
+    box-shadow: inset 0px 0px 8px #e3e3e3 !important;
+  }
+  .provisional.inset
+  {padding: 15px;
+  }
+  .outset {
+    border: 1px solid #e3e3e3 !important;
+    box-shadow: 0px 0px 8px #e3e3e3 !important;
+  }
+  .provisional.outset
+  {padding: 15px;
+  }
+  /*CSS eqht experimental */
+  .wb-eqht-css {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    height: 100%;
+  }
+  .wb-eqht-css .wb-eqht-grid {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .wb-eqht-css .hght-inhrt-css {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+  .wb-eqht-css .hght-inhrt-css .eqht-trgt-css {
+    flex: 1 1 auto;
+  }
+  .cnjnctn-grd {
+    display: flex;
+    margin-top: 19px;
+    margin-bottom: 19px;
+  }
+  .cnjnctn-grd .cnjnctn-col {
+    width: 100%;
+    padding-top: 9px;
+  }
+  .cnjnctn-grd .cnjnctn-col-sm {
+    width: 50%;
+    padding-top: 9px;
+  }
+  .cnjnctn-grd .cnjnctn-and, .cnjnctn-grd .cnjnctn-or {
+       
+    padding-right: 19px;
+    padding-left: 19px;
+    padding-top: 5px;
+    background-image: linear-gradient(to bottom, #6f6f6f 0.3em, #6f6f6f 0.3em, rgba(0,0,0,0) 0.3em, rgba(0,0,0,0) 2.4em, #6f6f6f 2.4em, #6f6f6f 2.4em);
+    background-repeat: no-repeat;
+    background-size: 2px 100%;
+    background-position: center;
+  }
+  
+  [tabindex] .modal-content .cnjnctn-grd .cnjnctn-and:after, [tabindex] .modal-content .cnjnctn-grd .cnjnctn-or:after {
+    top: 1px;
+    bottom: -1px;	
+  }
+  .cnjnctn-grd .cnjnctn-and:before, .cnjnctn-grd .cnjnctn-or:before {
+    float: left;
+    box-sizing: content-box;
+    line-height: 1.9em;
+    text-align: center;
+    padding: 4px;
+    height: 2em;
+    width: 2em;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  [tabindex] .modal-content .cnjnctn-grd .cnjnctn-and:before, [tabindex] .modal-content .cnjnctn-grd .cnjnctn-or:before {
+    line-height: 1.4em;
+    height: 1.4em;
+    width: 1.4em;
+  }
+  .cnjnctn-grd .cnjnctn-and:before {
+    border-width: 2px 0px 2px 0px;
+    border-color: #6f6f6f;
+    border-style: solid;
+  }
+  html:lang(en) .cnjnctn-and:before {
+    content: "and";
+  }
+  html:lang(fr) .cnjnctn-and:before {
+    content: "et";
+  }
+  .cnjnctn-or:before {
+    border-radius: 50%;
+    border: 2px solid #6f6f6f;
+  }
+  html:lang(en) .cnjnctn-or:before {
+    content: "or";
+  }
+  html:lang(fr) .cnjnctn-or:before {
+    content: "ou";
+  }
+  
+  /*For collapsed content at all resolutions */
+  
+  .cnjnctn-grd.flex-fw {
+  border-left: 2px solid #6f6f6f;
+  padding-left: 19px;
+  flex-direction: column;	
+  }
+  
+  .cnjnctn-grd.flex-fw .cnjnctn-and, .cnjnctn-grd.flex-fw .cnjnctn-or {
   padding-left: 0px;
-}
-.fieldflow-lg .radio label {
-  margin-left: 40px;
-}
-.fieldflow-lg .radio input[type=radio] {
-  margin-left: -40px;
-}
-.fieldflow-lg fieldset legend {
-  font-size: 22px;
-  margin-top: 0px;
-}
-</style>
+  background-image: none;
+  }
+  
+  .cnjnctn-grd.flex-fw .cnjnctn-and:before {
+  border-width: 0px 2px 0px 2px;
+  }
+  
+  .cnjnctn-grd.flex-fw .cnjnctn-col-sm	{
+    width: 100%;	
+  }
+  
+  @media all and (max-width: 767px) {
+  .cnjnctn-grd.flex-fw-xs {
+    flex-direction: column;
+  }
+  .cnjnctn-grd.flex-fw-xs {
+    border-left: 2px solid #6f6f6f;
+    padding-left: 19px;
+  }
+  .cnjnctn-grd.flex-fw-xs .cnjnctn-and, .cnjnctn-grd.flex-fw-xs .cnjnctn-or {
+    padding-left: 0px;
+    background-image: none;
+  }
+  
+  .cnjnctn-grd.flex-fw-xs .cnjnctn-and:before {
+    border-width: 0px 2px 0px 2px;
+  }
+  .cnjnctn-grd.flex-fw-xs .cnjnctn-col-sm	{
+    width: 100%;	
+  }
+  }
+  
+  @media all and (max-width: 991px) {
+  .cnjnctn-grd.flex-fw-sm {
+    flex-direction: column;
+  }
+  .cnjnctn-grd.flex-fw-sm {
+    border-left: 2px solid #6f6f6f;
+    padding-left: 19px;
+  }
+  .cnjnctn-grd.flex-fw-sm .cnjnctn-and, .cnjnctn-grd.flex-fw-sm .cnjnctn-or {
+    padding-left: 0px;
+    background-image: none;
+  }
+  
+  .cnjnctn-grd.flex-fw-sm .cnjnctn-and:before {
+    border-width: 0px 2px 0px 2px;
+  }
+  .cnjnctn-grd.flex-fw-sm .cnjnctn-col-sm	{
+    width: 100%;	
+  }	
+  }
+  
+  @media all and (max-width: 1169px) {
+  .cnjnctn-grd.flex-fw-md {
+    flex-direction: column;
+  }
+  .cnjnctn-grd.flex-fw-md {
+    border-left: 2px solid #6f6f6f;
+    padding-left: 19px;
+  }
+  .cnjnctn-grd.flex-fw-md .cnjnctn-and, .cnjnctn-grd.flex-fw-md .cnjnctn-or {
+    padding-left: 0px;
+    background-image: none;
+  }
+  
+  .cnjnctn-grd.flex-fw-md .cnjnctn-and:before {
+    border-width: 0px 2px 0px 2px;
+  }
+  .cnjnctn-grd.flex-fw-md .cnjnctn-col-sm	{
+    width: 100%;	
+  }	
+  }
+  
+  .dcsn-details  details + .cnjnctn-or:before {
+  float: left;
+  box-sizing: content-box;
+  line-height: 1.9em;
+  text-align: center;
+  padding: 4px;
+  height: 2em;
+  width: 2em;
+  font-weight: 500;
+  font-size: 16px;
+  border: 1px solid #6f6f6f;
+  }
+  
+  .dcsn-details details:not(:last-child) {
+  margin-bottom: 30px;
+  }
+  
+  .dcsn-details details + .cnjnctn-or {
+  position: absolute;
+  margin-top: -36px;
+  background-color: #fff;
+  margin-left: 38px;
+  
+  }
+  
+  /*Temporary solution for decision points inside wells or backgrounds */
+  .well .dcsn-details, .well .dcsn-details details + .cnjnctn-or, [class*='bg-'] .dcsn-details, [class*='bg-'] .dcsn-details details + .cnjnctn-or {
+    background-color: inherit;
+  }
+  
+  
+  
+  </style>
+  
 
 
 <script id="wb-script" type="application/ld+json">
@@ -691,40 +1107,42 @@ margin-left: -2.0em;
                 <!-- <p><strong>In 2022</strong>, you paid at least 30% of your 2021 adjusted family net income on eligible rent for your own principal residence in Canada</p> -->
                 <p class="mrgn-tp-md">Find out <a href="what-eligible-rent.html">what you can include as eligible rent</a>.</p>
               </label>
-              <p class="h4">Find out if your rent payments are 30% of your adjusted family net income</p>
-              <p>Do you have CRA My Account or My Service Canada Account?</p>
-            
-              <details>
-                <summary>Yes - I can sign in to CRA My Account</summary>
-                <p>You can find out if your adjusted family net income on file with the CRA qualifies for the one-time payment in your CRA My Account.</p>
-                <ol class="mrgn-tp-md mrgn-bttm-md">
-                  <li><a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">Sign in to CRA My Account</a> </li>
-                  <li>Once signed in, in the banner for the one-time payment, click on "<strong>Apply now</strong>"</li>
-                  <li>If your adjusted family net income does not qualify (more than $35,000 for families or more than $20,000 for individuals), you will be informed you can't apply</li>
-                  <li>If your adjusted family net income is eligible, you can input your 2022 rent amount and the application form will let you know if it is not 30% of your 2021 adjusted family net income</li>
-                </ol>
-                <p>If you are eligible, you can submit your application right away.</p>
-              </details>
-              <details>
-                <summary>Yes - I can sign in to My Service Canada Account</summary>
-                <p>If you don't have CRA My Account, you can still access a CRA My Account for your information through your My Service Canada Account:</p>
-                <ul>
-                  <li><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">Sign in to your My Service Canada Account</a></li>
-                  <li>Click on "<strong>Access CRA</strong>"</li>
-                  <li>Select "<strong>I agree</strong>" on the Registration and Authentication page to transfer directly to your CRA My Account</li>
-                </ul>
-                <p class="mrgn-tp-lg">In CRA My Account, you can find out if your adjusted family net income on file with the CRA qualifies for the one-time payment in your CRA My Account.</p>
-                <ol class="mrgn-tp-md mrgn-bttm-md">
-                  <li>Once signed in, in the banner for the one-time payment, click on "<strong>Apply now</strong>"</li>
-                  <li>If your adjusted family net income does not qualify (more than $35,000 for families or more than $20,000 for individuals), you will be informed you can't apply</li>
-                  <li>If your adjusted family net income is eligible, you can input your 2022 rent amount and the application form will let you know if it is not 30% of your 2021 adjusted family net income</li>
-                </ol>
-                <p>If you are eligible, you can submit your application right away.</p>
-              </details>
-              <details>
-                <summary>No - I need to estimate outside of My Account</summary>
-                <p>Answer a few questions to <a href="estimate-afni.html">estimate your adjusted family net income and rent</a> and determine if they qualify for the one-time payment.</p>
-              </details>
+              <div class="mrgn-lft-md">
+                <p class="h4">Find out if your rent payments are 30% of your adjusted family net income</p>
+                <p>Do you have CRA My Account or My Service Canada Account?</p>
+              
+                <details>
+                  <summary>Yes - I can sign in to CRA My Account</summary>
+                  <p>You can find out if your adjusted family net income on file with the CRA qualifies for the one-time payment in your CRA My Account.</p>
+                  <ol class="mrgn-tp-md mrgn-bttm-md">
+                    <li><a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">Sign in to CRA My Account</a> </li>
+                    <li>Once signed in, in the banner for the one-time payment, click on "<strong>Apply now</strong>"</li>
+                    <li>If your adjusted family net income does not qualify (more than $35,000 for families or more than $20,000 for individuals), you will be informed you can't apply</li>
+                    <li>If your adjusted family net income is eligible, you can input your 2022 rent amount and the application form will let you know if it is not 30% of your 2021 adjusted family net income</li>
+                  </ol>
+                  <p>If you are eligible, you can submit your application right away.</p>
+                </details>
+                <details>
+                  <summary>Yes - I can sign in to My Service Canada Account</summary>
+                  <p>If you don't have CRA My Account, you can still access a CRA My Account for your information through your My Service Canada Account:</p>
+                  <ul>
+                    <li><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">Sign in to your My Service Canada Account</a></li>
+                    <li>Click on "<strong>Access CRA</strong>"</li>
+                    <li>Select "<strong>I agree</strong>" on the Registration and Authentication page to transfer directly to your CRA My Account</li>
+                  </ul>
+                  <p class="mrgn-tp-lg">In CRA My Account, you can find out if your adjusted family net income on file with the CRA qualifies for the one-time payment in your CRA My Account.</p>
+                  <ol class="mrgn-tp-md mrgn-bttm-md">
+                    <li>Once signed in, in the banner for the one-time payment, click on "<strong>Apply now</strong>"</li>
+                    <li>If your adjusted family net income does not qualify (more than $35,000 for families or more than $20,000 for individuals), you will be informed you can't apply</li>
+                    <li>If your adjusted family net income is eligible, you can input your 2022 rent amount and the application form will let you know if it is not 30% of your 2021 adjusted family net income</li>
+                  </ol>
+                  <p>If you are eligible, you can submit your application right away.</p>
+                </details>
+                <details>
+                  <summary>No - I need to estimate outside of My Account</summary>
+                  <p>Answer a few questions to <a href="estimate-afni.html">estimate your adjusted family net income and rent</a> and determine if they qualify for the one-time payment.</p>
+                </details>
+              </div>
             </li>
         </ul>
         <div class="alert alert-info provisional" id="default-msg">
