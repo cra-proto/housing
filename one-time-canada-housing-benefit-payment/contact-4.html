@@ -736,8 +736,8 @@ window.addEventListener("lcw:error", function handleLivechatErrorEvent(errorEven
     <section class="gcnav-section">
       <h1 property="name" id="wb-cont">Contact the CRA</h1>
       <dl class="dl-horizontal brdr-0">
-        <dt><h2 class="h3 mrgn-tp-0">Online</h2>
-       </dt> <dd><p>Use your CRA My Account to:</p>
+        <dt><h2 class="h3 mrgn-tp-0">Online</h2></dt>
+       <dd><p>Use your CRA My Account to:</p>
        <ul>
        <li>apply for the one-time top-up to the Canada Housing Benefit</li>
        <li>update your personal information, including your address and your marital status</li>
@@ -751,19 +751,20 @@ window.addEventListener("lcw:error", function handleLivechatErrorEvent(errorEven
        <li>Select &quot;<strong>I agree</strong>&quot; on the Registration and Authentication page to transfer directly to your CRA My Account</li>
        </ol>
        </details></dd> 
-       <dt><h2 class="h3 mrgn-tp-0">By phone</h2>
-       </dt> 
+       
+       <dt><h2 class="h3 mrgn-tp-0">By phone</h2></dt> 
+
        <dd><p>Call the CRA for more information or help by phone.</p>
     
        <div <p><strong>What are you calling about?</strong></p>
-       <ul>
+       <!-- <ul>
        <li><a href="#dedicated">The one-time top-up to the Canada Housing Benefit</a></li>
        <li><a href="#ite">Your CRA account information</a></li>
-       </ul>
+       </ul> -->
        </div>
      
        <div id="phone-numbers"><div id="dedicated">
-	       <div <p><strong>The one-time top-up to the Canada Housing Benefit</strong></p>
+	       <div <details><summary>The one-time top-up to the Canada Housing Benefit</summary>
        <div id="ajax-dedicated"><dl class="dl-horizontal">
 
        <dt>Before you call</dt> <dd><p>To verify your identity, you'll need your:</p>
@@ -792,10 +793,11 @@ window.addEventListener("lcw:error", function handleLivechatErrorEvent(errorEven
        <p>Closed on <a href="https://www.canada.ca/en/revenue-agency/services/tax/public-holidays.html">public holidays</a></p>
        </dd></dl>
        </div>
+       </details> 
        </div>
 	  
        <div id="ite" class="phone"><dl class="dl-horizontal">
-       <div <p><strong>Your CRA account information</strong></p>
+       <div <details><summary>Your CRA account information</summary>
        <dt>Before you call</dt> <dd><p>To verify your identity, you'll need your:</p>
        <ul>
        <li>social insurance number (SIN)</li>
@@ -822,6 +824,7 @@ window.addEventListener("lcw:error", function handleLivechatErrorEvent(errorEven
        </dd></div>
        </dl>
        </div>
+       </details> 
        </div>
        
        <noscript>
